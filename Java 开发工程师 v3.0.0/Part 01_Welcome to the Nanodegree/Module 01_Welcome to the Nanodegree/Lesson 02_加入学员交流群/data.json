@@ -1,0 +1,55 @@
+{
+  "data": {
+    "lesson": {
+      "id": 906656,
+      "key": "0466e05b-7e2e-456f-8564-ac246bb68470",
+      "title": "加入学员交流群",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "为帮助你快速展开学习，请加入学员交流群",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 906657,
+          "key": "eaad071b-4336-4b69-97d3-28021ef912c1",
+          "title": "加入学员交流群",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eaad071b-4336-4b69-97d3-28021ef912c1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906658,
+              "key": "0624a7cc-0c33-4cf9-9e45-2a1bee8ad618",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### 学习交流社群\n\n学习交流社群，是我们专门为本课程同学提供的交流渠道。 本群仅面向本课程同学，我们非常鼓励大家可以在交流群中，**一起探索问题**、**分享学习经验**，共同获得成长。#Better Together   当然群内也是会有一位助教老师进行答疑哦～\n\n`如果你希望加入本班交流群`，请认真填写 [ 以下申请表 ](https://udacity.jinshuju.com/f/hqhuHK?x_field_1=classroom) 获取入群二维码。\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906659,
+              "key": "6e781b5a-21b4-4fe2-b0bc-acc11cd9d51d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<iframe id=\"goldendata_form_NJqvAY\" src=\"https://udacity.jinshuju.com/f/hqhuHK?x_field_1=classroom&background=white&banner=show&embedded=true\" width=\"100%\" frameborder=0 allowTransparency=\"true\" height=\"800\"><",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
