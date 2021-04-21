@@ -1,0 +1,1252 @@
+{
+  "data": {
+    "lesson": {
+      "id": 121885,
+      "key": "8193672240",
+      "title": "Variables and Data Types",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Discover the basic idea behind programing and write your first Java program. Use variables to store and retrieve information.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/8193672240/121885/1545025089019/Variables+and+Data+Types+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/8193672240/121885/1545025082420/Variables+and+Data+Types+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 2938,
+          "key": "82444893050923",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82444893050923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 160655,
+              "key": "5b4707c0-baf5-430e-bc21-fa84fe3ea9d5",
+              "title": "Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sK8lJ4uI9qE",
+                "china_cdn_id": "sK8lJ4uI9qE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 3069,
+          "key": "82413688810923",
+          "title": "Course Map",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82413688810923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 111254,
+              "key": "10d2aa35-b4e7-4ee5-a741-26f2e46a4a2f",
+              "title": "Course Map",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Hello! You must be here to learn Java!\n\nThis course will give you a foundation in Java syntax that will start your journey towards becoming a successful Java developer.\n\n**Java developers are in high demand** in the job market because Java works on any platform, and it’s the core language for building Android apps.\n\nThere are so many cool things you can build with Java, but to get there, you’ll have to start from the beginning!\n\n![examples of Java apps](http://i.imgur.com/LQnwVTD.png)\n*Examples of a game, a platform, and an application that use Java, from left to right: Minecraft, Android, NASA Worldwind.*\n\n### Course Structure\n\nIn this first lesson, you’ll program your computer to remember numbers and text using **variables**, and you’ll get to use variables to do lots of calculations that us humans can’t do!\n\nIn lesson 2, you’ll get to teach your computer how to make decisions when faced with multiple choices. This is called conditional programming or **control flow**.\n\nThen in lesson 3, you’ll get to write your own set of instructions for computers to follow using **functions**.\n\nIn Lesson 4, you’ll write programs that can repeat instructions over and over, billions of times if needed, using **loops**.\n\nBy the end of Lesson 4, you should be ready to work on your first big project! You’ll need to install some tools to get started, but don’t worry, we’ll walk you through that step by step.\n\nReady? Well then, **let’s start coding!**\n\n![Course Map image](https://media.giphy.com/media/xT8qB9qqyDL7yzoKIM/giphy.gif)\n",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 2937,
+          "key": "82227937880923",
+          "title": "Hello World",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82227937880923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15341,
+              "key": "fd1953a8-4829-4cae-a70c-cae9febd64fd",
+              "title": "Hello World",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "kMrC8mt0m8A",
+                "china_cdn_id": "kMrC8mt0m8A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 124441,
+          "key": "e89e1b9d-8e20-433c-ae2c-6f0465165297",
+          "title": "Print a Line",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e89e1b9d-8e20-433c-ae2c-6f0465165297",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 543162,
+              "key": "c213c5a0-5317-4d6e-8c4c-10280fd6bece",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Try to out put \"Java Rocks!\"",
+              "instructor_notes": ""
+            },
+            {
+              "id": 102264,
+              "key": "8245549234",
+              "title": "Print a Line",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8245549234",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Print a Line",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "8230572642",
+                "initial_code_files": [
+                  {
+                    "text": "// Try output \"Java Rocks!\". \nSystem.out.println(\"Hello, World!\");",
+                    "name": "code.java"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 125336,
+          "key": "e56844af-bc68-4dfd-8c4b-fbeade772a64",
+          "title": "The Memory Game",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e56844af-bc68-4dfd-8c4b-fbeade772a64",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15526,
+              "key": "b731be4a-718b-41ed-b7c4-2f01bbfdc2ff",
+              "title": "The Memory Game",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "OdZcminmyro",
+                "china_cdn_id": "OdZcminmyro.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 3064,
+          "key": "82455891290923",
+          "title": "Variables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82455891290923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124314,
+              "key": "451422a9-c133-44a0-ac6c-54c73850dbdc",
+              "title": "Variables",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "TGw5szyZk88",
+                "china_cdn_id": "TGw5szyZk88.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 127175,
+          "key": "82465288750923",
+          "title": "Updating Variables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82465288750923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124393,
+              "key": "5618774f-cacb-4e91-a8bf-dc812f436b8c",
+              "title": "Updating Variables",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "JNAAR9ANRhs",
+                "china_cdn_id": "JNAAR9ANRhs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 3122,
+          "key": "82419590420923",
+          "title": "Third Bus Stop",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82419590420923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 2954,
+              "key": "8241959042",
+              "title": "Third Bus Stop",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Note that Java allows you to write multiple instructions in the same statement!",
+              "user_state": {
+                "node_key": "8241959042",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "gkh7spDZvPc",
+                  "china_cdn_id": "gkh7spDZvPc.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Third Bus Stop",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/Q2Pglej83wJnyz_BJNeuWBnLjwGtSSNcd1PQWw1hxxF7f9nrI-Zik59GZ-nf7v0CleoeuAWYJI2snpuK-LcD=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8241959042",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8406771768",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.27150872817955113,
+                      "y": 0.5590008314855875
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.271723036159601,
+                      "y": 0.6480044345898004
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2714502805486284,
+                      "y": 0.7373544900221729
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.27191786159601,
+                      "y": 0.8301690687361419
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "yqRd09bO5IM",
+                  "china_cdn_id": "yqRd09bO5IM.mp4"
+                }
+              }
+            },
+            {
+              "id": 8583,
+              "key": "aaa761e1-7b1e-435b-bc55-fa34705cac5f",
+              "title": "Updating vs Setting variables",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<hr>\n\n# Updating vs Setting variables\n\nWhen changing a variable value, you could either set it to a new value all together, or update it based on its previous value.\n\nFor example, if we have a variable called time and we want to add 5 to it, we write: \n\n<code>time = time + 5;</code>\n\nThis will **Add** 5 to whatever value time already had!\n\nBut if we want to set time to 5 without caring about what the current value was, we write:\n\n<code>time = 5;</code>\n",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 2978,
+          "key": "82496485910923",
+          "title": "Displaying the Output",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82496485910923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15340,
+              "key": "9734d1ea-6cb7-4797-96f6-78c84bb7817e",
+              "title": "Displaying the Output",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "1TuuWTOviOg",
+                "china_cdn_id": "1TuuWTOviOg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 2977,
+          "key": "82429289000923",
+          "title": "Remembering the Stops",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82429289000923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 123893,
+              "key": "8242928900",
+              "title": "Remembering the Stops",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8242928900",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "9g-aMXGqkis",
+                  "china_cdn_id": "9g-aMXGqkis.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Remembering the stops",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/f-q-LsVj-oPSiAspOYbI4ux8vSrAzma6krHaJwBq_gvkXA_yUsDSdPk_y9N0ICqwOrRbDSLjHyXKx6TYWqZG=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8242928900",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8407661751",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6964424875311721,
+                      "y": 0.41861834811529935
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.696637312967581,
+                      "y": 0.5049889135254989
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6964424875311721,
+                      "y": 0.5936460643015521
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.697591957605985,
+                      "y": 0.6841047671840355
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "wqiqaBkLMXs",
+                  "china_cdn_id": "wqiqaBkLMXs.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 3065,
+          "key": "82209045530923",
+          "title": "The Bus Driver",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82209045530923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 121986,
+              "key": "746a55b1-9d55-4b90-aed5-dcb2e8567466",
+              "title": "The Bus Driver",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "0b4kkAd7n6M",
+                "china_cdn_id": "0b4kkAd7n6M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 124278,
+          "key": "81957084470923",
+          "title": "Variables (Strings)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "81957084470923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 14530,
+              "key": "8ada7897-416f-44ab-8459-19384451473e",
+              "title": "Variables (Strings)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "NGRBCm0Pxyg",
+                "china_cdn_id": "NGRBCm0Pxyg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 2939,
+          "key": "82409094050923",
+          "title": "String Concatenation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82409094050923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15295,
+              "key": "c1a20f95-7bb1-413d-99ad-7c457eb1e364",
+              "title": "String Concatenation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "euvUmlJd1H8",
+                "china_cdn_id": "euvUmlJd1H8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 3034,
+          "key": "82435094620923",
+          "title": "String Operations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82435094620923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 2481,
+              "key": "8243509462",
+              "title": "String Operations",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8243509462",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "Lc5L5RY8Oco",
+                  "china_cdn_id": "Lc5L5RY8Oco.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "String Operations",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/D989N_saslrYXro5NJvHlVR_OG4oObbKhw3_u7NunYwAv4AVhM_SfOJF_KxVbpuRf_rQh5AeE0WvJqapPMI=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8243509462",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8223613449",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3267612219451372,
+                      "y": 0.6657774390243902
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3261377805486284,
+                      "y": 0.7296286031042128
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.32678070448877805,
+                      "y": 0.7928561529933481
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.3264689837905237,
+                      "y": 0.8597560975609756
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "bQmSlTMsR9g",
+                  "china_cdn_id": "bQmSlTMsR9g.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 3068,
+          "key": "82236134510923",
+          "title": "Variable Names",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82236134510923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15505,
+              "key": "cad8fe99-7b97-4bf0-87f1-4e263e1f00de",
+              "title": "Variable Names",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "p8naXcgIyZo",
+                "china_cdn_id": "p8naXcgIyZo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 2940,
+          "key": "82447789100923",
+          "title": "Data Types",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82447789100923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124177,
+              "key": "fdb36fc8-81fb-408b-894e-dcfa4a87429d",
+              "title": "Data Types",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "u-MrueO6Di0",
+                "china_cdn_id": "u-MrueO6Di0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 124011,
+          "key": "82464489630923",
+          "title": "Data Types Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82464489630923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 2594,
+              "key": "8246448963",
+              "title": "Data Types Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8246448963",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "R8baXQ2eoEU",
+                  "china_cdn_id": "R8baXQ2eoEU.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Data Types Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/i0QHtMLnnvQA8w7YMIGQbLtjNxCaqKif8mm-2UzufuncCSzxjqTaugf-rZVpBEOvD_MhZ4-g5oRvb47QkFRd=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8246448963",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8244778914",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.27032029301745636,
+                      "y": 0.3316241685144124
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2708073566084788,
+                      "y": 0.4012957317073171
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.27018391521197005,
+                      "y": 0.47339246119733924
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.27045667082294267,
+                      "y": 0.5418860864745011
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2707489089775561,
+                      "y": 0.610379711751663
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check6",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.271158042394015,
+                      "y": 0.6776953991130821
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "7mjCHM44K4k",
+                  "china_cdn_id": "7mjCHM44K4k.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 3136,
+          "key": "82145567120923",
+          "title": "All the Maths",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82145567120923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124114,
+              "key": "592ce12c-8cf7-4d15-8eeb-7ca9968fceb5",
+              "title": "All the Maths",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ddwQ8IOXY4E",
+                "china_cdn_id": "ddwQ8IOXY4E.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 3120,
+          "key": "81957084640923",
+          "title": "Casting",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "81957084640923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 123762,
+              "key": "019c5fad-3a17-4eab-b392-a818193a8397",
+              "title": "Casting",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "c1oyLnugYdA",
+                "china_cdn_id": "c1oyLnugYdA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 123873,
+          "key": "82400094560923",
+          "title": "Comments",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82400094560923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15509,
+              "key": "4c4aca3f-c3ff-42f6-b964-26e6fa7090ac",
+              "title": "Comments",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "Y2c_rcI3iCU",
+                "china_cdn_id": "Y2c_rcI3iCU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 123381,
+          "key": "19a4b584-6e25-48ee-937b-6a76860e3761",
+          "title": "The 5th Subject",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "19a4b584-6e25-48ee-937b-6a76860e3761",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 105010,
+              "key": "8240099240",
+              "title": "The 5th Subject",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8240099240",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "Bonom_L-OWo",
+                  "china_cdn_id": "Bonom_L-OWo.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "The 5th Subject",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "8249648632",
+                "initial_code_files": [
+                  {
+                    "text": "/* Your friend seems to be really good at music, \nhe managed to score 96% on his final exam!\nNow that you know all 5 subject grades, \nupdate the average calculation below to calculate the \ntotal average of all subjects. */\n\ndouble maths=97.5;\ndouble english=98;\ndouble science=83.5;\ndouble drama=75;\ndouble sum=maths+english+science+drama;\ndouble average=sum/4;\nSystem.out.println(average);",
+                    "name": "starter.java"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "3U6_tokV5O8",
+                  "china_cdn_id": "3U6_tokV5O8.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 2925,
+          "key": "82435991760923",
+          "title": "Track the Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82435991760923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 2564,
+              "key": "8243599176",
+              "title": "Track the Values",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8243599176",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "T6uYDAyPaUk",
+                  "china_cdn_id": "T6uYDAyPaUk.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Track the Values",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/NQe4PUM1QjtxlzJwHSbTLUdOgOtR9XE_O6UKObpm68bm5JDsahfdXtorQctT5179gfEMI5UZRcNCZNcCX_6X=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8243599176",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8240999411",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.5707216334164589,
+                      "y": 0.39762333702882485
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.8106491583541147,
+                      "y": 0.39305016629711753
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.570896976309227,
+                      "y": 0.5878603104212861
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.812305174563591,
+                      "y": 0.5845343680709535
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "qoB_fvKQsrg",
+                  "china_cdn_id": "qoB_fvKQsrg.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 2941,
+          "key": "82078464510923",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82078464510923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 123935,
+              "key": "50eed6d7-8b04-45f4-9c11-31e48bd33a01",
+              "title": "Summary",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "7q2RiO9nuEg",
+                "china_cdn_id": "7q2RiO9nuEg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137197,
+          "key": "092b50c7-abd0-46d1-a8a4-16dbde03c3fa",
+          "title": "Lesson 1 Problem Set",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "092b50c7-abd0-46d1-a8a4-16dbde03c3fa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 4974,
+              "key": "7eacc898-64ad-4c48-9e20-4c7d6b00d2f8",
+              "title": "Lesson 1 Problem Set",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Welcome to the Intro to Java: Functional Programming, Lesson 1 problem set!  These problem sets are an opportunity for you to practice the concepts you learned in class before moving on to the next lesson.  Learning a computer programming language is similar to learning a human language.  Nobody can pick it up overnight, there's a lot of vocabulary and syntax to remember.  Language learners often speak of the moment when they realized they stopped translating in their head and actually started thinking in their second language.  This will happen with Java too!  Eventually, you will be able to consider a task that needs coding and immediately imagine what Java code would complete it.  To get there, though, requires practice.\n\nThat's where the problem sets come in.  They aren't mandatory, and they aren't graded.  They're just extra learning materials to help you along.\n\nYou can download the problem set [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/July/57881edd_problem-set-1/problem-set-1.pdf).",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

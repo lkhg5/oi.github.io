@@ -1,0 +1,1581 @@
+{
+  "data": {
+    "lesson": {
+      "id": 123703,
+      "key": "8192650550",
+      "title": "Functions",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Create functions in Java. Declare methods with input arguments and return types. Then, call the functions you create.   ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/8192650550/123703/1545025245066/Functions+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/8192650550/123703/1545025235491/Functions+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 125014,
+          "key": "38f71cca-9f97-4fbd-baee-7c39914b9376",
+          "title": "Introducing Functions 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "38f71cca-9f97-4fbd-baee-7c39914b9376",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 34027,
+              "key": "a8437869-f610-45ad-aad5-3d9543d6e89f",
+              "title": "Introducing Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "If you'd like to hear _Heart of Glass_ by Blondie, (which I highly recommend) you can [find it here](https://www.youtube.com/watch?v=WGU_4-5RaxU)! ",
+              "video": {
+                "youtube_id": "loAZIvBKWO0",
+                "china_cdn_id": "loAZIvBKWO0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137765,
+          "key": "95b853b8-0633-49c1-a125-7f6a8d7137ee",
+          "title": "Introducing Functions 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "95b853b8-0633-49c1-a125-7f6a8d7137ee",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12623,
+              "key": "39c6f418-f7ff-4e8c-a27a-26fe50c51848",
+              "title": "Introducing Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "vtYPptq5MgY",
+                "china_cdn_id": "vtYPptq5MgY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137576,
+          "key": "1d538b3a-2e8d-4a17-94fa-de91f484445f",
+          "title": "What is a Function?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1d538b3a-2e8d-4a17-94fa-de91f484445f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 128137,
+              "key": "d2654c6c-ee1f-4b2e-abb0-df3e7ce354e1",
+              "title": "What is a Function?",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ePxfZhm0XHA",
+                "china_cdn_id": "ePxfZhm0XHA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137890,
+          "key": "85719da3-1249-42e4-bffa-41761ffaa940",
+          "title": "Importance of Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "85719da3-1249-42e4-bffa-41761ffaa940",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127215,
+              "key": "8457789067",
+              "title": "Importance of Functions",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8457789067",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "iJJFYsIrJPs",
+                  "china_cdn_id": "iJJFYsIrJPs.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Importance of Functions - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/mU_obXubI_WS3rOUMwi4ygJkrbZ-BKGu7LDhZhiYv5P4pgrWe8x4fx9JYAzN0gM2TE71XxUFxiCrP9mOTr8=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8457789067",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8411206352",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check1",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.09846477556109726,
+                      "y": 0.33366823725055433
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.09795822942643391,
+                      "y": 0.5091116962305987
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "check3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.09838684538653367,
+                      "y": 0.671944290465632
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "2CSjOJT1tzQ",
+                  "china_cdn_id": "2CSjOJT1tzQ.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137407,
+          "key": "27dd5768-8f6c-459c-b3d4-a3a6fd50a5da",
+          "title": "Function Definition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "27dd5768-8f6c-459c-b3d4-a3a6fd50a5da",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12571,
+              "key": "12ea8901-69a1-410d-8860-1b6c21c361ae",
+              "title": "Function Definition",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "OvJvPhxQU8M",
+                "china_cdn_id": "OvJvPhxQU8M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137626,
+          "key": "bba1a176-1a79-45eb-b63f-270db864edb1",
+          "title": "Practice with Syntax",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bba1a176-1a79-45eb-b63f-270db864edb1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 126972,
+              "key": "8406707080",
+              "title": "Practice with Syntax",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8406707080",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "wfL52DiEiy8",
+                  "china_cdn_id": "wfL52DiEiy8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Practice with Syntax - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/Rl-YhTaM2lEwXNidGZMstFHM3hpdQYYXpVPbVq_6H9-8TTlqS0RNGCvDEVFEt1SOKMPPvzScytbROfgxKbY=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8406707080",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8401227622",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07538802660753881,
+                      "width": 0.07107231920199501,
+                      "x": 0.581943578553616,
+                      "y": 0.3157220066518847
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07538802660753881,
+                      "width": 0.07356608478802992,
+                      "x": 0.6848893391521197,
+                      "y": 0.31541019955654104
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text3",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07760532150776053,
+                      "width": 0.07231920199501247,
+                      "x": 0.51258572319202,
+                      "y": 0.49251662971175164
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "-k_tPm6O8t0",
+                  "china_cdn_id": "-k_tPm6O8t0.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137540,
+          "key": "d8c987ef-1613-4a43-be82-2441f107ddad",
+          "title": "Calling Chorus",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d8c987ef-1613-4a43-be82-2441f107ddad",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12352,
+              "key": "31536d41-2379-48e4-8dc2-a357dd183f7e",
+              "title": "Calling Chorus",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "qJsv3cJ5g_k",
+                "china_cdn_id": "qJsv3cJ5g_k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137630,
+          "key": "4e48f62b-8402-427b-bade-7287aaabfd3a",
+          "title": "Play Music",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4e48f62b-8402-427b-bade-7287aaabfd3a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 105047,
+              "key": "8407697416",
+              "title": "Play Music",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8407697416",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "2uvpco3ELm0",
+                  "china_cdn_id": "2uvpco3ELm0.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Play Music",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "8482634503",
+                "initial_code_files": [
+                  {
+                    "text": "boolean playButton; // true or false\n\n// Define a function playMusic() below.\n// This should print out: \"Music is playing\" when playButton is true\n// and \"Music is paused\" when playButton is false.\n\n\n",
+                    "name": "starter.java"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "WsuzXnciahs",
+                  "china_cdn_id": "WsuzXnciahs.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137692,
+          "key": "a68c5c96-b98b-4989-8ca4-da90dbfd3d85",
+          "title": "Parameters and Arguments",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a68c5c96-b98b-4989-8ca4-da90dbfd3d85",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127739,
+              "key": "3f6cb58b-26d7-4cea-af6c-748519544c3b",
+              "title": "Parameters and Arguments",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "fD95pvjMbpk",
+                "china_cdn_id": "fD95pvjMbpk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137612,
+          "key": "83b5878f-9a86-4fb6-a97d-1623ec86dc9e",
+          "title": "Weather Arguments",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "83b5878f-9a86-4fb6-a97d-1623ec86dc9e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 126828,
+              "key": "8400056711",
+              "title": "Weather Arguments",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8400056711",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "rU2nMms01P4",
+                  "china_cdn_id": "rU2nMms01P4.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Weather Arguments - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/Gz_4w2q7zHRoRkx0cg5QXDbqbBucu2vBUWVmU0ezDGBOa2e6L3UAfclVUrIdKIJs4KetDIxdfQHAo2voxA=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8400056711",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8427734060",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07760532150776053,
+                      "width": 0.41271820448877805,
+                      "x": 0.4788809226932668,
+                      "y": 0.6492863082039911
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07760532150776053,
+                      "width": 0.4139650872817955,
+                      "x": 0.478471789276808,
+                      "y": 0.7863774944567627
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "yVIOG4GyX1c",
+                  "china_cdn_id": "yVIOG4GyX1c.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 127909,
+          "key": "92f0b2fd-f80f-4d34-aeaf-fee683e687f0",
+          "title": "Variable Temperature",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "92f0b2fd-f80f-4d34-aeaf-fee683e687f0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12592,
+              "key": "ac624e5a-bb7d-4cc4-9e3c-ecbc52b980c7",
+              "title": "Variable Temperature",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "MIqKTKEcp88",
+                "china_cdn_id": "MIqKTKEcp88.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137785,
+          "key": "85f1ae04-c88f-489b-a88a-5a8648cca246",
+          "title": "Rollercoaster Parameters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "85f1ae04-c88f-489b-a88a-5a8648cca246",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127194,
+              "key": "8401057426",
+              "title": "Rollercoaster Parameters",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8401057426",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "EUEfNDk1tYg",
+                  "china_cdn_id": "EUEfNDk1tYg.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Rollercoaster Parameters - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/QhiSK6sCMS5ONiQumhOqH5VSXSL_DQPuknDtjyKPf22JcYNlIcIJkrFmNW5FTsLF4Q-enNdZ-kKfHLvPwQ=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8401057426",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8458308537",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.082039911308204,
+                      "width": 0.09725685785536159,
+                      "x": 0.36311564837905236,
+                      "y": 0.37039218403547675
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.082039911308204,
+                      "width": 0.09351620947630923,
+                      "x": 0.47806265586034913,
+                      "y": 0.36938747228381374
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "g4ubHLvEP9M",
+                  "china_cdn_id": "g4ubHLvEP9M.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137641,
+          "key": "a7b7574e-ed99-4a25-9f38-4a37719ffca2",
+          "title": "Multiple Parameters Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a7b7574e-ed99-4a25-9f38-4a37719ffca2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12570,
+              "key": "adba319d-ff5f-467e-ab7d-85da98b7b14a",
+              "title": "Multiple Parameters Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "d6huYDR2h1o",
+                "china_cdn_id": "d6huYDR2h1o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 127962,
+          "key": "d071619c-1a96-43d7-929e-096f25b04281",
+          "title": "Multiple Parameters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d071619c-1a96-43d7-929e-096f25b04281",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12532,
+              "key": "82e50a00-0c43-4fe2-8c26-b5d166d0d8e2",
+              "title": "Multiple Parameters",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "xvkbadMCp-o",
+                "china_cdn_id": "xvkbadMCp-o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137778,
+          "key": "08f56ea2-980a-4d3b-9952-3677e62313f0",
+          "title": "Argument Order",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "08f56ea2-980a-4d3b-9952-3677e62313f0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12389,
+              "key": "34b4d6ba-dd90-43e8-af9b-a47a575c1652",
+              "title": "Argument Order",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "P1cyT93rlTA",
+                "china_cdn_id": "P1cyT93rlTA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137629,
+          "key": "c07c5776-69bd-4d08-94e3-9aabd827be16",
+          "title": "Liking Photos",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c07c5776-69bd-4d08-94e3-9aabd827be16",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127112,
+              "key": "8423284119",
+              "title": "Liking Photos",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "There are many correct ways to write a function call for the function `likePhoto`; as long as you match the number and type of parameters correctly, this counts as a valid call.",
+              "user_state": {
+                "node_key": "8423284119",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "5E7dJ-S6EcY",
+                  "china_cdn_id": "5E7dJ-S6EcY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Liking Photos - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/ySfTwA_Om3s_uDnSjooMXfeomoCJSJko6VQOlCpdw9zrdOITDvO2Y1c9oaUFAUWYf2e28qvG1CBHu7RSIw=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8423284119",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8401837463",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.10199556541019955,
+                      "width": 0.49501246882793015,
+                      "x": 0.4165757481296758,
+                      "y": 0.6750623614190687
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "oH5Vwcp-4vM",
+                  "china_cdn_id": "oH5Vwcp-4vM.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137417,
+          "key": "246e3e16-3946-4036-a61d-5649cd8e3ec0",
+          "title": "Return Values",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "246e3e16-3946-4036-a61d-5649cd8e3ec0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 128043,
+              "key": "d0241724-43a8-485b-b2ed-a21c75a4adea",
+              "title": "Return Values",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "v-_m3yM5Cfo",
+                "china_cdn_id": "v-_m3yM5Cfo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137419,
+          "key": "49481a81-fb2d-4fa7-b0a1-d6fd880c105f",
+          "title": "Popular Photos",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49481a81-fb2d-4fa7-b0a1-d6fd880c105f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15697,
+              "key": "5f21c1ff-6285-41db-ac1f-72fbd044fd68",
+              "title": "Popular Photos",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "UCGNvIMr-Nc",
+                "china_cdn_id": "UCGNvIMr-Nc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137418,
+          "key": "61c3c0c1-fb82-44ad-b763-80ef0241eb35",
+          "title": "Return Photo Likes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61c3c0c1-fb82-44ad-b763-80ef0241eb35",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15213,
+              "key": "3f1b94df-3ff4-4393-8bdd-55f13b668a54",
+              "title": "Return Photo Likes",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "FBEaFuZl6gs",
+                "china_cdn_id": "FBEaFuZl6gs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137410,
+          "key": "52c84f84-2c1e-43bd-9887-d9ee7631862f",
+          "title": "What's Missing?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "52c84f84-2c1e-43bd-9887-d9ee7631862f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124014,
+              "key": "8451369259",
+              "title": "What's Missing?",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8451369259",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "S8uGEC-Xt8Y",
+                  "china_cdn_id": "S8uGEC-Xt8Y.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "What's Missing - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/x-wfwir3Z2W-ciu9fH0hSUZoV-o6rWMe3Lrj8FMyGV87Mdb16sLI1GSLcbxqUR8PIy_Olukn-yCKF7vvl_g=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8451369259",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8424175582",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.04671913965087282,
+                      "y": 0.29742932372505543
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.0468555174563591,
+                      "y": 0.4495565410199557
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.04572552992518703,
+                      "y": 0.5981499445676275
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.04650483167082294,
+                      "y": 0.7482677383592018
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "NfnJLph5uSk",
+                  "china_cdn_id": "NfnJLph5uSk.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137619,
+          "key": "fe5b59e0-d650-4a67-a7af-4e83241acd18",
+          "title": "Making Change",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fe5b59e0-d650-4a67-a7af-4e83241acd18",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 102940,
+              "key": "8401166948",
+              "title": "Making Change",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8401166948",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "oNcZD_EGv7Q",
+                  "china_cdn_id": "oNcZD_EGv7Q.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Making Change",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "8476145160",
+                "initial_code_files": [
+                  {
+                    "text": "// Define a function with the name and parameters: makeChange(double itemCost, double dollarsProvided)\n// Calculate and return the calculated change which should be the dollarsProvided minus the itemCost\n\n// Remember to return a value you need 1) a return type and 2) a return statement\n",
+                    "name": "starter.java"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "mL_wZiheByA",
+                  "china_cdn_id": "mL_wZiheByA.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137406,
+          "key": "23669fa5-e2f1-4b96-8db0-da0742d53de1",
+          "title": "Random Numbers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "23669fa5-e2f1-4b96-8db0-da0742d53de1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15059,
+              "key": "14383c50-f7df-42a6-b861-a363f6ade70a",
+              "title": "Random Numbers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "B-tP88rWxAQ",
+                "china_cdn_id": "B-tP88rWxAQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137710,
+          "key": "d3fc2000-12a2-46e8-bbb2-4352e84959a4",
+          "title": "Rolling Dice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d3fc2000-12a2-46e8-bbb2-4352e84959a4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127711,
+              "key": "c3620811-d765-47f1-b096-f89fd1de2ac3",
+              "title": "Rolling Dice",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "3ipvETpwI40",
+                "china_cdn_id": "3ipvETpwI40.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137628,
+          "key": "d999a8f9-8625-48aa-a55c-b10e59b3fea9",
+          "title": "Consider All Sides",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d999a8f9-8625-48aa-a55c-b10e59b3fea9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127710,
+              "key": "1f941e85-a982-4507-b929-08564d7a3858",
+              "title": "Consider All Sides",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "VfdhKp5ny58",
+                "china_cdn_id": "VfdhKp5ny58.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 123430,
+          "key": "7d8c372f-4277-4e50-bf5b-effc50652748",
+          "title": "Improved Dice Roll",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7d8c372f-4277-4e50-bf5b-effc50652748",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 122464,
+              "key": "8402036994",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8402036994",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "rkeazApODkA",
+                  "china_cdn_id": "rkeazApODkA.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Improved Dice Roll",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "8502310499",
+                "initial_code_files": [
+                  {
+                    "text": "// Using the sides parameter, change this code so that it returns\n// the correct range of roll values no matter the number of sides provided.\n// ex. For an 8-sided dice the numbers returned should be integers between 1-8\n\npublic int rollDice(int sides){\n        // random num between 0 and (almost) 1\n        double randomNumber=Math.random();\n\n        // change range to 0 to (almost) 6\n        randomNumber=randomNumber*6;\n\n        // shift range up one\n        randomNumber=randomNumber+1;\n\n        // cast to integer (ignore decimal part)\n        // ex. 6.998 becomes 6\n        int randomInt=(int)randomNumber;\n\n        // return statement\n        return randomInt;\n        }",
+                    "name": "starter.java"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "8eBV55yIXKI",
+                  "china_cdn_id": "8eBV55yIXKI.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137504,
+          "key": "3432a658-5103-4e51-847b-8bf5c39b5ecb",
+          "title": "Power of Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3432a658-5103-4e51-847b-8bf5c39b5ecb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15590,
+              "key": "bc8128a3-7707-4d3d-b5b1-1337822ffbb0",
+              "title": "Power of Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "wnSb4nZXjfc",
+                "china_cdn_id": "wnSb4nZXjfc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137522,
+          "key": "12404e1a-99a4-4335-ba28-379d6726e7be",
+          "title": "Java Documentation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "12404e1a-99a4-4335-ba28-379d6726e7be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 7354,
+              "key": "edfc1105-53a7-4327-a81a-e5dd0a67bdb7",
+              "title": "Java Documentation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "To learn more about the functions and variable types that Java 8 includes, take a look at [this documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html). You can click on the things you find most interesting to learn more about them! Here's the documentation for the [String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) and the [Math class](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html).",
+              "video": {
+                "youtube_id": "YtBSsc7p23w",
+                "china_cdn_id": "YtBSsc7p23w.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137365,
+          "key": "aa3ae866-5c02-4ed4-ba13-046e9de1a012",
+          "title": "Read this Doc",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aa3ae866-5c02-4ed4-ba13-046e9de1a012",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124174,
+              "key": "8408536934",
+              "title": "Read this Doc",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8408536934",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "FGK4G1ijZIM",
+                  "china_cdn_id": "FGK4G1ijZIM.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Read This Doc - Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/k9w11TrHh8EJHc_POdHW9bAOp0V_o1BZdM6riVNUfyM8VmbhL8u32_P9bBsN7T35r6_X-CcGdk-tBvgh8FLt=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8408536934",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8400228229",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.08869179600886919,
+                      "width": 0.18204488778054864,
+                      "x": 0.20004675810473815,
+                      "y": 0.7905695676274944
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.09090909090909091,
+                      "width": 0.18453865336658354,
+                      "x": 0.5711502493765586,
+                      "y": 0.7924057649667405
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "mTHMUWsEePk",
+                  "china_cdn_id": "mTHMUWsEePk.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137848,
+          "key": "b647b5c3-7713-46bf-81d5-bc81db82ec4c",
+          "title": "Importance of Documentation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b647b5c3-7713-46bf-81d5-bc81db82ec4c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 12638,
+              "key": "01d1a95b-4ec6-44ef-8a35-247303a024fb",
+              "title": "Importance of Documentation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "4Vai4YI2_wA",
+                "china_cdn_id": "4Vai4YI2_wA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137443,
+          "key": "998b1374-84e6-4070-8dd1-af35b1bd4f04",
+          "title": "Java Documentation Comments",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "998b1374-84e6-4070-8dd1-af35b1bd4f04",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 17893,
+              "key": "4c015a21-7656-4dd6-9055-a6c7aae17c6d",
+              "title": "Java Documentation Comments",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Below are the Java docs that the Java documentation comments create.\n\nGeneral comment structure:\n\n![Javadoc](http://i.imgur.com/X1IiVPs.png?1)\n\nGenerated Java documentation for the `rollDice(int sides)` function:\n\n![rollDice javaDoc](http://i.imgur.com/46bfDmi.png?1)",
+              "video": {
+                "youtube_id": "-kVaTNFCvsc",
+                "china_cdn_id": "-kVaTNFCvsc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137581,
+          "key": "edec2954-0a67-4b81-bbb0-ed07f2c99301",
+          "title": "Complete this Doc",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "edec2954-0a67-4b81-bbb0-ed07f2c99301",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 123702,
+              "key": "8401137785",
+              "title": "Complete the Doc",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Here is the Java doc comment that produces the incomplete document shown above:\n````\n/**Returns the absolute value of an int value. If the argument is not negative, the argument\n/* is returned. If the argument is negative, the negation of the argument is returned.\n/*\n/* @return the absolute value of the argument.\n*/\n````",
+              "user_state": {
+                "node_key": "8401137785",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "FpaNWDIMQCQ",
+                  "china_cdn_id": "FpaNWDIMQCQ.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Complete the Doc - quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/ukb23y0vNCne1c9tbVwetinbzx4lRLMNnZgMcdFjvSlLaftYjiqQf8Vtdhn5GqyWca8vAF2x96fBk61eQRU=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8401137785",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "8400208214",
+                "widgets": [
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.1007052680798005,
+                      "y": 0.6592987804878049
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.10076371571072319,
+                      "y": 0.7547810421286031
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.10179629052369077,
+                      "y": 0.8489121396895787
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "-EaQ_yeBn-A",
+                  "china_cdn_id": "-EaQ_yeBn-A.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 137577,
+          "key": "1d479a2c-32f2-48bb-aa88-23ca55b83ac0",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1d479a2c-32f2-48bb-aa88-23ca55b83ac0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 127703,
+              "key": "d092e4c9-4e2c-4a1e-9881-4ba883456f5e",
+              "title": "Conclusion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ZMm09gGYOv0",
+                "china_cdn_id": "ZMm09gGYOv0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137642,
+          "key": "e0587f33-f788-428d-8750-e76f0c83b207",
+          "title": "Lesson 3 Problem Set",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e0587f33-f788-428d-8750-e76f0c83b207",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 7529,
+              "key": "2c3f86b7-48c4-4cdd-b92c-2355e378020e",
+              "title": "Lesson 3 Problem Set",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Welcome to the Intro to Java: Functional Programming, Lesson 3 problem set!  These problem sets are an opportunity for you to practice the concepts you learned in class before moving on to the next lesson.  Learning a computer programming language is similar to learning a human language.  Nobody can pick it up overnight, there's a lot of vocabulary and syntax to remember.  Language learners often speak of the moment when they realized they stopped translating in their head and actually started thinking in their second language.  This will happen with Java too!  Eventually, you will be able to consider a task that needs coding and immediately imagine what Java code would complete it.  To get there, though, requires practice.\n\nThat's where the problem sets come in.  They aren't mandatory, and they aren't graded.  They're just extra learning materials to help you along.\n\nYou can download the problem set [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/July/57881f16_problem-set-3/problem-set-3.pdf).",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

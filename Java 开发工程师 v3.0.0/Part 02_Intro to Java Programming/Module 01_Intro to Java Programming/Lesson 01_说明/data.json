@@ -1,0 +1,46 @@
+{
+  "data": {
+    "lesson": {
+      "id": 952044,
+      "key": "08f0fef6-6112-4cca-a43f-48f96e88aa70",
+      "title": "说明",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": null,
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 952045,
+          "key": "c9b8d18d-2a71-42ea-93d3-a20011c722aa",
+          "title": "本章课程学习说明",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c9b8d18d-2a71-42ea-93d3-a20011c722aa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 952046,
+              "key": "fa2f2df9-c464-48b7-8988-d3d7369299b3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "如果你已经对 Java 比较了解，你可以将本课程作为回顾与复习。你可以自由选择你的学习进度，选做本课程中的一些习题和练习，回顾重点概念。\n\n另一方面，如果你是 Java 的初学者，我们建议你详细查看本节课程，了解 Java 语言的语法基础。\n\n祝你学习愉快！",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
