@@ -1,0 +1,245 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spring Boot Exception- @ControllerAdvise + @ExceptionHandler</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Spring Boot - continued</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Spring Boot Exception Handling.html">01. Spring Boot Exception Handling</a>
+    </li>
+    <li class="">
+      <a href="02. Spring Boot Exception - Custom Error Page.html">02. Spring Boot Exception - Custom Error Page</a>
+    </li>
+    <li class="">
+      <a href="03. Spring Boot Exception - Exception Handlers.html">03. Spring Boot Exception - Exception Handlers</a>
+    </li>
+    <li class="">
+      <a href="04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler.html">04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler</a>
+    </li>
+    <li class="">
+      <a href="05. Spring Boot Exception - SimpleMappingExceptionResolver.html">05. Spring Boot Exception - SimpleMappingExceptionResolver</a>
+    </li>
+    <li class="">
+      <a href="06. Spring Boot Exception Handling - Summary.html">06. Spring Boot Exception Handling - Summary</a>
+    </li>
+    <li class="">
+      <a href="07. WebSocket and STOMP.html">07. WebSocket and STOMP</a>
+    </li>
+    <li class="">
+      <a href="08. WebSocket - Example Project.html">08. WebSocket - Example Project</a>
+    </li>
+    <li class="">
+      <a href="09. Package Spring Boot Application.html">09. Package Spring Boot Application</a>
+    </li>
+    <li class="">
+      <a href="10. Course Recap.html">10. Course Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>035ND C01 L04 A05 <a href="https://github.com/CONTROLLERADVICE" rel="noopener noreferrer" target="_blank">@CONTROLLERADVICE</a> + <a href="https://github.com/EXCEPTIONHANDLER" rel="noopener noreferrer" target="_blank">@EXCEPTIONHANDLER</a></p></h3>
+  <video controls>
+  <source src="04. 035ND C01 L04 A05 @CONTROLLERADVICE + @EXCEPTIONHANDLER-sAQ_YCrCUlk.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 035ND C01 L04 A05 @CONTROLLERADVICE + @EXCEPTIONHANDLER-sAQ_YCrCUlk.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="example-instructions">Example Instructions</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li>Add a new controller class named RoleController under the controller directory. Your code should look like the one below: </li>
+</ol>
+<pre><code>@Controller
+public class RoleController {
+   @RequestMapping("/roleadd")
+   public String add() {
+       int num = 10 / 0;
+       return "add";
+   }
+}</code></pre>
+<ol start="2">
+<li>Create an exceptions folder (under your application package) and create a GolbalExceptionHandler Java class inside it. Your code should look like the one below: </li>
+</ol>
+<pre><code>@ControllerAdvice
+public class GlobalExceptionHandler {
+   @ExceptionHandler(value={java.lang.ArithmeticException.class})
+   public ModelAndView handlerArithmeticException(Exception e) {
+       ModelAndView modelAndView = new ModelAndView();
+       modelAndView.addObject("exception", e.toString());
+       modelAndView.setViewName("mathError");
+       return modelAndView;
+   }
+
+   @ExceptionHandler(value={java.lang.NullPointerException.class})
+   public ModelAndView handlerNullPointerException(Exception e) {
+       ModelAndView modelAndView = new ModelAndView();
+       modelAndView.addObject("exception", e.toString());
+       modelAndView.setViewName("nullPointerError");
+       return modelAndView;
+   }
+}</code></pre>
+<p>The <code>@ControllerAdvice</code> annotation used above means that the handler methods inside the class can handle exceptions across the entire application, and not only those resulting from a specific controller. </p>
+<ol start="3">
+<li><p>Comment out the two exception handler methods in UserController class so you can see how the global exception handlers will work to handle exceptions in different controllers. </p></li>
+<li><p>Go to http://localhost:8080/add, http://localhost:8080/update, and http://localhost:8080/roleadd to see how the exceptions will be handled properly by the global handlers we defined. </p></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Spring Boot Exception - SimpleMappingExceptionResolver.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

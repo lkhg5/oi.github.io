@@ -1,0 +1,288 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spring Boot Exception - Exception Handlers</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Spring Boot - continued</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Spring Boot Exception Handling.html">01. Spring Boot Exception Handling</a>
+    </li>
+    <li class="">
+      <a href="02. Spring Boot Exception - Custom Error Page.html">02. Spring Boot Exception - Custom Error Page</a>
+    </li>
+    <li class="">
+      <a href="03. Spring Boot Exception - Exception Handlers.html">03. Spring Boot Exception - Exception Handlers</a>
+    </li>
+    <li class="">
+      <a href="04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler.html">04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler</a>
+    </li>
+    <li class="">
+      <a href="05. Spring Boot Exception - SimpleMappingExceptionResolver.html">05. Spring Boot Exception - SimpleMappingExceptionResolver</a>
+    </li>
+    <li class="">
+      <a href="06. Spring Boot Exception Handling - Summary.html">06. Spring Boot Exception Handling - Summary</a>
+    </li>
+    <li class="">
+      <a href="07. WebSocket and STOMP.html">07. WebSocket and STOMP</a>
+    </li>
+    <li class="">
+      <a href="08. WebSocket - Example Project.html">08. WebSocket - Example Project</a>
+    </li>
+    <li class="">
+      <a href="09. Package Spring Boot Application.html">09. Package Spring Boot Application</a>
+    </li>
+    <li class="">
+      <a href="10. Course Recap.html">10. Course Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Spring Boot Exception - Exception Handlers</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="using-exception-handlers">Using Exception Handlers</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example---part-1">Example - Part 1</h3>
+<p>To understand how this works, let’s reuse the project we have created, modify it, and understand how <a href="https://github.com/exceptionhandler" rel="noopener noreferrer" target="_blank">@exceptionhandler</a> will handle exceptions. Follow the below instructions: </p>
+<ol>
+<li>Add the below new method to the controller class: </li>
+</ol>
+<pre><code>@ExceptionHandler(value={java.lang.ArithmeticException.class})
+public ModelAndView handlerArithmeticException(Exception e) {
+   ModelAndView modelAndView = new ModelAndView();
+   modelAndView.addObject("exception", e.toString());
+   modelAndView.setViewName("mathError");
+   return modelAndView;
+}</code></pre>
+<ol start="2">
+<li><p>Rename error.html to error.bak.html</p></li>
+<li><p>Add a new html file under template folder and name it "mathError.html". Your code should look like the one below:</p></li>
+</ol>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+This contains math exceptions
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ol start="4">
+<li>Go to http://localhost:8080/add and observe how mathError.html page will be rendered on the browser. </li>
+</ol>
+<p>Let's explain what happened in the example above. We defined the method <code>handlerArithmeticException</code> in the controller class to be called once an ArithmeticException occurs. How does that work? When we go to http://localhost:8080/add, an arithmetic exception will be thrown because this line: <code>int num = 10 / 0</code> tries to perform a division over 0, which is something invalid in mathematics. To allow <code>handlerArithmeticException</code>  method to be triggered automatically when any ArithmeticException occurs, we added this annotation above it: <code>@ExceptionHandler(value={java.lang.ArithmeticException.class})</code>. This annotation means that this method will work as an exception handler which will be called once the exception type specified between the parenthesis occurs (which is ArithmeticException in this case). The method returns ``ModelAndView<code>object.</code>ModelAndView``` can hold both objects and views, using ModelAndView as a return value allows any method in a controller class to return both a model and a value packed in the same object (packed in an ModelAndView object). </p>
+<p>Let's explain the code in the method's body. First, we defined ModelAndView object. Then, we filled that ModelAndView object with another object which is a string that represents the error message, "exception" is the name associated with the object we added to <code>modelAndView</code>, and e.toString() returns the string that represents the error. Then, we added the view to our ModelAndView object which is the name of the html page we want to see when this method gets triggered. We did that using <code>modelAndView.setViewName("mathError")</code>. In this case, "mathError.html" will be displayed. Finally, we returned the ModelAndView object which contains the error and the view that should be displayed.  </p>
+<p>For the html part, we just defined the html page that we want to display when an ArithmeticException occurs which is "mathError.html". We just added some simple text to it, but of course when you develop any website you can customize that page as you want, you can add more text, add images, and more. </p>
+<p>As you may have noticed, for each exception we define two things: 1. The handler method that will handle it, 2. The view (the html page) that will be displayed when the error occurs. You'll need to do this for each Exception you want to handle. </p>
+<p>Of course, a single exception handler method can handle multiple exceptions if you want, you just need to list those exceptions between the curly braces. For example, in the annotation you can write: <code>@ExceptionHandler({NullPointerException.class, ArithmeticException.class})</code>, this means that the handler method under this annotation will be triggered when any NullPointerException or ArithmeticException occurs. This can let you write less amounts of code if multiple errors can be handled by the same handler method and can have the same html page displayed when they occur. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="example---part-2">Example - Part 2</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>This time we are going to handle a different exception, which is NullPointerException. </p>
+<ol>
+<li>Update the controller and add the below two methods:</li>
+</ol>
+<pre><code>@RequestMapping("/update")
+public String update() {
+   String name = null;
+   name = name.toLowerCase(); // this line will cause NullPointerException because it calls a method on a null object
+   return "update";
+}</code></pre>
+<pre><code>@ExceptionHandler(value={java.lang.NullPointerException.class})
+public ModelAndView handlerNullPointerException(Exception e) {
+   ModelAndView modelAndView = new ModelAndView();
+   modelAndView.addObject("exception", e.toString());
+   modelAndView.setViewName("nullPointerError");
+   return modelAndView;
+}</code></pre>
+<ol start="2">
+<li>Add a new html page named "nullPointerError.html" under templates directory. Your code should look like the one below:</li>
+</ol>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+This contains null pointer exceptions.
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ol start="3">
+<li>Go to http://localhost:8080/update and observe how nullPointerError.html page will be rendered on the browser. The NullPointerException will occur when we go to http://localhost:8080/update because in update method (which will be called when we visit the link above) we try to call <code>toLowerCase</code> method on a null object. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L04 A04 EXCEPTION HANDLER</p></h3>
+  <video controls>
+  <source src="03. 035ND C01 L04 A04 EXCEPTION HANDLER-cDRG6cgsgXY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. 035ND C01 L04 A04 EXCEPTION HANDLER-cDRG6cgsgXY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Spring Boot Exception- @ControllerAdvise + @ExceptionHandler.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Spring Boot Exception - Exception Handlers')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
