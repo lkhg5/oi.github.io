@@ -1,0 +1,634 @@
+{
+  "data": {
+    "lesson": {
+      "id": 875469,
+      "key": "65ffdbc3-31cb-4701-b5c3-eb1c6aa7b0be",
+      "title": "Documentation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about the importance of documentation and easily implement it with the use of Swagger within your code.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/65ffdbc3-31cb-4701-b5c3-eb1c6aa7b0be/875469/1564506581954/Documentation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/65ffdbc3-31cb-4701-b5c3-eb1c6aa7b0be/875469/1564506578996/Documentation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 877488,
+          "key": "76a3cf3c-528a-49c7-b3ba-cf88b2d9e06f",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "76a3cf3c-528a-49c7-b3ba-cf88b2d9e06f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899568,
+              "key": "c1598bfd-f6c0-46a9-8bb4-ddfcc8ae44b6",
+              "title": "JAVA C2 L7 01 Documentation Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Bh2uVKl0AOs",
+                "china_cdn_id": "Bh2uVKl0AOs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 883771,
+          "key": "f8ff0f14-d476-45c0-ae7e-4e383459e52e",
+          "title": "Importance",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f8ff0f14-d476-45c0-ae7e-4e383459e52e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899569,
+              "key": "a510f3b7-5f2f-4fad-bc67-ffcd1f2927c0",
+              "title": "JAVA C2 L7 02 Documentation Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yFYWLriBZrM",
+                "china_cdn_id": "yFYWLriBZrM.mp4"
+              }
+            },
+            {
+              "id": 891121,
+              "key": "112631ea-9269-443a-b42b-a123fe575606",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It’s very important to document your REST APIs. There could be other developers that need to use your APIs or you may have customers that want to use your APIs to help speed up their development time. \n\nDocumentation is a good way to communicate to others how they can use your APIs. Documentation communicates the operations available, the format for requesting data and the format data will be returned in. \n\nTypically, the initial creation of documentation is easy, but the on-going maintenance of keeping that documentation up to date is hard. Imagine having to manually update documentation every time your code changes! It's good to use tools that automatically inspect your code and update the documentation.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 883772,
+          "key": "d6bbf433-485d-417b-a5a1-3da6f9518de8",
+          "title": "Swagger",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d6bbf433-485d-417b-a5a1-3da6f9518de8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899570,
+              "key": "3f2211a4-f458-42b2-8164-4083374d45f1",
+              "title": "JAVA C2 L7 03 Swagger",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iQhT4-7GCJU",
+                "china_cdn_id": "iQhT4-7GCJU.mp4"
+              }
+            },
+            {
+              "id": 891122,
+              "key": "7afb0178-5370-4aca-8ba4-bf909591690a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "One of the most popular API documentation specifications is <a href=\"https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md\">OpenApi</a>, formerly known as the Swagger Specification.  OpenAPI allows you to describe your API using JSON or YAML. Swagger is the name associated with some of the most well-known, and widely used tools for implementing the OpenAPI specification.  Swagger helps you design, build, document and consume REST APIs. SpringFox is a Swagger integration for the Spring Framework.\n\n<ul>\n<li>Swagger Editor – A browser-based editor where you can write OpenAPI specs.</li>\n<li>Swagger UI – A web application that renders OpenAPI specs as interactive API documentation.</li>\n<li>Swagger Codegen – A tool that generates server stubs and client libraries from an OpenAPI spec.</li>\n</ul>\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898252,
+              "key": "da6b8be0-2a7f-4a06-9f87-a9e7cfe0507f",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "da6b8be0-2a7f-4a06-9f87-a9e7cfe0507f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which Swagger component displays dynamically generated documentation?",
+                "answers": [
+                  {
+                    "id": "a1562415419759",
+                    "text": "Swagger Codegen",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562415481708",
+                    "text": "Swagger UI",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562415482524",
+                    "text": "Swagger OpenAPI",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562415483223",
+                    "text": "Swagger Editor",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883773,
+          "key": "c1625917-e8d6-4c37-a698-ac10030c043b",
+          "title": "Swagger UI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c1625917-e8d6-4c37-a698-ac10030c043b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899571,
+              "key": "c45e6054-e618-4ee3-a5a2-042b029c2bf4",
+              "title": "JAVA C2 L7 04 Swagger UI",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xAQn6pgDqg8",
+                "china_cdn_id": "xAQn6pgDqg8.mp4"
+              }
+            },
+            {
+              "id": 891123,
+              "key": "87192d95-b3a2-4650-a85e-8db9154a5ff2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Dynamically generated documentation from a Swagger-compliant API is displayed in the Swagger UI, which consists of HTML, JavaScript, and CSS files.  The documentation files are bundled by Swagger UI to display the API in a web browser. \n\nBesides rendering documentation, Swagger UI allows other API developers or consumers to interact with the API’s resources without having any of their implementation logic in place.\n\n<h5>Dependencies</h5>\n\n<pre>\n&lt;dependency&gt;\n    &lt;groupId&gt;io.springfox&lt;/groupId&gt;\n    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;\n    &lt;version&gt;2.9.2&lt;/version&gt;\n&lt;/dependency&gt;\n\n&lt;dependency&gt;\n    &lt;groupId&gt;io.springfox&lt;/groupId&gt;\n    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;\n    &lt;version&gt;2.9.2&lt;/version&gt;\n    &lt;scope&gt;compile&lt;/scope&gt;\n&lt;/dependency&gt;\n</pre>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898253,
+              "key": "5f2499fb-3617-44ab-96ac-3ce3394471b6",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5f2499fb-3617-44ab-96ac-3ce3394471b6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify THREE potential users of SwaggerUI.",
+                "answers": [
+                  {
+                    "id": "a1562415622845",
+                    "text": "External developers wanting to use your API",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562415714488",
+                    "text": "End users of your applications ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562415734346",
+                    "text": "Internal developers wanting to use your API",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562415775463",
+                    "text": "Quality Assurance (QA) testers needing to validate your API",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883774,
+          "key": "732a1575-6a99-4c1b-983e-1703d3054dda",
+          "title": "Swagger Configuration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "732a1575-6a99-4c1b-983e-1703d3054dda",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899572,
+              "key": "54fc7509-2aa7-4ef1-9cff-633ecb140bdb",
+              "title": "JAVA C2 L7 05 Swagger Configuration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gUdz6elCaCE",
+                "china_cdn_id": "gUdz6elCaCE.mp4"
+              }
+            },
+            {
+              "id": 891124,
+              "key": "d303e43e-51aa-4de5-bf2b-c6666db49b4d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The configuration of Swagger mainly centers around the Docket bean.\n\n<pre>\n@Configuration\n@EnableSwagger2\n\npublic class SwaggerConfig {\n   @Bean\n   public Docket api() {\n       return new Docket(DocumentationType.SWAGGER_2)\n               .select()\n               .apis(RequestHandlerSelectors.any())\n               .paths(PathSelectors.any())\n               .build();\n   }\n}\n\n</pre>\n\nSwagger also provides some default values in its response that you can customize, such as “Api Documentation”, “Created by Contact Email”, “Apache 2.0”.\nTo change these values, you can use the <code>apiInfo(ApiInfo apiInfo)</code> method. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 883770,
+          "key": "12d16762-3fef-409f-971b-cfb59f3e5e83",
+          "title": "Case Study: Swagger Configuration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "12d16762-3fef-409f-971b-cfb59f3e5e83",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899573,
+              "key": "a96b9c58-c45c-4aab-8bcc-5a53d661a99d",
+              "title": "JAVA C2 L7 06 Demo - Swagger Configuration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8PQOmdh5bnQ",
+                "china_cdn_id": "8PQOmdh5bnQ.mp4"
+              }
+            },
+            {
+              "id": 891125,
+              "key": "1cbf9756-e16d-4de8-9e7f-edc1a68d98a1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The case study to be documented is a REST API that retrieves a list of locations from a database. The code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson7-documenting\">GitLab</a>. \n\nThe REST API has the following components:\n\n<ul>\n <li><strong>Controller </strong>- LocationController.java</li>\n <li><strong>Service </strong>- LocationService.java and LocationServiceImpl.java</li>\n <li><strong>CRUD Repository </strong>- LocationRepository.java</li>\n <li><strong>Domain Entity/Model </strong>- Location.java</li>\n<li><strong>Swagger Config </strong>- SwaggerConfig.java</li>\n <li><strong>H2 Database </strong> accessible via <a href=\"http://localhost:8080/h2/\">http://localhost:8080/h2/</a></li>\n<li><strong>Tomcat Server </strong> accessible via <a href=\"http://localhost:8080\">http://localhost:8080</a></li>\n<li><strong>Swagger UI</strong> via <a href=\"http://localhost:8080/swagger-ui.html\">http://localhost:8080/swagger-ui.html</a></li>\n</ul>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 899574,
+          "key": "6196095b-e300-4717-ab33-6857516985cb",
+          "title": "Customizing Swagger",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6196095b-e300-4717-ab33-6857516985cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899575,
+              "key": "4794ee7e-b118-4f7b-86dc-b1cb6ef0a27e",
+              "title": "JAVA C2 L7 07 Customizing Swagger",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "929vxDvLCUY",
+                "china_cdn_id": "929vxDvLCUY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899576,
+          "key": "4766db07-6c1d-4157-bb2b-a18c586c44af",
+          "title": "Case Study: Error Messages",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4766db07-6c1d-4157-bb2b-a18c586c44af",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899577,
+              "key": "d6eabc08-69a2-4ad6-9be1-60b68a9d3908",
+              "title": "JAVA C2 L7 08 Demo - Error Messages",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GHXBLkJYNMg",
+                "china_cdn_id": "GHXBLkJYNMg.mp4"
+              }
+            },
+            {
+              "id": 899857,
+              "key": "40a5477f-74d1-4f85-8f25-8d7c5882533b",
+              "title": "Custom Error Messages Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "40a5477f-74d1-4f85-8f25-8d7c5882533b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following annotations are used to customize error messages with Swagger?",
+                "answers": [
+                  {
+                    "id": "a1562864970936",
+                    "text": "`@ErrorResponses`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562865001137",
+                    "text": "`@ApiResponses`",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562865002247",
+                    "text": "`@RestControllerResponse`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562865002832",
+                    "text": "`@GetErrorMapping`",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 899686,
+          "key": "49093183-8797-4016-9cd3-c63675bda701",
+          "title": "Lab: Document Your Dog API",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49093183-8797-4016-9cd3-c63675bda701",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899687,
+              "key": "4bd65b24-1a81-40ba-beb1-084a757e5ca6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lab: Document Your Dog API\n\nReuse your Dog REST API code from Lesson 2 and document it using Swagger.\n\n- **Step 1:** Add the necessary dependencies to the Maven POM file that include Springfox’s implementation of Swagger.\n\n- **Step 2:** Configure Swagger using a Docket Bean.\n\n- **Step 3:** Utilize Swagger UI to review and test your API.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899696,
+              "key": "34f63ca4-832f-4347-a586-91700f99e454",
+              "title": "Document Your Dog API Lab",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "34f63ca4-832f-4347-a586-91700f99e454",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "I completed the \"Document Your Dog API\" lab."
+              ],
+              "positive_feedback": "Very nice! Using Swagger for documentation helps automate an otherwise sometimes tedious process, and saves more time for coding. Other developers will appreciate your helpful documentation!",
+              "video_feedback": null,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 906361,
+          "key": "a69510fd-5916-40be-801d-74ca5a08e409",
+          "title": "Lab Solution: Document Your Dog API",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a69510fd-5916-40be-801d-74ca5a08e409",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "DocumentDogApi",
+                "uri": "https://video.udacity-data.com/topher/2019/August/5d4c7199_documentdogapi/documentdogapi.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 908229,
+              "key": "32ee7cb7-66d6-4a15-ab6a-21b23cb4ed2d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Solution: Document Your Dog API\n\nBelow, we'll walk through each step of the lab and look at *one potential way* to implement the lab. Even if you get stuck, you should always first try to work through the lab without the solution before coming here, so that you can best learn the related skills and be ready for the project at the end of the course.\n\n## **Step 1:** Add the necessary dependencies for Swagger.\n\nFirst, I have started by copying over my code from the Dog REST API (I've excluded the security piece from earlier for simplicity). From there, I just need to add two dependencies:\n\n```\n\t\t<dependency>\n\t\t\t<groupId>io.springfox</groupId>\n\t\t\t<artifactId>springfox-swagger-ui</artifactId>\n\t\t\t<version>2.9.2</version>\n\t\t</dependency>\n\n\t\t<dependency>\n\t\t\t<groupId>io.springfox</groupId>\n\t\t\t<artifactId>springfox-swagger2</artifactId>\n\t\t\t<version>2.9.2</version>\n\t\t\t<scope>compile</scope>\n\t\t</dependency>\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 908230,
+              "key": "c92b9571-defb-4c8e-a7f5-dcba9d3877bc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 2:** Configure Swagger using a Docket Bean.\n\nNow, I'll add a `config` package to my API and add a `SwaggerConfig` class within it. This file can be pretty much the same as the Case Study, although I'll alter it so the API Info matches the Dog API. I have not added any custom error messages here, although they can always be useful in your own implementations!\n\n```java\npackage com.udacity.DogRestApi.config;\n\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\nimport springfox.documentation.builders.PathSelectors;\nimport springfox.documentation.builders.RequestHandlerSelectors;\nimport springfox.documentation.service.ApiInfo;\nimport springfox.documentation.service.Contact;\nimport springfox.documentation.spi.DocumentationType;\nimport springfox.documentation.spring.web.plugins.Docket;\nimport springfox.documentation.swagger2.annotations.EnableSwagger2;\nimport java.util.Collections;\n\n@Configuration\n@EnableSwagger2\npublic class SwaggerConfig {\n    @Bean\n    public Docket api() {\n        return new Docket(DocumentationType.SWAGGER_2)\n                .select()\n                .apis(RequestHandlerSelectors.any())\n                .paths(PathSelectors.any())\n                .build()\n                .apiInfo(apiInfo());\n    }\n\n    private ApiInfo apiInfo() {\n        return new ApiInfo(\n                \"Dog REST API\",\n                \"This API returns a list of dogs.\",\n                \"1.0\",\n                \"http://www.udacity.com/tos\",\n                new Contact(\"Udacious Student\", \"www.udacity.com\", \"myeaddress@udacity.com\"),\n                \"License of API\", \"http://www.udacity.com/license\", Collections.emptyList());\n    }\n\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 908231,
+              "key": "c7347ccd-21d2-4f52-b8f3-4d8bc0c71328",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 3:** Utilize Swagger UI to review and test your API.\n\nNow, you should be able to head to http://localhost:8080/swagger-ui.html#/ and test out your API.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 908235,
+              "key": "b142346c-23cb-4264-80eb-09fdffc622d5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d4c6f9e_java-dog-swagger/java-dog-swagger.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b142346c-23cb-4264-80eb-09fdffc622d5",
+              "caption": "An example of the Dog REST API Swagger documentation page",
+              "alt": "An example of the Dog REST API Swagger documentation page",
+              "width": 650,
+              "height": 500,
+              "instructor_notes": null
+            },
+            {
+              "id": 908236,
+              "key": "3d9f144b-4b81-444e-98b3-475140477c35",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d4c6fd5_java-dog-swagger-get/java-dog-swagger-get.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3d9f144b-4b81-444e-98b3-475140477c35",
+              "caption": "Swagger has documented the available GET requests for us",
+              "alt": "Swagger has documented the available GET requests for us",
+              "width": 350,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 908237,
+              "key": "f1b76da8-7c47-491e-988c-be166ea388ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you click on one of the available commands for your API, you should be able to *Try it out* and test that it works correctly. Depending on which you test, you may need to provide information (such as the `id` for `getBreedByID`), or be able to immediately *Execute* the query.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 908238,
+              "key": "a788d4a1-41c3-408e-a663-610cf0b5eade",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d4c707f_java-swagger-execute/java-swagger-execute.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a788d4a1-41c3-408e-a663-610cf0b5eade",
+              "caption": "An example from an execution of `getAllDogs` in Swagger",
+              "alt": "An example from an execution of `getAllDogs` in Swagger",
+              "width": 550,
+              "height": 630,
+              "instructor_notes": null
+            },
+            {
+              "id": 908239,
+              "key": "691e13e9-6cf4-4025-9a8b-fd47485f75bc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you can see, automatically documenting your API with Swagger requires only a few lines of code, yet provides some incredibly useful functionality.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 908241,
+              "key": "23a9ac9a-4c01-488d-8c59-4c176374fb64",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Full Solution\n\nIf you'd like the full solution code all in one place, you can download it through the link below.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 877489,
+          "key": "45d65ae7-56f5-4ee3-8ff3-23b6a0bd299b",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "45d65ae7-56f5-4ee3-8ff3-23b6a0bd299b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899578,
+              "key": "21e9d5ec-3605-408d-ba38-459dc920ed81",
+              "title": "JAVA C2 L7 09 Documentation Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "heO_D4rwsnU",
+                "china_cdn_id": "heO_D4rwsnU.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "data": {
+    "lesson": {
+      "id": 930233,
+      "key": "4ff3d77b-20dd-4ccb-a8cf-cea62b096917",
+      "title": "期待你的反馈",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "<span style=\"color:#02B3E4\">**我们期望为你提供良好的学习体验，请抽出 1 分钟时间填写问卷，帮助我们做得更好。**</span>",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 930235,
+          "key": "0a60dec0-c93b-4764-84cd-37a5357eb7c4",
+          "title": "目前的学习体验如何？",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0a60dec0-c93b-4764-84cd-37a5357eb7c4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 930236,
+              "key": "332dd7c2-af31-4406-aa6f-95b700ac531d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<img src=\"https://video.udacity-data.com/topher/2019/August/5d43b289_slogan-logo-0706/slogan-logo-0706.jpg\" height=50px>\n\n----\n\n非常开心跟你一起开始新的纳米学位旅程！\n\n为了更好地帮助到你，我们希望了解你在 Udacity 的学习体验，请抽出 1 分钟为各项内容打分。\n\n### 说出你的想法，帮助我们做到更好\n\n\n自决定学习当前纳米学位以来，我们有哪些方面帮助到了你，有哪些方面是你希望得到改进的，非常期待听到你的声音：\n\n<a class=\"vds-button vds-button--primary\" href=\"https://forms.udacity.com/forms/CN-NPS-project-C\" role=\"button\" tabindex=\"10\" target=\"_blank\"><span class=\"vds-button__content\">开始为各项体验打分</span></a>\n \t\n\n\n&nbsp;\t\n我们期望你已经顺利通过第一个项目，按时成功完成第一个项目是学习的良好开端。当然，如果暂时没有通过，也不用慌张，接下来的时间，只要多多努力，就可以重新跟上进度。\n\n**期待看到你提升技能并顺利毕业**👏\n\n-----\n\nBest regards,\n\n优达学城课程服务团队\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

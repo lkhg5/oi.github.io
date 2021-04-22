@@ -1,0 +1,488 @@
+{
+  "data": {
+    "lesson": {
+      "id": 875468,
+      "key": "a69f4b69-fdfa-479f-b4ce-8d9daec7f287",
+      "title": "Consuming SOAP & REST",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Enable the consumption of SOAP and REST APIs within your own API to further speed up development time and avoid reinventing the wheel.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/a69f4b69-fdfa-479f-b4ce-8d9daec7f287/875468/1564506570650/Consuming+SOAP+%26+REST+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/a69f4b69-fdfa-479f-b4ce-8d9daec7f287/875468/1564506567585/Consuming+SOAP+%26+REST+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 877486,
+          "key": "ea5786ee-2353-4b94-8900-678775d2b1fc",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ea5786ee-2353-4b94-8900-678775d2b1fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899553,
+              "key": "15a3b86f-2c90-4cfc-95a8-252b7354697a",
+              "title": "JAVA C2 L6 01 Consuming-Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "aqxNb_nbNwo",
+                "china_cdn_id": "aqxNb_nbNwo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 883767,
+          "key": "836fece6-c484-43a0-9506-c327309b5ab5",
+          "title": "Consuming REST",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "836fece6-c484-43a0-9506-c327309b5ab5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899554,
+              "key": "ca933a41-6371-48ec-9c2f-aed0565f32a0",
+              "title": "JAVA C2 L6 02 REST API",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Gf8IzEXaut0",
+                "china_cdn_id": "Gf8IzEXaut0.mp4"
+              }
+            },
+            {
+              "id": 883815,
+              "key": "0cdc4c5a-adf9-4bc6-bbff-b6d65a892d6c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There are times when you want to consume (or call) publicly accessible web services or APIs in your application. If there is a web service or API available that provides the data you need, it doesn’t make sense for you to build one from scratch. This allows you to deliver your products and services faster to your end users. \n\n<a href=\"https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html\">RestTemplate</a> allows you to consume a REST API programmatically from your code.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898249,
+              "key": "dc73baf4-6eb1-433a-bf52-78be78696247",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dc73baf4-6eb1-433a-bf52-78be78696247",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify THREE ways to consume a REST API.",
+                "answers": [
+                  {
+                    "id": "a1562414497578",
+                    "text": "Programmatically via RestTemplate",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562414544846",
+                    "text": "SoapUI",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562414548297",
+                    "text": "Postman",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562414549014",
+                    "text": "cURL",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883766,
+          "key": "91ba4a8a-e544-444d-bf48-7abe7994cb53",
+          "title": "Case Study: Consume REST",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "91ba4a8a-e544-444d-bf48-7abe7994cb53",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899555,
+              "key": "9ee1aaae-9ef3-4307-b91b-37fc0daff653",
+              "title": "JAVA C2 L6 03 Demo - Consume REST",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "H-Kj9MvADg0",
+                "china_cdn_id": "H-Kj9MvADg0.mp4"
+              }
+            },
+            {
+              "id": 883816,
+              "key": "938e81c8-74c1-4950-a551-6946a532fd2b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<h5>REST Case Study</h5>\nThe code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson6-consuming/consuming%20rest%20apis\">GitLab</a>. The publicly accessible Joke API is <a href=\"https://official-joke-api.appspot.com/random_joke\">https://official-joke-api.appspot.com/random_joke</a>.\n\n<pre>\n{\n\"id\":94,\n \"type\":\"general\",\n \"setup\":\"Did you hear about the new restaurant on the moon?\",\n \"punchline\":\"The food is great, but there’s just no atmosphere.\"\n}\n\n{\n \"id\":283,\n \"type\":\"general\",\n \"setup\":\"What's the best thing about elevator jokes?\",\n \"punchline\":\"They work on so many levels.\"\n}",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 883769,
+          "key": "54eed34b-1d3a-419c-a1ee-f1bab2902c3f",
+          "title": "SOAP & Spring Web Services",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "54eed34b-1d3a-419c-a1ee-f1bab2902c3f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899557,
+              "key": "1e6c3c6e-f1eb-4f03-a496-bb3096921a7e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Consuming SOAP",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899556,
+              "key": "7f4e504a-1d7c-4e67-9144-df2d51d7c224",
+              "title": "JAVA C2 L6 04 SOAP Web Service",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zL6rOA0c1Ak",
+                "china_cdn_id": "zL6rOA0c1Ak.mp4"
+              }
+            },
+            {
+              "id": 899559,
+              "key": "e5061604-6af4-48c5-a731-14c17397d465",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Spring Web Services",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899558,
+              "key": "f8b5367f-c573-465b-9578-521e415ae069",
+              "title": "JAVA C2 L6 05 Spring Web Service",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "762L27E_mUo",
+                "china_cdn_id": "762L27E_mUo.mp4"
+              }
+            },
+            {
+              "id": 891119,
+              "key": "016180e6-8f8b-42ae-ac59-ff83a046a374",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There may be times when you want to consume a SOAP-based web service in your applications. Spring Web Services makes this process easy by automatically generating the files you need in order to consume a SOAP-based web service.  In order to generate the files, the WSDL for the SOAP service in question is needed. WSDL stands for Web Services Description Language and simply describes the web service: its location and the operations allowed.  Spring Web Services is contract-first only. This means that you need to start from a contract definition (XSD or WSDL) to generate the files.\n\n<h5>Dependencies</h5>\n\nThe <code>spring-boot-starter-web-services</code> dependency includes the needed dependencies for using Spring Web Services.\n\n<h5>Generate Java Files</h5>\n\nTo generate Java classes from the WSDL in maven, you need the following plugin setup:\n\n<pre>\n&lt;plugin&gt;\n   &lt;groupId&gt;org.jvnet.jaxb2.maven2&lt;/groupId&gt;\n  &lt;artifactId&gt;maven-jaxb2-plugin&lt;/artifactId&gt;\n  &lt;version&gt;0.14.0&lt;/version&gt;\n\t&lt;executions&gt;\n\t\t&lt;execution&gt;\n\t\t\t&lt;goals&gt;\n\t\t\t\t&lt;goal&gt;generate&lt;/goal&gt;\n\t\t\t&lt;/goals&gt;\n\t\t&lt;/execution&gt;\n\t&lt;/executions&gt;\n       &lt;configuration&gt;\n\t\t&lt;schemaDirectory&gt;${project.basedir}/src/main/resources/wsdl&lt;/schemaDirectory&gt;\n\t\t &lt;schemaIncludes&gt;\n\t\t\t&lt;include&gt;*.wsdl&lt;/include&gt;\n\t\t&lt;/schemaIncludes&gt;\n\t&lt;/configuration&gt;\n&lt;/plugin&gt;\n</pre>\n\nThis plugin uses JAXB, which generates the Java classes and handles the mapping of XML to Java and vice versa. In order to generate the Java files, run the <code> mvn generate-sources</code> Maven command. This can easily be done via the command line or through IntelliJ. This results in a number of generated Java classes under <code>/target/generated-sources/xjc</code>.  Once you have the generated code, you can create a web service client by simply extending the <code>WebServiceGatewaySupport</code> class and coding your operations.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898250,
+              "key": "6d19aed8-24c1-465a-888b-bbbe7f93ae2b",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6d19aed8-24c1-465a-888b-bbbe7f93ae2b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What handles the mapping of XML to Java and vice versa?",
+                "answers": [
+                  {
+                    "id": "a1562415051531",
+                    "text": "Jackson",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562415074357",
+                    "text": "XSD",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562415075029",
+                    "text": "WSDL",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562415075653",
+                    "text": "JAXB",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 899858,
+              "key": "e522f2a9-2114-4205-b30e-c949a2562afb",
+              "title": "Consuming SOAP",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e522f2a9-2114-4205-b30e-c949a2562afb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A REST API cannot consume data coming from a SOAP API.",
+                "answers": [
+                  {
+                    "id": "a1562865453543",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562865480877",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 899560,
+          "key": "0a148227-0e3b-4eef-a763-7c469b3541d3",
+          "title": "Case Study: WSDL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0a148227-0e3b-4eef-a763-7c469b3541d3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899562,
+              "key": "4aee1157-dfda-428f-9ef2-35d1268b1488",
+              "title": "JAVA C2 L6 06 Demo - WSDL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Mf70O-rqsL8",
+                "china_cdn_id": "Mf70O-rqsL8.mp4"
+              }
+            },
+            {
+              "id": 899561,
+              "key": "bbafafa3-fa92-408f-a7dc-3e184cdb1bde",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "</pre>\n\n\n<h5>SOAP Case Study</h5>\n\nThe code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson6-consuming/consuming%20soap\">GitLab</a>. The publicly accessible web service is <a href=\"https://www.dataaccess.com/webservicesserver/NumberConversion.wso?op=NumberToWords\">NumberToWords</a>, implemented by DataFlex, converts numbers to its word version. The <a href=\"http://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL \">WSDL</a> file defines the operations available. \n\n<pre>\n2391\n</pre>\n<pre>\n&lt;string&gt;two thousand three hundred and ninety one &lt;/string&gt;\n</pre>\n\n<pre>\n53429\n</pre>\n<pre>\n&lt;string&gt;fifty three thousand four hundred and twenty nine &lt;/string&gt;\n</pre>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 899563,
+          "key": "99a7a1d7-e6c9-4fa7-9caa-c7e3f19de8d9",
+          "title": "Case Study: Code Generation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99a7a1d7-e6c9-4fa7-9caa-c7e3f19de8d9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899564,
+              "key": "60fb34fc-8fb9-44ab-bbf4-4af404a49706",
+              "title": "JAVA C2 L6 07 Demo - Code Generation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4RFI9B9tdlo",
+                "china_cdn_id": "4RFI9B9tdlo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899565,
+          "key": "2ccb9148-385a-4625-9ea9-cf6cb0cff2f9",
+          "title": "Case Study: Client",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2ccb9148-385a-4625-9ea9-cf6cb0cff2f9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899566,
+              "key": "9ebe92f8-a1d5-4df2-8a54-5eff57a225de",
+              "title": "JAVA C2 L6 08 Demo - Client",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HroekMKDKjQ",
+                "china_cdn_id": "HroekMKDKjQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899684,
+          "key": "24e7a2a6-aad0-47b9-b66d-88856da11ccb",
+          "title": "Lab: Consume an API",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "24e7a2a6-aad0-47b9-b66d-88856da11ccb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899685,
+              "key": "aa023301-01bd-4c4b-b37a-74386d0f18a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lab: Consume an API\n\nConsume a publicly accessible API from Java using one from this [list](https://github.com/public-apis/public-apis/blob/master/README.md).\n\n- **Step 1:** Add the Jackson dependency to the Maven POM file. \n\n- **Step 2:** Use `RestTemplate` to test a publicly accessible API from the list.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899695,
+              "key": "ce5ffcf3-c410-4c2e-96c9-12fde4c64f5c",
+              "title": "Consume an API Lab",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ce5ffcf3-c410-4c2e-96c9-12fde4c64f5c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "I completed the \"Consume an API\" lab."
+              ],
+              "positive_feedback": "Consuming information from an external API can speed up your development, so you can focus on the unique aspects of your own API. Great job!",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 916930,
+              "key": "80f57cf0-63ae-4ddc-9f6d-c14f5ec443a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We haven't included a solution for this lab due to the vast differences in how you might implement this, both depending on the specific API's functionality as well as whether it is a SOAP vs. REST API. Make sure to check back in the Case Study if you need a refresher!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 877487,
+          "key": "2e01421e-2fb2-4ea7-85fb-f49f7bad7058",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2e01421e-2fb2-4ea7-85fb-f49f7bad7058",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899567,
+              "key": "a57234ba-5a03-465f-920c-6300d9ea7102",
+              "title": "JAVA C2 L6 09 Consuming-Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "98LtNbVjglU",
+                "china_cdn_id": "98LtNbVjglU.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "data": {
+    "lesson": {
+      "id": 875470,
+      "key": "a38aebd6-8cc7-4409-b141-9e0e0300b4c0",
+      "title": "Unit & Integration Tests",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Build unit and integration tests to give you confidence your application continues to work as intended after making new changes to your code.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/a38aebd6-8cc7-4409-b141-9e0e0300b4c0/875470/1564506591341/Unit+%26+Integration+Tests+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/a38aebd6-8cc7-4409-b141-9e0e0300b4c0/875470/1564506587746/Unit+%26+Integration+Tests+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 877490,
+          "key": "94ef8e51-c8bd-4752-a5f2-ae517f65cd07",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "94ef8e51-c8bd-4752-a5f2-ae517f65cd07",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899579,
+              "key": "2057fbe4-4e98-4671-8501-30c007b042fe",
+              "title": "JAVA C2 L8 01 Testing Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UEIb-ohnLW0",
+                "china_cdn_id": "UEIb-ohnLW0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 883775,
+          "key": "dd25113a-a210-483e-84d5-7054a3b08198",
+          "title": "Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dd25113a-a210-483e-84d5-7054a3b08198",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899580,
+              "key": "fb570ef2-73ce-46f7-b258-28255fd809b0",
+              "title": "JAVA C2 L8 02 Testing Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UVRpUx5zuIs",
+                "china_cdn_id": "UVRpUx5zuIs.mp4"
+              }
+            },
+            {
+              "id": 898072,
+              "key": "92a6337b-e1ca-4396-9fb6-48be0050235d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Testing gives you confidence that your application is working when you make changes, so you’ll want to introduce automated testing and make testing a normal part of your development process. First, unit test your small piece, then integrate your piece with the other system components to conduct integration testing.  \n\n<h5>Dependency</h5>\n<pre>\n&lt;dependency&gt;\n  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;\n  &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;\n  &lt;scope&gt;test&lt;/scope&gt;\n&lt;/dependency&gt;\n</pre>\n\n<code>Spring-boot-starter-test</code> imports both Spring Boot test modules as well as <code>JUnit</code>, <code>AssertJ</code>, <code>Hamcrest</code>, and a number of other useful libraries.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 883776,
+          "key": "5f6eca50-caec-4723-a92c-788c470c0419",
+          "title": "Unit Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5f6eca50-caec-4723-a92c-788c470c0419",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899581,
+              "key": "e5028b6b-4931-4ce4-87fb-2617e85235c8",
+              "title": "JAVA C2 L8 03 Unit Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X4EQiHQC-_I",
+                "china_cdn_id": "X4EQiHQC-_I.mp4"
+              }
+            },
+            {
+              "id": 898073,
+              "key": "f37553d1-ac64-49f9-a60f-ee442b7edd9e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We will first look at unit testing REST APIs using <a href=\"https://junit.org/junit5/\">JUnit</a>, <a href=\"https://site.mockito.org/\">Mockito</a> and <a href=\"https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/web/servlet/MockMvc.html\">Spring Test</a> (also known as, MockMVC).\n\n<ul>\n<li>JUnit is a popular unit testing framework that allows you to test individual units of source code.</li>\n<li>Mockito is a great mocking framework which provices data for JUnit tests. </li>\n<li><code>@MockBean</code> works well with the Mockito library.</li>\n<li><code>@WebMvcTest</code> is used for controller layer unit testing. </li>\n</ul>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898254,
+              "key": "b4198e78-be6e-417b-84cd-9494d7862187",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b4198e78-be6e-417b-84cd-9494d7862187",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which component does the @WebMvcTest annotation test?",
+                "answers": [
+                  {
+                    "id": "a1562416005408",
+                    "text": "Controller",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562416050397",
+                    "text": "Service ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562416056216",
+                    "text": "Data Access",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562416064589",
+                    "text": "User Interface (or View)",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883778,
+          "key": "fbab00a8-5dc4-43c3-bce4-ee502ee58d34",
+          "title": "Case Study: Unit Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fbab00a8-5dc4-43c3-bce4-ee502ee58d34",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899582,
+              "key": "d085bb9f-7df5-4477-9140-09339b9e57af",
+              "title": "JAVA C2 L8 04 Demo - Unit Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gAUx-H2VTLs",
+                "china_cdn_id": "gAUx-H2VTLs.mp4"
+              }
+            },
+            {
+              "id": 898074,
+              "key": "c89c2cfe-4652-497f-ab49-64f3d63623f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson8-testing\">GitLab</a>.\n\n<h5>REST API Components</h5>\n<ul>\n <li><strong>Controller </strong>- LocationController.java</li>\n <li><strong>Service </strong>- LocationService.java and LocationServiceImpl.java</li>\n <li><strong>CRUD Repository </strong>- LocationRepository.java</li>\n <li><strong>Domain Entity/Model </strong>- Location.java</li>\n <li><strong>H2 Database </strong> accessible via <a href=\"http://localhost:8080/h2/\">http://localhost:8080/h2/</a></li>\n<li><strong>Tomcat Server </strong> accessible via <a href=\"http://localhost:8080\">http://localhost:8080</a></li>\n</ul>\n<h5>Unit Testing Components</h5>\n<ul><li>LocationControllerUnitTest.java</li></ul>\n\n<h5>Integration Testing Components</h5>\n<ul><li>LocationControllerIntegrationTest.java</li></ul>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899859,
+              "key": "f602766f-0d20-428f-8a57-9a845b97b6a1",
+              "title": "Unit vs. Integration Tests",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f602766f-0d20-428f-8a57-9a845b97b6a1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the below descriptions to whether they are unit tests or integration tests."
+                },
+                "concepts_label": "Test description",
+                "answers_label": "Test Type",
+                "concepts": [
+                  {
+                    "text": "Given a test item with an ID of 1, tests whether the `retrieveLocation()` function in the `locationService` correctly returns that item when fed in the related ID.",
+                    "correct_answer": {
+                      "id": "a1562865655252",
+                      "text": "Unit"
+                    }
+                  },
+                  {
+                    "text": "Uses the IP address and port of the API to check for a success response code when a list of all locations is requested.",
+                    "correct_answer": {
+                      "id": "a1562865692367",
+                      "text": "Integration"
+                    }
+                  },
+                  {
+                    "text": "Given a dog API and a function `getBreed()`, tests whether that function appropriately returns the breed from a test dog item.",
+                    "correct_answer": {
+                      "id": "a1562865693142",
+                      "text": "Unit"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1562865655252",
+                    "text": "Unit"
+                  },
+                  {
+                    "id": "a1562865693142",
+                    "text": "Unit"
+                  },
+                  {
+                    "id": "a1562865818740",
+                    "text": "Integration"
+                  },
+                  {
+                    "id": "a1562865692367",
+                    "text": "Integration"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883777,
+          "key": "e2300d10-abdd-40d5-ba8b-2ba3873e2c7d",
+          "title": "Integration Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e2300d10-abdd-40d5-ba8b-2ba3873e2c7d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899583,
+              "key": "ee1beb4e-63f9-4512-a435-239f4e9e5b68",
+              "title": "JAVA C2 L8 05 Integration Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LXOIVFISNmE",
+                "china_cdn_id": "LXOIVFISNmE.mp4"
+              }
+            },
+            {
+              "id": 898075,
+              "key": "025aaa4a-af6d-44d6-8adf-7b23368d814a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Integration testing allows for testing of the entire application (and all of its layers) as opposed to just individual components. \n\nThe <code>@SpringBootTest</code> annotation is useful for integration testing and is chosen over <code>@WebMvcTest</code> because <code>@SpringBootTest</code> starts the full application context (including the server) and does not customize component scanning at all. \n\n<code>@SpringBootTest</code> will look for the main configuration class, annotated with<code>@SpringBootTest</code> and use that to start a Spring application context that simulates a calling client. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898256,
+              "key": "d90f82d6-f79d-4542-8396-35c1c4172204",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d90f82d6-f79d-4542-8396-35c1c4172204",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which components are tested using the @SpringBootTest annotation?",
+                "answers": [
+                  {
+                    "id": "a1562416218977",
+                    "text": "Controller ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562416252734",
+                    "text": "Service ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562416254432",
+                    "text": "Data access",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562416255950",
+                    "text": "User Interface (or view)",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 899584,
+          "key": "89733338-d03c-432b-9d91-ded84439d6fc",
+          "title": "Case Study: Integration Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "89733338-d03c-432b-9d91-ded84439d6fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899585,
+              "key": "ed9d1369-8b92-4a1a-828a-d0c8151f95a9",
+              "title": "JAVA C2 L8 06 Demo - Integration Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NuFStrYCTp4",
+                "china_cdn_id": "NuFStrYCTp4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899688,
+          "key": "cf3f0046-787d-43e3-a212-897f581b91f3",
+          "title": "Lab: Test Your Dog API",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cf3f0046-787d-43e3-a212-897f581b91f3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899689,
+              "key": "139daec4-9d7e-4441-8557-e1c416a3c5f4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lab: Test Your Dog API\n\nReuse your Dog REST API code from Lesson 2 and create unit and integration tests for it.\n\n- **Step 1:** Create a unit test for your API using the `@WebMvcTest` annotation.\n\n- **Step 2:** Create an integration test for your API using the `@SpringBootTest` annotation.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899697,
+              "key": "8ffc9e07-08ae-4caf-ae90-2d4076ea3857",
+              "title": "Test Your Dog API Lab",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8ffc9e07-08ae-4caf-ae90-2d4076ea3857",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "I completed the \"Test Your Dog API\" lab."
+              ],
+              "positive_feedback": "Amazing work! Not only have you implemented crucial testing for your API, but look back at everything you've done in this course - from REST, GraphQL and microservices, to securing, documenting and testing your APIs. Coming up soon is the project, where you'll combine all of your new skills together for a Vehicles API.",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 916931,
+              "key": "f27cd4b8-27b0-4968-b91d-52f377771929",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We haven't included a solution for this lab due to the many different tests you could possibly add for your API, but make sure to check back in the Case Studies if you need more ideas! You'll also get a chance to get creative in the upcoming project for what tests you want to implement.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 877491,
+          "key": "d33c096a-538e-4c79-be4d-a6c06ca1eb11",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d33c096a-538e-4c79-be4d-a6c06ca1eb11",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899586,
+              "key": "1a2beb79-7092-4c52-8aa8-6c5055570e13",
+              "title": "JAVA C2 L8 07 Testing Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SVNNtbgbOtI",
+                "china_cdn_id": "SVNNtbgbOtI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899587,
+          "key": "266a0fdb-7e24-4cb9-a056-0ca1f9984111",
+          "title": "An Emphasis on Testing & Documentation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "266a0fdb-7e24-4cb9-a056-0ca1f9984111",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899865,
+              "key": "e0ea68c3-3a28-4cf0-ad86-ae9c46628c21",
+              "title": "JAVA C2 L8 Importance Of Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uKgTF5whmtU",
+                "china_cdn_id": "uKgTF5whmtU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899588,
+          "key": "9837c256-b045-4637-9495-32ad9bcbe55f",
+          "title": "Course Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9837c256-b045-4637-9495-32ad9bcbe55f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899589,
+              "key": "71062f17-0bca-4e59-beb8-318a249f8af9",
+              "title": "JAVA C2 L0 Course Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qQISqzsE6HY",
+                "china_cdn_id": "qQISqzsE6HY.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

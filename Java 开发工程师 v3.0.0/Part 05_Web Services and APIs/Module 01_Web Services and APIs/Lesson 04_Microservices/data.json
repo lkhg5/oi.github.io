@@ -1,0 +1,969 @@
+{
+  "data": {
+    "lesson": {
+      "id": 875466,
+      "key": "74043f56-683f-40d5-a7db-f974764ec5f7",
+      "title": "Microservices",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Find out how Microservices improve on the older monolithic application structure, including how to use Eureka and Spring Data REST for easy development and deployment.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/74043f56-683f-40d5-a7db-f974764ec5f7/875466/1564506548913/Microservices+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/74043f56-683f-40d5-a7db-f974764ec5f7/875466/1564506545758/Microservices+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 877482,
+          "key": "5f61f1bf-a627-470e-a613-67f3dced8d2a",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5f61f1bf-a627-470e-a613-67f3dced8d2a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899505,
+              "key": "852004a6-b5d2-4de8-a7b6-94d42cb0ae7e",
+              "title": "JAVA C2 L4 01 Microservices Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iuOL0IJguCI",
+                "china_cdn_id": "iuOL0IJguCI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 883755,
+          "key": "9b87086b-a0fe-4158-bcc2-0cff2be82e23",
+          "title": "MSA",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9b87086b-a0fe-4158-bcc2-0cff2be82e23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899518,
+              "key": "7585909f-92e5-44f1-a507-85e6212c5d13",
+              "title": "JAVA C2 L4 02 Microservices Architecture (MSA)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "M9YlbhAHTzY",
+                "china_cdn_id": "M9YlbhAHTzY.mp4"
+              }
+            },
+            {
+              "id": 883803,
+              "key": "177da31e-ae34-45f0-8493-8797c3e881e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "N-Tier and monolithic applications used to be the de facto standard. In one single binary web artifact, like an <a href=\"https://en.wikipedia.org/wiki/EAR_(file_format)\">EAR</a> or <a href=\"https://en.wikipedia.org/wiki/WAR_(file_format)\">WAR</a> file, there would be a layered architecture with the decomposition of code into more functional components.\n\n<ul>\n<li>Presentation Layer</li>\n<li>Business Process Layer/Service Layer</li>\n<li>Data Access Layer</li>\n</ul>\n\nThere are several disadvantages to the n-tier monolithic application architecture:\n\n<ul>\n<li>Tight coupling of code which makes changes hard.</li>\n<li>A single deployment with multiple layers that causes long testing, building, and deployment cycles.</li>\n<li>A big monolithic application that makes code reuse and sharing of components difficult.</li>\n</ul>\n\nThe Microservices Architecture (MSA) decomposes systems into discrete, individual, standalone components that can communicate amongst themselves, working together or with external systems.\n\nMSA is a more agile framework that fits well with the cloud-based world and lends itself well to web application development and web service development.\n\n<h5>Features</h5>\n<ul>\n<li>MSA is very flexible because it supports any language that can communicate via a RESTful endpoint and leverages REST over HTTP.</li>\n<li>MSA offers agility and systems that are easier to write, test, deploy, and share.</li>\n<li>MSA provides systems that can better scale to load and demand.</li>\n<li>MSA provides systems that are resilient because failures are isolated and don’t cascade through the infrastructure.</li>\n</ul>\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898235,
+              "key": "d2471d4b-cdef-4658-a3be-c0e98d8a13bc",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d2471d4b-cdef-4658-a3be-c0e98d8a13bc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify TWO benefits of MSA.",
+                "answers": [
+                  {
+                    "id": "a1562376689475",
+                    "text": "Isolated failures",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562376732875",
+                    "text": "Inherent scalability ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562376735237",
+                    "text": "Multiple sources of truth for data",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562376736836",
+                    "text": "Cascading of errors throughout infrastructure ",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883758,
+          "key": "cc8648f3-8c35-4157-ae82-04630dc69e2f",
+          "title": "Spring Cloud & Eureka",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cc8648f3-8c35-4157-ae82-04630dc69e2f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899521,
+              "key": "88d99736-85c2-4905-a21d-0008089e328e",
+              "title": "JAVA C2 L4 03 Spring Cloud   Eureka",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cGKMR-Y_cg0",
+                "china_cdn_id": "cGKMR-Y_cg0.mp4"
+              }
+            },
+            {
+              "id": 883804,
+              "key": "cf1fb59f-a425-4ab3-9d41-f3b4f3220251",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Eureka, created by Netflix, is responsible for the registration and discovery microservices. Spring has incorporated Eureka into <a href=\"https://spring.io/projects/spring-cloud\">Spring Cloud</a>, making it even easier to stand up a Eureka server.\n\nEureka consists of a server and a client-side component. The server component will be the registry in which all the microservices register their availability.  The microservices use the Eureka client to register; once the registration is complete, it notifies the server of its existence. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898238,
+              "key": "0cdef5c6-cccf-47c8-b43b-17c5505ee240",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0cdef5c6-cccf-47c8-b43b-17c5505ee240",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What make a microservice different from a normal RESTful service?",
+                "answers": [
+                  {
+                    "id": "a1562378372042",
+                    "text": "A microservice communicates over REST",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562378478973",
+                    "text": "A microservice uses  a common shared database ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562378479808",
+                    "text": "A microservice must register itself with a discovery service",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562378480724",
+                    "text": "A microservice has less lines of code",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 883757,
+          "key": "4a33e9db-d17b-40ed-bb4e-855b0607b96f",
+          "title": "Case Study: Eureka Server",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4a33e9db-d17b-40ed-bb4e-855b0607b96f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899538,
+              "key": "868c8aff-ff79-4ea5-a754-e1ceb5c1a4d1",
+              "title": "JAVA C2 L4 04 Demo - Eureka Server",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1dZvq2eAvOc",
+                "china_cdn_id": "1dZvq2eAvOc.mp4"
+              }
+            },
+            {
+              "id": 883809,
+              "key": "790ca3bf-4160-4d61-a7aa-85b3070898cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The case study is an online ordering service. There are multiple services that work together to create the system. \n\n- Item Service\n- Order Service\n- Shipping Service \n\nEach service has its own database. For this case study, instead of building out the entire system, we will focus on the Item Service. The code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson4-microservices\">GitLab</a>. \n\nThe project has the following components:\n\n<h5>Eureka Module</h5>\n<li><strong>Eureka Registry </strong> accessible via <a href=\"http://localhost:8761\">http://localhost:8761</a></li>\n<br>\n<h5>Items Microservices Module</h5>\n\n<ul>\n <li><strong>CRUD Repository </strong>- ItemRepository.java</li>\n <li><strong>Domain Entity/Model </strong>-Item.java</li>\n <li><strong>H2 Database </strong> accessible via <a href=\"http://localhost:8080/h2/\">http://localhost:8080/h2/</a></li>\n<li><strong>Tomcat Server </strong> accessible via <a href=\"http://localhost:8080\">http://localhost:8080</a></li>\n<li><strong>Items Microservice</strong> accessible via <a href=\"http://localhost:8080/items\">http://localhost:8080/items</a></li>\n</ul>\n\n#### Troubleshooting\n\nYou may need this additional dependency in your POM file for the Eureka server to load:\n\n```\n<dependency>\n    <groupId>javax.xml.bind</groupId>\n    <artifactId>jaxb-api</artifactId>\n    <version>2.4.0-b180725.0427</version>\n</dependency>\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906911,
+          "key": "8f3c4c2e-01a1-42b6-8038-4d0521f7c379",
+          "title": "Lab I: Build a Dog Microservice (Eureka)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8f3c4c2e-01a1-42b6-8038-4d0521f7c379",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906916,
+              "key": "0db0694a-2cb4-4e5a-93ab-a60faa2b46c5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lab I: Build a Dog Microservice\n\nOnce again, you'll work with a dog-related API, this time to create a Microservice that returns a list of dogs from an embedded H2 in memory database and registers itself with a Eureka Server. While you may have some code re-use from before, you'll get a chance to see how much you are able to cut out from the earlier REST API in implementing a microservice. \n\n## Eureka\n\n**In a new module create the Eureka Service:**\n\n- **Step 1:** Create a SpringBoot project that creates a Eureka server. \n  - Ensure that you use the proper dependencies in the Maven POM file and the necessary annotations. \n  - Make a note of the service URL and add any other necessary details in `application.properties`.\n\n- **Step 2:** Use a web browser to view the Eureka web console.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906912,
+          "key": "337219a3-8a73-498b-b6a6-70ba497d68eb",
+          "title": "Lab I: Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "337219a3-8a73-498b-b6a6-70ba497d68eb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Eureka",
+                "uri": "https://video.udacity-data.com/topher/2019/August/5d485584_eureka/eureka.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 906918,
+              "key": "721e5b90-9d53-4b0d-96a6-36d3932f6c29",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Solution: Build a Dog Microservice - Eureka\n\nBelow, we'll walk through each step of the lab and look at *one potential way* to implement the lab. Even if you get stuck, you should always first try to work through the lab without the solution before coming here, so that you can best learn the related skills and be ready for the project at the end of the course.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906921,
+              "key": "a2a8b00e-984a-4f1d-a60d-2350517d3a08",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 1:** Create a SpringBoot project that creates a Eureka server.\n\n- Ensure that you use the proper dependencies in the Maven POM file and the necessary annotations.\n- Make a note of the service URL and add any other necessary details in `application.properties`.\n\nFirst, navigate once again to [Spring Initializr](https://start.spring.io/). You can add the `Config Client` (for `spring-cloud-starter-config`) and `Eureka Server` (for `spring-cloud-netflix-eureka-server`) dependencies to generate the POM file for this project. Remember that since this is just the Eureka server and not the microservice client you will build later, you won't need dependencies like `H2`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907307,
+              "key": "201ba14b-7155-49a0-ba1f-f41031727f1d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d485078_java-spring-eureka/java-spring-eureka.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/201ba14b-7155-49a0-ba1f-f41031727f1d",
+              "caption": "Select the correct dependencies for the project",
+              "alt": "Select the correct dependencies for the project",
+              "width": 625,
+              "height": 415,
+              "instructor_notes": null
+            },
+            {
+              "id": 907310,
+              "key": "afc28cd2-c5b4-4bb9-9ad2-00345a01dd49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Additionally, I added the below additional dependency to my POM file to get the Eureka server up and running:\n\n```\n\t\t<dependency>\n\t\t\t<groupId>javax.xml.bind</groupId>\n\t\t\t<artifactId>jaxb-api</artifactId>\n\t\t\t<version>2.4.0-b180725.0427</version>\n\t\t</dependency>\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907308,
+              "key": "a9ea0435-417f-41d9-adf2-5389925b56a8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "From there, navigate to your `application.properties` file to add the application name and server port (`8761` in the case of a Eureka server, typically). Below, I have also added lines to avoid registering the Eureka server itself as a client, as well as adding some additional logging to help with any potential debugging or information needs.\n\n```pseudo\nspring.application.name=eureka-server\nserver.port=8761\n\n# avoid registering itself as a client\neureka.client.register-with-eureka=false\neureka.client.fetch-registry=false\nlogging.level.com.netflix.eureka=ON\nlogging.level.com.netflix.discovery=ON\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907309,
+              "key": "ecff182d-c65a-4651-b58b-c9e3417c7b4b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You're already almost done! Now, we just need one import and one annotation added to `EurekaApplication.java` - importing `EnableEurekaServer` and adding the related annotation.\n\n```java\npackage com.udacity.eureka;\n\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;\n\n@SpringBootApplication\n@EnableEurekaServer\npublic class EurekaApplication {\n\n\tpublic static void main(String[] args) {\n\t\tSpringApplication.run(EurekaApplication.class, args);\n\t}\n\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906922,
+              "key": "768cc237-4942-4ad0-9c5e-43d73737e01b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 2:** Use a web browser to view the Eureka web console.\n\nNavigate to http://localhost:8761/ on your computer to view the Eureka web console. Note again that Eureka servers are typically put on port 8761, but if you would have used a different server port in `application.properties`, you would instead navigate to that port.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907311,
+              "key": "5cc641a6-9143-45b4-a8e4-188a42475ac1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d485325_java-eureka-server/java-eureka-server.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5cc641a6-9143-45b4-a8e4-188a42475ac1",
+              "caption": "A view of the Eureka web console",
+              "alt": "A view of the Eureka web console",
+              "width": 800,
+              "height": 475,
+              "instructor_notes": null
+            },
+            {
+              "id": 907312,
+              "key": "324cf253-5177-4a97-9a7f-318be152d4a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Eureka Server Solution\n\nYou can get the full code for the Eureka server below; we'll include it again at the end of the final lab solution of this lesson.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 883760,
+          "key": "e9e2e7f7-18b6-45c6-9261-bdd93c388f9f",
+          "title": "Spring Data REST",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9e2e7f7-18b6-45c6-9261-bdd93c388f9f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899537,
+              "key": "1b1a6592-a1d7-4a8c-9c18-cb1f9270c7ac",
+              "title": "JAVA C2 L4 06 Spring Data REST",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MeHN-SWMjfc",
+                "china_cdn_id": "MeHN-SWMjfc.mp4"
+              }
+            },
+            {
+              "id": 883808,
+              "key": "fbe738da-d755-4703-97fd-8fc3c7e232a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<a href=\"https://spring.io/projects/spring-data-rest\">Spring Data REST</a> makes it easy to expose microservices. Spring Data REST builds on top of Spring Data repositories and automatically exports those as REST resources. \n\nSo how does Spring Data Rest work?\n \n<ol>\n<li>At application startup, Spring Data Rest finds all of the spring data repositories</li>\n<li>Then, Spring Data Rest creates an endpoint that matches the entity name</li>\n<li>Next, Spring Data Rest appends an S to the entity name in the endpoint</li>\n<li>Lastly, Spring Data Rest exposes CRUD (Create, Read, Update, and Delete) operations as RESTful APIs over HTTP</li>\n</ol>\n\nThere is no need to create a controller or service layer!\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898243,
+              "key": "4df745a5-0516-47ad-b970-e67b5dfbc66b",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4df745a5-0516-47ad-b970-e67b5dfbc66b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which components are not needed when working with Spring Data REST?",
+                "answers": [
+                  {
+                    "id": "a1562409588813",
+                    "text": "Controller ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562409717126",
+                    "text": "Entity",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562409722015",
+                    "text": "Repository ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562409729567",
+                    "text": "Service",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 899543,
+          "key": "90be8e90-1562-440f-9b98-8f52e4063522",
+          "title": "Case Study: Spring Data REST",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "90be8e90-1562-440f-9b98-8f52e4063522",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899544,
+              "key": "781947d1-ce15-4ced-94c3-1b7ede6b933d",
+              "title": "JAVA C2 L4 07 Demo - Spring Data REST",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EtQe4STbuRA",
+                "china_cdn_id": "EtQe4STbuRA.mp4"
+              }
+            },
+            {
+              "id": 906909,
+              "key": "eeea5a8f-232c-4cce-baef-4c2bd366b8c7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Each service has its own database. For this case study, instead of building out the entire system, we will focus on the Item Service. The code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson4-microservices\">GitLab</a>. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906913,
+          "key": "b6e86a5d-5c38-4dba-9625-ac702134c827",
+          "title": "Lab II: Build a Dog Microservice (Spring Data REST)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b6e86a5d-5c38-4dba-9625-ac702134c827",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906917,
+              "key": "3f34e9f1-5869-41b6-b9ca-f1598b18cd53",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lab II: Build a Dog Microservice\n\nNow that you have a working Eureka server, you can build out a microservice that provides information about your dogs.\n\n## Spring Data REST\n\nSteps 1, 2 & 3 below can re-use some of your code from earlier lessons.\n\n**In a new separate module create a Microservice:**\n\n- **Step 1:** Create an entity called Dog. The dog should have three attributes:\n  - Name\n  - Breed\n  - Origin\n- **Step 2:** Create a repository that extends CrudRepository for creating, reading, updating, and deleting Dog objects.\n  - Note: This repository will not need to implement anything beyond an interface.\n- **Step 3:** Create a `data.sql` file to create sample dog data in the database.\n- **Step 4:** Create a microservice using Spring Data REST by including the proper dependency in the Maven POM file.\n- **Step 5:** Check that you are able to access your microservice.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906914,
+          "key": "1961eff6-6b92-4d9d-8669-79ad2f5265bd",
+          "title": "Lab II: Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1961eff6-6b92-4d9d-8669-79ad2f5265bd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906919,
+              "key": "348a7782-9f9e-45d8-9165-e5ddd320b1c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Solution: Build a Dog Microservice - Spring Data REST\n\nBelow, we'll walk through each step of the lab and look at *one potential way* to implement the lab. Even if you get stuck, you should always first try to work through the lab without the solution before coming here, so that you can best learn the related skills and be ready for the project at the end of the course.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907313,
+              "key": "ebac3e1f-492c-4df0-b19b-1bf60c143731",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 0:** Create a SpringBoot project/module for an eventual microservice.\n\nWe skipped this step on the original lab page, but it's essentially inferred to get us started. This can either be a new project (in which case you would need the Eureka server running in a separate window) or a new module. Since so far we've been using Spring Initializr as a separate project, I will approach it as such below.\n\nAlong with JPA, H2 and Spring Web Starter, you can add `Rest Repositories` (for `spring-boot-starter-data-rest`), `Cloud Config`, and also `Eureka Discovery Client`, which we won't utilize until the last part of the lab in this lesson (you can always update your POM file with this later, if necessary). If you need to debug, you might comment out the Eureka discovery client, as otherwise you'll see a lot of messages being output depending on whether it is connected to your Eureka server yet.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907314,
+              "key": "73b6d787-88e7-46ac-973b-1abe5cbab2dc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d485f10_java-spring-microservice2/java-spring-microservice2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/73b6d787-88e7-46ac-973b-1abe5cbab2dc",
+              "caption": "Adding the dependencies for the microservice",
+              "alt": "Adding the dependencies for the microservice",
+              "width": 750,
+              "height": 675,
+              "instructor_notes": null
+            },
+            {
+              "id": 907315,
+              "key": "18a494d6-8b1a-4701-9d61-6ca46cfe4a09",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Don't forget to add anything you may need for `H2` to `application.properties` here! I re-used the same lines from the REST API in mine.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906923,
+              "key": "a554ce7c-0263-4996-8770-153b9d69241d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 1:** Create an entity called Dog. \n- The dog should have three attributes:\n  - Name\n  - Breed\n  - Origin\n\nYou can re-use your code from the REST API for the `Dog` entity, just make sure to update the package name accordingly!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906924,
+              "key": "3b3da3f5-de03-40d6-b683-a25321563dc9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 2:** Create a repository that extends CrudRepository.\n- This repository is for creating, reading, updating, and deleting Dog objects.\n- Note: This repository will not need to implement anything beyond an interface.\n\nDepending on your implementation, this can be re-used from either the REST API or GraphQL API. In this case, we don't need to add anything within the interface here.\n\n```java\npackage com.udacity.DogMicroservice.repository;\n\nimport com.udacity.DogMicroservice.entity.Dog;\nimport org.springframework.data.repository.CrudRepository;\n\npublic interface DogRepository extends CrudRepository<Dog, Long> {\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906925,
+              "key": "3f7b4394-5a04-4b2f-8205-0d7f3547e7f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 3:** Create a `data.sql` file.\n- The file should create sample dog data in the database.\n\nYou can either re-use your previous `data.sql` files here or create a new one.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906926,
+              "key": "57da8978-3879-48f8-b966-b610758f0c91",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 4:** Create a microservice using Spring Data REST.\n- Include the proper dependencies in the Maven POM file.\n\nIf you've been following since Step 0, this was actually done by including `Rest Repositories` within Spring Initializr, but otherwise, you can add the following to your POM file:\n\n```pseudo\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-data-rest</artifactId>\n\t\t</dependency>\n```\n\nAmazingly, you have now created a microservice to serve up the dogs' information! Spring Data Rest is handling most of the work for you, although since this is a microservice, it is more limited in what it does on its own (we don't have the explicit functionality to just get dog names here, for instance).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906927,
+              "key": "a26fa603-1987-4eb2-916f-98a7157a8879",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 5:** Check that you are able to access your microservice.\n\nWhile it might feel like we have hardly coded anything yet, your microservice should now be ready! When I navigated to http://localhost:8080/dogs, I saw the below (with some formatting done by a browser extension).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907316,
+              "key": "1b0715eb-24b5-42a6-b32a-1afd8c9263bd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d485c91_java-microservice-dogs/java-microservice-dogs.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1b0715eb-24b5-42a6-b32a-1afd8c9263bd",
+              "caption": "A subset of the JSON from the microservice",
+              "alt": "A subset of the JSON from the microservice",
+              "width": 410,
+              "height": 555,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 883759,
+          "key": "4bdf59a5-0d5e-4a59-b31d-bbd3179156c9",
+          "title": "Microservice Registration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4bdf59a5-0d5e-4a59-b31d-bbd3179156c9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899540,
+              "key": "93ed0d49-8583-421d-85c5-2883b2b3b5b7",
+              "title": "JAVA C2 L4 05 Microservice Creation   Registration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ozWskAAllkw",
+                "china_cdn_id": "ozWskAAllkw.mp4"
+              }
+            },
+            {
+              "id": 883805,
+              "key": "37d7be32-c565-45f7-9bcf-c4fdedcc2b60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For a @SpringBootApplication to be discovery-aware, all that's needed is the Spring Discovery Client (i.e., <code>spring-cloud-starter-netflix-eureka-client</code> dependency) in the classpath. The next step is to annotate the main Spring application class with the @EnableEurekaClient annotation. @EnableEurekaClient is optional if the <code>spring-cloud-starter-netflix-eureka-client</code> dependency is on the classpath. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 898244,
+              "key": "9398b2ad-2c25-4869-8d65-3c150e79c5a5",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9398b2ad-2c25-4869-8d65-3c150e79c5a5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What happens if a microservice is not registered as a Eureka client?",
+                "answers": [
+                  {
+                    "id": "a1562410043267",
+                    "text": "The microservice cannot be discovered",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1562410270579",
+                    "text": "The microservice cannot automatically scale",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562410271621",
+                    "text": "The microservice is considered private and cannot be called.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1562410286831",
+                    "text": "Clients of the microservice must use the host name and port to access the service.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 899541,
+          "key": "ad2eff57-4094-4684-bff2-e72a6694be88",
+          "title": "Case Study: Registration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ad2eff57-4094-4684-bff2-e72a6694be88",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899542,
+              "key": "50944e8a-ce8f-4974-a174-a45e4750dc34",
+              "title": "JAVA C2 L4 07 Demo - Registration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MMymv5LxfpQ",
+                "china_cdn_id": "MMymv5LxfpQ.mp4"
+              }
+            },
+            {
+              "id": 906910,
+              "key": "2494ef5d-f37d-4c44-85c7-5ddbb15f7091",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Each service has its own database. For this case study, instead of building out the entire system, we will focus on the Item Service. The code can be cloned from <a href=\"https://gitlab.com/videolearning/udacity-java/tree/master/Lesson4-microservices\">GitLab</a>. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 899680,
+          "key": "b81a216c-5d59-48d0-987a-7079295390a2",
+          "title": "Lab III: Build a Dog Microservice (Registration)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b81a216c-5d59-48d0-987a-7079295390a2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899681,
+              "key": "b3c5dbc8-45ea-4aae-a0c6-94e0eff8a400",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lab III: Build a Dog Microservice\n\nNow, you can finish off your Eureka-based microservice! Create a Microservice that returns a list of dogs from an embedded H2 in memory database and registers itself with a Eureka Server.\n\n## Registration\n\n- **Step 1:** Turn the microservice into a Eureka client by adding the appropriate annotations and dependencies in the Maven POM file.\n\n- **Step 2:** Use a web browser to view the Eureka web console to ensure your microservice is registered.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899693,
+              "key": "a2050b5e-3f2a-4b4e-aa6a-5a81d731cccc",
+              "title": "Build a Dog Microservice Lab",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a2050b5e-3f2a-4b4e-aa6a-5a81d731cccc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "I completed the \"Build a Dog Microservice\" lab."
+              ],
+              "positive_feedback": "Nice work! You can now build REST APIs, GraphQL APIs, and microservices. From here on out, you'll add layers to your APIs by learning to secure, document and test them, as well as consume information from outside APIs.",
+              "video_feedback": null,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 906358,
+          "key": "0c1ff735-799e-4288-b483-1e65b003c7d0",
+          "title": "Lab III: Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0c1ff735-799e-4288-b483-1e65b003c7d0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Eureka",
+                "uri": "https://video.udacity-data.com/topher/2019/August/5d485584_eureka/eureka.zip"
+              },
+              {
+                "name": "DogMicroservice",
+                "uri": "https://video.udacity-data.com/topher/2019/August/5d4863e0_dogmicroservice/dogmicroservice.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 906920,
+              "key": "ae129b4b-f5d9-44be-90eb-f58883a9ec63",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Solution: Build a Dog Microservice - Registration\n\nBelow, we'll walk through each step of the lab and look at *one potential way* to implement the lab. Even if you get stuck, you should always first try to work through the lab without the solution before coming here, so that you can best learn the related skills and be ready for the project at the end of the course.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906928,
+              "key": "b8a4d8ba-f01b-458a-8ce6-df9c18d6f78c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 1:** Turn the microservice into a Eureka client.\n-  Add the appropriate annotations and dependencies in the Maven POM file.\n\nIf you followed Step 0 in the Lab II solution, you already have the necessary dependencies, but if not, you'll want to add both the Eureka discovery client and cloud config.\n\n```\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\t<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\t<artifactId>spring-cloud-starter-config</artifactId>\n\t\t</dependency>\n```\n\nSpring Initializr may have already added the dependency management for you, but if that field does not exist in your POM file, add the following:\n\n```\n\t<dependencyManagement>\n\t\t<dependencies>\n\t\t\t<dependency>\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\t\t<artifactId>spring-cloud-starter-parent</artifactId>\n\t\t\t\t<version>Greenwich.RELEASE</version>\n\t\t\t\t<type>pom</type>\n\t\t\t\t<scope>import</scope>\n\t\t\t</dependency>\n\t\t</dependencies>\n\t</dependencyManagement>\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907317,
+              "key": "699ab38a-b3b4-4088-a7a9-50d03d95fec3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "From there, it's just a couple of imports in `DogMicroserviceApplication.java` (or your similarly named application file) and a single additional annotation.\n\n```java\npackage com.udacity.DogMicroservice;\n\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.cloud.client.discovery.EnableDiscoveryClient;\nimport org.springframework.cloud.netflix.eureka.EnableEurekaClient;\n\n@SpringBootApplication\n@EnableEurekaClient\npublic class DogMicroserviceApplication {\n\n\tpublic static void main(String[] args) {\n\t\tSpringApplication.run(DogMicroserviceApplication.class, args);\n\t}\n\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907318,
+              "key": "6ea4eaee-d8be-4045-9c65-db6c0d3dabc8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Last is adding the necessary lines to `application.properties`. I decided to add my application `dog-service`, and set to port 8762. You can choose which port to use here, although I will keep it simple by using the very next port after the one for the Eureka server.\n\n```pseudo\nspring.application.name=dog-service\nserver.port=8762\neureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/\neureka.client.service-url.default-zone=http://localhost:8761/eureka/\neureka.instance.prefer-ip-address=true\n```\n\nAnd that's it! Your microservice is now able to be registered with the Eureka server.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906929,
+              "key": "4b8c5436-33b8-4d21-a60e-1c32a1d4e61b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## **Step 2:** Ensure your microservice is registered.\n- Use a web browser to view the Eureka web console, and check that your microservice is listed.\n\nFirst, if you stopped or closed it earlier, make sure your Eureka server is running at http://localhost:8761/. Then, go ahead and run the application for your Dog Microservice. You will likely need to refresh the page to see your new `dog-service` shown as registered with the Eureka server.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907319,
+              "key": "e02bf7cb-c4e2-4bad-a75d-339972ca4878",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/August/5d48629b_java-registered-microservice/java-registered-microservice.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e02bf7cb-c4e2-4bad-a75d-339972ca4878",
+              "caption": "The `dog-service` is now registered with the Eureka server",
+              "alt": "The `dog-service` is now registered with the Eureka server",
+              "width": 742,
+              "height": 422,
+              "instructor_notes": null
+            },
+            {
+              "id": 907320,
+              "key": "18d04a66-f519-45fb-9889-ae8f6aae8937",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You should also be able to see the returned JSON from your Dog microservice at http://localhost:8762/dogs. If you want to go even further, research how to further configure the microservice so you can access it at http://dog-service/dogs instead!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907321,
+              "key": "bccad302-c924-4d53-9575-032fa22b1d71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Full Solution\n\nIf you'd like the full solution code all in one place, you can download it through the links below.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 877483,
+          "key": "6a88a361-fe4a-4b48-bab1-bd56a863994b",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6a88a361-fe4a-4b48-bab1-bd56a863994b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899545,
+              "key": "a2f11461-ebc4-4103-bb8c-6f849912bc78",
+              "title": "JAVA C2 L4 08 Microservices Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "E54uVaedTY4",
+                "china_cdn_id": "E54uVaedTY4.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

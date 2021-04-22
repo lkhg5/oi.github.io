@@ -1,0 +1,234 @@
+{
+  "id": 2649,
+  "project_id": 628,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(js|css|py|html|htm|txt|md|markdown|sql|swift|java|gradle|xml|rst|yml|yaml|rmd|pdf|docx|h|H|hh|hxx|h\\+\\+|c|C|cc|cpp|cxx|c\\+\\+)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "- The Boogle Maps application does not actually store the address assigned to a given vehicle based on latitude and longitude, and instead randomly assigns a new one each time it is called. How could you update this to track which address is assigned to which vehicle? What happens if the vehicle latitude and longitude is updated in the Vehicles API?\n- The Pricing Service stores prices based on ID, but that ID is not truly assigned to a specific vehicle - if the vehicle is deleted and a new vehicle uses the old ID, the same price is used. How can you update the Pricing Service (and perhaps the Vehicles API) to assign a new (random) price when a vehicle is removed from the Vehicles API?\n- An additional helpful service after the Vehicles API would be to have an Orders/Sales service when a customer wants to order a vehicle. How would you implement this Orders/Sales API and integrate it with the Vehicles API?",
+  "hide_criteria": false,
+  "created_at": "2019-07-02T15:43:23.612Z",
+  "updated_at": "2020-07-24T11:25:29.966Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd035-beta",
+    "nd035",
+    "nd035-cn",
+    "nd035-ent"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 5636,
+      "name": "Convert the Pricing Service",
+      "created_at": "2019-07-02T15:48:05.157Z",
+      "updated_at": "2019-07-11T20:23:37.969Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 2649,
+      "rubric_items": [
+        {
+          "id": 16160,
+          "section_id": 5636,
+          "passed_description": "The Pricing Service API is converted to a microservice with Spring Data REST, without the need to explicitly include code for the Controller or Service.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T15:50:04.207Z",
+          "updated_at": "2019-07-11T20:23:37.974Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The Pricing Service is converted to a microservice.",
+          "exceedable": false
+        },
+        {
+          "id": 16266,
+          "section_id": 5636,
+          "passed_description": "A Eureka server is implemented and running on port 8761. The Pricing Service is registered on that server and is named `pricing-service`. \n\nThe Vehicles API should be able to use the Eureka server to call the pricing service.",
+          "exceeded_description": null,
+          "created_at": "2019-07-11T20:23:38.342Z",
+          "updated_at": "2019-07-11T20:27:57.666Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "A Eureka server is used and the Pricing Service is registered with that server.",
+          "exceedable": false
+        },
+        {
+          "id": 16161,
+          "section_id": 5636,
+          "passed_description": "Within the `test` folder, at least one additional test has been implemented outside of `contextLoads()`  for the overall Pricing Service Application. ",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T15:55:44.254Z",
+          "updated_at": "2019-07-11T20:27:57.675Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "At least one additional test is added for the Pricing Service.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5637,
+      "name": "Implement the Vehicles API",
+      "created_at": "2019-07-02T15:48:19.962Z",
+      "updated_at": "2019-07-02T15:48:38.239Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 2649,
+      "rubric_items": [
+        {
+          "id": 16162,
+          "section_id": 5637,
+          "passed_description": "The Vehicles API is able to create a new vehicle based on input from the user with a POST request.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T15:58:58.457Z",
+          "updated_at": "2019-07-02T16:02:35.475Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The Vehicles API can perform CREATE operations.",
+          "exceedable": false
+        },
+        {
+          "id": 16163,
+          "section_id": 5637,
+          "passed_description": "The Vehicles API can receive GET requests from a user, and read back either a list of all existing vehicles, or the data for a single vehicle.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:00:50.970Z",
+          "updated_at": "2019-07-02T16:01:54.130Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "The Vehicles API can perform READ operations.",
+          "exceedable": false
+        },
+        {
+          "id": 16164,
+          "section_id": 5637,
+          "passed_description": "The Vehicles API can update an existing vehicle through input from the user.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:01:54.292Z",
+          "updated_at": "2019-07-02T16:02:35.479Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "The Vehicles API can perform UPDATE operations.",
+          "exceedable": false
+        },
+        {
+          "id": 16165,
+          "section_id": 5637,
+          "passed_description": "The Vehicles API can delete an existing vehicle when requested by the user.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:02:35.683Z",
+          "updated_at": "2019-07-02T16:03:05.308Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "The Vehicles API can perform DELETE operations.",
+          "exceedable": false
+        },
+        {
+          "id": 16166,
+          "section_id": 5637,
+          "passed_description": "The Vehicles API is able to consume information from the separate Boogle Maps and Pricing Service APIs, and return that information as part of the vehicle information for a single vehicle.\n\n*Note:* Boogle Maps will assign a new random address each time a query is called, so don't fret if it changes between queries. ",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:03:05.511Z",
+          "updated_at": "2019-07-02T16:07:33.817Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 4,
+          "criteria": "The Vehicles API can request location data from Boogle Maps, and pricing data from the Pricing Service.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5638,
+      "name": "Testing the Vehicles API",
+      "created_at": "2019-07-02T15:48:38.394Z",
+      "updated_at": "2019-07-02T15:48:47.278Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 2649,
+      "rubric_items": [
+        {
+          "id": 16167,
+          "section_id": 5638,
+          "passed_description": "Within the `CarControllerTest.java` file, the `TODO`s for tests  of CRUD operations have been implemented.\n\nYou are welcome to add additional tests beyond these as desired!",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:07:34.126Z",
+          "updated_at": "2019-07-02T16:11:01.415Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Tests are implemented for the Vehicles API `CarController` that cover the CRUD (Create, Read, Update, Delete) operations.",
+          "exceedable": false
+        },
+        {
+          "id": 16168,
+          "section_id": 5638,
+          "passed_description": "All necessary dependencies have been added to the relevant POM files, and the code is able to run both from tests and in launching the actual applications.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:11:01.651Z",
+          "updated_at": "2019-07-02T16:12:19.537Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "All necessary dependencies are included in each Application's POM files, and the code runs successfully.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5639,
+      "name": "API Documentation",
+      "created_at": "2019-07-02T15:48:47.430Z",
+      "updated_at": "2019-07-02T15:50:03.969Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 2649,
+      "rubric_items": [
+        {
+          "id": 16169,
+          "section_id": 5639,
+          "passed_description": "API documentation for the Vehicles API is implemented using Swagger, and all related API queries are able to be run from there. The documentation is available at http://localhost:8080/swagger-ui.html when the application is running.\n\n*Note:* You are welcome to add Swagger API documentation for the other APIs, but it is not required.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T16:12:19.760Z",
+          "updated_at": "2019-07-02T16:21:54.915Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "API documentation for the Vehicles API is implemented using Swagger.",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 628,
+    "name": "Build the Backend System for a Car Website",
+    "nanodegree_key": "nd035",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": false,
+    "is_career": false,
+    "recruitment_family_id": 12,
+    "created_at": "2019-07-03T18:10:36.230Z",
+    "updated_at": "2021-04-21T03:54:07.161Z",
+    "price": "7.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}
