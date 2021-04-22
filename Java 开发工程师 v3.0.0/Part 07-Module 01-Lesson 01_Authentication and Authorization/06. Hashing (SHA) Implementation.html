@@ -1,0 +1,317 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hashing (SHA) Implementation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Authentication and Authorization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Course Overview.html">01. Course Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Authentication.html">02. Authentication</a>
+    </li>
+    <li class="">
+      <a href="03. Points to Consider.html">03. Points to Consider</a>
+    </li>
+    <li class="">
+      <a href="04. Hashing.html">04. Hashing</a>
+    </li>
+    <li class="">
+      <a href="05. Salting.html">05. Salting</a>
+    </li>
+    <li class="">
+      <a href="06. Hashing (SHA) Implementation.html">06. Hashing (SHA) Implementation</a>
+    </li>
+    <li class="">
+      <a href="07. Hashing (bCrypt) Implementation.html">07. Hashing (bCrypt) Implementation</a>
+    </li>
+    <li class="">
+      <a href="08. Authorization.html">08. Authorization</a>
+    </li>
+    <li class="">
+      <a href="09. JWTs.html">09. JWTs</a>
+    </li>
+    <li class="">
+      <a href="10. JWT Quiz.html">10. JWT Quiz</a>
+    </li>
+    <li class="">
+      <a href="11. Demo eCommerce Starter Code.html">11. Demo: eCommerce Starter Code</a>
+    </li>
+    <li class="">
+      <a href="12. Demo Authentication and Authorization using JWT.html">12. Demo: Authentication and Authorization using JWT</a>
+    </li>
+    <li class="">
+      <a href="13. Troubleshooting Tips.html">13. Troubleshooting Tips</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">06. Hashing (SHA) Implementation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="implement-hashing-sha-256">Implement Hashing (SHA-256)</h2>
+<h3 id="messagedigest-class">MessageDigest class</h3>
+<p>The <code>java.security.MessageDigest</code> class provides us an easy implementation of the MD2, MD5, SHA-1, SHA-256, SHA-384, and SHA-512 algorithms. The following example shows the SHA-256 implementation by creating an instance of the MessageDigest class. For more details of the MessageDigest class, refer <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#MessageDigest" target="_blank">here</a>.</p>
+<h3 id="securerandom-class">SecureRandom class</h3>
+<p>Salting is done by using an instance of the <code>java.security.SecureRandom</code> class. Let's look at the steps:</p>
+<p>** Step 1 - Create a main method to call the custom <strong><code>createSalt()</code></strong> and <strong><code>get_SecurePassword()</code></strong> methods**</p>
+<pre><code>//Necessary imports
+import java.security.SecureRandom;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.MessageDigest;
+
+public class SaltExample {
+
+public static void main(String[] args)throws NoSuchAlgorithmException, NoSuchProviderException {
+  // A static String for the example
+  String passwordToHash = "myPassword";
+
+  // Create a salt
+  byte[] salt = createSalt();
+
+  // Create a hash
+  String securePassword = get_SecurePassword(passwordToHash, salt); 
+  System.out.println(securePassword); 
+ }
+}</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>** Step 2 - Create the <code>createSalt()</code> to return a byte array** </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <pre><code class="java language-java">// Method to generate a Salt
+private static byte[] createSalt() {
+  SecureRandom random = new SecureRandom();
+  byte[] salt = new byte[16];
+  random.nextBytes(salt);
+  return salt;
+ }</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>** Step 3 - Create the <code>get_SecurePassword()</code> to return a String** </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <pre><code class="java language-java">// Method to generate the hash. 
+//It takes a password and the Salt as input arguments
+private static String get_SecurePassword(String passwordToHash, byte[] salt){
+  String generatedPassword = null;
+  try {
+   MessageDigest md = MessageDigest.getInstance("SHA-256");
+   md.update(salt);
+   byte[] bytes = md.digest(passwordToHash.getBytes());
+   StringBuilder sb = new StringBuilder();
+   for(int i=0; i&lt; bytes.length ;i++)
+   {
+    sb.append(Integer.toString((bytes[i] &amp; 0xff) + 0x100, 16).substring(1));
+   }
+   generatedPassword = sb.toString();
+  } 
+  catch (NoSuchAlgorithmException e) {
+   e.printStackTrace();
+  }
+  return generatedPassword;
+ } </code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Exercise - Implement MD5</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>To get acquainted with the  MessageDigest class, use your text editor to implement the MD5 algorithm (in the same manner, as shown above), and compare the generated hash, with and without salt.</p>
+<p>Hint: Use <code>getInstance("MD5")</code></p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="ec6683a1-1359-4727-a660-e1f87d285c2b--0">
+        <label for="ec6683a1-1359-4727-a660-e1f87d285c2b--0"><p>Generate the MD5 hash without salt</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="ec6683a1-1359-4727-a660-e1f87d285c2b--1">
+        <label for="ec6683a1-1359-4727-a660-e1f87d285c2b--1"><p>Generate the MD5 hash with salt</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="ec6683a1-1359-4727-a660-e1f87d285c2b--2">
+        <label for="ec6683a1-1359-4727-a660-e1f87d285c2b--2"><p>Compare the MD5 hash value with the SHA-256 hash value</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Superb! It's time to use the built-in library methods to implement the bCrypt algorithm next.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="07. Hashing (bCrypt) Implementation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Hashing (SHA) Implementation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

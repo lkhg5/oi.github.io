@@ -1,0 +1,473 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Another Deployment</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>CI/CD</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. CICD.html">02. CI/CD</a>
+    </li>
+    <li class="">
+      <a href="03. Git.html">03. Git</a>
+    </li>
+    <li class="">
+      <a href="04. AWS.html">04. AWS</a>
+    </li>
+    <li class="">
+      <a href="05. EC2 - Launch an Instance.html">05. EC2 - Launch an Instance</a>
+    </li>
+    <li class="">
+      <a href="06. EC2 Dashboard.html">06. EC2 Dashboard</a>
+    </li>
+    <li class="">
+      <a href="07. EC2 - Connect to Linux Instance.html">07. EC2 - Connect to Linux Instance</a>
+    </li>
+    <li class="">
+      <a href="08. Monitor your AWS Costs and Credits.html">08. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="09. Docker.html">09. Docker</a>
+    </li>
+    <li class="">
+      <a href="10. Docker - II.html">10. Docker - II</a>
+    </li>
+    <li class="">
+      <a href="11. Jenkins.html">11. Jenkins</a>
+    </li>
+    <li class="">
+      <a href="12. Bringing it all Together.html">12. Bringing it all Together</a>
+    </li>
+    <li class="">
+      <a href="13. Deployment - I.html">13. Deployment - I</a>
+    </li>
+    <li class="">
+      <a href="14. Deployment - II.html">14. Deployment - II</a>
+    </li>
+    <li class="">
+      <a href="15. Deployment - III.html">15. Deployment - III</a>
+    </li>
+    <li class="">
+      <a href="16. Another Deployment.html">16. Another Deployment</a>
+    </li>
+    <li class="">
+      <a href="17. Conclusion.html">17. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">16. Another Deployment</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND035 C4 Security And DevOps Deploy 02a</p></h3>
+  <video controls>
+  <source src="16. ND035 C4 Security And DevOps Deploy 02a-6ywkbl8eNvY.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Recall that there were a few options to decide where to run the target Tomcat server. We have already seen how to run a Tomcat server in a new container residing on the <strong>same host EC2 instance</strong>, and deploy our application to it. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-15-at-1.45.43-pm.png" alt="System overarching diagram - I" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>System overarching diagram - I</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Now, let's consider one more possibility: Run the Tomcat in a new container residing on a <strong>new EC2 instance</strong>, and deploy our application to it. See the diagram below to understand the system-flow:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-15-at-2.17.04-pm.png" alt="System overarching diagram - II" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>System overarching diagram - II</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="todo-deploy-to-a-new-container-residing-on-a-new-ec2-instance">ToDo: Deploy to a new container residing on a NEW EC2 instance</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="1-launch-a-new-host-ec2-instance">1. Launch a new host EC2 instance</h4>
+<p>Launch a new EC2 instance, based on <code>Amazon Linux 2 AMI</code> and <code>t2.small</code>/<code>t2.micro</code>. Let's name it <strong>Host_2</strong>, assuming we already have Jenkins running inside a container on <em>Host_1</em>. </p>
+<h4 id="2-install-docker-on-ec2-instance">2. Install docker on EC2 instance</h4>
+<p>Connect to Host_2 using SSH, and install docker:</p>
+<pre><code class="bash language-bash"># update the existing packages
+sudo yum update
+sudo  yum install docker</code></pre>
+<h4 id="3-create-a-new-user-for-docker-management-and-add-that-user-to-docker-default-group">3. Create a new user for Docker management, and add that user to Docker (default) group.</h4>
+<pre><code class="bash language-bash">sudo useradd host2admin
+sudo passwd host2admin
+# Add the host2admin user to the "docker" user group 
+sudo usermod -aG docker host2admin
+# Add the $USER user to the "docker" user group. The current $USER is ec2-user
+sudo usermod -a -G docker $USER
+sudo reboot</code></pre>
+<h4 id="4-start-services">4. Start services</h4>
+<pre><code class="bash language-bash"># Reconnect using SSH. The public IP will change after reboot
+sudo service docker start
+# Verify that you can run docker commands without sudo.
+docker run hello-world</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C4 Security And DevOps Deploy 02b</p></h3>
+  <video controls>
+  <source src="16. ND035 C4 Security And DevOps Deploy 02b-nQIAgI9ycLY.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="5-write-a-dockerfile-under-optdocker-directory">5. Write a Dockerfile under /opt/docker/ directory</h4>
+<ul>
+<li>Create the /opt/docker/ directory</li>
+</ul>
+<pre><code class="bash language-bash">sudo su -
+cd /opt
+mkdir docker
+cd docker
+vi Dockerfile</code></pre>
+<ul>
+<li>Add the following to the new Dockerfile</li>
+</ul>
+<pre><code class="bash language-bash"># Pull base image 
+From tomcat:8-jre8 
+# Maintainer
+MAINTAINER "Udacity" 
+# copy war file on to container 
+COPY ./*.war /usr/local/tomcat/webapps</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="6-allow-jenkins-access-to-the-docker">6. Allow Jenkins' access to the Docker</h4>
+<p>Jenkins will attempt to write files in the Docker as the newly created user "host2admin". Therefore, enable the password-based authentication</p>
+<pre><code class="bash language-bash">vi /etc/ssh/sshd_config
+# Comment the passwordauthentication line
+sudo service sshd restart</code></pre>
+<p>Change ownership permissions, allowing the new user "host2admin" to write here</p>
+<pre><code class="bash language-bash"> chown -R host2admin:host2admin /opt/docker/
+ sudo service docker restart</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C4 Security And DevOps Deploy 02c</p></h3>
+  <video controls>
+  <source src="16. ND035 C4 Security And DevOps Deploy 02c-pKGj7WkAd2I.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="7-login-to-jenkins-console-and-add-docker-server-to-execute-commands-from-jenkins">7. Login to Jenkins console and add Docker server to execute commands from Jenkins</h4>
+<ul>
+<li>Manage Jenkins &#8594; Manager plugins &#8594; Install "<em>Publish over SSH</em>" plugin</li>
+<li>Manage Jenkins &#8594; Configure system &#8594;  Publish over SSH &#8594; Add the new host IP address and credentials of the newly created user</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-15-at-5.36.24-pm.png" alt="Go to *Configure system**, and provide details to publish over SSH" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Go to <em>Configure system</em>*, and provide details to publish over SSH</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="8-create-jenkins-job">8. Create Jenkins job</h4>
+<p>Create a new job, <strong>mySecondJob</strong> (Type: Maven project), and configure with the following details (leaving remaining details as default):</p>
+<ul>
+<li><p><strong>Source Code Management</strong><br><br />
+Repository : <a href="https://github.com/YOUR_USERNAME/nd035-c4-Security-and-DevOps" rel="noopener noreferrer" target="_blank">https://github.com/YOUR_USERNAME/nd035-c4-Security-and-DevOps</a> <br><br />
+Branches to build : */master  </p></li>
+
+<li><p><strong>Build</strong><br><br />
+Root POM: pom.xml  <br />
+Goals and options: clean install package  </p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li><strong>Post Steps</strong><br><br />
+Add post-build steps: Choose <strong>Send files or execute commands over SSH</strong><br><br />
+Name: Host_2 (Choose Verbose mode)<br><br />
+Source files: <code>webapp/target/*.war</code><br><br />
+Remove prefix: <code>webapp/target</code><br><br />
+Remote directory: <code>//opt//docker</code> <br> <br />
+Exec command[s]: </li>
+</ul>
+<pre><code class="bash language-bash">docker stop demo_container;  
+docker rm -f demo_container;
+docker stop demo_image;  
+docker rm -f demo_image; 
+docker image rm -f demo_image; 
+cd /opt/docker; 
+docker build -t demo_image .</code></pre>
+<p>The commands above will remove any existing container/image with the given name, and create a fresh new image, <code>demo_image</code>, inside the current <code>/opt/docker/</code> directory. Add another <strong>Transfer Set</strong>, and use the following execution command:</p>
+<pre><code class="bash language-bash">  docker run -d --name demo_container -p 8888:8080 demo_image</code></pre>
+<p><br />
+The command above will create a new container, <code>demo_container</code> using the <code>demo_image</code> created in the previous command. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-15-at-5.41.49-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-15-at-5.41.20-pm.png" alt="Transfer set - I" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Transfer set - I</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-15-at-5.41.31-pm.png" alt="Transfer set - II" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Transfer set - II</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C4 Security And DevOps Deploy 02d</p></h3>
+  <video controls>
+  <source src="16. ND035 C4 Security And DevOps Deploy 02d-I7dPatnsG6c.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="9-execute-jenkins-job">9. Execute Jenkins job</h4>
+<p>Check images and containers again on the <em>Host_2</em>. A new <em>demo_image</em> and <em>demo_container</em> will get created through the Jenkins job. </p>
+<h4 id="10-access-web-application-from-the-browser">10. Access web application from the browser</h4>
+<pre><code>&lt;Host_2_Public_IP&gt;:8888/myApp</code></pre>
+<p>There is nothing to display in the <em>/usr/local/tomcat/webapps/myApp</em> folder on Tomcat; therefore it will show you a <strong>404 error</strong>. But, if you use a wholly developed application, it will display the content accordingly. </p>
+<blockquote>
+  <p>Congratulations! You have set up your second DevOps pipeline. That's great!</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="17. Conclusion.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('16. Another Deployment')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

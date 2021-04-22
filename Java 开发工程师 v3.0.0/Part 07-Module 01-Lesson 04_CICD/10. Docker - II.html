@@ -1,0 +1,587 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Docker - II</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>CI/CD</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. CICD.html">02. CI/CD</a>
+    </li>
+    <li class="">
+      <a href="03. Git.html">03. Git</a>
+    </li>
+    <li class="">
+      <a href="04. AWS.html">04. AWS</a>
+    </li>
+    <li class="">
+      <a href="05. EC2 - Launch an Instance.html">05. EC2 - Launch an Instance</a>
+    </li>
+    <li class="">
+      <a href="06. EC2 Dashboard.html">06. EC2 Dashboard</a>
+    </li>
+    <li class="">
+      <a href="07. EC2 - Connect to Linux Instance.html">07. EC2 - Connect to Linux Instance</a>
+    </li>
+    <li class="">
+      <a href="08. Monitor your AWS Costs and Credits.html">08. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="09. Docker.html">09. Docker</a>
+    </li>
+    <li class="">
+      <a href="10. Docker - II.html">10. Docker - II</a>
+    </li>
+    <li class="">
+      <a href="11. Jenkins.html">11. Jenkins</a>
+    </li>
+    <li class="">
+      <a href="12. Bringing it all Together.html">12. Bringing it all Together</a>
+    </li>
+    <li class="">
+      <a href="13. Deployment - I.html">13. Deployment - I</a>
+    </li>
+    <li class="">
+      <a href="14. Deployment - II.html">14. Deployment - II</a>
+    </li>
+    <li class="">
+      <a href="15. Deployment - III.html">15. Deployment - III</a>
+    </li>
+    <li class="">
+      <a href="16. Another Deployment.html">16. Another Deployment</a>
+    </li>
+    <li class="">
+      <a href="17. Conclusion.html">17. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">10. Docker - II</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In our final demo, we will create and run a container in the EC2 instance. Therefore, let's practice a similar exercise to get acquainted. </p>
+<h2 id="todo-run-a-container-in-an-ec2-instance-linux">ToDo: Run a Container in an EC2 Instance (Linux)</h2>
+<p><br></p>
+<ol>
+<li><strong>Launch an EC2 instance</strong> <br></li>
+</ol>
+<ul>
+<li>Use the following configuration, and leave the remaining values as the defaults:</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="stage" style="text-align:center;">Stage</th>
+<th id="configuration">Configuration</th>
+<th id="value">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">1.</td>
+<td>Amazon Machine Image (AMI)</td>
+<td><code>Amazon Linux 2 AMI (HVM), SSD Volume Type</code><br> Note: You have chosen a <strong>Free Tier Eligible</strong> AMI</td>
+</tr>
+<tr>
+<td style="text-align:center;">2.</td>
+<td>Instance Type</td>
+<td><code>t2.micro</code></td>
+</tr>
+<tr>
+<td style="text-align:center;">3.</td>
+<td>Configure Instance Details</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center;"></td>
+<td>a. Number of Instances</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center;"></td>
+<td>b. Network</td>
+<td>Select the default VPC</td>
+</tr>
+<tr>
+<td style="text-align:center;"></td>
+<td>c. Subnet</td>
+<td>Default</td>
+</tr>
+<tr>
+<td style="text-align:center;"></td>
+<td>d. Auto-assign public IP</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td style="text-align:center;">4.</td>
+<td>Storage</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center;"></td>
+<td>a. Root volume</td>
+<td>Default</td>
+</tr>
+<tr>
+<td style="text-align:center;"></td>
+<td>a. Additional volume</td>
+<td>EBS volume <br>(8GiB, General purpose SSD-gp2, deletes on termination)</td>
+</tr>
+<tr>
+<td style="text-align:center;">5.</td>
+<td>Tags</td>
+<td>Name:CloudServer</td>
+</tr>
+<tr>
+<td style="text-align:center;">6.</td>
+<td>Security Group</td>
+<td>New. <br>Allow TCP traffic on port 80, and 8080 from anywhere. <br>Allow SSH traffic on port 22 from anywhere.</td>
+</tr>
+<tr>
+<td style="text-align:center;"></center></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The Security group will look like this:</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="type" style="text-align:center;">Type</th>
+<th id="protocol">Protocol</th>
+<th id="port">Port</th>
+<th id="source">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">SSH</td>
+<td>TCP</td>
+<td>22</td>
+<td><code>0.0.0.0/0</code></td>
+</tr>
+<tr>
+<td style="text-align:center;">Custom TCP</td>
+<td>TCP</td>
+<td>80</td>
+<td><code>0.0.0.0/0</code></td>
+</tr>
+<tr>
+<td style="text-align:center;">Custom TCP</td>
+<td>TCP</td>
+<td>8080</td>
+<td><code>0.0.0.0/0</code></td>
+</tr>
+<tr>
+<td style="text-align:center;"></center></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Generate and download a new key pair, at the last stage of the <strong>Launch Instance</strong> wizard. <br></li>
+</ul>
+<blockquote>
+  <p><strong>Important:</strong> This key-pair will allow you to log into your instance, using SSH, from your local machine. Save the key-pair carefully, because the same private key cannot be re-generated. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li><strong>Connect to your EC2 instance using SSH.</strong> </li>
+</ol>
+<ul>
+<li>Open the terminal, go to the folder where you have downloaded the key-pair (say <em>AWS_EC2_DemoKey.pem</em>) and run:</li>
+</ul>
+<pre><code>chmod 400 AWS_EC2_DemoKey.pem</code></pre>
+<p>If you are a Windows user, you will have to use the PuTTy utility to convert the <em>.pem</em> to <em>.ppk</em> and then SSH into your EC2 instance. </p>
+<ul>
+<li>SSH into your EC2 instance:</li>
+</ul>
+<pre><code>ssh -i "AWS_EC2_DemoKey.pem" ec2-user@ec2-18-224-137-188.us-east-2.compute.amazonaws.com</code></pre>
+<p>The IP address and key filename will be different in your case. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-5.39.36-pm.png" alt="SSH login steps" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>SSH login steps</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-5.44.00-pm.png" alt="A successful login to EC2 instance. See the prompt." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>A successful login to EC2 instance. See the prompt.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li><strong>Install Docker</strong><br><br />
+Run the following commands to install Docker:</li>
+</ol>
+<pre><code class="bash language-bash"># update the existing packages
+sudo yum update
+# download and install Docker
+sudo yum install docker
+# Add the $USER user to the "docker" user group 
+# The current $USER is ec2-user
+sudo usermod -a -G docker $USER
+sudo reboot</code></pre>
+<p>The last command above will reboot the EC2 instance, and hence, your connection will be closed. <strong>Reconnect to your EC2 instance after 2 minutes,</strong> using the same SSH command:</p>
+<pre><code class="bash language-bash">ssh -i "AWS_EC2_DemoKey.pem" ec2-user@ec2-18-224-137-188.us-east-2.compute.amazonaws.com</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li><p><strong>Create and run your first Container</strong><br><br />
+Jenkins community provides various (open-source) images that anyone can use to create and run containers. Using images bypasses the need to write a Dockerfile. </p>
+<p>We will take a pre-created Apache server image, <code>httpd</code>, available in the <a href="https://hub.docker.com/_/httpd?tab=description&page=1&ordering=last_updated" rel="noopener noreferrer" target="_blank">Docker hub here</a>, as shown in the snapshots below.  </p></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-8.26.07-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-8.26.51-pm.png" alt="We are using *Option 2* to use this image. Though, you can view the corresponding Dockerfile in *Option 1*. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>We are using <em>Option 2</em> to use this image. Though, you can view the corresponding Dockerfile in <em>Option 1</em>. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li>Run the following commands to start the Docker:</li>
+</ul>
+<pre><code class="bash language-bash"># start Docker service
+sudo service docker start
+# Check if the Docker engine is running
+systemctl show --property ActiveState docker</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li>Create and run a container from an existing image. Run this command in in the EC2 instance's terminal:</li>
+</ul>
+<pre><code class="bash language-bash">docker run -dit --name myApacheServer -p 8080:80 -v apacheData:/usr/local/apache2/htdocs/ -v myPages:/var/www/html httpd:2.4
+# Check the currently running containers
+docker ps</code></pre>
+<p>The command above will automatically <code>pull</code> the <code>httpd:2.4</code> image from the DockerHub to the EC2 instance, meaning it will perform the job of the following command:</p>
+<pre><code class="bash language-bash">docker pull httpd:2.4</code></pre>
+<p>The various options used in the command above are:</p>
+<ul>
+<li><p>--name create a name for your container</p></li>
+<li><p>-p specifies port on which the Apache server will run</p></li>
+<li><p>-d detached mode, meaning run the container in the background</p></li>
+<li><p>-v will bind a volume to persist the data of the Apache server. This is important because when we will restart the container, we would want the Apache related data (configuration, user-data, plugins) to be present there. </p>
+<p>Then, check the output in your local browser, by copy-pasting the EC2 instance's public IP and appending with (Apache's) default port 8080. </p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-8.31.19-pm.png" alt="Output at **http://18.224.137.188:8080/**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Output at <strong><a href="http://18.224.137.188:8080/" rel="noopener noreferrer" target="_blank">http://18.224.137.188:8080/</a></strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li><strong>Serve a custom HTML page</strong><br><br />
+Apache server can serve your custom HTML page. We have provided a <strong>sample.html</strong> file in the Resources section of the current page, that you can download and use along with the commands below. </li>
+</ol>
+<ul>
+<li><p>Download the <em>sample.html</em> file from Udacity classroom page to your local machine. <br><br></p></li>
+<li><p>Copy the <em>sample.html</em> file from your local computer to the EC2 instance. <strong>Run this command from your local terminal</strong>:</p></li>
+</ul>
+<pre><code>scp -i AWS_EC2_DemoKey.pem sample.html ec2-user@18.224.137.188:/home/ec2-user/sample.html</code></pre>
+<p>Of course, replace the IP address, as applicable to you. <br><br></p>
+<ul>
+<li>Copy the <em>sample.html</em> from EC2 instance to the currently running container at the default path for Apache server. <strong>Run this command from EC2 instance's terminal</strong>:</li>
+</ul>
+<pre><code class="bash language-bash"># Check if you have the file in your root directory
+ls
+# Check the currently running containers
+docker ps
+# Copy the container ID and use it in the command below
+docker cp sample.html 5b5b034f995c:/usr/local/apache2/htdocs/sample.html</code></pre>
+<ul>
+<li>Check the output at <code>&lt;Public IP of the EC2 instance&gt;:8080/sample.html</code></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-8.54.21-pm.png" alt="Check if the container is running using &#x60;docker ps&#x60; command" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Check if the container is running using <code>docker ps</code> command</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-10-at-8.30.07-pm.png" alt="Output at **http://18.224.137.188:8080/sample.html**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Output at <strong><a href="http://18.224.137.188:8080/sample.html" rel="noopener noreferrer" target="_blank">http://18.224.137.188:8080/sample.html</a></strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li><strong>Stop Container and Docker</strong><br><br />
+Stop a particular container using its ID.</li>
+</ol>
+<pre><code class="bash language-bash"># Stop
+docker stop &lt;container_ID&gt;
+# Remove
+docker container rm &lt;container_ID&gt;</code></pre>
+<p><br />
+Stop the docker services using the commands:</p>
+<pre><code class="bash language-bash">sudo service docker stop</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="useful-tip">Useful Tip</h3>
+<p>Beyond this exercise, if you want to run any command in the container, then you have two options to do so:</p>
+<ol>
+<li><strong>Use bash shell into the container</strong><br><br />
+Find the container name/ID using <code>docker ps</code> command, and run:</li>
+</ol>
+<pre><code class="bash language-bash"># Use "docker exec -it &lt;container name&gt; bash"
+docker exec -it myContainer bash
+# Install Maven dependency
+apk add maven</code></pre>
+<p><br><br></p>
+<ol start="2">
+<li><strong>User <code>docker exec</code> command</strong><br><br />
+Find the container ID using <code>docker ps</code> command, and run:</li>
+</ol>
+<pre><code class="bash language-bash">docker exec -it 5b5b034f995c  &lt;command&gt; </code></pre>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="11. Jenkins.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Docker - II')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

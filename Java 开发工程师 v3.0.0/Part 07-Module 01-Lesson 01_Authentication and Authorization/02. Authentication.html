@@ -1,0 +1,354 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Authentication</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Authentication and Authorization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Course Overview.html">01. Course Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Authentication.html">02. Authentication</a>
+    </li>
+    <li class="">
+      <a href="03. Points to Consider.html">03. Points to Consider</a>
+    </li>
+    <li class="">
+      <a href="04. Hashing.html">04. Hashing</a>
+    </li>
+    <li class="">
+      <a href="05. Salting.html">05. Salting</a>
+    </li>
+    <li class="">
+      <a href="06. Hashing (SHA) Implementation.html">06. Hashing (SHA) Implementation</a>
+    </li>
+    <li class="">
+      <a href="07. Hashing (bCrypt) Implementation.html">07. Hashing (bCrypt) Implementation</a>
+    </li>
+    <li class="">
+      <a href="08. Authorization.html">08. Authorization</a>
+    </li>
+    <li class="">
+      <a href="09. JWTs.html">09. JWTs</a>
+    </li>
+    <li class="">
+      <a href="10. JWT Quiz.html">10. JWT Quiz</a>
+    </li>
+    <li class="">
+      <a href="11. Demo eCommerce Starter Code.html">11. Demo: eCommerce Starter Code</a>
+    </li>
+    <li class="">
+      <a href="12. Demo Authentication and Authorization using JWT.html">12. Demo: Authentication and Authorization using JWT</a>
+    </li>
+    <li class="">
+      <a href="13. Troubleshooting Tips.html">13. Troubleshooting Tips</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Authentication</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND035 C04 L01 A01.1 Authentication And Authorization</p></h3>
+  <video controls>
+  <source src="02. ND035 C04 L01 A01.1 Authentication And Authorization-XZgBIIs2Qeg.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND035 C04 L01 A01.1 Authentication And Authorization-XZgBIIs2Qeg.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>After completing this lesson, you will be able to …</p>
+<ul>
+<li>Explain the fundamentals of authentication and authorization </li>
+<li>Implement the hashing and salting techniques, such as bCrypt, and SHA-256</li>
+<li>Make use of JSON Web Tokens (JWTs) for authentication in your Spring application</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Why does authentication matter?</p></h3>
+  <div>
+  <h2 id="why-bother">Why bother?</h2>
+<p>Data breaches are on the rise and are expensive. According to the <a href="https://www.capita.com/sites/g/files/nginej146/files/2020-08/Ponemon-Global-Cost-of-Data-Breach-Study-2020.pdf" target="_blank">Cost of a Data Breach Report 2020</a> by IBM based on research conducted with 524 organizations worldwide, the following key-findings will intrigue you:</p>
+<ul>
+<li>The malicious attack contributes to more than 50% of the data breach root cause, and it is the most expensive one. </li>
+<li>The average total cost of a data breach in the US has been estimated to be $7.9 million, and $3.86 million on average worldwide. (10% increase since 2014)</li>
+<li>Data breaches are becoming harder to track and locate. In 2020, the average amount of time to identify that a breach had occurred was 280 days. </li>
+</ul>
+<p>The more straightforward solution is to try to prevent breaches before they can occur; therefore, authentication and authorization are critical.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="what-is-authentication">What is Authentication?</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L01 A01.2 Authentication And Authorization</p></h3>
+  <video controls>
+  <source src="02. ND035 C04 L01 A01.2 Authentication And Authorization-J6CfBpoUGj4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND035 C04 L01 A01.2 Authentication And Authorization-J6CfBpoUGj4.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>What is Authentication - Definition</p></h3>
+  <div>
+  <p>Authentication confirms your identity. It is a process that proves that you are the person who you say you are. In the digital world, the most common way to authenticate is to use a username and password. For example, while logging into your eCommerce account, you prove your identity by providing an email and a password, sometimes followed by an OTP or a second factor. There are many other ways to authenticate, and these are depicted in the figure below.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Common Mechanisms  for Authorization</p></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/authentication.png" alt="Common Methods for Authentication" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Common Methods for Authentication</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>What is Authentication? Heading</p></h3>
+  <div>
+  <h3 id="common-mechanisms-for-authentication">Common Mechanisms for Authentication</h3>
+<ul>
+<li><p><strong>Token-based authentication</strong> - It is a temporary credential that you (client) have which proves your identity. Read more <a href="https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication" target="_blank">here</a>. Note: we do use this later in the form of JWT, but we first authenticate with the username and password, then send the token on each subsequent request.</p></li>
+<li><p><strong>OAuth</strong> - is an industry-standard protocol for authorization that provides a token on your behalf once you’ve authenticated to the external service. Read more <a href="https://auth0.com/docs/protocols/oauth2" target="_blank">here</a>.  For example, if you've ever seen a "Sign in with Google/Facebook/etc", this is likely done using OAuth.</p></li>
+<li><p><strong>Time-based token</strong> (TOTP) - a token is generated with something only you know. This token changes after some time period. Read more <a href="https://www.freecodecamp.org/news/how-time-based-one-time-passwords-work-and-why-you-should-use-them-in-your-app-fdd2b9ed43c3/" target="_blank">here</a>. This is very commonly used in Two Factor Authentication as the 2nd factor. If you have random codes you need to enter, they may have been generated using this scheme.</p></li>
+<li><p><strong>Biometric authentication</strong> such as Fingerprint or Facial recognition (popular on smartphones). Most of the standard mechanisms for authentication utilizes either of the following two "Network authentication protocols": i). Kerberos, and ii). Secure Sockets Layer (SSL) / Transport Layer Security (TLS).</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>What is authentication?</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p><strong>Authentication</strong> is all about…</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="900725" id="rbk1">
+        <label for="rbk1"><p>Determining what a user is allowed to access.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="900725" id="rbk2">
+        <label for="rbk2"><p>Proving that you are the person you say you are.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Proving that you are the person you say you are.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Checkbox Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following are examples of authentication?  <br />
+(Select all that apply.)</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="907199" id="rbk1">
+      <label for="rbk1"><p>Photo ID</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="907199" id="rbk2">
+      <label for="rbk2"><p>Social Security card</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="907199" id="rbk3">
+      <label for="rbk3"><p>Biometric screening (e.g., fingerprints, facial recognition, etc.)</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="907199" id="rbk4">
+      <label for="rbk4"><p>Username and password</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Photo ID</li>
+      <li>Social Security card</li>
+      <li>Biometric screening (e.g., fingerprints, facial recognition, etc.)</li>
+      <li>Username and password</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr>
+<h3 id="more-to-explore---network-authentication-protocols">More to Explore - Network Authentication Protocols</h3>
+<p>Kerberos provides secure authentication for client/server applications by using secret-key cryptography. Here are some links on Kerberos <a href="https://www.kerberos.org/docs/index.html" target="_blank">here</a>. On the other hand, SSL/TLS uses a cryptographic system that uses two keys to encrypt data − a public key known to everyone and a private or secret key known only to the recipient of the message. A typical example is an HTTPS website that utilizes SSL/TLS certificate that is signed by a publicly trusted Certifying Authority. Here is a  resource for SSL/TLS <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">here</a>.</p>
+<p>Details about these "Network authentication protocols" are beyond the scope of this lesson.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Points to Consider.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Authentication')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

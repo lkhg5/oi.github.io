@@ -1,0 +1,606 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bringing it all Together</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>CI/CD</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. CICD.html">02. CI/CD</a>
+    </li>
+    <li class="">
+      <a href="03. Git.html">03. Git</a>
+    </li>
+    <li class="">
+      <a href="04. AWS.html">04. AWS</a>
+    </li>
+    <li class="">
+      <a href="05. EC2 - Launch an Instance.html">05. EC2 - Launch an Instance</a>
+    </li>
+    <li class="">
+      <a href="06. EC2 Dashboard.html">06. EC2 Dashboard</a>
+    </li>
+    <li class="">
+      <a href="07. EC2 - Connect to Linux Instance.html">07. EC2 - Connect to Linux Instance</a>
+    </li>
+    <li class="">
+      <a href="08. Monitor your AWS Costs and Credits.html">08. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="09. Docker.html">09. Docker</a>
+    </li>
+    <li class="">
+      <a href="10. Docker - II.html">10. Docker - II</a>
+    </li>
+    <li class="">
+      <a href="11. Jenkins.html">11. Jenkins</a>
+    </li>
+    <li class="">
+      <a href="12. Bringing it all Together.html">12. Bringing it all Together</a>
+    </li>
+    <li class="">
+      <a href="13. Deployment - I.html">13. Deployment - I</a>
+    </li>
+    <li class="">
+      <a href="14. Deployment - II.html">14. Deployment - II</a>
+    </li>
+    <li class="">
+      <a href="15. Deployment - III.html">15. Deployment - III</a>
+    </li>
+    <li class="">
+      <a href="16. Another Deployment.html">16. Another Deployment</a>
+    </li>
+    <li class="">
+      <a href="17. Conclusion.html">17. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">12. Bringing it all Together</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h1 id="bringing-it-all-together">Bringing it all together</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L05 A06 Product Development Phases Problem Set V2</p></h3>
+  <video controls>
+  <source src="12. ND035 C04 L05 A06 Product Development Phases Problem Set V2-fNB2EFivAwY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="12. ND035 C04 L05 A06 Product Development Phases Problem Set V2-fNB2EFivAwY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The following steps are demonstrated in the video above:</p>
+<ol>
+<li><strong>Launch an AWS EC2 instance</strong><br> <br />
+Using <em>Amazon Linux 2 AMI</em> and <em>t2.micro</em> instance type. This EC2 instance would already have the Docker package available on it. In addition, choose the following configuration:</li>
+</ol>
+<ul>
+<li>Choose a default VPC, public subnet, and enable the auto-assign public IP</li>
+<li>For the security group, allow TCP traffic on port 80 and 8080, and SSH traffic on port 22 from anywhere. Leave the remaining values as the defaults. </li>
+<li>Download a new key-pair or use the existing one. </li>
+</ul>
+<ol>
+<li><strong>Connect to the EC2 instance</strong><br> <br />
+Use SSH to connect to your Linux EC2 instance:</li>
+</ol>
+<pre><code class="bash language-bash"># Assuming the key name is AWS_EC2_DemoKey.pem available in the pwd
+chmod 400 AWS_EC2_DemoKey.pem
+# Assuming the public DNS is: ec2-18-221-37-196.us-east-2.compute.amazonaws.com
+ssh -i "AWS_EC2_DemoKey.pem" ec2-user@ec2-18-221-37-196.us-east-2.compute.amazonaws.com</code></pre>
+<ol start="3">
+<li><strong>Install Docker</strong><br> <br />
+After successful connection, install the Docker, add the current user to the user-group, and reboot:</li>
+</ol>
+<pre><code class="bash language-bash"># update the existing packages
+sudo yum update
+# download and install Docker
+sudo yum install docker
+# Add the $USER user to the "docker" user group 
+# The current $USER is ec2-user
+sudo usermod -a -G docker $USER
+sudo reboot</code></pre>
+<p>The last command above will reboot the EC2 instance, and hence, your connection will be closed. Reconnect to your EC2 instance after 2 minutes, using the same SSH command as used in the previous step. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-12.46.59-pm.png" alt="The [jenkinsci/blueocean](https://hub.docker.com/r/jenkinsci/blueocean/) Docker image in Docker hub" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>The <a href="https://hub.docker.com/r/jenkinsci/blueocean/" rel="noopener noreferrer" target="_blank">jenkinsci/blueocean</a> Docker image in Docker hub</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li><strong>Create and run your Container</strong><br><br />
+In this final demo, we are using another Docker image, <a href="https://hub.docker.com/r/jenkinsci/blueocean/" rel="noopener noreferrer" target="_blank">jenkinsci/blueocean</a>, so that you do not have to write any Dockerfile. Let' start the Docker, create and run a container from this image. </li>
+</ol>
+<pre><code class="bash language-bash"># start Docker service
+sudo service docker start
+# Check if the Docker engine is running
+systemctl show --property ActiveState docker
+# Create and run a new Container using the "jenkinsci/blueocean" image
+docker run -u root -d --name myContainer -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home jenkinsci/blueocean</code></pre>
+<p>In the command above, the various options are:</p>
+<ul>
+<li><p>--name create a name for your container, say <strong>myContainer</strong>. However, the demo has shown the <strong>jenkins</strong> as container name. </p></li>
+<li><p>-p specifies a port on which the Jenkins server will run. Basically, <code>-p 8080:8080</code> mapping 8080 of the host (EC2 instance) to the 8080 of the container. </p></li>
+<li><p>-d detached mode, meaning the container will run in the background</p></li>
+<li><p>-v is binding a volume to persist the data of the Jenkins server. This is important because when we will restart the container, we would want the Jenkins related data (configuration, user-data, plugins) to be present there. We are binding three volumes.</p></li>
+<li><p><code>-v jenkins-data:/var/jenkins_home</code> is the first volume as the default home directory of Jenkins</p></li>
+<li><p><code>-v "$HOME":/home</code> is the second volume for user-specific data</p></li>
+<li><p><code>-v /var/run/docker.sock:/var/run/docker.sock</code> is the third volume where we have defined a docker socket in the container. This one will help to execute docker commands from within the container. Have a look at this <a href="https://stackoverflow.com/questions/35110146/can-anyone-explain-docker-sock#:~:text=137-,docker.,defaults%20to%20use%20UNIX%20socket.&text=There%20might%20be%20different%20reasons,Docker%20socket%20inside%20a%20container." rel="noopener noreferrer" target="_blank">discussion</a> for more details. </p>
+<p>At this stage, the Jenkins console will come up on the 8080 port, say <strong><a href="http://18.221.37.196:8080" rel="noopener noreferrer" target="_blank">http://18.221.37.196:8080</a></strong> in your local browser. <strong>But, we need to generate an additional RSA key-pair (public and private) to secure the pipeline. We will place the public key in the Github account, and private key in the Jenkins console.</strong></p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-1.11.35-pm.png" alt="Start Docker, and run a container" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Start Docker, and run a container</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li><strong>Create an RSA key pair inside the container</strong><br><br />
+Before login into the Jenkins console, let's create an RSA key pair inside the container. Recall that if you want to run any command inside of the container, then you first open a bash shell into the container, as shown below:</li>
+</ol>
+<pre><code class="bash language-bash"># Open a shell into myContainer. The container name may vary in your case
+docker exec -it myContainer bash
+# Since our project is a Maven project, we need to install Maven in the container
+apk add maven
+# Generate RSA key-pair. It will generate a public and private key. 
+# We will place the public key in the Github account, and the private key in the Jenkins console
+ssh-keygen -t rsa
+# View the private key
+cat /root/.ssh/id_rsa
+# View the pubic key 
+ cat /root/.ssh/id_rsa.pub</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-1.13.53-pm.png" alt="First-time admin login to Jenkins console at EC2 instance&#x27;s public IP appended with 8080 port. (Say, **http://18.221.37.196:8080**). The IP address will vary in your case. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>First-time admin login to Jenkins console at EC2 instance's public IP appended with 8080 port. (Say, **<a href="http://18.221.37.196:8080**)" rel="noopener noreferrer" target="_blank">http://18.221.37.196:8080**)</a>. The IP address will vary in your case. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li><strong>Admin login to Jenkins console</strong><br></li>
+</ol>
+<ul>
+<li>Go to the AWS dashboard to copy the public IP address of your Linux EC2 instance. Paste the public IP address into your browser, and append with <code>:8080</code> port. For the first time, it will open up the Jenkins console GUI. It will ask you the admin password for the first-time.</li>
+<li>The Jenkins admins password can be found at two places, in the host EC2 instance, and inside the container. </li>
+</ul>
+<pre><code class="bash language-bash"># Run the following commands in the host EC2 instance's terminal
+docker ps
+# Use the container ID from the command above
+docker logs &lt;conatiner_id&gt;</code></pre>
+<p>Since our Jenkins server is running inside of the container, therefore the admin password will also be stored there as well. </p>
+<pre><code class="bash language-bash"># Open the bash into the container
+docker exec -it myContainer bash
+# View the file
+cat /var/jenkins_home/secrets/initialAdminPassword</code></pre>
+<ul>
+<li>Paste the admin password into the Jenkins console, say <a href="http://18.221.37.196:8080" rel="noopener noreferrer" target="_blank">http://18.221.37.196:8080</a> in your local browser, install the suggested plugins, and create the admin account. See the snapshots below. </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-1.51.38-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-1.51.48-pm.png" alt="Admin password in the logs of the host EC2 instance. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Admin password in the logs of the host EC2 instance. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-1.52.20-pm.png" alt="Admin password inside the container" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Admin password inside the container</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-2.03.46-pm.png" alt="Jenkins dashboard" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Jenkins dashboard</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="7">
+<li><strong>Add private key to Jenkins global credentials</strong><br><br />
+At the Jenkins console, go to <strong>Manage Jenkins</strong> &#8594; <strong>Manage Credentials</strong> &#8594;    <strong>Global credentials</strong> to create an SSH username and paste the private key. Recall that you can view the private key from the <strong>bash into the container</strong> as:</li>
+</ol>
+<pre><code class="bash language-bash"># Open the bash into the container, if you have exited from the bash
+docker exec -it myContainer bash
+# View the private key
+cat /root/.ssh/id_rsa</code></pre>
+<p>See the snapshots below. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-2.12.45-pm.png" alt="**Manage Jenkins** &amp;#8594; **Manage Credentials**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><strong>Manage Jenkins</strong> &#8594; <strong>Manage Credentials</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-2.13.23-pm.png" alt="Create a new **Global credential**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Create a new <strong>Global credential</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-2.15.51-pm.png" alt="Paste the private key here. Note the **Kind** of credentials above. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Paste the private key here. Note the <strong>Kind</strong> of credentials above. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="8">
+<li><strong>Add public key to Github repository</strong><br><br />
+Let's add the corresponding public key into the Github repository. Note that this is a good practice to use a pair of a public-private key. Go to the <strong>repository in your Github account</strong> &#8594; <strong>Settings</strong> &#8594; <strong>Deploy keys</strong> page. Paste the public key here. Recall that you can view the public key from the <strong>bash into the container</strong> as:</li>
+</ol>
+<pre><code class="bash language-bash"># View the pubic key 
+cat /root/.ssh/id_rsa.pub</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-2.35.38-pm.png" alt="Go to Deploy keys settings" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Go to Deploy keys settings</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-2.36.36-pm.png" alt="Add the public key" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Add the public key</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>9 ** Jenkins console: Create and build the first Job**</p>
+<ul>
+<li>Create the <strong>Freestyle project</strong> type job, say <strong>myFirstJob</strong>, or choose any other name. Enter the details as mentioned below:</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="**tab**"><strong>Tab</strong></th>
+<th id="**field**"><strong>Field</strong></th>
+<th id="**value**"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General</td>
+<td>Github project</td>
+<td>Provide your Github repository URL</td>
+</tr>
+<tr>
+<td>Source Code Management</td>
+<td>Git</td>
+<td>Check</td>
+</tr>
+<tr>
+<td></td>
+<td>Repository URL</td>
+<td>Provide your Github repository URL</td>
+</tr>
+<tr>
+<td></td>
+<td>Credentials</td>
+<td>Choose the one you've created in the Global credentials</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>Add build step</td>
+<td>Invoke top-level Maven targets</td>
+</tr>
+<tr>
+<td></td>
+<td>Goals</td>
+<td><code>package</code></td>
+</tr>
+<tr>
+<td></td>
+<td>POM</td>
+<td>Specify the POM file path relative to your repository home, such as <br> <code>starter_code/pom.xml</code></td>
+</tr>
+<tr>
+<td></center></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Save the job, and click on the "Build Now" option.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-11-at-5.07.15-pm.png" alt="Build success" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Build success</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L05 A07 Outro</p></h3>
+  <video controls>
+  <source src="12. ND035 C04 L05 A07 Outro--4gG1POAdZA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="12. ND035 C04 L05 A07 Outro--4gG1POAdZA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="13. Deployment - I.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Bringing it all Together')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

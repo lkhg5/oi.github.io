@@ -1,0 +1,556 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.530
+Let's write a test for our user controller class.
+
+00:00:04.530 --> 00:00:08.310
+So this controller class is what we will be writing the test for.
+
+00:00:08.310 --> 00:00:12.990
+So like we had mentioned earlier that I'm
+
+00:00:12.990 --> 00:00:18.120
+going to create a folder called controllers under the test demo package,
+
+00:00:18.120 --> 00:00:21.660
+and that's where I'm going to write a user controller test,
+
+00:00:21.660 --> 00:00:24.270
+because that is how we would do it.
+
+00:00:24.270 --> 00:00:31.665
+So controllers and what I'm going to
+
+00:00:31.665 --> 00:00:40.515
+do is I'm going to add a test class called user controller test.
+
+00:00:40.515 --> 00:00:46.895
+So here we'll learn a few more concepts or details of a mocks.
+
+00:00:46.895 --> 00:00:54.330
+So the first thing that I need to do is I need to create an object of user controller.
+
+00:00:54.330 --> 00:01:00.110
+The reason why I want to do that is I want to be able to use this object to
+
+00:01:00.110 --> 00:01:06.555
+call the methods of the userController class and verify them or test them.
+
+00:01:06.555 --> 00:01:13.255
+So the other thing that I'm going to need is a user repository.
+
+00:01:13.255 --> 00:01:20.830
+So I have the userRepository and I will call it userRepo.
+
+00:01:21.830 --> 00:01:27.405
+Now I'm going to call mock on this.
+
+00:01:27.405 --> 00:01:32.900
+So remember we had mentioned that mocks is going to replace
+
+00:01:32.900 --> 00:01:38.509
+the actual instance or the actual resource connection or the resource,
+
+00:01:38.509 --> 00:01:40.370
+so that is exactly what I'm doing.
+
+00:01:40.370 --> 00:01:45.725
+So this line is going to create a mock object, in here.
+
+00:01:45.725 --> 00:01:48.515
+So it will not create a real object to user repository,
+
+00:01:48.515 --> 00:01:50.375
+and that's how you create mocks.
+
+00:01:50.375 --> 00:01:52.880
+So I press option return again.
+
+00:01:52.880 --> 00:01:58.305
+That is a shortcut for interlogy for importing the mock or any other imports,
+
+00:01:58.305 --> 00:02:05.595
+and the other class I'm going to need is Cartcontroller.
+
+00:02:05.595 --> 00:02:09.645
+I apologize it's going to be CartRepository.
+
+00:02:09.645 --> 00:02:13.725
+So I'm going to call it CartRepository,
+
+00:02:13.725 --> 00:02:22.570
+and I'm going to mock that as a type too fast, CartRepository.class.
+
+00:02:27.170 --> 00:02:32.230
+The next thing that I would do is I'm going to write a before method.
+
+00:02:33.380 --> 00:02:41.465
+As you remember, before method is called before every single test method.
+
+00:02:41.465 --> 00:02:45.490
+So here I have done half the work for you,
+
+00:02:45.490 --> 00:02:49.475
+so when you write the rest of the test cases here,
+
+00:02:49.475 --> 00:02:53.825
+it's going to be used for them as well.
+
+00:02:53.825 --> 00:02:55.535
+So in this setup,
+
+00:02:55.535 --> 00:03:00.050
+what I'm going to do is I'm going to create
+
+00:03:00.050 --> 00:03:06.485
+all the things or all the objects that need to be run before every method.
+
+00:03:06.485 --> 00:03:16.260
+Let's say that I want to create a test and the test is create user happy path.
+
+00:03:16.260 --> 00:03:20.990
+Now this is something that you would hear a lot of times in testing.
+
+00:03:20.990 --> 00:03:23.000
+It's called happy path,
+
+00:03:23.000 --> 00:03:28.250
+and what that means is that it is the happy use-case,
+
+00:03:28.250 --> 00:03:30.020
+or the positive use case,
+
+00:03:30.020 --> 00:03:34.670
+or the very bare minimum positive use case that we need to run.
+
+00:03:34.670 --> 00:03:38.135
+So this falls in the sanity case again,
+
+00:03:38.135 --> 00:03:40.070
+and I'm going to,
+
+00:03:40.070 --> 00:03:46.355
+so the reason why I added exception is because IntelliJ prompted me to do that,
+
+00:03:46.355 --> 00:03:48.610
+so this is my test method.
+
+00:03:48.610 --> 00:03:54.250
+So what I'm going to do here is I'm going to,
+
+00:03:54.250 --> 00:03:58.585
+first of all, create an encoder.
+
+00:03:58.585 --> 00:04:03.985
+So let me show you what I'm trying to do here.
+
+00:04:03.985 --> 00:04:07.330
+So the create user method,
+
+00:04:07.330 --> 00:04:10.985
+this is what we're trying to test.
+
+00:04:10.985 --> 00:04:14.490
+So let's look at it,
+
+00:04:14.490 --> 00:04:16.949
+what it does is that it creates a user,
+
+00:04:16.949 --> 00:04:18.120
+it sets the username,
+
+00:04:18.120 --> 00:04:19.200
+it creates a card,
+
+00:04:19.200 --> 00:04:20.835
+it takes for password,
+
+00:04:20.835 --> 00:04:22.239
+it sets the password,
+
+00:04:22.239 --> 00:04:24.370
+sets the card and then saves it.
+
+00:04:24.370 --> 00:04:31.970
+So let's create one happy case where we would be doing all of this.
+
+00:04:31.970 --> 00:04:36.490
+So here we're going to create a user request,
+
+00:04:37.050 --> 00:04:42.450
+and I'm going to call it r for short right now.
+
+00:04:42.450 --> 00:04:45.270
+New create user.
+
+00:04:45.270 --> 00:04:47.500
+It's going to create an instance of it,
+
+00:04:47.500 --> 00:04:50.035
+I'm going to set the password.
+
+00:04:50.035 --> 00:04:55.920
+Actually, I'm going to set the username first and let me call the test,
+
+00:04:55.920 --> 00:04:59.110
+and I'm going to set the password as well.
+
+00:04:59.450 --> 00:05:04.600
+Let me call this Test Password.
+
+00:05:05.000 --> 00:05:09.040
+There is another field that I need to populate,
+
+00:05:09.040 --> 00:05:10.735
+which is confirm password,
+
+00:05:10.735 --> 00:05:13.700
+which is the same as the set password,
+
+00:05:13.700 --> 00:05:15.765
+sorry, which is the same as the password.
+
+00:05:15.765 --> 00:05:17.740
+So I set all the three values here.
+
+00:05:17.740 --> 00:05:21.235
+Now what I'm going to do is I need a response,
+
+00:05:21.235 --> 00:05:23.380
+so I'm going to use the user controller and
+
+00:05:23.380 --> 00:05:25.840
+call the actual method that we will be testing,
+
+00:05:25.840 --> 00:05:27.865
+which is the createUser.
+
+00:05:27.865 --> 00:05:35.620
+I'm now going to assign this to a variable and I'm going to call it response.
+
+00:05:35.620 --> 00:05:39.580
+So as IntelliJ prompted me to make it final,
+
+00:05:39.580 --> 00:05:41.225
+I'm going to make it final.
+
+00:05:41.225 --> 00:05:46.315
+Now I'm going to pass the object that I just created,
+
+00:05:46.315 --> 00:05:52.430
+which is r. The reason why I added r is because I wanted to show another concept that,
+
+00:05:52.430 --> 00:05:54.370
+or another feature of IntelliJ,
+
+00:05:54.370 --> 00:05:55.915
+but I would do it at the end.
+
+00:05:55.915 --> 00:05:57.594
+So now I have response,
+
+00:05:57.594 --> 00:06:02.615
+and what I can do is I can now run assertions on this response.
+
+00:06:02.615 --> 00:06:05.560
+So I have assert NotNull,
+
+00:06:05.560 --> 00:06:09.365
+and what I'm going to do is I'm going to put response in it,
+
+00:06:09.365 --> 00:06:15.915
+and I would add the junit assertNotNull in here.
+
+00:06:15.915 --> 00:06:21.800
+The next thing that I want to assert is that my request was successful,
+
+00:06:21.800 --> 00:06:23.750
+which means that I got a 200,
+
+00:06:23.750 --> 00:06:26.750
+200 HTTP response status code.
+
+00:06:26.750 --> 00:06:35.385
+So I'm going to assert equals 200, which is the expected,
+
+00:06:35.385 --> 00:06:40.570
+and the next one is going to be the actual so response.getStatusCodeValue,
+
+00:06:43.310 --> 00:06:46.110
+and I imported that as well.
+
+00:06:46.110 --> 00:06:51.880
+The next thing that I can assert here is something from the user section.
+
+00:06:51.880 --> 00:06:56.090
+So I'm going to get the user and I'm going to create an object out of it,
+
+00:06:56.090 --> 00:06:58.955
+and I'm going to get the response,
+
+00:06:58.955 --> 00:07:00.535
+get it's a body,
+
+00:07:00.535 --> 00:07:03.020
+and now I have the user body,
+
+00:07:03.020 --> 00:07:05.630
+sorry, the response body or the user.
+
+00:07:05.630 --> 00:07:09.920
+What I'm going to do is I'm going to run some more assertions on that,
+
+00:07:09.920 --> 00:07:14.710
+which is assertNotNull on the user,
+
+00:07:14.710 --> 00:07:19.690
+so and then I can run a assertNotEquals,
+
+00:07:20.090 --> 00:07:24.620
+or actually I would just do assertEquals.
+
+00:07:24.620 --> 00:07:30.820
+I'm going to check the response.
+
+00:07:30.820 --> 00:07:36.115
+The first check that I'm going to do is I'm going to check that this is not null.
+
+00:07:36.115 --> 00:07:40.285
+The second thing that I want to test is that the ID.
+
+00:07:40.285 --> 00:07:46.315
+So I'm going to run assertEquals zero,
+
+00:07:46.315 --> 00:07:52.090
+u.getID because that's the first value, the ID value.
+
+00:07:52.090 --> 00:07:58.720
+I'm going to verify that the username is this because that's what I'd said earlier.
+
+00:07:58.720 --> 00:08:03.130
+So this is my expected,
+
+00:08:03.130 --> 00:08:10.900
+and I'm going to put u.getUsername assertEquals.
+
+00:08:10.900 --> 00:08:14.815
+I can just test the password section as well.
+
+00:08:14.815 --> 00:08:18.115
+I can run a lot of tests on this,
+
+00:08:18.115 --> 00:08:24.190
+but this is just the basic or the primary or the sanity test case which just helps us to
+
+00:08:24.190 --> 00:08:32.510
+verify that the basic functionality of createUser works as expected.
+
+00:08:32.730 --> 00:08:35.620
+That's pretty much it. Actually, I have
+
+00:08:35.620 --> 00:08:39.950
+finished as much testing as I wanted to do over here.
+
+00:08:40.110 --> 00:08:43.930
+So now I have a sanity test
+
+00:08:43.930 --> 00:08:51.705
+for our createUser controller class,but what I don't have is the full setup.
+
+00:08:51.705 --> 00:08:54.090
+So let me complete the full setup.
+
+00:08:54.090 --> 00:08:58.870
+I need an object for this which is the UserController.
+
+00:08:58.870 --> 00:09:00.820
+What I need to do is,
+
+00:09:00.820 --> 00:09:10.210
+I need to call the TestUtils and injectOjects and userRepo.
+
+00:09:10.210 --> 00:09:16.210
+Here, I injected the userRepo object and I'm going to do the same for
+
+00:09:16.210 --> 00:09:22.300
+cart as well as I'm going to do it for the encoder as well.
+
+00:09:22.300 --> 00:09:25.780
+I haven't mocked it, so I need to do that.
+
+00:09:25.780 --> 00:09:31.180
+I haven't seen this private.
+
+00:09:31.180 --> 00:09:38.660
+So now I need BCryptPasswordEncoder, encoder equals mock.
+
+00:09:38.730 --> 00:09:41.560
+I have all the mock object.
+
+00:09:41.560 --> 00:09:50.080
+I need to pass the cartRepository and bCrypt.
+
+00:09:50.080 --> 00:10:00.355
+Let me go back to the controller class to see the exact name, bCryptPasswordEncoder.
+
+00:10:00.355 --> 00:10:08.245
+So my entire setup is complete and I finished the first test method.
+
+00:10:08.245 --> 00:10:18.715
+So let me explain to you what we just did over here and then do a little bit of stubbing.
+
+00:10:18.715 --> 00:10:23.170
+So what I did over here is that I created the TestUtils.
+
+00:10:23.170 --> 00:10:26.710
+I injected the objects of the userRepo,of
+
+00:10:26.710 --> 00:10:32.860
+the cartRepo and the encoder into our UserController because that is the object.
+
+00:10:32.860 --> 00:10:35.335
+So this is our class.
+
+00:10:35.335 --> 00:10:39.760
+The object requires these three Autowired fields.
+
+00:10:39.760 --> 00:10:43.000
+So that is what my TestUtils does,
+
+00:10:43.000 --> 00:10:50.350
+it gets these all fields injected into my user controller object.
+
+00:10:50.350 --> 00:10:54.175
+Simple. The next thing that I did was I created
+
+00:10:54.175 --> 00:10:58.900
+a happy_path or a sanity test case where I created a user,
+
+00:10:58.900 --> 00:11:01.090
+I completed the setup,
+
+00:11:01.090 --> 00:11:05.065
+I called the method that is under test,
+
+00:11:05.065 --> 00:11:08.050
+and I asserted a few things on it.
+
+00:11:08.050 --> 00:11:11.815
+So that completes the test.
+
+00:11:11.815 --> 00:11:17.260
+However, I have one thing to show to you which was stubbing.
+
+00:11:17.260 --> 00:11:24.400
+Now, what that means is that I'm going to now call or replace
+
+00:11:24.400 --> 00:11:28.180
+a certain piece of the code that is being run over here
+
+00:11:28.180 --> 00:11:33.325
+with the value that I want to add to it.
+
+00:11:33.325 --> 00:11:37.435
+So I'm going to preset it so that when my test runs,
+
+00:11:37.435 --> 00:11:41.450
+instead of the value of that particular piece of code,
+
+00:11:41.450 --> 00:11:44.085
+it will put whatever I said.
+
+00:11:44.085 --> 00:11:51.495
+It's easier if I just show it to you then try to explain it in just long sentences here.
+
+00:11:51.495 --> 00:11:59.755
+So encoder.encode, this is what I need to preset.
+
+00:11:59.755 --> 00:12:05.115
+So it's prompting that I add the when, import that out.
+
+00:12:05.115 --> 00:12:14.750
+So now, what this says is that every time encoder.encode testtest is called,
+
+00:12:14.750 --> 00:12:25.240
+I can replace that value by calling thenReturn on this and put any value of my choice.
+
+00:12:25.240 --> 00:12:28.810
+So I'm going to say thisIsHashed.
+
+00:12:28.810 --> 00:12:33.460
+That's it. This is an example of stubbing.
+
+00:12:33.460 --> 00:12:36.670
+These are all our mocks.
+
+00:12:36.670 --> 00:12:40.060
+We are doing this using Mockito.
+
+00:12:40.060 --> 00:12:43.885
+Now, let's try to run this and see what happens.
+
+00:12:43.885 --> 00:12:46.945
+I see at the bottom it says it failed.
+
+00:12:46.945 --> 00:12:49.810
+It says the test failed in Actual.
+
+00:12:49.810 --> 00:12:54.760
+Let's do a live debug on this one and see what happens and why is this happening,
+
+00:12:54.760 --> 00:12:59.440
+or maybe we can just take a look at the code again and try to figure out what happened.
+
+00:12:59.440 --> 00:13:06.475
+So the test password is testPassword and we are encoding testtest.
+
+00:13:06.475 --> 00:13:12.685
+So what we need to encode is testPassword because that is the password that is set.
+
+00:13:12.685 --> 00:13:19.345
+Whenever that value is encountered from user create,
+
+00:13:19.345 --> 00:13:22.540
+which is here, line 54,
+
+00:13:22.540 --> 00:13:24.925
+it will return thisIsHashed.
+
+00:13:24.925 --> 00:13:28.510
+Now this is the value that is going to be returned,
+
+00:13:28.510 --> 00:13:32.829
+which means that when I'm asserting I don't need to test it against testPassword,
+
+00:13:32.829 --> 00:13:35.470
+but I would verify it against thisisHashed.
+
+00:13:35.470 --> 00:13:41.380
+So the reason why it says null in the Actual is because it was looking for thisIsHashed,
+
+00:13:41.380 --> 00:13:47.740
+but the value that I was trying to pull was getPassword on whatever
+
+00:13:47.740 --> 00:13:50.890
+was the previous value which is testPassword and that we
+
+00:13:50.890 --> 00:13:54.535
+hadn't stopped which is why it gave that error.
+
+00:13:54.535 --> 00:14:00.110
+Now, let's try to run this and see what happens.
+
+00:14:06.480 --> 00:14:13.060
+So this is perfect. So we ran our first successful test in the e-commerce application.
+
+00:14:13.060 --> 00:14:15.880
+I hope you're able to add more test cases to
+
+00:14:15.880 --> 00:14:19.315
+this and bring the code coverage to an 80 percent
+
+00:14:19.315 --> 00:14:26.570
+because currently the code coverage that is existing with one test case here is this.
+

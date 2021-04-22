@@ -1,0 +1,400 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.975
+Here I have imported the e-commerce application into IntelliJ.
+
+00:00:03.975 --> 00:00:06.990
+Here I see the SRC folder,
+
+00:00:06.990 --> 00:00:08.445
+and then there is a target folder,
+
+00:00:08.445 --> 00:00:10.830
+I'm going to focus on the SRC folder which
+
+00:00:10.830 --> 00:00:14.685
+contains all the code that we need to take a look at right now.
+
+00:00:14.685 --> 00:00:18.675
+Under main, you see the java folder,
+
+00:00:18.675 --> 00:00:21.435
+and under that, there is a demo folder.
+
+00:00:21.435 --> 00:00:25.710
+Now the demo folder contains three parts: controllers,
+
+00:00:25.710 --> 00:00:28.080
+model, and the main application.
+
+00:00:28.080 --> 00:00:30.570
+So let's start with the main application.
+
+00:00:30.570 --> 00:00:33.780
+This main application talks about
+
+00:00:33.780 --> 00:00:37.185
+the annotation SpringBootApplication which tells
+
+00:00:37.185 --> 00:00:40.665
+us that this application is built using Spring Boot.
+
+00:00:40.665 --> 00:00:44.805
+There is also a JpaRepository path
+
+00:00:44.805 --> 00:00:48.660
+and an EntityScan which is the same as the ComponentScan;
+
+00:00:48.660 --> 00:00:51.105
+however, it's for entities.
+
+00:00:51.105 --> 00:00:56.670
+So the Controller folder has four different controllers: UserController,
+
+00:00:56.670 --> 00:01:00.210
+OrderController, ItemController, and CartController.
+
+00:01:00.210 --> 00:01:03.005
+Now this is an e-commerce application.
+
+00:01:03.005 --> 00:01:09.825
+The e-commerce application has a user and has certain APIs related to the user,
+
+00:01:09.825 --> 00:01:13.505
+OrderController has certain APIs related to the order,
+
+00:01:13.505 --> 00:01:18.200
+ItemController as a name suggests has APIs related to the item,
+
+00:01:18.200 --> 00:01:21.575
+and CartController has APIs related to the cart.
+
+00:01:21.575 --> 00:01:24.290
+In terms of functionality,
+
+00:01:24.290 --> 00:01:27.770
+a user will have a cart,
+
+00:01:27.770 --> 00:01:33.650
+and the cart will contain certain items that will make up an order.
+
+00:01:33.650 --> 00:01:35.630
+Once you submit the order,
+
+00:01:35.630 --> 00:01:39.740
+that user has an order associated with it and
+
+00:01:39.740 --> 00:01:44.410
+that order can be retrieved when you access that user.
+
+00:01:44.410 --> 00:01:49.055
+Like any e-commerce application that you might have used in the past,
+
+00:01:49.055 --> 00:01:55.885
+under the model, we have two folders: requests and persistence.
+
+00:01:55.885 --> 00:02:00.450
+The requests section has two requests,
+
+00:02:00.450 --> 00:02:02.460
+one is a CreateUser.
+
+00:02:02.460 --> 00:02:06.860
+As a name suggests, this is what we will use in order to create
+
+00:02:06.860 --> 00:02:11.540
+the user and modify the cart which has as I've mentioned,
+
+00:02:11.540 --> 00:02:15.810
+a username, an itemID, and a quantity.
+
+00:02:15.810 --> 00:02:18.225
+That is what your cart will have,
+
+00:02:18.225 --> 00:02:22.550
+so this is what you would use in order to modify the cart.
+
+00:02:23.400 --> 00:02:27.215
+Let's talk about these entities quickly.
+
+00:02:27.215 --> 00:02:29.975
+So cart contains an ID,
+
+00:02:29.975 --> 00:02:33.700
+and it has a list of items, and it has a user.
+
+00:02:33.700 --> 00:02:36.280
+Item has an id,
+
+00:02:36.280 --> 00:02:39.395
+a name, a price, and a description.
+
+00:02:39.395 --> 00:02:44.120
+So let's consider the example of let's say a laptop.
+
+00:02:44.120 --> 00:02:45.740
+Laptop has an id,
+
+00:02:45.740 --> 00:02:46.955
+it has the name,
+
+00:02:46.955 --> 00:02:48.395
+it has a certain price,
+
+00:02:48.395 --> 00:02:50.075
+and then has a description.
+
+00:02:50.075 --> 00:02:53.975
+A user has an ID which is a unique identifier,
+
+00:02:53.975 --> 00:02:56.255
+it has a username for example,
+
+00:02:56.255 --> 00:02:58.645
+my name Sareeta could be a username,
+
+00:02:58.645 --> 00:03:01.290
+and it has a cart.
+
+00:03:01.290 --> 00:03:04.955
+Of course, there are getters and setters in each of these entities,
+
+00:03:04.955 --> 00:03:08.255
+and the user order contains the ID
+
+00:03:08.255 --> 00:03:11.510
+which is the identifier also will be helping for linking,
+
+00:03:11.510 --> 00:03:14.995
+the list of items and the user.
+
+00:03:14.995 --> 00:03:21.180
+Under a repository, we have CartRepository which extends the JpaRepository,
+
+00:03:21.180 --> 00:03:26.160
+ItemRepository which has a method to find by name,
+
+00:03:26.160 --> 00:03:30.400
+OrderRepository which also has a method to find the user,
+
+00:03:30.400 --> 00:03:34.485
+UseRepository which has a method find by username.
+
+00:03:34.485 --> 00:03:41.520
+We would use all these in combination to demonstrate a functionality.
+
+00:03:41.520 --> 00:03:47.000
+By functionality what I mean is let's say that we want to create a user,
+
+00:03:47.000 --> 00:03:48.920
+that is one functionality.
+
+00:03:48.920 --> 00:03:57.405
+Let's use a rest client of your choice in order to see how these APIs work in real.
+
+00:03:57.405 --> 00:03:59.525
+So for doing that,
+
+00:03:59.525 --> 00:04:01.970
+I have already started the server.
+
+00:04:01.970 --> 00:04:04.575
+This is my server logs,
+
+00:04:04.575 --> 00:04:06.590
+and I'm pretty sure by now,
+
+00:04:06.590 --> 00:04:08.795
+you already understand how to start the server,
+
+00:04:08.795 --> 00:04:11.734
+nothing bad, you click on this button to rerun,
+
+00:04:11.734 --> 00:04:16.210
+or you might just have a Run button if you haven't started the server.
+
+00:04:16.210 --> 00:04:21.080
+So again, this code is going to be available to you,
+
+00:04:21.080 --> 00:04:25.295
+and the link will be provided to you under the video.
+
+00:04:25.295 --> 00:04:31.800
+Let's look at the rest client of my choice is Postman,
+
+00:04:31.800 --> 00:04:34.395
+I have created a collection.
+
+00:04:34.395 --> 00:04:36.780
+I am pretty sure that by now,
+
+00:04:36.780 --> 00:04:38.800
+you would also know how to create a collection,
+
+00:04:38.800 --> 00:04:43.800
+and how to save all your requests for quick use.
+
+00:04:43.800 --> 00:04:47.280
+Let's start with Create a User.
+
+00:04:47.280 --> 00:04:54.830
+Now Create a User basically will just create this user with the username Sareeta,
+
+00:04:54.830 --> 00:04:56.495
+and if this is successful,
+
+00:04:56.495 --> 00:05:03.330
+you will see a 200 okay which is your HTTP response code,
+
+00:05:03.330 --> 00:05:05.855
+and that is an okay response,
+
+00:05:05.855 --> 00:05:08.260
+which means the user was successfully created.
+
+00:05:08.260 --> 00:05:10.645
+I'm pretty sure you already know that by now.
+
+00:05:10.645 --> 00:05:12.450
+So here we go,
+
+00:05:12.450 --> 00:05:14.240
+and let's look at this.
+
+00:05:14.240 --> 00:05:15.800
+So as you see,
+
+00:05:15.800 --> 00:05:17.840
+there was an ID assigned to it,
+
+00:05:17.840 --> 00:05:20.250
+and the username that was persisted.
+
+00:05:20.250 --> 00:05:24.980
+Now something that I need to mention here is for this particular application,
+
+00:05:24.980 --> 00:05:28.280
+we are using each H2 database which is
+
+00:05:28.280 --> 00:05:32.585
+an in-memory database so that every time we restart the server,
+
+00:05:32.585 --> 00:05:36.040
+it will start from fresh because it's in-memory,
+
+00:05:36.040 --> 00:05:39.485
+and nothing gets saved in an actual database like
+
+00:05:39.485 --> 00:05:44.630
+SQL or NoSQL databases like Cosmos, Mongo, and others.
+
+00:05:44.630 --> 00:05:49.090
+So this was already successful,
+
+00:05:49.090 --> 00:05:57.340
+which means now I have a user called Sareeta in my H2 in-memory database.
+
+00:05:57.340 --> 00:06:03.495
+Now let me run this API which is getUser.
+
+00:06:03.495 --> 00:06:05.040
+Now as you see,
+
+00:06:05.040 --> 00:06:07.065
+this was a user created,
+
+00:06:07.065 --> 00:06:16.325
+and this is going to be the exact name that I would enter here,
+
+00:06:16.325 --> 00:06:19.165
+and I run this,
+
+00:06:19.165 --> 00:06:27.700
+and what this does is now it fetched my user with the ID from the H2 database.
+
+00:06:27.700 --> 00:06:34.340
+If you want to take a look at how I constructed this end point,
+
+00:06:34.340 --> 00:06:36.440
+now this is an end point,
+
+00:06:36.440 --> 00:06:42.090
+let me take you back to the IDE which is IntelliJ.
+
+00:06:44.630 --> 00:06:49.765
+So I'm going to refer to the controller class user,
+
+00:06:49.765 --> 00:06:55.340
+and the request mapping here is API user,
+
+00:06:57.440 --> 00:07:02.620
+and I am running the server on localhost:8080 port that is
+
+00:07:02.620 --> 00:07:09.610
+the default port that the application got started on since I used the Tomcat server.
+
+00:07:09.610 --> 00:07:17.070
+Here is API user and the exact endpoint was create.
+
+00:07:17.070 --> 00:07:19.110
+As you see, this was a post mapping.
+
+00:07:19.110 --> 00:07:21.675
+So the HTTP verb with post,
+
+00:07:21.675 --> 00:07:25.385
+and the end point is create,
+
+00:07:25.385 --> 00:07:28.600
+so I added create to end of it,
+
+00:07:28.600 --> 00:07:32.160
+and I post requests in terms of the header.
+
+00:07:32.160 --> 00:07:36.170
+One thing that you need to add is content type which is application/json.
+
+00:07:36.170 --> 00:07:41.135
+Otherwise, what you can do is let me show that to you.
+
+00:07:41.135 --> 00:07:45.855
+I am going to create one more.
+
+00:07:45.855 --> 00:07:47.430
+Let me duplicate this,
+
+00:07:47.430 --> 00:07:55.330
+or let me just create one more request.
+
+00:07:57.890 --> 00:08:01.380
+Here when I create a request,
+
+00:08:01.380 --> 00:08:02.790
+it gives me the body,
+
+00:08:02.790 --> 00:08:05.385
+and as I told you, this is a post.
+
+00:08:05.385 --> 00:08:08.840
+Here I use raw and under here,
+
+00:08:08.840 --> 00:08:11.830
+it allows you to define what is the content type,
+
+00:08:11.830 --> 00:08:14.570
+and I'm going to pick application JSON.
+
+00:08:14.570 --> 00:08:16.540
+You can either add it to the header,
+
+00:08:16.540 --> 00:08:18.265
+or by default from here,
+
+00:08:18.265 --> 00:08:19.650
+you can add that as well.
+
+00:08:19.650 --> 00:08:26.670
+So I added that as well in order to make this particular request successful.
+

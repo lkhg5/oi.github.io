@@ -1,0 +1,473 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Deployment - II</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>CI/CD</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. CICD.html">02. CI/CD</a>
+    </li>
+    <li class="">
+      <a href="03. Git.html">03. Git</a>
+    </li>
+    <li class="">
+      <a href="04. AWS.html">04. AWS</a>
+    </li>
+    <li class="">
+      <a href="05. EC2 - Launch an Instance.html">05. EC2 - Launch an Instance</a>
+    </li>
+    <li class="">
+      <a href="06. EC2 Dashboard.html">06. EC2 Dashboard</a>
+    </li>
+    <li class="">
+      <a href="07. EC2 - Connect to Linux Instance.html">07. EC2 - Connect to Linux Instance</a>
+    </li>
+    <li class="">
+      <a href="08. Monitor your AWS Costs and Credits.html">08. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="09. Docker.html">09. Docker</a>
+    </li>
+    <li class="">
+      <a href="10. Docker - II.html">10. Docker - II</a>
+    </li>
+    <li class="">
+      <a href="11. Jenkins.html">11. Jenkins</a>
+    </li>
+    <li class="">
+      <a href="12. Bringing it all Together.html">12. Bringing it all Together</a>
+    </li>
+    <li class="">
+      <a href="13. Deployment - I.html">13. Deployment - I</a>
+    </li>
+    <li class="">
+      <a href="14. Deployment - II.html">14. Deployment - II</a>
+    </li>
+    <li class="">
+      <a href="15. Deployment - III.html">15. Deployment - III</a>
+    </li>
+    <li class="">
+      <a href="16. Another Deployment.html">16. Another Deployment</a>
+    </li>
+    <li class="">
+      <a href="17. Conclusion.html">17. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">14. Deployment - II</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND035 C4 Security And DevOps Deploy 01b</p></h3>
+  <video controls>
+  <source src="14. ND035 C4 Security And DevOps Deploy 01b--rG6O9ZzGfI.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li><strong>Copy files to the default folder</strong><br><br />
+View the container ID, and open a bash inside the <em>myTomcatServer</em> container:</li>
+</ol>
+<pre><code class="bash language-bash"># Verify running containers
+docker ps
+# Open a bash into the container
+docker exec -it myTomcatServer bash</code></pre>
+<p>You will be taken to the default directory of Tomcat: <code>/usr/local/tomcat</code>. Note that the Tomcat serves the application residing in the <strong>webapps</strong> folder. By default, this folder does not contain the Welcome page of Tomcat. So, let's copy the contents of <strong>webapps.dist</strong> directory to <strong>webapps</strong> directory.</p>
+<pre><code class="bash language-bash"># View the files inside the /usr/local/tomcat folder. Notice the webapps folder
+ls -l
+# Copy the files from webapps.dist to the webapps folder
+cp -r webapps.dist/* webapps
+# Come out of the bash, when needed
+exit</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-3.38.44-pm.png" alt="The same output of &#x60;docker ps&#x60; and &#x60;docker container ls&#x60; commands. &lt;br&gt; Notice that the Jenkins is accessible on port 8080, while Tomcat is accessible on port 8888" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>The same output of <code>docker ps</code> and <code>docker container ls</code> commands. <br> Notice that the Jenkins is accessible on port 8080, while Tomcat is accessible on port 8888</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-3.46.13-pm.png" alt="Copy the contents of *webapps.dist* directory to *webapps* directory" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Copy the contents of <em>webapps.dist</em> directory to <em>webapps</em> directory</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li><strong>Welcome page</strong><br><br />
+Go to the AWS dashboard to copy the public IP address of your Linux EC2 instance. Paste the public IP address into your browser, and append with <code>:8888</code> port, say <a href="http://18.222.193.10:8888/" rel="noopener noreferrer" target="_blank">http://18.222.193.10:8888/</a> . It will show you the welcome page.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-3.58.46-pm.png" alt="Tomcat welcome page at http://18.222.193.10:8888/ &lt;br&gt;
+Feel free to navigate the directories inside the *webapps* folder, such as  http://18.222.193.10:8888/examples/ " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Tomcat welcome page at <a href="http://18.222.193.10:8888/" rel="noopener noreferrer" target="_blank">http://18.222.193.10:8888/</a> <br><br />
+Feel free to navigate the directories inside the <em>webapps</em> folder, such as  <a href="http://18.222.193.10:8888/examples/" rel="noopener noreferrer" target="_blank">http://18.222.193.10:8888/examples/</a> </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-4.10.55-pm.png" alt="At the same time, the Jenkins server is running at port 8080" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>At the same time, the Jenkins server is running at port 8080</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="configure-the-tomcat--add-user-and-roles">Configure the Tomcat | Add user and roles</h2>
+<p>If you try to access the <strong>Manager App</strong> link on the Tomcat welcome page (<a href="http://18.222.193.10:8888/)" rel="noopener noreferrer" target="_blank">http://18.222.193.10:8888/)</a>, you will be denied access to resources. This is a role-based access control feature of the Tomcat web server. Let's see how we can edit the necessary configuration. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-4.16.17-pm.png" alt="Tomcat denying access to privileged resources, and &lt;br&gt;pointing us to edit the **context.xml** or **tomcat-users.xml** file." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Tomcat denying access to privileged resources, and <br>pointing us to edit the <strong>context.xml</strong> or <strong>tomcat-users.xml</strong> file.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li><strong>Install a text editor in container</strong><br><br />
+Run the following commands from within the bash into the * myTomcatServer* container: </li>
+</ol>
+<pre><code class="bash language-bash"># Install VIM editor because we need to edit a few files
+apt-get update
+apt-get install vim</code></pre>
+<p>Now, you can open any file to edit by using <code>vi file_name</code> command. Open the first file to edit:</p>
+<pre><code class="bash language-bash"># Open the file with an editor
+vi conf/tomcat-users.xml </code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-4.40.04-pm.png" alt="Add the highlighted lines of code in the&#x60;conf/tomcat-users.xml&#x60; file. This file is opened in VIM editor" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Add the highlighted lines of code in the<code>conf/tomcat-users.xml</code> file. This file is opened in VIM editor</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li><strong>Edit the <code>tomcat-users.xml</code> file</strong><br><br />
+In the XML file above, the <code>&lt;!--</code> shows the beginning of a multi-line comment, and <code>--&gt;</code> shows the end of a comment. Add two new roles, and assign them to a new user, <em>admin</em>, just above the <code>&lt;/tomcat-users&gt;</code> tag.</li>
+</ol>
+<pre><code class="xml language-xml">&lt;role rolename="admin-gui"/&gt;
+&lt;role rolename="manager-gui"/&gt;
+&lt;role rolename="manager-script"/&gt;
+&lt;user username="admin" password="admin" roles="admin-gui, manager-gui, manager-script"/&gt;</code></pre>
+<p>A sample code is already available in the XML file above. You may need a little help with VIM editor keys: </p>
+<ul>
+<li>Press <strong>ESC</strong> + <strong>i</strong> key to enter into the Insert mode. This is the mode where you can scroll/edit in the file. Another useful mode is Visual mode, <strong>ESC</strong> + <strong>v</strong>.</li>
+<li>When you are done, press <strong>ESC</strong> + <strong>:wq</strong> to Save and quit.</li>
+<li>Press <strong>ESC</strong> + <strong>:q!</strong> to quit without saving anything. Have look at this <a href="https://vim.rtorr.com/" rel="noopener noreferrer" target="_blank">cheat sheet</a> for more VIM commands. </li>
+<li>To copy here is called Yank, which works only in Visual mode, <strong>ESC</strong> + <strong>v</strong>.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li><strong>Edit the <code>context.xml</code> file</strong><br></li>
+</ol>
+<pre><code class="bash language-bash"># Find the context.xml files
+find . -name context.xml
+# Open the manager context file in VIM editor
+vi ./webapps/manager/META-INF/context.xml</code></pre>
+<p>Comment the following line of code by append it with <code>&lt;--</code> and putting a <code>--&gt;</code> at the end.</p>
+<pre><code class="xml language-xml"> &lt;Valve className="org.apache.catalina.valves.RemoteAddrValve"
+          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /&gt;</code></pre>
+<p>Use the arrow keys to navigate in the file, and VIM commands to add <code>&lt;--</code> and <code>--&gt;</code> at suitable places. See the snapshot below:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-5.10.42-pm.png" alt="Find the &#x60;context.xml&#x60; files" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Find the <code>context.xml</code> files</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-5.12.29-pm.png" alt="Comment out the highlighted code in the &#x60;context.xml&#x60; file" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Comment out the highlighted code in the <code>context.xml</code> file</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p><strong>Note</strong>: A new user is required in our deployment because Jenkins (from another container) will attempt to push the application build to the Tomcat server (current container). We will see a way to share these credentials with Jenkins to allow pushing the build here. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C4 Security And DevOps Deploy 01c (Online-Video-Cutter.Com)</p></h3>
+  <video controls>
+  <source src="14. ND035 C4 Security And DevOps Deploy 01c (Online-Video-Cutter.Com)-OezyvFtcxO0.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li><strong>Restart the Tomcat server</strong><br><br />
+Run the following commands from within the bash into the <em>myTomcatServer</em> container: </li>
+</ol>
+<pre><code class="bash language-bash"># Shutdown the server
+ ./bin/shutdown.sh </code></pre>
+<p>It will stop the container as well. Restart the <em>myTomcatServer</em> container:</p>
+<pre><code class="bash language-bash">docker start myTomcatServer</code></pre>
+<p>Now, the <a href="http://18.222.193.10:8888/manager/html" rel="noopener noreferrer" target="_blank">http://18.222.193.10:8888/manager/html</a> will ask you for manager-gui credentials before showing the manager page. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-5.14.17-pm.png" alt="Prompt asking for Tomcat manager-gui password" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Prompt asking for Tomcat manager-gui password</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-5.14.42-pm.png" alt="Output at http://18.222.193.10:8888/manager/html " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Output at <a href="http://18.222.193.10:8888/manager/html" rel="noopener noreferrer" target="_blank">http://18.222.193.10:8888/manager/html</a> </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="15. Deployment - III.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Deployment - II')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

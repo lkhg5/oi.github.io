@@ -1,0 +1,529 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo: eCommerce Starter Code</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Authentication and Authorization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Course Overview.html">01. Course Overview</a>
+    </li>
+    <li class="">
+      <a href="02. Authentication.html">02. Authentication</a>
+    </li>
+    <li class="">
+      <a href="03. Points to Consider.html">03. Points to Consider</a>
+    </li>
+    <li class="">
+      <a href="04. Hashing.html">04. Hashing</a>
+    </li>
+    <li class="">
+      <a href="05. Salting.html">05. Salting</a>
+    </li>
+    <li class="">
+      <a href="06. Hashing (SHA) Implementation.html">06. Hashing (SHA) Implementation</a>
+    </li>
+    <li class="">
+      <a href="07. Hashing (bCrypt) Implementation.html">07. Hashing (bCrypt) Implementation</a>
+    </li>
+    <li class="">
+      <a href="08. Authorization.html">08. Authorization</a>
+    </li>
+    <li class="">
+      <a href="09. JWTs.html">09. JWTs</a>
+    </li>
+    <li class="">
+      <a href="10. JWT Quiz.html">10. JWT Quiz</a>
+    </li>
+    <li class="">
+      <a href="11. Demo eCommerce Starter Code.html">11. Demo: eCommerce Starter Code</a>
+    </li>
+    <li class="">
+      <a href="12. Demo Authentication and Authorization using JWT.html">12. Demo: Authentication and Authorization using JWT</a>
+    </li>
+    <li class="">
+      <a href="13. Troubleshooting Tips.html">13. Troubleshooting Tips</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. Demo: eCommerce Starter Code</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <p>Let's walk through the given starter code of the e-Commerce application, and then we will implement the JWT. **We'll be working with the eCommerce application throughout this course, and then—at the end of the course—you'll finish and submit the application as your final project. **</p>
+<h2 id="step-1-fork-and-clone-the-project-starter-code">Step 1: Fork, and Clone the Project starter code</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L01 A06.1 Code Walkthrough</p></h3>
+  <video controls>
+  <source src="11. ND035 C04 L01 A06.1 Code Walkthrough-Masbxs2NJnQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND035 C04 L01 A06.1 Code Walkthrough-Masbxs2NJnQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p>Note - To make it convenient for you, we have created a new Github repo dedicated to this course. All the steps mentioned above will be the same, except the repo name, and the folder name.   </p>
+</blockquote>
+<p>The repository for the eCommerce application starter code can be found at:<br />
+<a href="https://github.com/udacity/JDND" target="_blank">https://github.com/udacity/nd035-c4-Security-and-DevOps</a> .  Did you notice that this repo contains multiple branches, that contain the code associated with upcoming demos and exercises?</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-10-at-5.41.22-pm.png" alt="Switch to a different branch as you progress through this course. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Switch to a different branch as you progress through this course. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Each branch contains an individual Maven project for you to follow. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="how-to-work-with-github-repo">How to work with Github repo?</h3>
+<p>You can choose from either of the below two options:</p>
+<ol>
+<li><strong>Option - Clone the repo locally</strong><br>
+Here are the steps that you need to follow:<ol>
+<li>Fork the repo to your account. </li>
+<li>Clone the repo using the command in your terminal (Linux/MacOS) or Git Bash (Windows):</li></ol></li>
+</ol>
+<pre><code>   git clone https://github.com/USERNAME/nd035-c4-Security-and-DevOps.git</code></pre>
+<ol>
+<li>Import the project into the IntelliJ IDE. </li>
+<li>Switch between branches, and make changes. By default, you will be on the <em>master</em> branch. To switch branch, use the commands:</li>
+</ol>
+<pre><code>   git branch
+   git checkout &lt;branch-name&gt;</code></pre>
+<p>After switching the branch, the code in the IntelliJ will also change automatically. </p>
+<ol>
+<li>Push the local changes back to the remote (online) repo in your account. You can use:</li>
+</ol>
+<pre><code>   git add -A 
+   git commit -m "your message"
+   git push origin &lt;branch-name&gt;</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li><strong>Option - Link your IntelliJ IDE to Github repo</strong> (Recommended)<br><br />
+You can even connect your IntelliJ directly with the Github repo (in your account), and switch branches when needed. Moreover, you can perform all Github operations from the IntelliJ IDE. Refer to the <strong>Troubleshooting Tips</strong> page for more info. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Task List</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Before going any further, be sure you've done the following:</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="da7da23b-06f1-419b-b9d6-c7dbb057cdbb--0">
+        <label for="da7da23b-06f1-419b-b9d6-c7dbb057cdbb--0"><p>Either forked and cloned the repository, or linked IntelliJ to the Github repo</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="da7da23b-06f1-419b-b9d6-c7dbb057cdbb--1">
+        <label for="da7da23b-06f1-419b-b9d6-c7dbb057cdbb--1"><p>Imported the eCommerce application into IntelliJ</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="da7da23b-06f1-419b-b9d6-c7dbb057cdbb--2">
+        <label for="da7da23b-06f1-419b-b9d6-c7dbb057cdbb--2"><p>Gone through the project README file in Github</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Good! Let's now check out the starter code in detail….</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="step-2-code-walkthrough-and-making-requests-to-the-api-endpoints-from-the-postman-tool">Step 2: Code walkthrough and making requests to the API endpoints from the Postman tool</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L01 A06.2 Code Walkthrough</p></h3>
+  <video controls>
+  <source src="11. ND035 C04 L01 A06.2 Code Walkthrough-8RjUWi5BTlc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND035 C04 L01 A06.2 Code Walkthrough-8RjUWi5BTlc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="class-diagrams">Class Diagrams</h3>
+<p>Let's have a look at various classes present in the starter code. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/controllers.png" alt="Classes in the **controllers** package" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Classes in the <strong>controllers</strong> package</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-10-at-12.32.39-pm.png" alt="Classes in the **model/persistence/** package. In addition, it has a **repositories** sub-package." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Classes in the <strong>model/persistence/</strong> package. In addition, it has a <strong>repositories</strong> sub-package.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-10-at-12.30.38-pm.png" alt="Classes in the **model/persistence/repositories/** package" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Classes in the <strong>model/persistence/repositories/</strong> package</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-10-at-12.33.42-pm.png" alt="Classes in the **model/requests/** package" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Classes in the <strong>model/requests/</strong> package</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Task List</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Before going further, be sure you've tried the following:</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="6042fbc1-c6c9-484e-b821-9f6cee22f15f--0">
+        <label for="6042fbc1-c6c9-484e-b821-9f6cee22f15f--0"><p>Create a collection in Postman</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="6042fbc1-c6c9-484e-b821-9f6cee22f15f--1">
+        <label for="6042fbc1-c6c9-484e-b821-9f6cee22f15f--1"><p>Save your requests for quick use</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="6042fbc1-c6c9-484e-b821-9f6cee22f15f--2">
+        <label for="6042fbc1-c6c9-484e-b821-9f6cee22f15f--2"><p>Try making a <code>CreateUser</code> request</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="6042fbc1-c6c9-484e-b821-9f6cee22f15f--3">
+        <label for="6042fbc1-c6c9-484e-b821-9f6cee22f15f--3"><p>Try making a <code>getUser</code> request</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Good! Next, let's try out the <code>addToCart</code> request.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="step-3-making-addtocart-and-submitorder-requests">Step 3: Making <code>addToCart</code> and <code>submitOrder</code> requests</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L01 A06.3 Code Walkthrough</p></h3>
+  <video controls>
+  <source src="11. ND035 C04 L01 A06.3 Code Walkthrough-UXN9DWkNmlE.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND035 C04 L01 A06.3 Code Walkthrough-UXN9DWkNmlE.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L01 A06.4 Code Walkthrough</p></h3>
+  <video controls>
+  <source src="11. ND035 C04 L01 A06.4 Code Walkthrough-gp-xtgquzfA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. ND035 C04 L01 A06.4 Code Walkthrough-gp-xtgquzfA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Task List</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Before going further, be sure you've tried the following:</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="b92ff1a5-8236-4f46-b507-10935029c870--0">
+        <label for="b92ff1a5-8236-4f46-b507-10935029c870--0"><p>Try making an <code>addToCart</code> request</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="b92ff1a5-8236-4f46-b507-10935029c870--1">
+        <label for="b92ff1a5-8236-4f46-b507-10935029c870--1"><p>Try making an <code>submitOrder</code> request</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Nice work!</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Task List</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Before going any further, it would be a good idea to make sure you feel relatively comfortable with the starter code. Here are some things to try:</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="5e7f2d2c-40c4-4e59-af6c-5ae5f2ee8e34--0">
+        <label for="5e7f2d2c-40c4-4e59-af6c-5ae5f2ee8e34--0"><p>Look up a user's order history</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="5e7f2d2c-40c4-4e59-af6c-5ae5f2ee8e34--1">
+        <label for="5e7f2d2c-40c4-4e59-af6c-5ae5f2ee8e34--1"><p>View information about the various items in the database</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Good! We'll use this starter code to demonstrate implementation of JWTs <em>and</em> we'll also be coming back to it for our final project in the course.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Demo Authentication and Authorization using JWT.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Demo: eCommerce Starter Code')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

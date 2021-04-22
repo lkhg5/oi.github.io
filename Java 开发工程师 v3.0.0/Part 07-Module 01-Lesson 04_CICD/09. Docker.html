@@ -1,0 +1,527 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Docker</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>CI/CD</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. CICD.html">02. CI/CD</a>
+    </li>
+    <li class="">
+      <a href="03. Git.html">03. Git</a>
+    </li>
+    <li class="">
+      <a href="04. AWS.html">04. AWS</a>
+    </li>
+    <li class="">
+      <a href="05. EC2 - Launch an Instance.html">05. EC2 - Launch an Instance</a>
+    </li>
+    <li class="">
+      <a href="06. EC2 Dashboard.html">06. EC2 Dashboard</a>
+    </li>
+    <li class="">
+      <a href="07. EC2 - Connect to Linux Instance.html">07. EC2 - Connect to Linux Instance</a>
+    </li>
+    <li class="">
+      <a href="08. Monitor your AWS Costs and Credits.html">08. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="09. Docker.html">09. Docker</a>
+    </li>
+    <li class="">
+      <a href="10. Docker - II.html">10. Docker - II</a>
+    </li>
+    <li class="">
+      <a href="11. Jenkins.html">11. Jenkins</a>
+    </li>
+    <li class="">
+      <a href="12. Bringing it all Together.html">12. Bringing it all Together</a>
+    </li>
+    <li class="">
+      <a href="13. Deployment - I.html">13. Deployment - I</a>
+    </li>
+    <li class="">
+      <a href="14. Deployment - II.html">14. Deployment - II</a>
+    </li>
+    <li class="">
+      <a href="15. Deployment - III.html">15. Deployment - III</a>
+    </li>
+    <li class="">
+      <a href="16. Another Deployment.html">16. Another Deployment</a>
+    </li>
+    <li class="">
+      <a href="17. Conclusion.html">17. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. Docker</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Docker</p></h3>
+  <div>
+  <h1 id="docker">Docker</h1>
+<p>Docker is a tool that helps to create *Docker *images. An <em>image</em> (or Docker image) is a portable read-only template that contains a set of instructions to create a container. An image can be instantiated multiple numbers of times to create multiple <em>containers</em>.</p>
+<h2 id="containers">Containers</h2>
+<p>OS level virtualization allows us to run <em>multiple isolated user-space instances</em> in parallel. A <em>container</em> (or Docker container) is the isolated user-space instance that consists of the following items all bundled into one package:</p>
+<ul>
+<li>the application code, </li>
+<li>the required dependencies (e.g. libraries, utilities, configuration files), and </li>
+<li>the necessary runtime environment to run the application. </li>
+</ul>
+<p>Each container is an independent component that can run on its own and be moved from environment to environment.</p>
+<h3 id="benefit-of-containers">Benefit of Containers</h3>
+<ul>
+<li>Containers make it easier for developers to create, deploy, and run applications on different hardware and platforms, quickly and easily. </li>
+<li>Containers share a single kernel and share application libraries. </li>
+<li>Containers cause a lower system overhead as compared to Virtual Machines.</li>
+</ul>
+<h3 id="recommended-read">Recommended Read</h3>
+<ul>
+<li><a href="https://docs.docker.com/engine/docker-overview/" target="_blank">General overview about Docker containers</a></li>
+<li><a href="https://www.docker.com/resources/what-container" target="_blank">Documentation on Docker Containers</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND035 C04 L05 A03 Why Docker </p></h3>
+  <video controls>
+  <source src="09. ND035 C04 L05 A03 Why Docker -E2QjRCyCo8c.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. ND035 C04 L05 A03 Why Docker -E2QjRCyCo8c.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="key-terms">Key Terms</h3>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="**term**"><strong>Term</strong></th>
+<th id="**definition**"><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dockerfile</td>
+<td>A file containing instructions on how to translate an application into an image that can be run in containers</td>
+</tr>
+<tr>
+<td>Base Image</td>
+<td>A set of common dependencies built into a Docker image that acts as a starting point to build an application’s Docker images to reduce build times</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>A snapshot of dependencies and code used by Docker containers to run an application</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Grouped software dependencies and packages that make it easier and more reliable to deploy software</td>
+</tr>
+<tr>
+<td>DockerHub</td>
+<td>A centralized place, called Container Registry, to store container images</td>
+</tr>
+<tr>
+<td>Ephemeral</td>
+<td>Software property where an application is expected to be short-lived</td>
+</tr>
+</tbody>
+</table>
+<h2 id="center"></center></h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="how-does-it-work">How does it work?</h3>
+<p>Let me give you an overview of the flow of execution for creating a container: <br />
+<center></p>
+<p><strong>Dockerfile &#8594; Docker Image &#8594; Docker container</strong></p>
+<p></center><br />
+The steps shown above are:</p>
+<ol>
+<li><strong>Write a Dockerfile</strong>:<br> It is a text document that contains the commands a user would execute on the command line to assemble an image. In this file, you can specify the necessary environments and dependencies. For example, see a Dockerfile below:</li>
+</ol>
+<pre><code class="bash language-bash"># Pull the "tomcat" image. The community maintains this image. 
+FROM tomcat 
+# Copy all files present in the current folder to the "/usr/local/tomcat/webapps"  folder 
+COPY ./*.* /usr/local/tomcat/webapps</code></pre>
+<p>In the example above, every time you create a container, it will have the tomcat web server installed. In addition, all the contents of the current directory will also be copied to the <em>/usr/local/tomcat/webapps</em> folder of each container. See another Dockerfile <a href="https://github.com/docker/labs/blob/master/beginner/static-site/Dockerfile" rel="noopener noreferrer" target="_blank">example here</a>. <br><br />
+See the <a href="https://docs.docker.com/engine/reference/builder/" rel="noopener noreferrer" target="_blank">Dockerfile reference</a> for possible commands you can use. <br><br></p>
+<ol start="2">
+<li><strong>Build an Image</strong>:<br> Use the <code>docker build</code> command to build an image from the Dockerfile. Usually, we execute this command from the same directory where the Dockerfile is present. </li>
+</ol>
+<pre><code class="bash language-bash"># This command will look for a Dockerfile in the `pwd`, and create myImage
+docker build  --tag myImage  [OPTIONS] path_where_to_store_the_image </code></pre>
+<p>You can store your images online at DockerHub as well, so that you/anyone can "pull" them on any other machine, anytime. We can even use the pre-created Docker images maintained by the community. <br><br></p>
+<blockquote>
+  <p>You can by-pass the two steps mentioned above by directly pulling a pre-created image from the DockerHub to your local machine, and then create and run containers using that image. For example, you can pull an image by running the command below in your terminal:</p>
+</blockquote>
+<pre><code class="bash language-bash">docker pull tomcat:latest</code></pre>
+<ol start="3">
+<li><strong>Create and run a Container</strong>:<br> After creating an image, you can use it to create as many Containers as you want on any platform. Each container will have the same environment and dependencies to run a copy of your application. The following command creates and runs a new container:</li>
+</ol>
+<pre><code class="bash language-bash">docker run --name myContainer myImage</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>MCQ</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Select all statements that are correct with regard to Docker Image.</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1590739815999" name="1029104" id="a1590739815999">
+      <label for="a1590739815999"><p>It is a portable package that contains the application and its dependencies. </p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1590739870487" name="1029104" id="a1590739870487">
+      <label for="a1590739870487"><p>An image can be instantiated multiple numbers of times to create "containers".</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1590739941223" name="1029104" id="a1590739941223">
+      <label for="a1590739941223"><p>We have to install a software "Docker Desktop" to be able to create images and instantiate containers</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1590740128036" name="1029104" id="a1590740128036">
+      <label for="a1590740128036"><p>Images can be stored locally, as well as online at DockerHub</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>It is a portable package that contains the application and its dependencies. </li>
+      <li>An image can be instantiated multiple numbers of times to create "containers".</li>
+      <li>We have to install a software "Docker Desktop" to be able to create images and instantiate containers</li>
+      <li>Images can be stored locally, as well as online at DockerHub</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Radio Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is a container?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="907196" id="rbk1">
+        <label for="rbk1"><p>A server which runs your application directly on it</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="907196" id="rbk2">
+        <label for="rbk2"><p>A bundled environment containing the tools, libraries, and other components to run an application</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="907196" id="rbk3">
+        <label for="rbk3"><p>A testing framework</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    A bundled environment containing the tools, libraries, and other components to run an application
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="how-to-install-docker">How to Install Docker?</h3>
+<p>We will deploy our application on a Virtual Machine (VM) on Amazon Web Service (AWS) cloud. The VM that we will use would be a Linux machine, where we will install the Docker as</p>
+<pre><code class="shell language-shell"># Install Docker
+sudo yum install docker
+# Add the current user to the "docker" group
+sudo usermod -a -G docker $USER
+# Start Docker service
+sudo service docker start</code></pre>
+<p>Alternatively, if you wish to install Docker locally, you can refer to the official <a href="https://docs.docker.com/desktop/" rel="noopener noreferrer" target="_blank">"Download and Install"</a> section. </p>
+<h3 id="basic-commands">Basic Commands</h3>
+<p>The following are basic commands used with Docker:</p>
+<ul>
+<li><p><code>docker build .</code> will run the Dockerfile to create an image. A Dockerfile is a text file that contains commands as a step-by-step recipe on how to build up your image. <strong><em>In our case, we would not use a Dockerfile because we will use a pre-created <code>jenkinsci/blueocean</code> image to instantiate a container.</em></strong> For more details about Dockerfile, refer the <a href="https://docs.docker.com/get-started/part2/" rel="noopener noreferrer" target="_blank">Build and run your image</a> page. </p></li>
+<li><p><code>docker images</code> will print all the available images</p></li>
+<li><p><code>docker run {IMAGE_ID}</code> will create and run a container with the specified image</p></li>
+<li><p><code>docker exec -it {CONTAINER_ID} bash</code> will open a bash terminal inside the container</p></li>
+<li><p><code>docker ps</code> will print all the running containers</p></li>
+<li><p><code>docker kill {CONTAINER_ID}</code> will terminate the container</p></li>
+</ul>
+<p>There are many more commands that are beyond the scope of this exercise, however, you can refer to this <a href="https://docs.docker.com/engine/reference/commandline/docker/" rel="noopener noreferrer" target="_blank">Reference manual</a> anytime. <strong>We will see the instructor using a few of these commands in the final consolidated demonstration on "Bringing it all Together" page.</strong></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>An important command is:</p>
+<pre><code class="bash language-bash">docker container help</code></pre>
+<p>It will show you all possible docker commands related to a container. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-02-12-at-12.48.12-pm.png" alt="Output of &#x60;docker container help&#x60;" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Output of <code>docker container help</code></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Matching Quiz</p></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the term with its corresponding definition.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Dockerfile</p></button>
+  <button class="btn btn-primary"><p>Docker Container</p></button>
+  <button class="btn btn-primary"><p>Container Registry</p></button>
+  <button class="btn btn-primary"><p>Docker Image</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>DESCRIPTION</p>
+      </th>
+      <th>
+        <p>TERM</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>An ephemeral application that is deployed as one unit</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Application and its dependencies grouped with execution instructions</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Centralized resource for storing images</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Instructions on how to translate application code into an image</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>DESCRIPTION</p>
+        </th>
+        <th>
+          <p>TERM</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>Instructions on how to translate application code into an image</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Dockerfile</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>An ephemeral application that is deployed as one unit</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Docker Container</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Centralized resource for storing images</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Container Registry</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Application and its dependencies grouped with execution instructions</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Docker Image</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="10. Docker - II.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. Docker')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
