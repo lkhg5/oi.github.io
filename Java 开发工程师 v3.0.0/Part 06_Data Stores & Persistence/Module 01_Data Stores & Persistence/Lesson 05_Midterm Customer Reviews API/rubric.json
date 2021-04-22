@@ -1,0 +1,259 @@
+{
+  "id": 2650,
+  "project_id": 627,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(js|css|py|html|htm|txt|md|markdown|sql|swift|java|gradle|xml|rst|yml|yaml|rmd|pdf|docx|h|H|hh|hxx|h\\+\\+|c|C|cc|cpp|cxx|c\\+\\+)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "",
+  "hide_criteria": false,
+  "created_at": "2019-07-02T17:46:31.076Z",
+  "updated_at": "2019-07-10T19:37:57.313Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd035-beta",
+    "nd035",
+    "nd035-cn"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 5640,
+      "name": "Code Quality",
+      "created_at": "2019-07-02T17:58:24.934Z",
+      "updated_at": "2019-07-02T17:58:38.701Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 2650,
+      "rubric_items": [
+        {
+          "id": 16170,
+          "section_id": 5640,
+          "passed_description": "All code is functional (i.e. no errors are thrown by the code). Warnings are okay, as long as they are not a result of poor coding practices.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T17:58:39.068Z",
+          "updated_at": "2019-07-02T17:59:34.461Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does the code work?",
+          "exceedable": false
+        },
+        {
+          "id": 16171,
+          "section_id": 5640,
+          "passed_description": "The project uses functions and loops where possible to reduce repetitive code. Comments are used as needed to document code functionality.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T17:59:34.790Z",
+          "updated_at": "2019-07-02T18:00:02.817Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Does the project follow good coding practices?",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5641,
+      "name": "Relational Database Management System (RDBMS)",
+      "created_at": "2019-07-02T18:00:03.167Z",
+      "updated_at": "2019-07-02T18:00:07.301Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 2650,
+      "rubric_items": [
+        {
+          "id": 16172,
+          "section_id": 5641,
+          "passed_description": "The project contains the necessary SQL scripts to create review, comment and product tables.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:00:07.679Z",
+          "updated_at": "2019-07-02T18:00:28.412Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The project demonstrates understanding of SQL DDL.",
+          "exceedable": false
+        },
+        {
+          "id": 16173,
+          "section_id": 5641,
+          "passed_description": "The project contains the SQL to create foreign key constraints on review & comment tables. Review is related to Product. Comment is related to Review.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:00:28.764Z",
+          "updated_at": "2019-07-02T18:00:43.666Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "The project shows proper use of relational model constraints.",
+          "exceedable": false
+        },
+        {
+          "id": 16174,
+          "section_id": 5641,
+          "passed_description": "The project contains the following properties to properly connect to a relational database in Spring.\nSpring.datasource.url, spring.datasource.username, spring.datasource.password\n",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:00:44.189Z",
+          "updated_at": "2019-07-02T18:01:15.598Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "The project demonstrates understanding of connecting an application to a relational database.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5642,
+      "name": "JPA",
+      "created_at": "2019-07-02T18:01:23.379Z",
+      "updated_at": "2019-07-02T18:01:30.390Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 2650,
+      "rubric_items": [
+        {
+          "id": 16175,
+          "section_id": 5642,
+          "passed_description": "The project contains the JPA entities for Product, Review & Comment.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:01:30.758Z",
+          "updated_at": "2019-07-02T18:01:50.413Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The project demonstrates understanding of JPA.",
+          "exceedable": false
+        },
+        {
+          "id": 16176,
+          "section_id": 5642,
+          "passed_description": "The project contains JPA entities which use at least one of the available id generation strategies in JPA.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:01:50.838Z",
+          "updated_at": "2019-07-02T18:02:17.205Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "The project demonstrates understanding of primary key (id) generation in JPA.",
+          "exceedable": false
+        },
+        {
+          "id": 16177,
+          "section_id": 5642,
+          "passed_description": "The project contains JPA entities which are connected using JPA collections.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:02:17.521Z",
+          "updated_at": "2019-07-02T18:02:37.425Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "The project shows proper use JPA data modeling.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5643,
+      "name": "Spring Data JPA",
+      "created_at": "2019-07-02T18:05:17.741Z",
+      "updated_at": "2019-07-02T18:05:24.057Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 2650,
+      "rubric_items": [
+        {
+          "id": 16178,
+          "section_id": 5643,
+          "passed_description": "The project contains Spring Data JPA repositories for Product, Review & Comment entities.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:05:24.430Z",
+          "updated_at": "2019-07-26T18:33:22.311Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The project demonstrates understanding of Spring Data JPA.",
+          "exceedable": false
+        },
+        {
+          "id": 16179,
+          "section_id": 5643,
+          "passed_description": "The project contains Spring Data JPA repositories with methods following the query keywords and return types.\n\nhttps://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords\n\nhttps://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-return-types",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:06:51.350Z",
+          "updated_at": "2019-07-02T18:07:05.685Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "The project shows proper use Spring Data JPA Repository Query methods",
+          "exceedable": false
+        },
+        {
+          "id": 16180,
+          "section_id": 5643,
+          "passed_description": "The project contains the correct methods wired in at the provided controllers in the starter code.",
+          "exceeded_description": null,
+          "created_at": "2019-07-02T18:07:06.038Z",
+          "updated_at": "2019-07-02T18:07:35.943Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "The project demonstrates usage of Spring Data JPA repositories.\n",
+          "exceedable": false
+        },
+        {
+          "id": 16339,
+          "section_id": 5643,
+          "passed_description": "The project has tests for all the methods in the Spring Data JPA repositories.",
+          "exceeded_description": null,
+          "created_at": "2019-07-28T16:34:20.785Z",
+          "updated_at": "2019-07-28T16:34:56.180Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "The project demonstrates usage Spring test framework.",
+          "exceedable": false
+        },
+        {
+          "id": 16340,
+          "section_id": 5643,
+          "passed_description": "The project has tests for Spring Data JPA repositories that run against a H2 database.",
+          "exceeded_description": null,
+          "created_at": "2019-07-28T16:34:56.439Z",
+          "updated_at": "2019-07-28T16:35:16.218Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 4,
+          "criteria": "The project shows proper use of H2 database for testing.",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 627,
+    "name": "Data Store for Customer Reviews - Midterm",
+    "nanodegree_key": "nd035",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": false,
+    "is_career": false,
+    "recruitment_family_id": 12,
+    "created_at": "2019-07-03T17:39:07.818Z",
+    "updated_at": "2020-09-21T14:44:24.947Z",
+    "price": "7.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

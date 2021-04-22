@@ -1,0 +1,338 @@
+{
+  "data": {
+    "lesson": {
+      "id": 900325,
+      "key": "b450f60b-a86d-48f8-aa06-6ddcc7be93a9",
+      "title": "MongoDB for Java",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn to use MongoDB in your java applications",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/b450f60b-a86d-48f8-aa06-6ddcc7be93a9/900325/1564512215430/MongoDB+for+Java+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/b450f60b-a86d-48f8-aa06-6ddcc7be93a9/900325/1564512213142/MongoDB+for+Java+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 900321,
+          "key": "df240808-f748-425f-9320-64f973cd5430",
+          "title": "Java Driver",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "df240808-f748-425f-9320-64f973cd5430",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900310,
+              "key": "b7ff3f57-c1e2-4b62-881c-fadac9564318",
+              "title": "ND#305 C03 L04 A02 Java Driver",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IDntpM3Q_us",
+                "china_cdn_id": "IDntpM3Q_us.mp4"
+              }
+            },
+            {
+              "id": 900317,
+              "key": "5ceb1b9a-4593-47d8-8afe-ff25d39d905c",
+              "title": "Summary",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "MongoDB provides a driver that java applications can use to interact with MongoDB. There are two types of drivers for MongoDB:  \n\n1. Sync\n2. Async - A callback-based asynchronous driver\n\nWe will be using the sync version of the driver in this lesson. The link for the async driver is included in the additional resources section, feel free to explore it on your own.\n\nThe Mongo driver used in this lesson is 3.8.\n\n**Additional Resources**\n- [Mongo Java Driver](https://mongodb.github.io/mongo-java-driver/3.8/driver/)\n- [Mongo Java Driver Maven Coordinates](https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver/3.8.2)\n- [Mongo Java Async Driver](https://mongodb.github.io/mongo-java-driver/3.8/driver-async/)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 900323,
+          "key": "5ad73a23-39e6-4757-8a25-ff1170fb78c4",
+          "title": "Working with Documents",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5ad73a23-39e6-4757-8a25-ff1170fb78c4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900308,
+              "key": "9cb804b4-0c16-4871-a0b2-beeb6e4fdae8",
+              "title": "ND#305 C03 L04 A03 Create Documents",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AGGOJeiUZ7I",
+                "china_cdn_id": "AGGOJeiUZ7I.mp4"
+              }
+            },
+            {
+              "id": 922050,
+              "key": "64bda016-5964-419d-816d-a8a5deeee4f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Link for the starter code for the following exercise.**\n\nCheckout the <a href=\"https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l4_exercise4\" target=\"_blank\">starter code</a>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900313,
+              "key": "5611a435-e391-4afa-a617-1e831942492c",
+              "title": "Exercise",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5611a435-e391-4afa-a617-1e831942492c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Create a collection named _members_.",
+                "Insert a _member_ document with no *_id* field but include all the other fields. Print the inserted document to see if id is generated by the database.",
+                "Insert a _member_ document with all the fields including *_id*. Print the inserted document to see if id is NOT overwritten by the database.",
+                "Insert 5 _member_ documents using one `insert`.",
+                "Update the name of the field `gender` to `sex` in all the inserted documents.",
+                "Delete a document using its *_id*.",
+                "Delete just **one** document whose `sex` is `male`. **Tip:** This requires you to look through the MongoDB driver documentation to find the right command."
+              ],
+              "positive_feedback": "Well done! You now know how to create,update and delete documents in a collection using the mongo driver.",
+              "video_feedback": null,
+              "description": "##### Environment Setup\n- MongoDB server is started.\n- Java 1.8 is installed.\n- Checkout the [starter code](https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l4_exercise4).\n- Import the starter code into the IDE like IntelliJ IDEA CE (Optional).\n- Modify the `Application.java` class to complete the exercise.\n\n##### Document Structure\nThe _member_ document represents the members of a health club.\n```json\n{\n\t\"_id\": “cjenkins”,\n\t\"first_name\": \"Carl\",\n\t\"last_name\": \"Jenkins\",\n\t\"gender\": \"male\",\n\t\"age\": 23,\n\t\"address\": {\n\t\t\"street\": \"123 Main Street\",\n\t\t\"city\": \"Oakland\",\n\t\t\"state\": \"CA\"\n\t},\n\t\"interests\": [\"pilates\",\"swim\",\"crossfit\"],\n\t\"balance\": 125.20\n}\n```\n\n##### How to run the code?\n- In the IDE, Run the `Exercise4Application` class.\n- Using Maven:\n - MacOS - `./mvnw exec:java`\n - Windows - `mvnw exec:java` "
+            },
+            {
+              "id": 900312,
+              "key": "71ee20fc-0c99-4263-a583-550bfdb38c4b",
+              "title": "ND#305 C03 L04 A04 Querying Documents",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WnrTMQqL2tc",
+                "china_cdn_id": "WnrTMQqL2tc.mp4"
+              }
+            },
+            {
+              "id": 922051,
+              "key": "a4c659e3-0b61-4ab7-904f-ff8c79478c6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Checkout the link to the ** **<a href=\"https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l4_exercise6\" target=\"_blank\">**starter code**</a>** ** for the Exercise below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900307,
+              "key": "09ef44a3-3ddc-4b20-bd4d-ba2a75fc7082",
+              "title": "Exercise",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "09ef44a3-3ddc-4b20-bd4d-ba2a75fc7082",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Find all members whose `last_name` is `Khan` and print the results. There should be one document in the results.",
+                "Find all members whose `last_name` is `Doe` and `gender` is `female` and print the results. There should be one document in the results.",
+                "Find all members who are interested in `golf` and print the results. There should be 2 documents in the results.",
+                "Find all members who live in `MN` and print the results. There should be 2 documents in the results.",
+                "Count the number of members who are `male` and print the results. Result: 3",
+                "Find the first _member_ who is a `female` sorted by their `first_name` and print the results. Result: Member’s `first_name` is `Jane`."
+              ],
+              "positive_feedback": "Well done! You used the various query methods in MongoDB java driver.",
+              "video_feedback": null,
+              "description": "##### Environment Setup\n- MongoDB server is started.\n- Use mongo shell to connect to your local MongoDB server.\n- Select the database `jdnd-c3`.\n- **Run `db.members.remove({})` to remove all documents in the collection.**\n- Insert seed data given below.\n- Checkout the [starter code](https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l4_exercise6).\n- Import the starter code into the IDE like IntelliJ IDEA CE (Optional).\n- Modify the `Application.java` class to complete the exercise.\n\n**Seed Data**\n```\ndb.members.insert([{\n  first_name: \"Jane\",\n  last_name: \"Doe\",\n  age: 45,\n  gender: \"female\",\n  interests: [\"pilates\",\"swim\",\"crossfit\"],\n  balance: 125.20,\n  address: {\n      street: \"123 Main St\",\n      city: \"Birmingham\",\n      state: \"AL\"\n  }\n},\n{\n  first_name: \"John\",\n  last_name: \"Doe\",\n  age: 47,\n  gender: \"male\",\n  interests: [\"pilates\",\"swim\"],\n  balance: 56.25,\n  address: {\n      street: \"123 First St\",\n      city: \"Minneapolis\",\n      state: \"MN\"\n  }\n},\n{\n  first_name: \"Lakshmi\",\n  last_name: \"Natarajan\",\n  age: 29,\n  gender: \"female\",\n  interests: [\"swim\", \"tennis\"],\n  balance: 556.39,\n  address: {\n      street: \"149 Main St\",\n      city: \"Birmingham\",\n      state: \"AL\"\n  }\n},\n{\n  first_name: \"Eduardo\",\n  last_name: \"Lopez\",\n  age: 32,\n  gender: \"male\",\n  interests: [\"swim\", \"tennis\", \"golf\"],\n  balance: 1034.23,\n  address: {\n      street: \"298 Second St\",\n      city: \"Birmingham\",\n      state: \"AL\"\n  }\n},\n{\n  first_name: \"Sana\",\n  last_name: \"Khan\",\n  age: 53,\n  gender: \"female\",\n  interests: [\"golf\"],\n  balance: 500,\n  address: {\n      street: \"649 First St\",\n      city: \"Minneapolis\",\n      state: \"MN\"\n  }\n},\n{\n  first_name: \"Rahul\",\n  last_name: \"Mani\",\n  age: 18,\n  gender: \"male\",\n  interests: [\"swim\"],\n  balance: 250,  \n  address: {\n      street: \"41 Second Ave\",\n      city: \"Indianapolis\",\n      state: \"IN\"\n  }\n}\n]);\n```\n\n##### How to run the code?\n- In the IDE, Run the `Application` class.\n- Using Maven:\n - MacOS - `./mvnw exec:java`\n - Windows - `mvnw exec:java` "
+            }
+          ]
+        },
+        {
+          "id": 900324,
+          "key": "596f8c80-722f-4ff9-833e-30cb2c9b8745",
+          "title": "Spring Data MongoDB",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "596f8c80-722f-4ff9-833e-30cb2c9b8745",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900344,
+              "key": "90182a2d-a954-4c15-8223-520410af7f51",
+              "title": "ND#305 C03 L04 A01 Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5O9UPT_q6B0",
+                "china_cdn_id": "5O9UPT_q6B0.mp4"
+              }
+            },
+            {
+              "id": 900309,
+              "key": "5f73050f-62a5-4d88-bbd5-a51aaca4ff3c",
+              "title": "ND#305 C03 L04 A04 Spring Data Mongo",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SQLeKmXKUes",
+                "china_cdn_id": "SQLeKmXKUes.mp4"
+              }
+            },
+            {
+              "id": 966242,
+              "key": "a6c5f0c2-07fa-400b-b8e6-3a900e440852",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Additional Resources**\n- [Spring Data MongoDB](https://docs.spring.io/spring-data/mongodb/docs/2.1.9.RELEASE/reference/html/#introduction)\n- [Getting Started with Spring Data MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900316,
+              "key": "dc2438a2-115a-433a-9bb1-c237b7721c49",
+              "title": "Exercise",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dc2438a2-115a-433a-9bb1-c237b7721c49",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Define a class called `Member` to represent a member. Annotate with @Document and @Id.",
+                "Define a class called `MemberRepository` with a method to find members by last name.",
+                "Modify the `Application` to save a `Member` using the `MemberRepository`.",
+                "Modify the `Application` to read `Member` using the last name of the previously saved member. Print the read result.",
+                "Modify the `Application` to read `Member` using _id_ of the previously saved member. Print the read result."
+              ],
+              "positive_feedback": "Nicely done. You scratched the surface of Spring Data MongoDB. Read the linked documentation to expand your knowledge.",
+              "video_feedback": null,
+              "description": "##### Environment Setup\n- MongoDB server is started.\n- Use mongo shell to connect to your local MongoDB server.\n- Select the database `jdnd-c3`.\n- Checkout the [starter code](https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l4_exercise10)\n- Import the starter code into the IDE like IntelliJ IDEA CE (Optional).\n- Modify the `Application.java` class to complete the exercise."
+            }
+          ]
+        },
+        {
+          "id": 900322,
+          "key": "273f05f7-f7af-42a6-bfda-d48df94a71da",
+          "title": "DB Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "273f05f7-f7af-42a6-bfda-d48df94a71da",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900311,
+              "key": "89b93230-13a3-46fb-8191-0e8fd1b2e08d",
+              "title": "Testing MongoDB Code",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nLet’s see how we can write tests for Spring Data MongoDB application. Just like we had used H2 for testing JPA repositories, we will be leveraging an [unofficial embedded MongoDB implementation](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo).\n\n#### Test Using Embedded MongoDB\nThis section covers two scenarios\n1. Autoconfigured Spring Boot Test.\n2. Test with custom manual configuration.\n\nFor both scenarios, the embedded MongoDB dependency should be added,\n\n```xml\n<dependency>\n    <groupId>de.flapdoodle.embed</groupId>\n    <artifactId>de.flapdoodle.embed.mongo</artifactId>\n    <scope>test</scope>\n</dependency>\n```\nIt’s scoped to _test_ as we only need it for our tests.\n\n##### Autoconfigured Spring Boot Test\nAfter adding de.flapdoodle.embed.mongo dependency Spring Boot will automatically try to download and start the embedded MongoDB when running tests. The first test will be a little slower than subsequent tests because of the download.\n\nThe following test looks very similar to the JPA test in Lesson 2. Notice the _@DataMongoTest_ that tells Spring Boot an embedded Mongo is required for this test. Spring Boot will recognize the Flapdoodle artifact in the classpath, download and run the embedded Mongo implementation. \n\n```java\n@DataMongoTest\n@ExtendWith(SpringExtension.class)\npublic class EmbeddedMongoTest {\n\n    @Autowired MongoTemplate mongoTemplate;\n\n    @Test\n    public void simpleTest() {\n\n        DBObject dbObject = BasicDBObjectBuilder.start()\n            .add(\"key\", \"value\")\n            .get();\n \n        mongoTemplate.save(objectToSave, \"myCollection\");\n \n        assertThat(mongoTemplate.findAll(DBObject.class, \"myCollection\")).extracting(\"key\")\n            .containsOnly(\"value\");\n    }\n}\n```\n\n##### Manual Configuration Test\nSpring Boot will automatically start and configure the embedded database and then inject MongoTemplateinstance for us. However, sometimes we might need to configure embedded Mongo database manually(e.g., when testing a specific DB version).\n\nWhile we won’t be showing you here how to configure the embedded MongoDB instance manually, it’s important for you to know that there may be cases where you will need to do so. \n\nMore examples can be found on the official [Flapdoodle’s GitHub repository](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo).\n\n##### Logs\nLogging can be configured using the below properties. There are other values they can be set to, but this is one example. \n\n```\nlogging.level.org.springframework.boot.autoconfigure.mongo.embedded=debug\nlogging.level.org.mongodb=error\n```\n\nKeep in mind that the type of testing above has its limitations. The Embedded Mongo implementation is like Mongo but *NOT* an actual MongoDB installation. These type of tests are useful for validating basic CRUD functionality. As soon as more advanced features of MongoDB are required, these tests quickly lose their value. This is another tool in a developer’s arsenal and must be used appropriately.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 922053,
+              "key": "f833319b-0080-4a4c-8d30-7d9cc1a29390",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Checkout the ** **<a href=\"https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l4_exercise13\" target=\"_blank\">**starter code**</a> for the Exercise below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900315,
+              "key": "54c22c3d-8449-485e-adcb-bef4f7ac6579",
+              "title": "Exercise",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "54c22c3d-8449-485e-adcb-bef4f7ac6579",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Write a test for your MemberRepository `save` method in MemberRepositoryTest class."
+              ],
+              "positive_feedback": "Nice job on writing a test!",
+              "video_feedback": null,
+              "description": "##### Environment Setup\n- MongoDB server is started.\n- Use mongo shell to connect to your local MongoDB server.\n- Select the database `jdnd-c3`.\n- You will be using your `Member` code from the previous section to complete this exercise.\n- Modify your `MemberRepositoryTest.java` class to complete the exercise."
+            }
+          ]
+        },
+        {
+          "id": 900320,
+          "key": "756d408b-94f9-43b0-ad5c-12ca2ef15835",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "756d408b-94f9-43b0-ad5c-12ca2ef15835",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900314,
+              "key": "903ab925-384e-4630-a57e-be7910caf715",
+              "title": "ND#305 C03 L04 A05 Recap",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OOT2Gyk36aM",
+                "china_cdn_id": "OOT2Gyk36aM.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
