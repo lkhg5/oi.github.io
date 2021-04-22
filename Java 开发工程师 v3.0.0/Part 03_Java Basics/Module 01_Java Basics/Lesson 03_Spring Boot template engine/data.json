@@ -1,0 +1,1109 @@
+{
+  "data": {
+    "lesson": {
+      "id": 899638,
+      "key": "2e887502-8fe1-46aa-87b6-bbbb8db00afb",
+      "title": "Spring Boot template engine",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Spring Boot template engine",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2e887502-8fe1-46aa-87b6-bbbb8db00afb/899638/1564507252916/Spring+Boot+template+engine+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2e887502-8fe1-46aa-87b6-bbbb8db00afb/899638/1564507247659/Spring+Boot+template+engine+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 899636,
+          "key": "675fdc34-4e80-465b-8def-abfb3162e989",
+          "title": "Spring Boot Template Engine",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "675fdc34-4e80-465b-8def-abfb3162e989",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 899639,
+              "key": "1b62e6ba-19b7-42e3-b244-ac71bbc97291",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous lesson, we have introduced microservice, MVC framework and Spring Boot framework. I believe now you have a good sense about how to create a simple Spring Boot application. Let’s continue our Spring Boot journey. In this lesson we are going to learn the  Spring Boot template engine and a persistence framework. There are three major template engines in Spring Boot which are: \n1. Freemarker\n2. JSP\n3. Thymeleaf\n\nWe are going to focus on Thymeleaf for this course. But I will still give you a brief introduction on Freemarker. I won’t cover JSP, because it is not widely used in spring boot application.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900522,
+              "key": "e1f55fd6-c148-43d3-9fed-ba399bd5edc1",
+              "title": "035ND C01 L03 A01 WELCOME",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Prbodc9EvZA",
+                "china_cdn_id": "Prbodc9EvZA.mp4"
+              }
+            },
+            {
+              "id": 951638,
+              "key": "b5883163-9c78-489b-be78-202e99d8ee44",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A template engine is an engine that helps produce dynamic web pages. It parses HTML/XHTML pages that contain some special attributes or tags that are mapped to some variables on the server. When a web page is to be rendered on a browser, the template engine replaces the tags or the attributes in that web page's HTML/XHTML with the values of the variables those attributes are bound to. \n\nFor example, a message on a web page's HTML can have the following value: ```\"Hello ${userName}\"```, where userName is a variable on the server. When a template engine wants to render that page, it'll replace ${userName} with the value of that variable on the server. Let's suppose that the value is John, in that case the message will say \"Hello John\". ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899640,
+              "key": "6470ea35-b5e5-4747-aa48-af73476af90a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Freemarker Introduction",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906406,
+              "key": "4a3b3f39-e866-48ba-93f6-6df536d045c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "FreeMarker is a Java based template engine package from Apache. \n\nActually I was one of the contributors for that project. It’s become a fully accepted Apache project in 2018. \n\nFreeMarker work as a sequential text processor which is a different approach compared to Thymeleaf. But again, FreeMarker is a new project, and I see the potential in it. In this lesson, we are going to briefly show how to use FreeMarker in SpringBoot. If you are interested in FreeMarker, please feel free to check it out at its website: [https://freemarker.apache.org/](https://freemarker.apache.org/). ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906546,
+              "key": "974c2dc6-3f02-466f-88e0-0cdfbff0ecfa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 908232,
+              "key": "9f2b5e9b-2ff6-4c7e-855c-2bcbe786e02d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "(Resources: Freemaker: https://freemarker.apache.org/)\n\n1. Go to https://start.spring.io/ and change artifact to freemarker. \n\n2. Add Spring Web and Apache Freemarker as dependencies.\n\n3. Download, unzip, and import the project.\n\n4. Create a model directory (under com.example.freemarker) and create Student class with id, studentName, and grade as our model (you need to create this class under the model directory). In addition to declaring id, studentName, and grade variables for our class, make sure you set up the constructor which will be used to initialize Student objects (note how the constructor receives id, name, and grade values and uses them to set the values of the student object). Your code should look like the one below: \n```\npublic class Student {\n   private Integer Id;\n   private String studentName;\n   private double grade;\n\n  //Student constructor\n   public Student(Integer id, String studentName, double grade) {\n       Id = id;\n       this.studentName = studentName;\n       this.grade = grade;\n   }\n\n   public double getGrade() {\n       return grade;\n   }\n\n   public void setGrade(double grade) {\n       this.grade = grade;\n   }\n\n   public String getStudentName() {\n       return studentName;\n   }\n\n   public void setStudentName(String studentName) {\n       this.studentName = studentName;\n   }\n\n   public Integer getId() {\n\n       return Id;\n   }\n\n   public void setId(Integer id) {\n       Id = id;\n   }\n}\n```\n\n5. Create a controller directory (under com.example.freemarker) and create a StudentList class as our controller (you need to create this class under the controller directory). Your code should look like the one below: \n```\n@Controller\npublic class StudentList {\n\n   @RequestMapping(\"/list\")\n   public String list(Model model) {\n       List<Student> list = new ArrayList<>();\n       list.add(new Student(1, \"Tom\", 80.5));\n       list.add(new Student(2, \"Jerry\", 90.4));\n       list.add(new Student(3, \"Paul\", 77.5));\n       model.addAttribute(\"list\", list);\n       return \"list\";\n   }\n}\n```\n\n6. Create a list.ftl in resource/templates. Your code should look like the one below:\n```\n<html>\n   <title>Student List</title>\n   <meta charset=\"utf-8\" />\n   <body>\n       <h3>Student Grade Table</h3>\n       <table>\n           <tr>\n               <th>Student ID</th>\n               <th>Student Name</th>\n               <th>Grade</th>\n           </tr>\n           <#list list as student>\n           <tr>\n               <td>${student.id}</td>\n               <td>${student.studentName}</td>\n               <td>${student.grade}</td>\n           <tr>\n           </#list>\n       </table>\n   </body>\n</html>\n```\n\n7. Start the application and go to localhost:8080/list\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899730,
+              "key": "82672450-ecfc-49cd-9370-97d2e4ea3eeb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Spring Boot with Freemarker",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900525,
+              "key": "3de940b7-e268-4eb1-af3c-7de31c3bcacc",
+              "title": "035ND C01 L03 A02 SPRINGBOOT WITH FREEMARKER",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Cdqb1sX8xBA",
+                "china_cdn_id": "Cdqb1sX8xBA.mp4"
+              }
+            },
+            {
+              "id": 899731,
+              "key": "4422fdb5-7cc4-46b6-902e-334adf260105",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Below are few things you might have noticed during the development: \n\n1. We used @Controller this time rather than @RestController. To clarify, @RestController is used when the response should be sent to the browser in JSON or XML format. However,  @Controller can be responsible for both returning a response in JOSN or XML format and rendering that response on the browser. For example, in our code above we rendered the list added to the model by the controller (it was added using ```model.addAttribute(\"list\", list)```) as rows in the table that should be displayed on the browser. \nWhat we did is that we defined a loop variable in the html code using this syntax: ```<# list variable_name as name> </# list> ```. This syntax in FreeMarker allows us to define a loop variable that we can use to iterate over a list. In this case, we wanted to iterate over the variable \"list\" (the one that was added to the model by the controller), and we defined a loop variable \"student\" to represent each element in the list in each loop iteration, then we got data from \"student\" to display it as columns in each row. Note that a loop variable only exists between its start and end tags and can't be accessed outside of them. So, here, \"student\" variable can only be accessed within these tags: ```<# list variable_name as name> </# list>```. Note that using @RestController is equivalent to using @Controller plus using @ResponseBody.\n\n\n2. We added the view in template folder rather than static folder.\n\n\n3. We created a student model with three attributes (variables), and the controller sent a student list back to the freemarker view. Please take a look at the freemarker’s syntax and understand how it works.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906547,
+          "key": "0acdad36-f26a-4d67-b018-b85e0eaaec6e",
+          "title": "Spring Boot Template Engine - Thymeleaf",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0acdad36-f26a-4d67-b018-b85e0eaaec6e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906548,
+              "key": "e37351d0-5235-4a9e-b42d-a244573d4e7f",
+              "title": "035ND C01 L03 A03 SPRINGBOOT WITH THYMELEAF INTRO",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JdKz6nBnBn8",
+                "china_cdn_id": "JdKz6nBnBn8.mp4"
+              }
+            },
+            {
+              "id": 952332,
+              "key": "8184e8c4-aacc-4169-8d8f-856f627d19e3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Thymeleaf is a template engine that is based on attributes. This simply means that if you have any variables that reside on the server and you want to use them in your page, you just need to refer to them by using some attributes in your HTML code (we'll see how in the coming lessons). \n\nWhen a browser wants to display a web page, it builds a DOM (Document Object Model) of that page. DOM is a tree representation of your HTML document, where each element (tag) in your HTML code is defined as an object that can have a parent and one or more children. In other words, DOM is an object-based representation of your web page and it is the way browsers represent a page in memory, i.e., a browser creates a DOM from an html code and stores it in memory. A developer can access DOM through some languages like javascript and change things in the page (like some text, image, etc.) without the need of changing the HTML of that page. \n\nThymeleaf modifies the DOM (which resides in memory) to make it reflect the values of the variables on the server side (those that were referenced in the HTML code), and by that the web page will be dynamic and will have the values of those variables displayed. It should be mentioned that Thymeleaf performs all of its processes in memory (including modifying DOM), that's why it's considered an in-memory template engine. \n\nLet’s take an example about DOM tree, look at the HTML code below: \n```\n<!DOCTYPE html>\n<html>\n\t<head>\n   \t\t<title>Demo</title>\n\t</head>\n\t<body>\n   \t\t<h1>What is DOM?</h1>\n   \t\t<p>DOM is an object-based representation of your web page and it is the way browsers represent a page in memory</p>\n\t</body>\n</html>\n```\nAs you can see, html is the root element and it has two children, head and body. Head has one child which is title which has the value of “Demo”. Body has two children, the first one is h1 and it has the value of “What is DOM?”, the second one is p and it has the value of “DOM is an object-based representation...”. The resulting DOM tree of this HTML looks like the one below: \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 952333,
+              "key": "6d9462ff-49b4-46c4-b4ad-f7a3ed94f4b4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/October/5dad612d_dom/dom.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6d9462ff-49b4-46c4-b4ad-f7a3ed94f4b4",
+              "caption": "",
+              "alt": "",
+              "width": 845,
+              "height": 520,
+              "instructor_notes": null
+            },
+            {
+              "id": 906549,
+              "key": "43d7d692-396a-419a-9ea2-2d9322c8fb89",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906550,
+              "key": "a723fd63-cf82-41af-a500-715d8d819c72",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n1. Go to https://start.spring.io/ and create a new Spring Boot project named spring-boot-thymeleaf with Thymeleaf and Spring Web being added as dependencies.\n2. Download, unzip, and import the project.\n3. Create a controller directory under ```com.example.springbootthymeleaf```. Then, create a UserController Java class under the controller directory. Your code should look like the one below: \n```\n@Controller\npublic class UserController {\n\n   @RequestMapping(\"demo\")\n   public String demo(Model model) {\n       model.addAttribute(\"message\", \"Hello Thymeleaf\");\n       // return to templates/demo.html page.\n       return \"demo\";\n   }\n}\n```\n\n4. Create a demo.html file under resources/template directory. Your code should look like the one below:\n```\n<!DOCTYPE html>\n<html lang=\"en\" xmlns:th=\"http://www.w3.org/1999/xhtml\">\n<head>\n   <meta charset=\"UTF-8\">\n   <title>Thymeleaft Demo</title>\n</head>\n<body>\n   <span th:text=\"${message}\"></span>\n</body>\n</html>\n```\n\n5. Run the application, and go to http://localhost:8080/demo, you should see “Hello Thymeleaf” message printed on the web page.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906551,
+              "key": "2851548a-820f-4bc5-99ce-3f66a7abab08",
+              "title": "035ND C01 L03 A04 SPRINGBOOT WITH THYMELEAF",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kz7Du8N4mmM",
+                "china_cdn_id": "kz7Du8N4mmM.mp4"
+              }
+            },
+            {
+              "id": 906552,
+              "key": "dbd006af-9c57-4e4d-93ab-1a75a7f08ef5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "That’s our Spring Boot application using Thymeleaf, easy right? \n\nCompared to freemarker, it’s easier to use. One thing you need to add to your html header is ```xmlns:th=\"http://www.w3.org/1999/xhtml\"```, which tells the html that we are using Thymeleaf engine. \n\nIn the next lessons, we'll take a look at thymeleaf syntax including:\n\n- Variable\n- Condition\n- Loop\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906553,
+          "key": "2f4d22bd-f2d2-40c2-989d-8b06b4c94eb9",
+          "title": "Thymeleaf - Variable",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2f4d22bd-f2d2-40c2-989d-8b06b4c94eb9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906555,
+              "key": "a5a2f067-8b27-46c4-b989-111fbe20c394",
+              "title": "035ND C01 L03 A05 THYMELEAF VARIABLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3F5LN8q-Wh4",
+                "china_cdn_id": "3F5LN8q-Wh4.mp4"
+              }
+            },
+            {
+              "id": 906556,
+              "key": "f92f43da-3298-4fa0-ae72-54ebd3d8e6bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nLet's revisit the simple example you built in the previous lesson. In the previous lesson, you wrote the bellow code: \n\n**Controller class code:**\n\n```\n@Controller\npublic class UserController {\n\n   @RequestMapping(\"demo\")\n   public String demo(Model model) {\n       model.addAttribute(\"message\", \"Hello Thymeleaf\");\n       // return to templates/demo.html page.\n       return \"demo\";\n   }\n}\n```\n**HTML code:**\n```\n<!DOCTYPE html>\n<html lang=\"en\" xmlns:th=\"http://www.w3.org/1999/xhtml\">\n<head>\n   <meta charset=\"UTF-8\">\n   <title>Thymeleaft Demo</title>\n</head>\n<body>\n   <span th:text=\"${message}\"></span>\n</body>\n</html>\n```\n\nTake a look at the code again. If you think that you used the variable named \"message\" on your web page, you're right. Let's explain the example further in order to understand how to use variables in Thymeleaf. \n\nFirst, any data that should be accessed when rendering a page is called **model attributes**. This means if there is any variable on the server side that you want to have its value displayed on some page, you need to add it to your model attributes. \n\nAs you can see in the java code, we added our variable “message” to the model attributes using ```model.addAttribute(\"message\", \"Hello Thymeleaf\")```. Here, the variable name is “message”, and the variable value is “Hello Thymeleaf”. So, when the page is displayed, we’ll see “Hello Thymeleaf”. \n\nIn order to display that variable value on the page, we need to refer to it in the HTML code (we’ll use Thymeleaf to do that). To be able to use Thymeleaf as a template engine in the HTML code, you need to add this line to the html tag: ```xmlns:th=\"http://www.w3.org/1999/xhtml\"``` as we did in the code above. This line tells the html that we are using Thymeleaf engine. \n\nNote how we used ```xmlns:th``` and associated it with some URI. What we did here was that we defined a namespace. The provided URI (http://www.w3.org/1999/xhtml) represents a unique name of the namespace. A namespace is a technique to differentiate between elements and attributes in an XML file that have the same name but have different purposes. Say for example that in an XML file we have two elements with the same name like ```<image>```, and suppose that those two tags or elements were developed by different developers, have different functionalities, and belong to two different namespaces. In this case, in each ```<image>``` tag we need to identify the namespace in order to let XML know to which namespace each of the ```<image>``` tags belongs, based on that it can know how each one functions. In the example above, we defined the namespace in the html tag, meaning that we'll use elements and attributes that are identified by that namespace across the entire html file. ```th``` is a prefix of the name space which we need to add before any attribute that belongs to that namespace. As you can see, the namespace that refers to Thymeleaf elements and attributes is prefixed with ```th```, this means that whenever we want to use an attribute that belongs to that namespace we should prefix it with ```th``` (for example ```th:text```).\n\nThis is useful if we want to use multiple namespaces in the same html file and they have some attributes with identical names, in that case, each namespace can have a different prefix. Let's say we have an attribute named \"length\" and it exists in two different namespaces that we use in our HTML file, let's say that the first namespace has a prefix of \"m\" and the second has a prefix of \"n\", If we want to use the length attribute from the first namespace we'll write \"m:length\", if we want to use it from the other namespace we'll write \"n:length\". \n\nLet's continue explaining the rest of the code, in the example above, we wanted to display the variable inside the body tag, specifically, inside the span tag. To access that variable, we added the attribute ```th:text``` to the span tag, then we assigned ${message} to that attribute. The attribute will then display the text that results from this expression: ${message}, which is \"Hello Thymeleaf\". Note how using the dollar sign and enclosing the variable with braces will evaluate to the value of that variable. So, ```th:text``` attribute is used to display a variable’s value. \n\nIt should also be noted that ```th:text``` will replace a tag’s content. For example, if we write:\n\n```\n<p th:text=\"${message}\">test</p>\n```\nThe text that will be displayed on the web page is “Hello Thymeleaf” (“test” will be replaced).\n\nYou can use the steps above to include any variable you want through Thymeleaf. \n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 906557,
+          "key": "9b751fb1-25de-4948-8815-21029abc7e45",
+          "title": "Thymeleaf - Condition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9b751fb1-25de-4948-8815-21029abc7e45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906558,
+              "key": "b1cbeb9e-9f93-49fa-9b71-3e1079a8446d",
+              "title": "035ND C01 L03 A06 THYMELEAF CONDITION",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xjAUZyP-Zq8",
+                "china_cdn_id": "xjAUZyP-Zq8.mp4"
+              }
+            },
+            {
+              "id": 906559,
+              "key": "b7223b35-d076-4d7c-ace6-8d51d35b5c6b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906560,
+              "key": "a6df26a1-44d6-4884-9123-92cb802db46a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let’s update our controller class. Change the code inside the class to look like the one below: \n\n```\n@RequestMapping(\"demo\")\npublic String demo(Model model) {\n   model.addAttribute(\"message\", \"Hello Thymeleaf\");\n   double grade = 90.5;\n   model.addAttribute(\"grade\", grade);\n   model.addAttribute(\"GPA\", convertGPA(grade));\n   // return to templates/demo.html page.\n\n   return \"demo\";\n}\n\nprivate String convertGPA(double grade) {\n   if (grade >= 90) {\n       return \"A\";\n   } else if (grade < 90 && grade >= 80) {\n       return \"B\";\n   } else if (grade < 80 && grade >= 70) {\n       return \"C\";\n   } else if (grade < 70 && grade >= 60) {\n       return \"D\";\n   } else {\n       return \"F\";\n   }\n}\n```\n\nThen, update our view, add the following code to the HTML file inside the ```body``` tag, after ```<span th:text=\"${message}\"></span>``` and before ```</body>```:\n\n```\n<h3>Exam Results</h3>\n<div th:if=\"${grade} >= 60\">\n   You passed the exam.\n   <div th:switch=\"${GPA}\">You are\n       <span th:case=\"A\">Excellent</span>\n       <span th:case=\"B\">Good</span>\n       <span th:case=\"C\">Okay</span>\n       <span th:case=\"D\">Need improvement</span>\n   </div>\n</div>\n<div th:if=\"${grade} < 60\">\n   You failed the exam.\n</div>\n```\n\nThe model for this demo is\n```\npublic class User {\n\n    public Integer id;\n    public String name;\n    public Integer age;\n\n    public User(Integer id, String name, Integer age) {\n        this.id = id;\n        this.name = name;\n        this.age = age;\n    }\n}\n```\n\nRun the application and go to localhost:8080/demo to see the result\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906562,
+              "key": "3d69b307-f985-4b07-b3c2-e981cc8bdbe2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Demo",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906561,
+              "key": "012181d8-14d1-4974-9aeb-b4e2695f8b5c",
+              "title": "035ND C01 L03 A07 THYMELEAF CONDITION EXAMPLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OZJtDp4EVrM",
+                "china_cdn_id": "OZJtDp4EVrM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 906563,
+          "key": "c11b319a-1c9f-4574-bbad-3faa375c094e",
+          "title": "Thymeleaf - Loop",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c11b319a-1c9f-4574-bbad-3faa375c094e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906564,
+              "key": "2e40819b-ceb6-4e0a-be9d-e0eec1be67ef",
+              "title": "035ND C01 L03 A08 THYMELEAF LOOP",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hyndTT_NU0M",
+                "china_cdn_id": "hyndTT_NU0M.mp4"
+              }
+            },
+            {
+              "id": 906565,
+              "key": "9deb1ae4-b178-48ae-9ece-3e9fa123f3c9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906566,
+              "key": "81ebf17a-512e-42a5-a918-dc6374b1ec38",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n1. Create a model directory and add a User class inside it, your code should look like the one below: \n\n```\npublic class User {\n\n   public Integer id;\n   public String name;\n   public Integer age;\n\n   public User(Integer id, String name, Integer age) {\n       this.id = id;\n       this.name = name;\n       this.age = age;\n   }\n}\n```\n\n2. Add the below new method to our controller class:\n\n```\n@RequestMapping(\"demo2\")\npublic String demo2(Model model) {\n   List<User> lst = new ArrayList<>();\n   lst.add(new User(1, \"Tom\", 30));\n   lst.add(new User(2, \"Jerry\", 29));\n   lst.add(new User(3, \"Nancy\", 27));\n   model.addAttribute(\"list\", lst);\n   return \"demo2\";\n}\n```\n\n3. Copy demo.html and paste it as demo2.html. Remove everything between ```<body>``` and ```</body>``` tags. Then, add the following code inside the ```body``` tag: \n\n```\n<h3>Thymeleaf Loop</h3>\n<table>\n   <tr>\n       <th>ID</th>\n       <th>Name</th>\n       <th>Age</th>\n   </tr>\n   <tr th:each=\"user : ${list}\" >\n       <td th:text=\"${user.id}\"></td>\n       <td th:text=\"${user.name}\"></td>\n       <td th:text=\"${user.age}\"></td>\n   </tr>\n</table>\n```\n\n4. Run the code and see the resulting web page. \n\nLet's explain the example above more. First, we created the User class that will contain some variables related to a user (id, name, and age). Then, we created a list of User objects in the controller class (we named that list ```lst```). We wanted to iterate over ```lst``` and render its values on the page, as we said previously, if we want to access any data at the rendering time, we must add it to the model attributes, so we added ```lst``` to the model attributes using this line: ```model.addAttribute(\"list\", lst)```. Note how we linked ```lst``` variable with the name \"list\". This means that when we want to access this variable in the HTML code we'll use the name \"list\". \n\nFor the loop syntax in the HTML file, to indicate that you want to iterate through some variable, you need to add a loop attribute in the tag of the view that you want to have it rendered repeatedly in every iteration of the loop. The loop attribute syntax is ```th:each=\"loop_variable : ${variable_name}\"```, where ```loop_variable``` is the variable you'll use to represent each element in the list (here we call it user, you can call it anything else), and ```variable_name``` is the name of the variable that you want to iterate over which is \"list\" in our example. Since the view that we want it to be rendered repeatedly for every element in the list is the table row, we write: ```<tr th:each=\"user : ${list}\" >```, this will create a new row for every user. \n\nWithin the body of the view in which we define the loop attribute, we can access the loop variable and get any data we want from it, we can get any data inside that variable using the dot notation. For example, to access the id of the current user (the user of the current iteration), we can write ${user.id}. Remember, since any value we access from the loop variable is also a variable, we need to render it using ```th:text``` attribute as we learned previously. In our example, we wanted to render each variable related to the user (like the id) in a column, that's why we wrote: \n\n```\n<td th:text=\"${user.id}\"></td>\n<td th:text=\"${user.name}\"></td>\n<td th:text=\"${user.age}\"></td>\n```\nWhere ```td``` is the tag that's used to build columns inside table rows. So, our code example will create a row for each user in the list and display the user info in the columns of that row. \n\nThis is how you can create loops in Thymeleaf and you can apply the same concept to any other example. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906567,
+              "key": "43609d51-4fa0-470c-b5dd-7c04361483d4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Demo",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906568,
+              "key": "6bc35158-d065-475b-b0c1-98c2c8d819f4",
+              "title": "035ND C01 L03 A09 THYMELEAF LOOP EXAMPLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HaVVQjr3ucU",
+                "china_cdn_id": "HaVVQjr3ucU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 906569,
+          "key": "074f0609-9454-4ffc-b2d6-50c6ecc6a913",
+          "title": "Thymeleaf - Scope",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "074f0609-9454-4ffc-b2d6-50c6ecc6a913",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906570,
+              "key": "70342b22-9312-405e-810c-fd9ac5fc93d9",
+              "title": "035ND C01 L03 A10 THYMELEAF SCOPE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uMpY7aEkawM",
+                "china_cdn_id": "uMpY7aEkawM.mp4"
+              }
+            },
+            {
+              "id": 953060,
+              "key": "ba6843ca-e6f8-4f98-8574-9c3f6413df79",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A scope defines whether some data is available at a certain moment or not. As we learned previously, Servlet is a technology/API/class that is used to handle client requests in web applications and send back the response, and it resides on the server side. Remember that Spring Boot uses Servlet to handle clients requests and respond to them.\n\nServlet has three scopes, application, request, and session scopes.\n\n**Application scope:** This scope starts once a web application is deployed on a server and it’ll only end once that application is shutdown, i.e., as long as the website is hosted on the server, any data that’s added to the application scope will be available. This is useful if we have some data that we want to keep as long as our website is live, in that case we store that data in the application scope. For example, the count of the visits made to the website is something we want to keep throughout the entire life of a web service, that's why it's good to store it in the application scope. In Servlet, we can get the application scope by calling ```getServletContext``` method as we’ll see in the example code below.\n\n**Request scope:** This scope starts when a request is initiated from a client until the sever sends the respond back. So, any data that should be available during handling the request can be added to the request scope. For example, if a user clicks on some product in a page, the product name can be added to the request scope in order to handle the request accordingly. \n\n**Session scope:** This scope starts once a client starts a connection with a website through a browser window until they close that browser window. So, any data that’s needed as long as the client has a connection with the website on their browser should be added to the session scope. A very good example is a website that shows the username at the top left corner of the page (for example) after the user logs in and as long as they have the browser opened and they don't log out. In this case, the username is stored in the session scope. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906571,
+              "key": "d632cfaa-a3f4-478a-80be-05597613cef4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906572,
+              "key": "65cf1099-db85-47aa-b0b1-00d0b1aeeeb8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this example, we are going to reuse our existing code and learn how to use these three scopes in Thymeleaf.\n\n1. Add the below method in our existing controller:\n\n```\n@RequestMapping(\"demo3\")\npublic String demo3(HttpServletRequest request, Model model) {\n   // Add \"request data\" string to the request scope and associated it with the key \"request\" (we'll use the key value to retrieve the data)\n   request.setAttribute(\"request\", \"request data\");\n  \n   // Add \"session data\" String to the session scope and associate it with the key \"session\" (we'll use the key value to retrieve the data)\n   request.getSession().setAttribute(\"session\", \"session data\");\n  \n   // Add \"application data\" String to the application scope and associate it with the key \"application\" (we'll use the key value to retrieve the data)\n   request.getSession().getServletContext().setAttribute(\"application\", \"application data\");\n   return \"demo2\";\n}\n```\n\n\n2. Add the following code in our demo2.html:\n\n```\n<h3>Thymeleaf Scope</h3>\nRequest: <span th:text=\"${#httpServletRequest.getAttribute('request')}\"></span><br />\nSession: <span th:text=\"${session.session}\"></span><br />\nApplication: <span th:text=\"${application.application}\"></span><br />\n```\n\n3. Start application and go to http://localhost:8080/demo3 to see the result\n\nIn the code above, we used ```#httpServletRequest``` because it gives us a direct access to the HttpServletRequest object, then we got the attribute we stored in it using the corresponding key (\"request\"). Then, we wrapped that with ```${}``` to get its value as we learned previously. This retrieves the value stored in the request scope with the key \"request\". \n\nFor the session, we used ```${session.session}``` to get the value stored in the session scope, which has the key \"session\". \n\nFor the application, we used ```${application.application}``` to get the value stored in the application scope, which has the key \"application\". ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906574,
+              "key": "b539d3df-a55d-43fe-a3e0-70086e3349e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Demo",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906573,
+              "key": "833fb99c-e287-48dd-a5d4-3fa1a0e96f4c",
+              "title": "035ND C01 L03 A12 SCOPE EXAMPLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gNJlVXaqxrg",
+                "china_cdn_id": "gNJlVXaqxrg.mp4"
+              }
+            },
+            {
+              "id": 906575,
+              "key": "28f2cb16-6435-4366-9f16-511a0ca39076",
+              "title": "Scope Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "28f2cb16-6435-4366-9f16-511a0ca39076",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When a bean has scope limited to only HTTP request, what is that called ?",
+                "answers": [
+                  {
+                    "id": "a1564431352389",
+                    "text": "Request scope",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1564431360181",
+                    "text": "Session scope",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 906576,
+          "key": "1a3381c5-9040-4237-b557-c85b44e39a18",
+          "title": "Thymeleaf - URL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1a3381c5-9040-4237-b557-c85b44e39a18",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 906577,
+              "key": "37ee1caf-75f9-49d7-9bf1-292611083178",
+              "title": "035ND C01 L03 A13 THYMELEAF URL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "M4TfYmMJqrI",
+                "china_cdn_id": "M4TfYmMJqrI.mp4"
+              }
+            },
+            {
+              "id": 906578,
+              "key": "2b0935ed-bf34-45b1-b5d7-6830c8bbfb94",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906579,
+              "key": "48e479b4-09d8-459a-9e4c-d056c38cfefb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Add the following html in demo2.html\n\n```\n<h3>Thymeleaf URLs</h3>\n<!-- redirect to demo page without parameter -->\n<a th:href=\"@{~/demo}\">Visit Demo Page</a> <br />\n<!-- redirect to demo page with parameter -->\n<a th:href=\"@{~/demo(id=1, name=eric)}\">Visit Demo page With Parameter</a>\n```\n\nRun the application, and goto localhost:8080:/demo3.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906580,
+              "key": "a677b2fd-e738-4867-91ff-1682eb536757",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Demo",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906581,
+              "key": "c13e9275-57d4-4857-b82b-7c312b28bb3c",
+              "title": "035ND C01 L03 A14 URL EXAMPLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3zPMvfX0SKU",
+                "china_cdn_id": "3zPMvfX0SKU.mp4"
+              }
+            },
+            {
+              "id": 906582,
+              "key": "402b1958-c1ef-4462-9835-880790ee753f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Resources:\n\nhttps://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 899635,
+          "key": "7f35b467-0bf7-4f1f-982a-bab3cd3ad848",
+          "title": "Spring Boot Unit Test, Hot Swap, and Logging",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7f35b467-0bf7-4f1f-982a-bab3cd3ad848",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900539,
+              "key": "355589e1-2f22-4acc-978d-f0eff922d8fd",
+              "title": "035ND C01 L03 A15 SPRINGBOOT",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o38XEevy2Qw",
+                "china_cdn_id": "o38XEevy2Qw.mp4"
+              }
+            },
+            {
+              "id": 900540,
+              "key": "6a5e474d-2e0a-4f1d-94fa-25196d183062",
+              "title": "035ND C01 L03 A16 CREATE SPRINGBOOT",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gz2UQHcGjfU",
+                "china_cdn_id": "gz2UQHcGjfU.mp4"
+              }
+            },
+            {
+              "id": 953361,
+              "key": "a4307876-f2f3-40ee-8f08-b4b735499173",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Unit testing is a type of testing where we test the individual units of a program to make sure that each unit works properly. In object-oriented programming a unit can be a class or a method.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906584,
+              "key": "ed0a081e-586e-4e98-b256-b87db735f900",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Example - instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899738,
+              "key": "491018d0-ef19-4c09-a052-09a6d8023e48",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this example, we are going to create a Spring Boot application first, then create a unit test to test it. Please follow the instructions below. \n\n1. Go to **https://start.spring.io** and create a new Spring Boot application named \"spring-boot-unit-tests\"\n2. Add Spring Web as a dependency. Then, download and import the project into IntelliJ\n3. Create a dao directory under the application directory, then create a UserDao class inside. Your code should look like the one below: \n\n```\n@Repository\npublic class UserDao {\n   public String getUser() {\n       return \"Tom\";\n   }\n}\n```\n\n4. Create a service directory under your application directory then create a UserService class inside it. Your code should look like the one below: \n\n```\n@Service\npublic class UserService {\n   @Resource\n   private UserDao userDao;\n\n   public String getUser() {\n       return userDao.getUser();\n   }\n}\n```\n5. Create a unit test class under test/java/com/example/springbootunittest and name it UserServiceTest. Your code should look like the one below: \n\n```\n@RunWith(SpringJUnit4ClassRunner.class) // @RunWith: integrate spring with junit\n@SpringBootTest(classes = {SpringBootUnitTestApplication.class}) // @SpringBootTest: this class is spring boot test.\npublic class UserServiceTest {\n   @Resource\n   private UserService userService;\n\n   @Test\n   public void testGetUser() {\n       Assert.assertEquals(userService.getUser(), \"Tom\");\n   }\n}\n```\n6. Directly run UserServiceTest class to see the test result (right-click the class and select **Run 'UserServiceTest'**).\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900542,
+              "key": "6598d60f-5706-42fb-95b1-a05a430e076f",
+              "title": "035ND C01 L03 A17 SPRINGBOOT UNIT TEST EXAMPLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hIIvD6lgu5k",
+                "china_cdn_id": "hIIvD6lgu5k.mp4"
+              }
+            },
+            {
+              "id": 899739,
+              "key": "44ff8b86-337a-493c-b9ad-38317b2c621b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If everything is setup correctly, you should see a test case passed. What we did was that we added a one method class UserDao, and a business logic class UserService. UserDao uses @Repository annotation and UserService uses @Service annotation. Then, we created a Spring Boot Unit test to test UserService. \n\nIt’s very similar to Junit test. In addition, we added the annotation @RunWith(SpringJUnit4ClassRunner.class) to integrate junit with Spring Boot, and we added the annotation @SpringBootTest(classes = {SpringBootUnitTestApplication.class}) to tell the application that this class is a Spring Boot test. \n\n@Test annotation is used to indicate that the method under it should be executed as a test. As you can see, the method asserts that if we'll call getUser method on our userService object, we should get \"Tom\". When we run the test, this method will be executed and the test will only pass if we get \"Tom\" as a result of calling getUser. By that, we have asserted that when we call getUser method on userService object the result will be as expected (\"Tom\"). You can add as many test methods like this one as you want (each method should be preceded with @Test), the testing will only pass if they all pass, and the testing will fail if any of them will fail. If a unit fails a test, it means that it doesn't behave properly as you expected. In that case, you need to check that unit in your code and make sure to fix its code. As we mentioned previously, a unit can be a class or a method. \n\nSince we are going to cover more about Spring Boot test in future classes, we just gave you an idea about how Spring Boot unit test looks like here. If you are interested to see how unit test works in Spring Boot, please feel free to create more unit tests on your own.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899740,
+              "key": "a9ffce99-e571-4e6d-89c7-be3a906f972f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Spring Boot Unit Test Annotations",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900541,
+              "key": "42930abd-9493-4c85-8ae6-37ce21d1f596",
+              "title": "035ND C01 L03 A18 ANNOTATIONS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PGncNhZiH3Y",
+                "china_cdn_id": "PGncNhZiH3Y.mp4"
+              }
+            },
+            {
+              "id": 899743,
+              "key": "f83baa52-6fb8-4cb9-9cac-41d32c043df7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Spring Boot and Hot Swap",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900544,
+              "key": "6e8f4e80-055b-4f4d-892d-5b550410af56",
+              "title": "035ND C01 L03 A19 HOTSWAP",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "483OGTkNJTE",
+                "china_cdn_id": "483OGTkNJTE.mp4"
+              }
+            },
+            {
+              "id": 906296,
+              "key": "c4b7bd12-be59-4ca3-9808-a01b5c1326fd",
+              "title": "035ND C01 L03 A20 DEVTOOL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NVxakFcFmvY",
+                "china_cdn_id": "NVxakFcFmvY.mp4"
+              }
+            },
+            {
+              "id": 906585,
+              "key": "63dedd60-694d-4737-8711-aa1c328e4557",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Example - instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899741,
+              "key": "924f896d-34f3-418b-9fec-9a23884b46d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Enabling DevTool in IntelliJ \nIn order to enable DevTool in IntelliJ you need to follow the steps below: \n\n1.  Add DevTool dependency to your pom.xml as the following: \n\n```\n<dependency>\n  <groupId>org.springframework.boot</groupId>\n  <artifactId>spring-boot-devtools</artifactId>\n  <scope>runtime</scope>\n  <optional>true</optional>\n</dependency>\n```\n\n2. Enable automatic build of projects in IntelliJ\n\nIn order to enable automatic build of your projects in IntelliJ, you need to enable that in the preferences. On Mac, preferences can be accessed by clicking on **\"IntelliJ IDEA\"** (found to the left of \"file\"), then clicking on preferences. To enable automatic building, click on \"Compiler\" (only compiler, not anything under it), then check \"Build project automatically\", then click \"OK\". \n\n3. Change the value of compiler.automake.allow.when.app.running\n\nTo do this, press ctrl+shift+A (command+shift+A on Mac), type \"registry\", double-click \"registry...\", check \"compiler.automake.allow.when.app.running\", then click on \"close\". \n\nBy following the steps above you should have DevTool enabled in IntelliJ.  \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899742,
+              "key": "7de65051-3d38-4b8f-abcc-50e4465314dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now you have Spring Boot DevTool ready to use, let’s try it to make sure we get what we are expecting. Instead of creating a new project, we can reuse our existing project spring-boot-thymeleaf. In your future projects, you can directly add DevTool dependency (the first step above) when you create your Spring Boot application (through this website: https://start.spring.io).\n\nFirst, we want to make sure it works for this html page: http://localhost:8080/demo. Update “You passed the exam.” in your demo.html to “You successfully passed your exam.” Give a second for the application server to restart and refresh the demo page. \n\nSecond, we also want to make sure it works for changes in Java. open UserController Java file and change the grade from 90 to 40 . Then, save the changes, you will then notice the changes in your console and you will see the application server is restarting. When you refresh the web page, you will see the sentence changed to \"You failed the exam\" because we changed the grade to 40. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906297,
+              "key": "2cd6a4a3-cf71-4654-a301-dff273b43b0b",
+              "title": "035ND C01 L03 A21 DEVTOOL EXAMPLE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "osVq-QxOWrg",
+                "china_cdn_id": "osVq-QxOWrg.mp4"
+              }
+            },
+            {
+              "id": 900545,
+              "key": "9f8616f4-34fc-4e06-b1f8-3d6cd941b2d4",
+              "title": "035ND C01 L03 A22 HOTSWAP SUMMARY",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vIVCCAVLGfs",
+                "china_cdn_id": "vIVCCAVLGfs.mp4"
+              }
+            },
+            {
+              "id": 906587,
+              "key": "3a37afe1-6ea1-4bfd-a6be-59c3e5764403",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906302,
+              "key": "c8ccf044-a1d6-4001-8a54-c13e084474cc",
+              "title": "035ND C01 L03 A23 SPRINGBOOT SUMMARY",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UN9qQ2cYCp8",
+                "china_cdn_id": "UN9qQ2cYCp8.mp4"
+              }
+            },
+            {
+              "id": 906298,
+              "key": "9a44c5c2-4cb7-46ef-b77f-ffd7bf6a6f4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Springboot Logging",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906299,
+              "key": "fbd05a15-faf2-4673-b754-b2563f575d10",
+              "title": "035ND C01 L03 A24 LOGGING INTRO",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lJho7ILgRCY",
+                "china_cdn_id": "lJho7ILgRCY.mp4"
+              }
+            },
+            {
+              "id": 899744,
+              "key": "44136b92-aa87-4a92-876e-d5aa8c866e89",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In programming, logging is defined as recording or tracing what happens in a program (like errors, warnings, and info about different events). When you look at the log of any program, you'll understand all the events that happen. That's why, looking at the log file is very important to understand the things that happen in a program. You can also log specific events that you'd like to trace, i.e., you can add to the log of a program. For example, say that you want to trace successful login attempts by your program users. In the code part where the login is completed successfully, you can write some code to print to the log that the login is successful. You can also print the values of any variables in the log. For example, in the login case, you can print the username. In that case, when anyone looks at the log file, they'll see the successful login attempts along with the username related to each one. \n\n\nSpring Boot supports Java Util Logging, Log4j 2, and Logback  (all of these are frameworks that can be used for logging). By default, it uses Logback. With these logging frameworks, you can configure the console logging as well as file logging for you to quickly detect problems and the source of the problems in a program. The default Spring Boot logging provides the following information:\n\n- Date and time\n-  Log level - (ERROR, WARN, INFO, DEBUG, and TRACE). How many logs do you want to see? Based on the level you set, Spring Boot will print the messages fit for that level. For complete logging level, you can see here: https://logging.apache.org/log4j/2.0/manual/architecture.html\n- Process ID\n- Thread name\n- Logger name - usually the same name of the class we want to log \n- Log message\n\nBy default, all logs will be print on console, not in file. But in reality, we always want to be able to trace historical logs, so we need to keep them in a file.\n\n#### Log Levels\nThere are certain levels of what can be printed in a log. The available log levels are: OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, and ALL. We wrote those levels in order from the least detailed (OFF, which means that there will be no logs at all) to the most detailed (ALL). This means if we set the level to WARN for example, it'll print all the logs related to FATAL, ERROR, and WARN levels. If we set the level of the log to DEBUG, it'll print all the logs related to FATAL, ERROR, WARN, INFO, and DEBUG levels, and so on. Please note that Logback (the default logging framework in Spring Boot) doesn't support FATAL level, anything that's related to that level will be mapped to ERROR level. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 953373,
+              "key": "80c3d5e2-a202-4375-81d5-17343947882b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Example - Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906321,
+              "key": "1f0315f1-095d-4f65-a13d-3ce15b6e87cd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Check out demo code from github: https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/demos/spring-boot-logging\nAs mentioned above, there are two outputs you can setup, console log or file log. Here, I am setting the error level to Debug for both. By default, “ERROR”, “WARN”, and “INFO” log messages will be printed in the log file. If you want to enable DEBUG level Log. Just add the following to your application.properties:\n\n```\ndebug=true\n```\n\nFor file log (if you want the logs to be printed in some file), you need to specify your log file path in application.properties as below: \n\n```\nlogging.level.root = DEBUG\nlogging.file = /var/tmp/mylog.log\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899630,
+              "key": "48513fa1-aa2a-4969-adde-bada419246c0",
+              "title": "Spring Boot Logging Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "48513fa1-aa2a-4969-adde-bada419246c0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which LOG level is higher? (meaning will produce more loggings)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "INFO",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "WARN",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 900548,
+              "key": "aa215315-9b5f-4667-a412-b11bc42956f0",
+              "title": "035ND C01 L03 A25 LOGGING DEMO",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GvfdQdiKfBI",
+                "china_cdn_id": "GvfdQdiKfBI.mp4"
+              }
+            },
+            {
+              "id": 900547,
+              "key": "464bc578-6d62-42ea-b954-1422d9f4578a",
+              "title": "035ND C01 L03 A26 LOGGING ANOTHER OPTION",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IIausERcN4E",
+                "china_cdn_id": "IIausERcN4E.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 899637,
+          "key": "18af14b7-1ef3-440c-972b-a9a05e25df8b",
+          "title": "Spring Boot Form Validation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "18af14b7-1ef3-440c-972b-a9a05e25df8b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900549,
+              "key": "bcc8ac6b-67a4-4680-b523-8bdb75bde48f",
+              "title": "035ND C01 L03 A27 VALIDATION",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WL6kbDDFQgU",
+                "china_cdn_id": "WL6kbDDFQgU.mp4"
+              }
+            },
+            {
+              "id": 953343,
+              "key": "1f676e9f-6a60-4fa5-a53e-5e7924979ec8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Validation is a security measure. It's required if your web application contains forms that require user input. Forms are an easy target for malicious users/attackers because user inputs usually need to be stored into the database of a website. Letting malicious users input whatever they want into the forms can lead to attacks like SQL injection attacks. If the attack is successfully executed against the website, it may end up with leaking confidential data from that website, manipulating data from that website, or deleting the entire database of the website. Therefore, it's very important to have validation set up for the web application to protect the application and the company, where validation will only accept user inputs if they are valid (according to some conditions or formats the website developers set). Only after an input is validated can it be further processed on the server and/or stored in the database. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 906583,
+              "key": "5c32880a-160f-4666-86b0-e04363f140f1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899745,
+              "key": "c42c5c52-273e-4ab0-8ecc-baf25c460203",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. Go to https://start.spring.io/ and create a Spring Boot project named: spring-boot-validation and add Spring Web, Thymeleaf, and Spring Boot DevTools as dependencies.\n2. Create a model package under your application package, then create a User class under it, your class code should look like the one below:\n\n```\nimport javax.validation.constraints.NotBlank;\n\npublic class User {\n   @NotBlank(message = \"username cannot be empty\")\n   private String name;\n   @NotBlank(message = \"password cannot be empty\")\n   private String password;\n   private Double grade;\n\n   public User(String name, String password, Double grade) {\n       this.name = name;\n       this.password = password;\n       this.grade = grade;\n   }\n}\n```\n3. Please generate the getter and setter methods for each of the variables in the User class (**important**). To do that automatically, you can press **command+N on Mac (ctrl+N on Windows)**, then select Getters and Setters, then select all the variables and click OK. \n\n4. Create a controller package under your application package, then create a UserController class under it, your class code should look like the one below:\n\n```\npackage com.example.springbootvalidation.controller;\n\nimport com.example.springbootvalidation.model.User;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.validation.BindingResult;\nimport org.springframework.web.bind.annotation.RequestMapping;\n\nimport javax.validation.Valid;\n\n@Controller\npublic class UserController {\n\n   @RequestMapping(\"add\")\n   public String toAdd(User user) {\n       return \"add\";\n   }\n\n   @RequestMapping(\"addUser\")\n   public String add(@Valid User user, BindingResult result) {\n    // @Valid is used to validate the User object received from the user according to the validation we set in the User class. \n   // BindResult object contains the validation result and contains any errors that may occur when the User object is not valid.\n   // We check if BindResult object has any errors using the if statement below:\n       if (result.hasErrors()) {\n           // If there is any error, we'll return add, which is the name of the html page that should be displayed\n           return \"add\";\n       }\n       //If there are no errors we'll display success.html\n       System.out.println(\"Save user =\" + user);\n       return \"success\";\n   }\n}\n```\n5. Add ```add.html``` under templates folder, your code should look like the one below: \n\n```\n<!DOCTYPE html>\n<html lang=\"en\" xmlns:th=\"http://www.w3.org/1999/xhtml\">\n<head>\n   <meta charset=\"UTF-8\">\n   <title>Add User</title>\n</head>\n<body>\n<h3>Add User</h3>\n<!--we use th:error tag inside the span elements below to print the error message we defined for each attribute validation in the User class, if there will be any error. For example, if the name is blank, the message defined in the @NotBlank annotation above \"name\" attribute in the user class will be displayed, which is \"username cannot be empty\"-->\n<form action=\"addUser\" method=\"post\">\nUsername: <input type=\"text\" name=\"name\" />\n<span th:errors=\"${user.name}\" style=\"color:red\"></span><br />\nPassword: <input type=\"password\" name=\"password\"/><br />\n<span th:errors=\"${user.password}\" style=\"color:red\"></span><br />\nGrade: <input type=\"text\" name=\"grade\" /><br />\n<input type=\"submit\" value=\"Add\" >\n</form>\n</body>\n</html>\n```\n\n6. Add ```success.html``` page under templates folder, your code should look like the one below: \n\n```\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n   <meta charset=\"UTF-8\">\n   <title>Successful</title>\n</head>\n<body>\nUser successfully added.\n</body>\n</html>\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900550,
+              "key": "3e09b448-4b3c-47e4-b784-e4d386dc8a29",
+              "title": "035ND C01 L03 A28 VALIDATION EXAMPLE EXPLAIN",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "h85_6bQ8tWI",
+                "china_cdn_id": "h85_6bQ8tWI.mp4"
+              }
+            },
+            {
+              "id": 899746,
+              "key": "5b7cec0e-5a57-4625-b4f6-c3b074ba00b0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Spring Boot Validation Common Annotations",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900551,
+              "key": "cbf9ef60-6b3e-480e-be5e-d4065d3420d6",
+              "title": "035ND C01 L03 A30 VALIDATION ANNOTATIONS V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SXcOm-NJ1cM",
+                "china_cdn_id": "SXcOm-NJ1cM.mp4"
+              }
+            },
+            {
+              "id": 906300,
+              "key": "c367eabe-a253-498b-97c3-a3d6fb0bfa93",
+              "title": "035ND C01 L03 A29 VALIDATION DEMO",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "VMigHOlqGWI",
+                "china_cdn_id": "VMigHOlqGWI.mp4"
+              }
+            },
+            {
+              "id": 953345,
+              "key": "892afdb9-ad30-4165-8284-da6c0847ce6f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you can see in the example above, all the invalidation we added to the code works well, meaning all the information inputted by the user through the form won't even be sent to the controller to process, where the user will be stopped at the validation level. With this validation, we can protect our application from malicious input from users to make our application more safe.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 953344,
+              "key": "c9e69fa5-f5ee-41d3-b5ed-0a1d64a81da1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here are the instructions to modify your code to build the demo example explained in the video above: \n\n1. Update User class as in the below code, again please generate the getter and setter methods for all variables (**important**): \n\n```\nimport org.hibernate.validator.constraints.Length;\n\nimport javax.validation.constraints.Email;\nimport javax.validation.constraints.Max;\nimport javax.validation.constraints.Min;\nimport javax.validation.constraints.NotBlank;\n\npublic class User {\n   @NotBlank(message = \"username cannot be empty\")\n   private String name;\n   @NotBlank(message = \"password cannot be empty\")\n   @Length(min=6, max=10, message=\"length of password should between 6 to 10 characters\")\n   private String password;\n   @Min(value=0)\n   @Max(value=100)\n   private Double grade;\n   @Email\n   private String email;\n\n   public User(String name, String password, Double grade, String email) {\n       this.name = name;\n       this.password = password;\n       this.grade = grade;\n       this.email = email;\n   }\n}\n```\n\n2. Update add.html file as in the code below: \n\n```\n<!DOCTYPE html>\n<html lang=\"en\" xmlns:th=\"http://www.w3.org/1999/xhtml\">\n<head>\n   <meta charset=\"UTF-8\">\n   <title>Add User</title>\n</head>\n<body>\n<h3>Add User</h3>\n\n<form action=\"addUser\" method=\"post\">\n<span th:errors=\"${user.name}\" style=\"color:red\"></span><br />\nUsername: <input type=\"text\" name=\"name\" /><br />\n<span th:errors=\"${user.password}\" style=\"color:red\"></span><br />\nPassword: <input type=\"password\" name=\"password\"/><br />\n<span th:errors=\"${user.grade}\" style=\"color:red\"></span><br />\nGrade: <input type=\"text\" name=\"grade\" /><br />\n<span th:errors=\"${user.email}\" style=\"color:red\"></span><br />\nEmail: <input type=\"text\" name=\"email\" /><br />\n<input type=\"submit\" value=\"Add\" >\n</form>\n</body>\n</html>\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 953346,
+              "key": "939cdbf9-9a00-450f-a936-b6b97ac96391",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quizzes",
+              "instructor_notes": ""
+            },
+            {
+              "id": 899634,
+              "key": "4d20d3ea-0c34-4548-9a37-33ce151f11e9",
+              "title": "Spring Boot Validation Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4d20d3ea-0c34-4548-9a37-33ce151f11e9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Object is used by a request processing method to check validation failure",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "BindingResult",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "ValidationBinding",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 899627,
+              "key": "823a469a-ea8b-41d8-b7e8-1eda49f74708",
+              "title": "Spring Boot Validation Common Annotations Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "823a469a-ea8b-41d8-b7e8-1eda49f74708",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If we create a field, this field should allow string like “ “, but does not allow null string. Which validation annotation I should use.",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "@NotBlank",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "@NotEmpty",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 900553,
+              "key": "08a7f9a2-226f-4957-9575-c2e522c5bd23",
+              "title": "035ND C01 L03 A32 LESSON RECAP V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "VuRK_KEqQr8",
+                "china_cdn_id": "VuRK_KEqQr8.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
