@@ -1,0 +1,269 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MongoDB</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>NoSQL and MongoDB</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. NoSQL Databases.html">01. NoSQL Databases</a>
+    </li>
+    <li class="">
+      <a href="02. MongoDB.html">02. MongoDB</a>
+    </li>
+    <li class="">
+      <a href="03. Working with documents.html">03. Working with documents</a>
+    </li>
+    <li class="">
+      <a href="04. Data Modeling.html">04. Data Modeling</a>
+    </li>
+    <li class="">
+      <a href="05. Recap.html">05. Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. MongoDB</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>JavaND#305 C03 L03 A02 Mongo DB</p></h3>
+  <video controls>
+  <source src="02. JavaND#305 C03 L03 A02 Mongo DB-5YPoe0LrL_U.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. JavaND#305 C03 L03 A02 Mongo DB-5YPoe0LrL_U.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Summary</p></h3>
+  <div>
+  <h2 id="mongodb">MongoDB</h2>
+<p>Similar to MySQL, MongoDB also follows the client server model.</p>
+<blockquote>
+  <p>The name MongoDB comes from the word, humongous. It is built to store lots and lots of data.</p>
+</blockquote>
+<p>Databases are made up of sets of collections. Documents are organized into collections. So, what are documents?</p>
+<h4 id="documents">Documents</h4>
+<p><a href="https://docs.mongodb.com/manual/core/document/" rel="noopener noreferrer" target="_blank">In MongoDB, data is organized into documents</a>. A document is a collection of key and value pairs (also referred to as <em>field-and-value</em> pairs). </p>
+<pre><code class="json language-json">{
+   field1: value1,
+   field2: value2,
+   field3: value3,
+   ...
+   fieldN: valueN 
+}</code></pre>
+<p>The values stored in a document can be any <a href="https://docs.mongodb.com/manual/reference/bson-types/" rel="noopener noreferrer" target="_blank">BSON data type</a>. The below example shows, in order, an <strong>ObjectId</strong>, an <strong>embedded document</strong> which contains the fields <code>first</code> and <code>last</code>, two <strong>Date</strong>s, and, finally, an <strong>array of strings</strong>. As you can see from the below example, there are many types of values we can store in a document, included other documents!</p>
+<pre><code class="json language-json">var myFirstDoc = {
+               _id: ObjectId("4904803df364948bd2f45896"),
+               name: { first: "Ada", last: "Lovelace" },
+               birth: new Date(‘Dec 10, 1815’),
+               death: new Date(‘Nov 27, 1852),
+               known: [ "Mathematics", "Computing" ]
+            }</code></pre>
+<p>In MongoDB, the <code>_id</code> field is particularly important, because it acts as a primary key. Each document must have a unique <code>_id</code>.  If an inserted document omits the _id field, the MongoDB driver automatically generates an ObjectId for the _id field.</p>
+<p>As mentioned previously, you can use any BSON data type in a collection. From the MongoDB documentation, BSON is: “<a href="https://docs.mongodb.com/manual/core/document/" rel="noopener noreferrer" target="_blank">a serialization format used to store documents and make remote procedure calls in MongoDB. “BSON” is a portmanteau of the words “binary” and “JSON”. Think of BSON as a binary representation of JSON (JavaScript Object Notation) documents.</a>”</p>
+<p>Some advantages of using documents are:  </p>
+<ul>
+<li>Documents and value types correspond to commonly used data types in many programming languages.</li>
+<li>The ability to embed documents and arrays into other documents reduces the need for expensive joins.</li>
+</ul>
+<h5 id="additional-resources">Additional Resources:</h5>
+<ul>
+<li><a href="https://www.mongodb.com/what-is-mongodb" rel="noopener noreferrer" target="_blank">MongoDB</a></li>
+<li><a href="https://www.json.org/" rel="noopener noreferrer" target="_blank">JSON Spec</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/bson-types/" rel="noopener noreferrer" target="_blank">BSON types</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Exercise</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <h4 id="mongodb-installation">MongoDB Installation</h4>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/" rel="noopener noreferrer" target="_blank">Installing MongoDB Server on Windows</a></li>
+<li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/" rel="noopener noreferrer" target="_blank">Installing MongoDB Server on MacOS</a></li>
+</ul>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="127f16da-3131-483f-9bb3-0222990f0231--0">
+        <label for="127f16da-3131-483f-9bb3-0222990f0231--0"><p>Start the MongoDB server using the instructions provided in the above links.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="127f16da-3131-483f-9bb3-0222990f0231--1">
+        <label for="127f16da-3131-483f-9bb3-0222990f0231--1"><p>Connect to the server using <a href="https://docs.mongodb.com/manual/reference/program/mongo/#bin.mongo" rel="noopener noreferrer" target="_blank">mongo</a> shell.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="127f16da-3131-483f-9bb3-0222990f0231--2">
+        <label for="127f16da-3131-483f-9bb3-0222990f0231--2"><p>Create a user with read/write and admin permission. </p>
+<p><em>(We will use this user to connect to the database moving forward.)</em></p>
+<p><code>db.createUser({"user": "course3", "pwd": "course3", "roles": ["readWrite", "dbAdmin"]});</code></p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="127f16da-3131-483f-9bb3-0222990f0231--3">
+        <label for="127f16da-3131-483f-9bb3-0222990f0231--3"><p>Run the command <code>use jdnd-c3</code> that creates a database of that name.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Congratulations! You have a working installation of MongoDB server on your local workstation.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Working with documents.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. MongoDB')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

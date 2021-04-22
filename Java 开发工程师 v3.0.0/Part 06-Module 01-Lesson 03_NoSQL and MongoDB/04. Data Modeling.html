@@ -1,0 +1,496 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Modeling</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>NoSQL and MongoDB</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. NoSQL Databases.html">01. NoSQL Databases</a>
+    </li>
+    <li class="">
+      <a href="02. MongoDB.html">02. MongoDB</a>
+    </li>
+    <li class="">
+      <a href="03. Working with documents.html">03. Working with documents</a>
+    </li>
+    <li class="">
+      <a href="04. Data Modeling.html">04. Data Modeling</a>
+    </li>
+    <li class="">
+      <a href="05. Recap.html">05. Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Data Modeling</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>JavaND#305 C03 L03 A05 Data Modeling</p></h3>
+  <video controls>
+  <source src="04. JavaND#305 C03 L03 A05 Data Modeling-ZCFENvM9tuo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. JavaND#305 C03 L03 A05 Data Modeling-ZCFENvM9tuo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Check all that are true for MongoDB data modeling.</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="rbk1" name="900279" id="rbk1">
+      <label for="rbk1"><p>Embedded data model is preferred for “contains” relationship between entities.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk2" name="900279" id="rbk2">
+      <label for="rbk2"><p>Embedded data model can support many-to-many relationships.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk3" name="900279" id="rbk3">
+      <label for="rbk3"><p>A write operation is atomic for a single document including the embedded documents.</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="rbk4" name="900279" id="rbk4">
+      <label for="rbk4"><p>For document references, the application needs to maintain the integrity of the relationship.</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Embedded data model is preferred for “contains” relationship between entities.</li>
+      <li>A write operation is atomic for a single document including the embedded documents.</li>
+      <li>For document references, the application needs to maintain the integrity of the relationship.</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Patterns</p></h3>
+  <div>
+  <h4 id="one-to-one-with-embedded-documents">One-to-One with Embedded Documents</h4>
+<p>MongoDB supports having another document as a value of key. One way of achieving a one-to-one relationship between documents is by embedding the related document in the parent document. Consider the example of a patient document. A patient usually has an associated address for communication.  <br />
+In a normalized data model, the address document would contain a reference to the address document.</p>
+<pre><code class="json language-json">{
+   _id: "lakshmi",
+   name: "Lakshmi Natarajan"
+}
+
+{
+   patient_id: "lakshmi",
+   street: "149 Main St",
+   city: "Birmingham",
+   state: "AL"
+}</code></pre>
+<p>In the above example, if your application typically needs the address along with other patient information, it needs to send an additional query to read the related address. It becomes more of a problem if a patient has multiple addresses. For this use-case, embedding works well since the patient information along with the address can be read in one query, </p>
+<pre><code class="json language-json">{
+   _id: "lakshmi",
+   name: "Lakshmi Natarajan",
+   address: {
+                 street: "149 Main St",
+                 city: "Birmingham",
+                 state: "AL"
+           }
+}</code></pre>
+<h4 id="one-to-many-with-embedded-documents">One-to-Many with Embedded Documents</h4>
+<p>Just like One-to-One, One-to-Many relationships can be achieved by embedding multiple documents. </p>
+<p>The address documents include a reference to the patient documents.</p>
+<pre><code class="json language-json">{
+   _id: "lakshmi",
+   name: "Lakshmi Natarajan"
+}
+
+{
+   patient_id: "lakshmi",
+   street: "149 Main St",
+   city: "Birmingham",
+   state: "AL"
+}
+
+{
+      patient_id: "lakshmi",
+      street: "298 Second St",
+      city: "Birmingham",
+      state: "AL"
+}</code></pre>
+<p>With Embedding:</p>
+<pre><code class="json language-json">{
+   _id: "lakshmi",
+   name: "Lakshmi Natarajan"
+   addresses: [{
+   street: "149 Main St",
+   city: "Birmingham",
+   state: "AL"
+},
+{
+      street: "298 Second St",
+      city: "Birmingham",
+      state: "AL"
+}]
+ }</code></pre>
+<h4 id="one-to-many-with-document-references">One-to-Many with Document References</h4>
+<p>Even though embedding is convenient and seems to make life easier for developers, it may not be optimal for all use-cases. For instance, there is a limit to how large a document can be. There are other scenarios where embedding does not make sense, like when repetition needs to be avoided. </p>
+<p>In the below example, embedding the artist document inside the movie document leads to repetition of the artist data:</p>
+<pre><code class="json language-json">{
+    "_id": "12345"
+    "title": "Seven"
+    "cast": [{
+        "name": "Brad Pitt",
+        "gender": "male",
+        "age": 51
+    },
+    {
+        "name": "Morgan Freeman",
+        "gender": "male",
+        "age": 70
+    },
+    {
+        "name": "Gwyneth Paltrow",
+        "gender": "female",
+        "age": 46
+    }]
+}
+
+{
+    "_id": "12346"
+    "title": "Fight Club"
+    "cast": [{
+        "name": "Brad Pitt",
+        "gender": "male",
+        "age": 51
+    }]
+}</code></pre>
+<p>The repetition makes it harder to update the details of the artist document.  In order to update the <em>age</em> field of an actor, all the movie documents containing the artist document need to be updated.</p>
+<p>As you might have guessed, document references work well here. </p>
+<p><strong>Artist Collection</strong></p>
+<pre><code class="json language-json">{
+        "_id": "abc123",
+        "name": "Brad Pitt",
+        "gender": "male",
+        "age": 51
+    }
+
+    {
+        "_id": "abc124",
+        "name": "Morgan Freeman",
+        "gender": "male",
+        "age": 70
+    }
+
+    {
+        "_id": "abc125",
+        "name": "Gwyneth Paltrow",
+        "gender": "female",
+        "age": 46
+    }</code></pre>
+<p><strong>Movie Collection</strong></p>
+<pre><code class="json language-json">{
+    "_id": "12345"
+    "title": "Seven"
+    "cast": ["abc123", "abc124", "abc125"]
+}
+{
+    "_id": "12346"
+    "title": "Fight Club"
+    "cast": ["abc123"]
+}</code></pre>
+<p>The number of artists in a movie doesn’t grow, but an artist can keep acting in more movies. So in this case, storing the reference in the movie makes sense.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What is the advantage of using document references in data modeling?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="900284" id="rbk1">
+        <label for="rbk1"><p>Document references can be loaded along with the referring document in a single call to the database</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="900284" id="rbk2">
+        <label for="rbk2"><p>MongoDB guarantees atomic writes when updating documents and the references it holds.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="900284" id="rbk3">
+        <label for="rbk3"><p>Document references are best suited for a “contains” relationship.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk4" name="900284" id="rbk4">
+        <label for="rbk4"><p>Document references are useful when duplication of data needs to be avoided.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Document references are useful when duplication of data needs to be avoided.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Quiz</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>When to embed documents within documents?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="rbk1" name="900275" id="rbk1">
+        <label for="rbk1"><p>In one-to-many relationships, where the “many” documents are viewed in the context of the “one” or documents.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk2" name="900275" id="rbk2">
+        <label for="rbk2"><p>Embedding documents reduces duplication of data.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="rbk3" name="900275" id="rbk3">
+        <label for="rbk3"><p>Embedding documents increases the number of trips to the database.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    In one-to-many relationships, where the “many” documents are viewed in the context of the “one” or documents.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Exercise</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Use MongoDB to store the data for a blog. These are the primary entities in a blog:</p>
+<ol>
+<li>Post - The actual blog post which has a title, text and an author.</li>
+<li>Comment - A comment written by a visitor for a particular post. A comment has the name of the visitor and text of the comment.</li>
+<li>Author - A person who writes posts. Author has first_name, last_name and email.</li>
+</ol>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="68351237-c74f-49d5-8134-2b24f77dc531--0">
+        <label for="68351237-c74f-49d5-8134-2b24f77dc531--0"><p>Model these entities so a blog post can be read in one call to the MongoDB server.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Nice. You dabbled in data modeling. Data modeling takes practice, think of some other scenarios and write down how you would model them.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Data Modeling Intro</p></h3>
+  <div>
+  <h2 id="data-modeling">Data Modeling:</h2>
+<p>While designing documents in MongoDB, One of the key considerations for the structure of your documents is the decision to embed or to use references.</p>
+<h4 id="embedded-model">Embedded Model:</h4>
+<p>MongoDB allows embedding one document in another. you to embed related data in the same document. Consider the patient record</p>
+<p>In general, use embedded data models when:</p>
+<ul>
+<li>One-to-one or one-to-many relationships need to be represented. You have “contains” relationships between entities. For example, when a person contains an address.</li>
+</ul>
+<pre><code class="json language-json">  “name”: “Jane Doe”,
+    “address”: [
+        {
+            “line1”: “123 Main St”,
+            “city”: “Birmingham”,
+            “state”: “AL”,
+            “zip”: 40881
+        }</code></pre>
+<ul>
+<li>You have one-to-many relationships between entities. In these relationships the “many” or child documents always appear with or are viewed in the context of the “one” or parent documents. In the patient record document, a patient can have many visits to the clinic. The visit document has no meaning when its not associated with a patient. Therefore, it is embedded with the patient document.</li>
+</ul>
+<pre><code class="json language-json">    “first_name”: “John”,
+    “last_name”: “Smith”,
+    “visits”: [
+        {
+            “data”: “2019-05-06”,
+            “physician”: “Robert Mendoza”,
+            “reason”: “Fever”
+        },
+        {
+            “data”: “2019-02-01”,
+            “physician”: “Manny Armann”,
+            “reason”: “Cough”
+         }</code></pre>
+<p>Embedded models allow for better read performance since all the related data can be read in one go.</p>
+<h4 id="reference-model">Reference Model:</h4>
+<p>References can be used to describe relationships between documents.</p>
+<p>In general, use references:</p>
+<ul>
+<li><p>If duplication needs to be avoided.when embedding would result in duplication of data but would not provide sufficient read performance advantages to outweigh the implications of the duplication.</p></li>
+<li><p>To represent more complex many-to-many relationships.</p></li>
+</ul>
+<p>References provide more flexibility than embedding. However, applications must issue follow-up queries to resolve the references. In other words, normalized data models can require more round trips to the server.</p>
+<h4 id="operational-factors">Operational Factors:</h4>
+<p>Embedded models support atomicity since MongoDB guarantees atomic operations at the document level. If atomicity is important for the application, the choice is clear. However there are many scenarios where references could be useful as well. A caveat of references is that the application needs to maintain them with no support from the database. Embedded data models make it possible to update related data in a single atomic write operation. In MongoDB, a write operation is atomic on the level of a single document, even if the operation modifies multiple embedded documents within a single document.</p>
+<p>As soon as you start introducing references, it is up to the application to maintain the integrity of the documents.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Recap.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Data Modeling')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
