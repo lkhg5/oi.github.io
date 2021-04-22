@@ -1,0 +1,363 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Collections - List</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Java Refresher Course</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Java Introduction.html">01. Java Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Java Basic APIs.html">02. Java Basic APIs</a>
+    </li>
+    <li class="">
+      <a href="03. An Overview of Some Basic Java APIs.html">03. An Overview of Some Basic Java APIs</a>
+    </li>
+    <li class="">
+      <a href="04. Java Basic APIs - StringBuilder, StringBuffer, Regex.html">04. Java Basic APIs - StringBuilder, StringBuffer, Regex</a>
+    </li>
+    <li class="">
+      <a href="05. Java Basic APIs - Binary Search, Recursion, Big-O Notation.html">05. Java Basic APIs - Binary Search, Recursion, Big-O Notation</a>
+    </li>
+    <li class="">
+      <a href="06. Collections.html">06. Collections</a>
+    </li>
+    <li class="">
+      <a href="07. Collections - List.html">07. Collections - List</a>
+    </li>
+    <li class="">
+      <a href="08. Collections - Stack and Queue.html">08. Collections - Stack and Queue</a>
+    </li>
+    <li class="">
+      <a href="09. Collections - Map and Set.html">09. Collections - Map and Set</a>
+    </li>
+    <li class="">
+      <a href="10. Environment Setup.html">10. Environment Setup</a>
+    </li>
+    <li class="">
+      <a href="11. Exception and File IO.html">11. Exception and File IO</a>
+    </li>
+    <li class="">
+      <a href="12. Java Programming Practice Exercises.html">12. Java Programming Practice Exercises</a>
+    </li>
+    <li class="">
+      <a href="13. Java Refresher Course - Summary.html">13. Java Refresher Course - Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Collections - List</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="list">List</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L01 A08 LIST</p></h3>
+  <video controls>
+  <source src="07. 035ND C01 L01 A08 LIST-Z_i3-sMRLKU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. 035ND C01 L01 A08 LIST-Z_i3-sMRLKU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>One problem with array is, once the size is defined, you will have to stick with the size. If you have an integer array like</p>
+<pre><code>A[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9} </code></pre>
+<p>And the statement below will result in a run-time exception.</p>
+<pre><code>A[10] = 10;</code></pre>
+<p>Therefore, in this case, you need your array to have a flexible size like a List. In Java, a List is an interface, and ArrayLists and LinkedLists are two common implementations for List. </p>
+<h3 id="difference-between-arraylists-and-linkedlists">Difference between ArrayLists and LinkedLists</h3>
+<p>ArrayList is based on a data structure called dynamic array (aka growable or resizable array). Dynamic arrays overcome the problem of having a fixed size that needs to be known and defined at the allocation time, because they can have variable size which allows addition and deletion of elements even after the array is declared. </p>
+<p>Please note that dynamic arrays use fixed size arrays. Constructing a dynamic array can be done by allocating a space in the memory for a fixed size array, which has a size larger than the initial number of elements that need to go into the dynamic array. When more elements need to be added, they can go into the extra available spaces that were previously allocated. However, if some new elements need to be added and no additional spaces are available, a new larger array will be allocated (with a size larger than the one currently required), all elements will be copied to the new array, then the new elements can be added, which is an expensive process in terms of performance. </p>
+<p>On the other hand, LinkedList is based on a data structure called doubly linked list (DLL), which is a list where each node has two pointers, one points to the previous node, and the other points to the next one. The first element in the list is called the head and its previous pointer points to Null, while the last element is called the tail and its next pointer points to Null. </p>
+<p>The table below lists data manipulation examples and illustrates when you should use LinkedList or ArrayList based on their performance:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/linkedlist-vs-arraylist.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>So, if the case you need to implement requires manipulating elements (like insertion and deletion) more frequently, LinkedList is better, but if it requires retrieving elements more frequently, ArrayList is better. </p>
+<p>Please take a look at their APIs, and see if you can solve the quizzes and coding problems on your own.</p>
+<h3 id="helpful-resources">Helpful Resources:</h3>
+<p>ArrayList: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" rel="noopener noreferrer" target="_blank">https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html</a></p>
+<p>LinkedList: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html" rel="noopener noreferrer" target="_blank">https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>List Quiz 1</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><pre><code>ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;() ;
+list.add( "Andy" );
+list.add( "Bart" );
+list.add( "Carl" );
+list.add( "Doug" );
+list.add( "Elmo" );</code></pre>
+<p>Which of the following will change the list so that it looks like:</p>
+<ul>
+<li>Andy</li>
+<li>Bart</li>
+<li>Carl</li>
+<li>Doug</li>
+<li>Oscar</li>
+<li>Elmo</li>
+</ul></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1565283500822" name="908193" id="a1565283500822">
+        <label for="a1565283500822"><p>list.add( 3, "Oscar" )</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1565283552912" name="908193" id="a1565283552912">
+        <label for="a1565283552912"><p>list.add( 4, "Oscar" )</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1565283553663" name="908193" id="a1565283553663">
+        <label for="a1565283553663"><p>list.set( 3, "Oscar" ) </p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1565283554371" name="908193" id="a1565283554371">
+        <label for="a1565283554371"><p>list.set( 4, "Oscar" )</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    list.add( 4, "Oscar" )
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>List Quiz 2</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What does the poll method do to a LinkedList?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1565294511608" name="908252" id="a1565294511608">
+        <label for="a1565294511608"><p>Return the first element.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1565294540900" name="908252" id="a1565294540900">
+        <label for="a1565294540900"><p>Return and removes the first element.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Return and removes the first element.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>List Coding Question</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Please complete the coding exercise for List.</p>
+<p>Given a list of strings, all starting with a lowercase letter, please group them based on their first character. If their first character is an 'a', group them in list 0. If their first character is a ‘b’, group them in list 1. For any other starting characters, group them in list 2.</p>
+<p><strong>Example1:</strong> </p>
+<p>Input: {“bcd”, “abc”, “cde”}</p>
+<p>Output: [{“abc”}, {“bcd”}, {“cde”}]</p>
+<p><strong>Example2:</strong> </p>
+<p>Input: {“abc”, “bcd”, “bbb”, “ace”, “snb”, “aaaa”, “bbbbb”, “eeee”} </p>
+<p>Output: [{“abc”, “ace”, “aaaa”}, {“bcd”, “bbb”, “bbbb”}, {“snb”, “eeee”}]</p>
+<p><strong>Your method signature should be:</strong></p>
+<pre><code class="java language-java">public static List&lt;String&gt;[] groupString(List&lt;String&gt; input) {
+
+}</code></pre>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="c046bb01-e9ef-44c8-a925-38cfa2979d99--0">
+        <label for="c046bb01-e9ef-44c8-a925-38cfa2979d99--0"><p>I completed the exercise</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Solution: <a href="https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/exercises/list/src/ListDemo.java" rel="noopener noreferrer" target="_blank">https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/exercises/list/src/ListDemo.java</a></p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Collections - Stack and Queue.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Collections - List')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

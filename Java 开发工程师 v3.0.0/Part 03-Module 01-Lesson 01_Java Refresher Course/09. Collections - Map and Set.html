@@ -1,0 +1,327 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Collections - Map and Set</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Java Refresher Course</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Java Introduction.html">01. Java Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Java Basic APIs.html">02. Java Basic APIs</a>
+    </li>
+    <li class="">
+      <a href="03. An Overview of Some Basic Java APIs.html">03. An Overview of Some Basic Java APIs</a>
+    </li>
+    <li class="">
+      <a href="04. Java Basic APIs - StringBuilder, StringBuffer, Regex.html">04. Java Basic APIs - StringBuilder, StringBuffer, Regex</a>
+    </li>
+    <li class="">
+      <a href="05. Java Basic APIs - Binary Search, Recursion, Big-O Notation.html">05. Java Basic APIs - Binary Search, Recursion, Big-O Notation</a>
+    </li>
+    <li class="">
+      <a href="06. Collections.html">06. Collections</a>
+    </li>
+    <li class="">
+      <a href="07. Collections - List.html">07. Collections - List</a>
+    </li>
+    <li class="">
+      <a href="08. Collections - Stack and Queue.html">08. Collections - Stack and Queue</a>
+    </li>
+    <li class="">
+      <a href="09. Collections - Map and Set.html">09. Collections - Map and Set</a>
+    </li>
+    <li class="">
+      <a href="10. Environment Setup.html">10. Environment Setup</a>
+    </li>
+    <li class="">
+      <a href="11. Exception and File IO.html">11. Exception and File IO</a>
+    </li>
+    <li class="">
+      <a href="12. Java Programming Practice Exercises.html">12. Java Programming Practice Exercises</a>
+    </li>
+    <li class="">
+      <a href="13. Java Refresher Course - Summary.html">13. Java Refresher Course - Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. Collections - Map and Set</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>035ND C01 L01 A11 MAP AND SET</p></h3>
+  <video controls>
+  <source src="09. 035ND C01 L01 A11 MAP AND SET-vhM8ZhbdM40.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. 035ND C01 L01 A11 MAP AND SET-vhM8ZhbdM40.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="the-difference-between-hashmap-and-treemap">The Difference between HashMap and TreeMap</h3>
+<p>As mentioned in the video, Hashmap is not ordered while TreeMap is ordered. The order here refers to the order of keys. Keys are always ordered in TreeMap, and they have an ascending order. For example, if we have the following key-value pairs: </p>
+<p><strong>"1": "apple"</strong></p>
+<p><strong>"0": "orange"</strong></p>
+<p><strong>"2": "Guava"</strong></p>
+<p>The entries will be maintained in the TreeMap in order, i.e., "0": "orange" will be the first key-value entry, followed by "1": "apple", followed by "2": "Guava", because the keys will be ordered in an ascending manner (from 0 to 2). On the other hand, the order won't be guaranteed in HashMap, where the entries will be maintained randomly regardless of the ordering of keys. </p>
+<p>In terms of complexity, HashMap is faster, because the basic operations (contains, add, remove, and size) require a constant time to be completed (O(1)). In the case of TreeMap, contains, add, and remove operations have O(log (n)) time complexity. So, if you don't care about the order, use HashMap. </p>
+<h3 id="the-difference-between-hashset-and-treeset">The Difference between HashSet and TreeSet</h3>
+<p>As mentioned in the video, HashSet is not ordered, but TreeSet is ordered. The entries in TreeSet are ordered in an ascending manner based on their values. For example, if we enter the following entries in a TreeSet: <strong>"Hard"</strong>, <strong>"Work"</strong>, <strong>"Pays"</strong>, <strong>"Off"</strong>, they'll be stored in the following order: <strong>"Hard"</strong>, <strong>"Off"</strong>, <strong>"Pays"</strong>, <strong>"Work"</strong>, because they'll be ordered in an ascending manner based on the first alphabet of each entry. However, if we add the same entries to a HashSet, they'll be stored randomly regardless of the alphabetical order. </p>
+<p>In terms of complexity, HashSet is faster, because the basic operations (contains, add, remove, and size) require a constant time to be completed (O(1)). In the case of TreeSet, contains, add, and remove operations have O(log (n)) time complexity. So, if you don't care about the order, use HashSet. </p>
+<h3 id="useful-resources">Useful Resources:</h3>
+<p>Map: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html" rel="noopener noreferrer" target="_blank">https://docs.oracle.com/javase/8/docs/api/java/util/Map.html</a></p>
+<p>Set: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html" rel="noopener noreferrer" target="_blank">https://docs.oracle.com/javase/8/docs/api/java/util/Set.html</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Map and Set</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which set maintains the order of elements?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1564422375852" name="906524" id="a1564422375852">
+        <label for="a1564422375852"><p>HashSet</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1564422385632" name="906524" id="a1564422385632">
+        <label for="a1564422385632"><p>TreeSet</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    TreeSet
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Map and Set Q2</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><pre><code>Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); 
+map.put("Name", "Aman"); 
+map.put("Address", "Kolkata"); 
+map.compute("Name", (key, val)  -&gt; val.concat(" Singh")); 
+System.out.println(map.get(“Name”));</code></pre>
+<p>What is the console output?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1564422433337" name="906525" id="a1564422433337">
+        <label for="a1564422433337"><p>Aman Singh</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1564422472987" name="906525" id="a1564422472987">
+        <label for="a1564422472987"><p>Aman</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Aman Singh
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Map And Set Exercise</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Please complete the “words frequency” coding problem.</p>
+<p>Give a list of strings, calculate and print the frequency of each string based on alphabetical order.</p>
+<p>Example1: input {“abc”, “bcd”, “abc”}, output “abc”|2, “bcd”|1</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="232e8057-52c8-478e-b3ba-b6f4f9e96080--0">
+        <label for="232e8057-52c8-478e-b3ba-b6f4f9e96080--0"><p>I completed the exercise</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Solution: <a href="https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/exercises" rel="noopener noreferrer" target="_blank">https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/exercises</a></p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L01 A12 MAP AND SET WALKTHROUGH</p></h3>
+  <video controls>
+  <source src="09. 035ND C01 L01 A12 MAP AND SET WALKTHROUGH-XkskFKGuvqI.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. 035ND C01 L01 A12 MAP AND SET WALKTHROUGH-XkskFKGuvqI.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>If you're still wondering why we added 1 after checking the frequency of a String in line 10 in the code appearing in the video above, consider the below example: </p>
+<p>If we have a String "bcd" that doesn't exist in the map, <code>getOrderDefault</code> will return the default value which is 0. However, since the string is being added at the same step, this means the frequency should become 1 not 0, that's why we add 1 to the frequency. The same concept applies if we add a String that already exists. Let's say we want to add "abc" given that "abc" already exists once in the map. In this case, <code>getOrderDefault</code> will return 1, but because we want to add that String again to the map, the frequency should become 2. </p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="10. Environment Setup.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. Collections - Map and Set')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.040 --> 00:00:07.680
+Welcome back. Now you should have your Maven and encode your setup for this course.
+
+00:00:07.680 --> 00:00:10.365
+Let's continue our with Java refreshment.
+
+00:00:10.365 --> 00:00:15.960
+In this lesson, we're going to learn exception and Java IO.
+
+00:00:15.960 --> 00:00:18.945
+Exception was happening if you don't handle it,
+
+00:00:18.945 --> 00:00:21.315
+your system will stop working.
+
+00:00:21.315 --> 00:00:26.640
+Java IO is used to process input and produce the output.
+
+00:00:26.640 --> 00:00:31.185
+It's very important that in any program language to read
+
+00:00:31.185 --> 00:00:35.790
+and process data from sources like file or images,
+
+00:00:35.790 --> 00:00:41.290
+because we cannot store all information in our database.
+

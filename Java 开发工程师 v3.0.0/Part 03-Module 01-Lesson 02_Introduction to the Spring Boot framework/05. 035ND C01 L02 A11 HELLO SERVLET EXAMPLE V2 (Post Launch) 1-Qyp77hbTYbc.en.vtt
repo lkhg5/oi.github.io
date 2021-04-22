@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.375
+If you follow the instruction to set up the singlet,
+
+00:00:03.375 --> 00:00:05.745
+and if you look at the console,
+
+00:00:05.745 --> 00:00:12.420
+you should see the printed messages we added in our doGET method.
+
+00:00:12.420 --> 00:00:15.330
+You may realize that, in the example,
+
+00:00:15.330 --> 00:00:22.650
+we need to add ServletComponentScan and notation to make this application running.
+
+00:00:22.650 --> 00:00:28.590
+So ServletComponentScan is making the Spring Boot scan for
+
+00:00:28.590 --> 00:00:32.750
+the Web Servlet annotation and it's only
+
+00:00:32.750 --> 00:00:37.505
+performed when using an embedded web server such as Spring Boot.
+
+00:00:37.505 --> 00:00:39.800
+If you're interested to know more,
+
+00:00:39.800 --> 00:00:42.770
+please take a look at the API document.
+
+00:00:42.770 --> 00:00:44.300
+In the next video,
+
+00:00:44.300 --> 00:00:46.895
+we are going to learn what future is,
+
+00:00:46.895 --> 00:00:51.030
+and how to implement a future in Spring Boot.
+

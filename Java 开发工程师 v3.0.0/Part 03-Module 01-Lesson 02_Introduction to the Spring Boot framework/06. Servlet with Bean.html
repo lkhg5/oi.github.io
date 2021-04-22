@@ -1,0 +1,344 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Servlet with Bean</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to the Spring Boot framework</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Microservice.html">01. Intro to Microservice</a>
+    </li>
+    <li class="">
+      <a href="02. Microservice And MVC framework.html">02. Microservice And MVC framework</a>
+    </li>
+    <li class="">
+      <a href="03. Spring Boot Introduction.html">03. Spring Boot Introduction</a>
+    </li>
+    <li class="">
+      <a href="04. Spring Boot MVC Development Introduction.html">04. Spring Boot MVC Development Introduction</a>
+    </li>
+    <li class="">
+      <a href="05. Using Servlet.html">05. Using Servlet</a>
+    </li>
+    <li class="">
+      <a href="06. Servlet with Bean.html">06. Servlet with Bean</a>
+    </li>
+    <li class="">
+      <a href="07. Using Static Resources.html">07. Using Static Resources</a>
+    </li>
+    <li class="">
+      <a href="08. File Upload Application.html">08. File Upload Application</a>
+    </li>
+    <li class="">
+      <a href="09. Lesson Summary.html">09. Lesson Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">06. Servlet with Bean</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="servlet-with-bean">Servlet with Bean</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Let’s create servlet with bean. Bean is a very important concept in Spring. A bean is an object in your Spring Boot project that Sprint Boot manages during runtime. Usually, any class that handles your application logic is a bean. More specifically, a bean is managed by IoC (Inversion of Control) container in a Spring Boot project. IoC is responsible for creating the beans in a project, managing any dependencies between them (by using dependency injection), managing their lifecycles, and configuring them. </p>
+<p>If you want to keep your existing code for future reference, you can stash your existing code, or copy it to another place. Switch to using bean is minimal here.</p>
+<p>To use beans follow the below steps: </p>
+<ol>
+<li>Remove <a href="https://github.com/ServletComponentScan" rel="noopener noreferrer" target="_blank">@ServletComponentScan</a> annotation in <code>SpringBootHelloworldApplication</code> class.</li>
+<li>Add the following methods to the application class (<code>SpringBootHelloworldApplication</code>):</li>
+</ol>
+<pre><code>/// Register Servlet.
+@Bean
+public ServletRegistrationBean getServletRegistrationBean() {
+  ServletRegistrationBean servletBean = new ServletRegistrationBean(new HelloServlet());
+  servletBean.addUrlMappings("/helloServlet");
+  return servletBean;
+}
+
+/// Register Filter.
+@Bean
+public FilterRegistrationBean getFilterRegistrationBean() {
+  FilterRegistrationBean filterBean = new FilterRegistrationBean(new HelloFilter());
+  // Add filter path
+  filterBean.addUrlPatterns("/helloServlet");
+  return filterBean;
+}
+
+@Bean
+public ServletListenerRegistrationBean&lt;HelloListener&gt; getServletListenerRegistrationBean() {
+  ServletListenerRegistrationBean listenerBean =
+        new ServletListenerRegistrationBean(new HelloListener());
+  return listenerBean;
+}</code></pre>
+<ol start="3">
+<li>Make sure your imports are like the ones below: </li>
+</ol>
+<pre><code>import com.example.helloworld.servlet.HelloFilter;
+import com.example.helloworld.servlet.HelloListener;
+import com.example.helloworld.servlet.HelloServlet;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;</code></pre>
+<ol start="4">
+<li>Now you can run the application. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L02 A14 HELLO BEAN</p></h3>
+  <video controls>
+  <source src="06. 035ND C01 L02 A14 HELLO BEAN-D_XGjM2FL4I.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="06. 035ND C01 L02 A14 HELLO BEAN-D_XGjM2FL4I.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="quizzes-about-servlet">Quizzes about Servlet</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Question 1 of 3</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>If a web application has Servlet, Listener and Filter classes. Which of them will be instantiated first by the server?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1570713469555" name="951435" id="a1570713469555">
+        <label for="a1570713469555"><p>Servlet</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1570713477043" name="951435" id="a1570713477043">
+        <label for="a1570713477043"><p>Filter</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1570713479990" name="951435" id="a1570713479990">
+        <label for="a1570713479990"><p>Listener</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Listener
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Question 2 of 3</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which object is used by the filters to get the next component invoked?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1570713620483" name="951436" id="a1570713620483">
+        <label for="a1570713620483"><p>RequesstDispatcher</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1570713681408" name="951436" id="a1570713681408">
+        <label for="a1570713681408"><p>ServletContext</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1570713687550" name="951436" id="a1570713687550">
+        <label for="a1570713687550"><p>FilterChain</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    FilterChain
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Question 3 of 3</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following objects cannot be used by the listeners and servlets of an application for sharing information between them?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1570714218282" name="951437" id="a1570714218282">
+        <label for="a1570714218282"><p>ServletRequest</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1570714233189" name="951437" id="a1570714233189">
+        <label for="a1570714233189"><p>HttpSession</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1570714268453" name="951437" id="a1570714268453">
+        <label for="a1570714268453"><p>ServletContext</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    ServletRequest
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="07. Using Static Resources.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Servlet with Bean')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

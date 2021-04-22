@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.490
+We have covered string, input string,
+
+00:00:02.490 --> 00:00:05.610
+output string, file reader, and file writer.
+
+00:00:05.610 --> 00:00:09.675
+In this video, we're going to learn buffer and buffer reader.
+
+00:00:09.675 --> 00:00:14.040
+Buffers is region of physical memory storage used to
+
+00:00:14.040 --> 00:00:19.005
+temporary store data while it's being moved from one place to another.
+
+00:00:19.005 --> 00:00:23.445
+The physical memory storage would be RAM, in most case.
+
+00:00:23.445 --> 00:00:31.980
+For file, buffer is a storage still part of the string data fuses to output.
+
+00:00:31.980 --> 00:00:33.675
+When we use a buffer,
+
+00:00:33.675 --> 00:00:40.125
+what happen is each character is stored in buffer into memory location,
+
+00:00:40.125 --> 00:00:46.430
+then converting the string of data into a single solid value.
+
+00:00:46.430 --> 00:00:53.955
+Java BufferedReader is used to read tax for our character-based input string,
+
+00:00:53.955 --> 00:00:59.520
+it can be used to read data line-by-line by reline method,
+
+00:00:59.520 --> 00:01:04.490
+it can be also used to read character by character using read method.
+
+00:01:04.490 --> 00:01:07.160
+When using a BufferedReader,
+
+00:01:07.160 --> 00:01:11.700
+you want to make sure that you close it before you finish.
+

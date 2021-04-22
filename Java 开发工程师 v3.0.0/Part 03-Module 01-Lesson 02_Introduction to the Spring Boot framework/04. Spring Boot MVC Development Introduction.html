@@ -1,0 +1,317 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spring Boot MVC Development Introduction</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to the Spring Boot framework</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro to Microservice.html">01. Intro to Microservice</a>
+    </li>
+    <li class="">
+      <a href="02. Microservice And MVC framework.html">02. Microservice And MVC framework</a>
+    </li>
+    <li class="">
+      <a href="03. Spring Boot Introduction.html">03. Spring Boot Introduction</a>
+    </li>
+    <li class="">
+      <a href="04. Spring Boot MVC Development Introduction.html">04. Spring Boot MVC Development Introduction</a>
+    </li>
+    <li class="">
+      <a href="05. Using Servlet.html">05. Using Servlet</a>
+    </li>
+    <li class="">
+      <a href="06. Servlet with Bean.html">06. Servlet with Bean</a>
+    </li>
+    <li class="">
+      <a href="07. Using Static Resources.html">07. Using Static Resources</a>
+    </li>
+    <li class="">
+      <a href="08. File Upload Application.html">08. File Upload Application</a>
+    </li>
+    <li class="">
+      <a href="09. Lesson Summary.html">09. Lesson Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Spring Boot MVC Development Introduction</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>035ND C01 L02 A06 SPRINGBOOT DEVELOPMENT</p></h3>
+  <video controls>
+  <source src="04. 035ND C01 L02 A06 SPRINGBOOT DEVELOPMENT-Grnjq19EcvU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 035ND C01 L02 A06 SPRINGBOOT DEVELOPMENT-Grnjq19EcvU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L02 A07 CREATE CONTROLLER</p></h3>
+  <video controls>
+  <source src="04. 035ND C01 L02 A07 CREATE CONTROLLER-bj7CCah2eqY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 035ND C01 L02 A07 CREATE CONTROLLER-bj7CCah2eqY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>If you don’t know what JSON is, please take a look at here: <a href="https://www.w3schools.com/whatis/whatis_json.asp" rel="noopener noreferrer" target="_blank">https://www.w3schools.com/whatis/whatis_json.asp</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="instructions">Instructions</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li>Create a package under <code>com.example.springboothelloworld</code> and name it "controller", you can do that by right-clicking the <code>com.example.springboothelloworld</code> package then selecting New -&gt; Package. </li>
+<li>Create a Java class under the controller package and name it "HelloController", you can do that by right-clicking the <code>controller</code> package then selecting New -&gt; Java Class. </li>
+<li>Make the content of HelloController class like the code below: </li>
+</ol>
+<pre><code>@Controller
+public class HelloController {
+   private Map&lt;String, Object&gt; result = new HashMap&lt;&gt;();
+
+   @RequestMapping("/hello")
+   @ResponseBody
+   public Map&lt;String, Object&gt; hello() {
+       result.put("name", "Stephen");
+       result.put("city", "San Jose");
+       return result;
+   }
+}</code></pre>
+<ol start="4">
+<li>If you see any red bulb, click on it and select import class, that will solve the import problem. Notice that IntelliJ will automatically add the dependency to your pom.xml file. For this example, the spring-boot-web will be added to your dependency list as below:</li>
+</ol>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+<p>If for any reason your compiler states that <code>@RequestMapping</code> and <code>@ResponseBody</code> annotations are not resolved and if you check <code>pom.xml</code> and you don't find the dependencies above, then you need to add the dependencies by yourself. Copy the dependencies above and add them anywhere inside <code>dependencies</code> tag in <code>pom.xml</code>. Then, go back to the code, click on each annotation, then press alt and Enter keys together (option and Enter on Mac) and select import class. </p>
+<ol start="6">
+<li>Now you can run the command below in your IntelliJ terminal:</li>
+</ol>
+<pre><code>mvn spring-boot:run </code></pre>
+<p>Once you see something like “Completed initialization in xxx ms”. Open a browser, and go to<br />
+http://localhost:8080/hello, you should see something like: <br />
+{"city":"San Jose","name":"Stephen"}</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L02 A08 CREATE SIMPLE SPRINGBOOT CONTROLLER</p></h3>
+  <video controls>
+  <source src="04. 035ND C01 L02 A08 CREATE SIMPLE SPRINGBOOT CONTROLLER-Wb_UAvy3NYQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 035ND C01 L02 A08 CREATE SIMPLE SPRINGBOOT CONTROLLER-Wb_UAvy3NYQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="using-restcontroller">Using RestController</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L02 A09 REST CONTROLLER</p></h3>
+  <video controls>
+  <source src="04. 035ND C01 L02 A09 REST CONTROLLER-8nvncBhj9xI.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. 035ND C01 L02 A09 REST CONTROLLER-8nvncBhj9xI.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><a href="https://github.com/RestController" rel="noopener noreferrer" target="_blank">@RestController</a> is a specialized version of controller, which automatically uses both <a href="https://github.com/Controller" rel="noopener noreferrer" target="_blank">@Controller</a> and <a href="https://github.com/ResponseBody" rel="noopener noreferrer" target="_blank">@ResponseBody</a>. In this example, we are going to use it to update our existing Controller class we created previously. </p>
+<p>Steps:</p>
+<ol>
+<li><p>Replace the <a href="https://github.com/Controller" rel="noopener noreferrer" target="_blank">@Controller</a> with <a href="https://github.com/RestController" rel="noopener noreferrer" target="_blank">@RestController</a>.</p></li>
+<li><p>Remove <a href="https://github.com/ResponseBody" rel="noopener noreferrer" target="_blank">@ResponseBody</a> annotation.</p></li>
+</ol>
+<p>If you have auto imports, the imports will be changed when you change the annotation.</p>
+<p><strong>You can take a look at the solved version of this entire example here</strong>: <a href="https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/demos/spring-boot-hello-world" rel="noopener noreferrer" target="_blank">https://github.com/udacity/nd035-v1-C1-Java-Basics-Exercises-and-Project-Starter/tree/master/demos/spring-boot-hello-world</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Spring Boot RestController Quiz</p></h3>
+  <div>
+  <p><strong>QUESTION: <p>HTTP Request methods</p></strong></p>
+  <p>Since we are dealing with a web application, name any common http request methods you know or you have heard of. Separated by comma.</p>
+
+  <details>
+    <summary><strong>ANSWER:</strong></summary>
+    <p><p>Thanks for your response.<br />
+This is mine: PUT, GET, POST, DELETE, PATCH</p></p>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>We have created a simple Spring Boot application with a controller. In the next few videos, we are going to dig a little deeper and we are going to use Servlet, Filter and Listener class. All these classes are used by java backend server to receive requests, manipulate them and respond with responses.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Using Servlet.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Spring Boot MVC Development Introduction')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

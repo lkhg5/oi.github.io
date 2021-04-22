@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.035
+Let's start with string. String is like an endless flow of data.
+
+00:00:04.035 --> 00:00:08.205
+You can either read for a string or write to a string.
+
+00:00:08.205 --> 00:00:14.130
+A string is connected to a data source or data destination.
+
+00:00:14.130 --> 00:00:21.030
+String in File IO can be either byte base or character-based.
+
+00:00:21.030 --> 00:00:29.100
+A program that need to read data from some source needs an input string or reader.
+
+00:00:29.100 --> 00:00:38.480
+A program that need to write data to some destination needs a output string or writer,
+
+00:00:38.480 --> 00:00:42.230
+which can be shown as the graph like here.
+
+00:00:42.230 --> 00:00:51.810
+So we have the source and we read it using input string or reader by program.
+
+00:00:51.810 --> 00:01:00.460
+The program can be right to the output string and writer to the destination.
+
+00:01:00.620 --> 00:01:08.380
+For input string or for output string are common input and output string classes.
+
+00:01:08.380 --> 00:01:14.600
+For reader and for a writer or common reader are writer classes.
+
+00:01:14.600 --> 00:01:18.330
+We're going to take a more in next few videos.
+

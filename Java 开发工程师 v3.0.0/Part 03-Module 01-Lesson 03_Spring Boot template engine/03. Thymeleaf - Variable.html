@@ -1,0 +1,232 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thymeleaf - Variable</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Spring Boot template engine</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Spring Boot Template Engine.html">01. Spring Boot Template Engine</a>
+    </li>
+    <li class="">
+      <a href="02. Spring Boot Template Engine - Thymeleaf.html">02. Spring Boot Template Engine - Thymeleaf</a>
+    </li>
+    <li class="">
+      <a href="03. Thymeleaf - Variable.html">03. Thymeleaf - Variable</a>
+    </li>
+    <li class="">
+      <a href="04. Thymeleaf - Condition.html">04. Thymeleaf - Condition</a>
+    </li>
+    <li class="">
+      <a href="05. Thymeleaf - Loop.html">05. Thymeleaf - Loop</a>
+    </li>
+    <li class="">
+      <a href="06. Thymeleaf - Scope.html">06. Thymeleaf - Scope</a>
+    </li>
+    <li class="">
+      <a href="07. Thymeleaf - URL.html">07. Thymeleaf - URL</a>
+    </li>
+    <li class="">
+      <a href="08. Spring Boot Unit Test, Hot Swap, and Logging.html">08. Spring Boot Unit Test, Hot Swap, and Logging</a>
+    </li>
+    <li class="">
+      <a href="09. Spring Boot Form Validation.html">09. Spring Boot Form Validation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Thymeleaf - Variable</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>035ND C01 L03 A05 THYMELEAF VARIABLE</p></h3>
+  <video controls>
+  <source src="03. 035ND C01 L03 A05 THYMELEAF VARIABLE-3F5LN8q-Wh4.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. 035ND C01 L03 A05 THYMELEAF VARIABLE-3F5LN8q-Wh4.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Let's revisit the simple example you built in the previous lesson. In the previous lesson, you wrote the bellow code: </p>
+<p><strong>Controller class code:</strong></p>
+<pre><code>@Controller
+public class UserController {
+
+   @RequestMapping("demo")
+   public String demo(Model model) {
+       model.addAttribute("message", "Hello Thymeleaf");
+       // return to templates/demo.html page.
+       return "demo";
+   }
+}</code></pre>
+<p><strong>HTML code:</strong></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Thymeleaft Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;span th:text="${message}"&gt;&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Take a look at the code again. If you think that you used the variable named "message" on your web page, you're right. Let's explain the example further in order to understand how to use variables in Thymeleaf. </p>
+<p>First, any data that should be accessed when rendering a page is called <strong>model attributes</strong>. This means if there is any variable on the server side that you want to have its value displayed on some page, you need to add it to your model attributes. </p>
+<p>As you can see in the java code, we added our variable “message” to the model attributes using <code>model.addAttribute("message", "Hello Thymeleaf")</code>. Here, the variable name is “message”, and the variable value is “Hello Thymeleaf”. So, when the page is displayed, we’ll see “Hello Thymeleaf”. </p>
+<p>In order to display that variable value on the page, we need to refer to it in the HTML code (we’ll use Thymeleaf to do that). To be able to use Thymeleaf as a template engine in the HTML code, you need to add this line to the html tag: <code>xmlns:th="http://www.w3.org/1999/xhtml"</code> as we did in the code above. This line tells the html that we are using Thymeleaf engine. </p>
+<p>Note how we used <code>xmlns:th</code> and associated it with some URI. What we did here was that we defined a namespace. The provided URI (<a href="http://www.w3.org/1999/xhtml" rel="noopener noreferrer" target="_blank">http://www.w3.org/1999/xhtml</a>) represents a unique name of the namespace. A namespace is a technique to differentiate between elements and attributes in an XML file that have the same name but have different purposes. Say for example that in an XML file we have two elements with the same name like <code>&lt;image&gt;</code>, and suppose that those two tags or elements were developed by different developers, have different functionalities, and belong to two different namespaces. In this case, in each <code>&lt;image&gt;</code> tag we need to identify the namespace in order to let XML know to which namespace each of the <code>&lt;image&gt;</code> tags belongs, based on that it can know how each one functions. In the example above, we defined the namespace in the html tag, meaning that we'll use elements and attributes that are identified by that namespace across the entire html file. <code>th</code> is a prefix of the name space which we need to add before any attribute that belongs to that namespace. As you can see, the namespace that refers to Thymeleaf elements and attributes is prefixed with <code>th</code>, this means that whenever we want to use an attribute that belongs to that namespace we should prefix it with <code>th</code> (for example <code>th:text</code>).</p>
+<p>This is useful if we want to use multiple namespaces in the same html file and they have some attributes with identical names, in that case, each namespace can have a different prefix. Let's say we have an attribute named "length" and it exists in two different namespaces that we use in our HTML file, let's say that the first namespace has a prefix of "m" and the second has a prefix of "n", If we want to use the length attribute from the first namespace we'll write "m:length", if we want to use it from the other namespace we'll write "n:length". </p>
+<p>Let's continue explaining the rest of the code, in the example above, we wanted to display the variable inside the body tag, specifically, inside the span tag. To access that variable, we added the attribute <code>th:text</code> to the span tag, then we assigned ${message} to that attribute. The attribute will then display the text that results from this expression: ${message}, which is "Hello Thymeleaf". Note how using the dollar sign and enclosing the variable with braces will evaluate to the value of that variable. So, <code>th:text</code> attribute is used to display a variable’s value. </p>
+<p>It should also be noted that <code>th:text</code> will replace a tag’s content. For example, if we write:</p>
+<pre><code>&lt;p th:text="${message}"&gt;test&lt;/p&gt;</code></pre>
+<p>The text that will be displayed on the web page is “Hello Thymeleaf” (“test” will be replaced).</p>
+<p>You can use the steps above to include any variable you want through Thymeleaf. </p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Thymeleaf - Condition.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Thymeleaf - Variable')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

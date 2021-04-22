@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.110 --> 00:00:04.635
+In this lesson, we have learned about microservices,
+
+00:00:04.635 --> 00:00:07.875
+MVC and Spring Boot is,
+
+00:00:07.875 --> 00:00:12.360
+the differences between Spring Boot and Spring MVC.
+
+00:00:12.360 --> 00:00:14.520
+In addition, now you know how to use
+
+00:00:14.520 --> 00:00:19.980
+Spring Boot initializer to create a Spring Boot application from scratch.
+
+00:00:19.980 --> 00:00:22.095
+In our next lesson,
+
+00:00:22.095 --> 00:00:28.120
+we're going to talk about Spring Boot development. Stay tuned.
+

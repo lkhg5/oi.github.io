@@ -1,0 +1,294 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spring Boot Template Engine - Thymeleaf</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Spring Boot template engine</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Spring Boot Template Engine.html">01. Spring Boot Template Engine</a>
+    </li>
+    <li class="">
+      <a href="02. Spring Boot Template Engine - Thymeleaf.html">02. Spring Boot Template Engine - Thymeleaf</a>
+    </li>
+    <li class="">
+      <a href="03. Thymeleaf - Variable.html">03. Thymeleaf - Variable</a>
+    </li>
+    <li class="">
+      <a href="04. Thymeleaf - Condition.html">04. Thymeleaf - Condition</a>
+    </li>
+    <li class="">
+      <a href="05. Thymeleaf - Loop.html">05. Thymeleaf - Loop</a>
+    </li>
+    <li class="">
+      <a href="06. Thymeleaf - Scope.html">06. Thymeleaf - Scope</a>
+    </li>
+    <li class="">
+      <a href="07. Thymeleaf - URL.html">07. Thymeleaf - URL</a>
+    </li>
+    <li class="">
+      <a href="08. Spring Boot Unit Test, Hot Swap, and Logging.html">08. Spring Boot Unit Test, Hot Swap, and Logging</a>
+    </li>
+    <li class="">
+      <a href="09. Spring Boot Form Validation.html">09. Spring Boot Form Validation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Spring Boot Template Engine - Thymeleaf</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>035ND C01 L03 A03 SPRINGBOOT WITH THYMELEAF INTRO</p></h3>
+  <video controls>
+  <source src="02. 035ND C01 L03 A03 SPRINGBOOT WITH THYMELEAF INTRO-JdKz6nBnBn8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. 035ND C01 L03 A03 SPRINGBOOT WITH THYMELEAF INTRO-JdKz6nBnBn8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Thymeleaf is a template engine that is based on attributes. This simply means that if you have any variables that reside on the server and you want to use them in your page, you just need to refer to them by using some attributes in your HTML code (we'll see how in the coming lessons). </p>
+<p>When a browser wants to display a web page, it builds a DOM (Document Object Model) of that page. DOM is a tree representation of your HTML document, where each element (tag) in your HTML code is defined as an object that can have a parent and one or more children. In other words, DOM is an object-based representation of your web page and it is the way browsers represent a page in memory, i.e., a browser creates a DOM from an html code and stores it in memory. A developer can access DOM through some languages like javascript and change things in the page (like some text, image, etc.) without the need of changing the HTML of that page. </p>
+<p>Thymeleaf modifies the DOM (which resides in memory) to make it reflect the values of the variables on the server side (those that were referenced in the HTML code), and by that the web page will be dynamic and will have the values of those variables displayed. It should be mentioned that Thymeleaf performs all of its processes in memory (including modifying DOM), that's why it's considered an in-memory template engine. </p>
+<p>Let’s take an example about DOM tree, look at the HTML code below: </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+           &lt;title&gt;Demo&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+           &lt;h1&gt;What is DOM?&lt;/h1&gt;
+           &lt;p&gt;DOM is an object-based representation of your web page and it is the way browsers represent a page in memory&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>As you can see, html is the root element and it has two children, head and body. Head has one child which is title which has the value of “Demo”. Body has two children, the first one is h1 and it has the value of “What is DOM?”, the second one is p and it has the value of “DOM is an object-based representation…”. The resulting DOM tree of this HTML looks like the one below: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/dom.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="instructions">Instructions</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li>Go to <a href="https://start.spring.io/" rel="noopener noreferrer" target="_blank">https://start.spring.io/</a> and create a new Spring Boot project named spring-boot-thymeleaf with Thymeleaf and Spring Web being added as dependencies.</li>
+<li>Download, unzip, and import the project.</li>
+<li>Create a controller directory under <code>com.example.springbootthymeleaf</code>. Then, create a UserController Java class under the controller directory. Your code should look like the one below: </li>
+</ol>
+<pre><code>@Controller
+public class UserController {
+
+   @RequestMapping("demo")
+   public String demo(Model model) {
+       model.addAttribute("message", "Hello Thymeleaf");
+       // return to templates/demo.html page.
+       return "demo";
+   }
+}</code></pre>
+<ol start="4">
+<li>Create a demo.html file under resources/template directory. Your code should look like the one below:</li>
+</ol>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;title&gt;Thymeleaft Demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;span th:text="${message}"&gt;&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ol start="5">
+<li>Run the application, and go to http://localhost:8080/demo, you should see “Hello Thymeleaf” message printed on the web page.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>035ND C01 L03 A04 SPRINGBOOT WITH THYMELEAF</p></h3>
+  <video controls>
+  <source src="02. 035ND C01 L03 A04 SPRINGBOOT WITH THYMELEAF-kz7Du8N4mmM.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. 035ND C01 L03 A04 SPRINGBOOT WITH THYMELEAF-kz7Du8N4mmM.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>That’s our Spring Boot application using Thymeleaf, easy right? </p>
+<p>Compared to freemarker, it’s easier to use. One thing you need to add to your html header is <code>xmlns:th="http://www.w3.org/1999/xhtml"</code>, which tells the html that we are using Thymeleaf engine. </p>
+<p>In the next lessons, we'll take a look at thymeleaf syntax including:</p>
+<ul>
+<li>Variable</li>
+<li>Condition</li>
+<li>Loop</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Thymeleaf - Variable.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Spring Boot Template Engine - Thymeleaf')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
