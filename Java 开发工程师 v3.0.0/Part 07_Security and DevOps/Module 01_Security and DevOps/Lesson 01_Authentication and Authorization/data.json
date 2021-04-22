@@ -1,0 +1,2199 @@
+{
+  "data": {
+    "lesson": {
+      "id": 900763,
+      "key": "6937a8f4-aeb7-4aec-ac7b-37840ecf1765",
+      "title": "Authentication and Authorization",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Implement authentication on a Spring Boot application using a JSON Web Token (JWT).",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/6937a8f4-aeb7-4aec-ac7b-37840ecf1765/900763/1581176846901/Authentication+and+Authorization+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/6937a8f4-aeb7-4aec-ac7b-37840ecf1765/900763/1581176840912/Authentication+and+Authorization+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 900753,
+          "key": "29c313f6-9429-433a-b3c3-d1eb0f6c2d60",
+          "title": "Course Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "29c313f6-9429-433a-b3c3-d1eb0f6c2d60",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900764,
+              "key": "8f3fd418-cd03-446e-8f69-eac5531d564d",
+              "title": "ND035 C04 L01 A00 Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pi7sa00tVws",
+                "china_cdn_id": "pi7sa00tVws.mp4"
+              }
+            },
+            {
+              "id": 1095301,
+              "key": "23d3fd3a-9da2-4862-85f3-c344ea74c334",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this course, you will learn about the technologies involved in the **”Security”** and **”DevOps”** of a Java-based enterprise application development. By the end of this course, you will be able to...\n\n* Implement authentication and authorization on a Spring Boot application using JSON Web Token (JWT)\n\n* Unit test the Spring application using **”JUnit”** and **”Mockito”** frameworks\n\n* Use SLF4J logging API and Log4J logging framework for code insight and debugging the application\n\n* Use the **”Splunk”** tool for analyzing machine-generated raw data\n\n* Set up a **”CI/CD”** pipeline, that will connect and automate the deployment of your code present in Github to the server running on the cloud. \n\nAlso, we will introduce an “eCommerce application” that you will work through and submit as your final project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1095300,
+              "key": "5b46636c-a495-4178-a5bd-9d4bb35a735f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Course Motivation",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107243,
+              "key": "d6648319-b243-4337-806f-a001a5557ba9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Motivation 1 - Authentication and Authorization\n\nSecurity is an essential aspect of a web application. There could be various security breaches that can happen if the web application has not addressed these during the design and development phase. The diagram below describes some common security vulnerabilities:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 969350,
+              "key": "3ee6c29e-a21d-4145-9f02-f0211666cb23",
+              "title": "Security vulnerabilities Image",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/February/5e58a422_copy-of-images/copy-of-images.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3ee6c29e-a21d-4145-9f02-f0211666cb23",
+              "caption": "Some common security vulnerabilities",
+              "alt": "Some common security vulnerabilities",
+              "width": 700,
+              "height": 451,
+              "instructor_notes": null
+            },
+            {
+              "id": 1107246,
+              "key": "749c24f3-d9c3-4a5f-875e-1369e16eb410",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We will learn about a few authentication and authorization mechanisms, along with the implementation of JSON web token-based (JWT) authentication. \n\n### Motivation 2 - Logging and Splunk\nAn enterprise web application generates a massive amount of raw data, such as application logs, server logs, network devices logs, IoT data, and many more. Therefore, to evolve the application, we need a suitable depth of logging and an efficient tool to analyze the logs using Splunk.\n\n\n### Motivation 3 - DevOps\nThe requirements of the customer are agile, as is the software development model. We need to follow the industry best-practices, which will increase the speed of software delivery and the speed of software evolution (enhancements). This requirement makes it essential to use DevOps model for  **“expeditious”** software development. \n\n---\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 900757,
+          "key": "4f4198da-a7a8-4dd0-b24d-01c7da2e4e5f",
+          "title": "Authentication",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4f4198da-a7a8-4dd0-b24d-01c7da2e4e5f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900765,
+              "key": "e3684ab0-bc0c-4c5f-b001-1eb69e11f7f2",
+              "title": "ND035 C04 L01 A01.1 Authentication And Authorization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XZgBIIs2Qeg",
+                "china_cdn_id": "XZgBIIs2Qeg.mp4"
+              }
+            },
+            {
+              "id": 1107248,
+              "key": "86227cea-b44d-4b76-9ca2-e9014b065927",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "After completing this lesson, you will be able to ...\n\n* Explain the fundamentals of authentication and authorization \n* Implement the hashing and salting techniques, such as bCrypt, and SHA-256\n* Make use of JSON Web Tokens (JWTs) for authentication in your Spring application",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900741,
+              "key": "f0b0cdd5-8c2a-4706-a778-be17cf6fa1d5",
+              "title": "Why does authentication matter?",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Why bother?\n\nData breaches are on the rise and are expensive. According to the <a href=\"https://www.capita.com/sites/g/files/nginej146/files/2020-08/Ponemon-Global-Cost-of-Data-Breach-Study-2020.pdf\" target=\"_blank\">Cost of a Data Breach Report 2020</a> by IBM based on research conducted with 524 organizations worldwide, the following key-findings will intrigue you:\n\n* The malicious attack contributes to more than 50% of the data breach root cause, and it is the most expensive one. \n* The average total cost of a data breach in the US has been estimated to be $7.9 million, and $3.86 million on average worldwide. (10% increase since 2014)\n* Data breaches are becoming harder to track and locate. In 2020, the average amount of time to identify that a breach had occurred was 280 days. \n\nThe more straightforward solution is to try to prevent breaches before they can occur; therefore, authentication and authorization are critical.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107249,
+              "key": "1937bab5-3796-4a2d-8a3d-a2e764d56f9d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## What is Authentication?",
+              "instructor_notes": null
+            },
+            {
+              "id": 900766,
+              "key": "6b0418b8-1391-4454-b8be-17b81836a793",
+              "title": "ND035 C04 L01 A01.2 Authentication And Authorization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "J6CfBpoUGj4",
+                "china_cdn_id": "J6CfBpoUGj4.mp4"
+              }
+            },
+            {
+              "id": 969351,
+              "key": "e1bcd105-a931-4ab4-9484-d731d70e8958",
+              "title": "What is Authentication - Definition",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Authentication confirms your identity. It is a process that proves that you are the person who you say you are. In the digital world, the most common way to authenticate is to use a username and password. For example, while logging into your eCommerce account, you prove your identity by providing an email and a password, sometimes followed by an OTP or a second factor. There are many other ways to authenticate, and these are depicted in the figure below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 969336,
+              "key": "086ff089-de78-45e7-ae0f-7c4eb3bff087",
+              "title": "Common Mechanisms  for Authorization",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/February/5e39ae41_authentication/authentication.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/086ff089-de78-45e7-ae0f-7c4eb3bff087",
+              "caption": "Common Methods for Authentication",
+              "alt": "Common Methods for Authentication",
+              "width": 700,
+              "height": 233,
+              "instructor_notes": null
+            },
+            {
+              "id": 900734,
+              "key": "0bcb2172-bb81-4357-8815-08c369168b4a",
+              "title": "What is Authentication? Heading",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Common Mechanisms for Authentication\n\n* **Token-based authentication** - It is a temporary credential that you (client) have which proves your identity. Read more <a href=\"https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication\" target=\"_blank\">here</a>. Note: we do use this later in the form of JWT, but we first authenticate with the username and password, then send the token on each subsequent request.\n\n\n* **OAuth** - is an industry-standard protocol for authorization that provides a token on your behalf once you’ve authenticated to the external service. Read more <a href=\"https://auth0.com/docs/protocols/oauth2\" target=\"_blank\">here</a>.  For example, if you've ever seen a \"Sign in with Google/Facebook/etc\", this is likely done using OAuth.\n\n\n* **Time-based token** (TOTP) - a token is generated with something only you know. This token changes after some time period. Read more <a href=\"https://www.freecodecamp.org/news/how-time-based-one-time-passwords-work-and-why-you-should-use-them-in-your-app-fdd2b9ed43c3/\" target=\"_blank\">here</a>. This is very commonly used in Two Factor Authentication as the 2nd factor. If you have random codes you need to enter, they may have been generated using this scheme.\n\n\n* **Biometric authentication** such as Fingerprint or Facial recognition (popular on smartphones). Most of the standard mechanisms for authentication utilizes either of the following two \"Network authentication protocols\": i). Kerberos, and ii). Secure Sockets Layer (SSL) / Transport Layer Security (TLS).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900725,
+              "key": "0e52c088-f497-498f-abe7-21c9acaad319",
+              "title": "What is authentication?",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0e52c088-f497-498f-abe7-21c9acaad319",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**Authentication** is all about...",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Determining what a user is allowed to access.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Proving that you are the person you say you are.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 907199,
+              "key": "efd5f4b9-f254-456e-ac36-a3e604d141d2",
+              "title": "Checkbox Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "efd5f4b9-f254-456e-ac36-a3e604d141d2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are examples of authentication?  \n(Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Photo ID",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Social Security card",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Biometric screening (e.g., fingerprints, facial recognition, etc.)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Username and password",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107250,
+              "key": "c023fe51-ed2f-406d-8fcf-f85f80e0dceb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<hr>\n\n### More to Explore - Network Authentication Protocols\n\nKerberos provides secure authentication for client/server applications by using secret-key cryptography. Here are some links on Kerberos <a href=\"https://www.kerberos.org/docs/index.html\" target=\"_blank\">here</a>. On the other hand, SSL/TLS uses a cryptographic system that uses two keys to encrypt data − a public key known to everyone and a private or secret key known only to the recipient of the message. A typical example is an HTTPS website that utilizes SSL/TLS certificate that is signed by a publicly trusted Certifying Authority. Here is a  resource for SSL/TLS <a href=\"https://en.wikipedia.org/wiki/Transport_Layer_Security\" target=\"_blank\">here</a>.\n\nDetails about these \"Network authentication protocols\" are beyond the scope of this lesson.",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 900759,
+          "key": "787bbce6-5f63-4096-8a13-224814ed64d1",
+          "title": "Points to Consider",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "787bbce6-5f63-4096-8a13-224814ed64d1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1107257,
+              "key": "8c128ff2-dfad-4371-bdc3-a25d528694cd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Authentication Considerations",
+              "instructor_notes": null
+            },
+            {
+              "id": 900767,
+              "key": "e58c481f-b598-4238-aa18-473602fe649f",
+              "title": "ND035 C04 L01 A01.3 Authentication And Authorization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NPIO7_4sZbg",
+                "china_cdn_id": "NPIO7_4sZbg.mp4"
+              }
+            },
+            {
+              "id": 900714,
+              "key": "7cc66c0f-5729-434f-8bc1-16641e7c80b6",
+              "title": "Authentication Considerations Heading",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Good authentication practices center around protecting the data used for authentication, such as:\n\n* You wouldn't just tell people your password, and so your website shouldn't either. \n* You also need to ensure that passwords are sufficiently random and complex, with things like length requirements, to ensure that your credentials aren't easily cracked. \n* They must not be able to be forged easily, so no one can impersonate anyone else. Finally, they have to be deterministically generated, that is they must be generated the same way every time, to ensure you actually can authenticate users into your system.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900716,
+              "key": "63357d6f-e590-42e2-9428-117579a4e700",
+              "title": "OWASP suggestions for authentication and authorization",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As referenced in the above video, you can check out the [OWASP authentication cheatsheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Authentication_Cheat_Sheet.md) for guidelines to authentication best practices. This is a great resource to check out now, or to bookmark for later reference.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907257,
+              "key": "c6593b46-fb28-45e9-ad42-08d07d95a99b",
+              "title": "Authentication considerations",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c6593b46-fb28-45e9-ad42-08d07d95a99b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following is true with regard to authentication considerations and mechanisms? ",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Password length and complexity requirements shouldn't be considered while deciding on Authentication strategy.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "The data used for authentication should be sufficiently random, is an authentication consideration.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Time based token (TOTP)  can be used as an authentication mechanism.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107254,
+              "key": "da6f74a9-14a1-407a-a7de-aaca8cabdc8f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Authentication Protection",
+              "instructor_notes": null
+            },
+            {
+              "id": 1107253,
+              "key": "e6b999ef-1a3d-4245-bf90-59f6058e2b05",
+              "title": "ND035 C04 L01 A01.4 Authentication And Authorization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gVOyzxvY4Lw",
+                "china_cdn_id": "gVOyzxvY4Lw.mp4"
+              }
+            },
+            {
+              "id": 1107255,
+              "key": "2b30bf69-fc6b-468c-902b-cfac6ab7a8e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's learn more about Hashing, and see how it is implemented in Java.",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 900751,
+          "key": "e7887bf4-1550-4128-9ab9-c71cf8e9775b",
+          "title": "Hashing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e7887bf4-1550-4128-9ab9-c71cf8e9775b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900729,
+              "key": "cdc89809-832c-48d1-83dd-c15f45c6d228",
+              "title": "Hashing Heading",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 1. What is Hashing?\n\n**Hashing** is the process of generating a unique value (hash) for a given *text*, *string*, or *numeric* input (key). The generated value (called a *hash*) itself could be either a *text*, *string*, or *numeric*, which depends upon the underlying **Hash** function. \n\n> A **Hash** function is a one-way mathematical function which is used to generate a unique value for a given input.  \n>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107256,
+              "key": "f856bd85-ded1-4104-bcb6-7b7d1a306d84",
+              "title": "Authentication Protection Heading",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The two essential properties of hashing are:\n\n* Hashing must be irreversible\n* Each input should have a unique output (or, practically, as close to unique as possible)\n\nA scenario, when a hash function gives the same output for different inputs, is called a **collision**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1018676,
+              "key": "395721a6-44eb-476a-a8d4-63bd2ad59df6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Irreversible vs. Reversible functions\n\nLet there be a function *f*, which can generate unique hash values for a given set of input. Another function *g* can get the original value back if the hash value is given as input. In such a case, the function *f* would be called **reversible**, as we can get the original value back. Hence, *f* cannot be used as a Hash function. Following is an example of a reversible function:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 938375,
+              "key": "41d8d2b8-22d5-4f26-830b-eaa26235e77c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/September/5d87c72d_screen-shot-2019-09-22-at-12.10.06-pm/screen-shot-2019-09-22-at-12.10.06-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/41d8d2b8-22d5-4f26-830b-eaa26235e77c",
+              "caption": "",
+              "alt": "",
+              "width": 880,
+              "height": 344,
+              "instructor_notes": null
+            },
+            {
+              "id": 938377,
+              "key": "5b483d7a-b004-4ca7-bfbc-94ad7e3a5a4a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "> The hashes should be irreversible, so one cannot compute the input given the output.  \n>\n\n\n## 2. Where to use Hashing in an Application?\n\nWe use hashing to store any sensitive information in the system, such as user passwords.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900769,
+              "key": "e8a48b5e-1589-4535-84b9-c53a0b7e7783",
+              "title": "ND035 C04 L01 A02.1 What Is Hashing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zyRoz2ziTow",
+                "china_cdn_id": "zyRoz2ziTow.mp4"
+              }
+            },
+            {
+              "id": 900709,
+              "key": "ca480167-1994-4827-83a0-577cff28aefe",
+              "title": "Hashing example",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Theoretical Example\n\nLet's look at a simple example of hashing. Suppose that a user has the following password:\n\n* `passw0rd!` - If we directly store this text in the database, we will have a major security vulnerability. \n\nSo instead, we can first run the password through a one-way function that produces a jumbled up piece of text (which has no obvious discernible relationship to the original password). That jumbled up piece of text is the *hash*, and it might look something like this:\n\n* `passw0rd!` → hash function → `@kdF3lkAWoLA`\n\nSo when the client interacts with the server, rather than directly sending the password, the client can instead send the hash:\n\n* `passw0rd!` → hashing function → `@kdF3lkAWoLA` → stored in database\n\nThis way, if someone gains access to the database, they will still not have access to the plain-text password.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900715,
+              "key": "49976428-d8b3-4199-ada5-d68760e8288a",
+              "title": "Radio Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "49976428-d8b3-4199-ada5-d68760e8288a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these statements correctly describes a hashing function?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "A hashing function produces output that is hard or impossible to reverse (it is a one-way function)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "A hashing function encrypts the data in a way that can be reversed as needed (it is a two-way function)",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107258,
+              "key": "dfe39393-052c-4ac5-bf41-82c2ec62da7d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 3. How to Pick a Good Hash Function",
+              "instructor_notes": null
+            },
+            {
+              "id": 1107260,
+              "key": "8cdee07e-6d27-4868-9a28-375287f16c18",
+              "title": "How to Pick a Good Hash Function Heading",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A good hash function needs to be efficiently computable, so it needs to be reasonably fast. \nIt needs to be uniform, which means given an input the output needs to be as unique as possible. In other words, a low number of collisions exists.\nA given output should give absolutely no indication of its input. Inputs should be effectively random and uniformly distributed. Changing \"cat\" to \"bat\" should yield unpredictable results (this is known as the avalanche property)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107259,
+              "key": "cb5060d1-6dbe-4e82-9f08-3b74b7d02cbc",
+              "title": "ND035 C04 L01 A02.3 What Is Hashing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xsRtyjq0Mjk",
+                "china_cdn_id": "xsRtyjq0Mjk.mp4"
+              }
+            },
+            {
+              "id": 969345,
+              "key": "f63ae203-0f75-4c15-892f-1515815e5889",
+              "title": "Types of Hashing",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Some famous Hashing Algorithms\n\nThere are many hashing algorithms prevalent in the industry. \n\n* **MD5**: The MD5 Message-Digest Algorithm is a hash function that accepts an input message of any length, and correspondingly produces a 128-bit (16-byte) hash value. Mostly, MD5 is used to verify data integrity. It was proposed by Ronal Rivest in 1992, as specified in <a href=\"https://tools.ietf.org/html/rfc1321\" target=\"_blank\">RFC 1321</a>. MD5 is comparatively unsafe, as it might get reversed by using brute-force-attack. Also, the chances of collision are very high in MD5. For non-critical applications, MD5 can be a good choice as it is computationally faster than other algorithms.<br><br>\n* **SHA**: The SHA (Secure Hash Algorithm) is a set (SHA-0, SHA-1, SHA-2, and SHA-3) of cryptographic hash functions developed by the National Institute of Standards and Technology (NIST). In comparison to MD5, SHA generates secure hashes. SHA-1 is a 160-bit hash function. SHA-2 is further of two types: SHA-256 and SHA-512. SHA-256 is a 256-bit hash function that provides 128 bits of security in the case of collision attacks, while SHA-512 is a 512-bit hash function is designed for 256 bits of security. SHA-3 supports the same hash lengths as SHA-2. Chances of collision are high in SHA as well, but lesser than MD5. Thus, SHA-2 could be a good choice for general purpose application with a limited set of inputs, such as a University portal.<br><br>\n* **bCrypt**: It is generally used to generate the hash for user-passwords. bCrypt is based on the Blowfish cipher algorithm. It has a crucial phase for key setup. This phase starts with encrypting a sub-key and uses the output of this encryption to change another sub-key. This way, the bCrypt involves iterative steps for generating the hash, making it a preferred choice of developers for critical applications.<br><br>\n* **sCrypt**: It is a computationally intensive password-based key derivation function, proposed in 2016, as specified in <a href=\"https://tools.ietf.org/html/rfc7914\" target=\"_blank\">RFC 7914</a>. As part of the algorithm, it generates a large vector of pseudorandom bit strings. Thus, it requires a large amount of memory for computation. It isn't easy for a brute-force-attacker to reverse the hash, as it would involve a significantly high amount of time, memory, and a high number (billion) of attempts. Other password-based key derivation functions such as PBKDF1 and PBKDF2 have relatively low resource demands.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107261,
+              "key": "f85b9fc9-5222-4bec-a378-f1a73f3e656a",
+              "title": "Radio Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f85b9fc9-5222-4bec-a378-f1a73f3e656a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these hashing algorithms is good for passwords?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "MD5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Bcrypt",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 983048,
+              "key": "1009d9f5-80b7-4988-a49b-228e61d4ca5e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 4. Explore Further - Collision\n\nIn several scenarios, two different keys can generate the same hash. Such a scenario is called **Collision**. If we use a simple hash function, such as input length or sum of ASCII code of all characters, then it might lead to a collision. The diagram below lists the approaches used for collision resolution.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 969342,
+              "key": "4649f1d8-baaa-4677-aa84-33d28794f282",
+              "title": "Collision Resolution",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/February/5e39b35e_collisionresolutiontechniques/collisionresolutiontechniques.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4649f1d8-baaa-4677-aa84-33d28794f282",
+              "caption": "Collision Resolution Techniques",
+              "alt": "Diagram to list the Collision Resolution Techniques",
+              "width": 875,
+              "height": 303,
+              "instructor_notes": null
+            },
+            {
+              "id": 969338,
+              "key": "f29fae73-56b1-4114-8153-02f6312ee666",
+              "title": "Link to Collision",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A collision can be resolved by using any of the following techniques:\n\n1. **Separate Chaining** - It is a type of Open Hashing technique. The idea is to store the keys corresponding to collision (same) hash outputs in a Linked List. There would be a separate Linked List for each unique hash output. <br><br>\n1. **Open Addressing** - It is also called Closed Hashing. In this approach, for a given set of $n$ input keys, we take a data structure that can accommodate more than $n$ keys. The idea is to store the keys corresponding to collision (same) hash outputs in the next available slot in the data structure. <br><br>\n   * Linear or quadratic probing - Keep *probing* until an empty slot is found. <br><br>\n   * **Double Hashing** -  We use two hash functions - one for hashing, and another for calculating the *offset*. Then, this offset is appended to the output of the first hash function. This way, the final output is expected to be a collision-free value. \n\nYou may find it useful to read further about Collision Resolution Techniques <a href=\"https://en.wikipedia.org/wiki/Hash_table#Collision_resolution\" target=\"_blank\">here</a>.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 900758,
+          "key": "a9c4802f-9d96-4078-bc94-56eab9deafc1",
+          "title": "Salting",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9c4802f-9d96-4078-bc94-56eab9deafc1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900744,
+              "key": "c0ff50f3-0834-4f83-b8bf-718e723266e6",
+              "title": "ND035 C04 L01 A02.2 What Is Hashing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qfcENVs6Xks",
+                "china_cdn_id": "qfcENVs6Xks.mp4"
+              }
+            },
+            {
+              "id": 900710,
+              "key": "9911fbc7-ef37-45af-b720-2f86f73dc2ae",
+              "title": "Salting",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A salt is random data that is used as an additional input to the hash function so that the final hash becomes more secure. \n\n> Salting is an approach to generate two different hash values for two different users providing the same input.  \n>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 969346,
+              "key": "44d9d13b-967b-49a0-b3ff-0d43ca9d9742",
+              "title": "How does Salting Works?",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### How does the Salting Works?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900745,
+              "key": "7b9b4acf-e530-43af-9f26-85ec36dfc008",
+              "title": "ND035 C04 L01 A03 Pictorial Represontation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Efh34cGDdVc",
+                "china_cdn_id": "Efh34cGDdVc.mp4"
+              }
+            },
+            {
+              "id": 1107262,
+              "key": "b75df734-0b17-43b5-abdc-b3b98e34df36",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The following figure shows another example to explain the concept of Salting:",
+              "instructor_notes": null
+            },
+            {
+              "id": 969353,
+              "key": "cf29d9d4-de28-4589-b372-3aa0e1df3261",
+              "title": "Salting Image",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/February/5e39b468_salting/salting.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cf29d9d4-de28-4589-b372-3aa0e1df3261",
+              "caption": "Example - Two users providing the same password, would generate a same hash. However, the salting will generate a different hash.",
+              "alt": "Image - A scenario to explain the need for Salting",
+              "width": 660,
+              "height": 285,
+              "instructor_notes": null
+            },
+            {
+              "id": 969340,
+              "key": "77b539b6-58e7-49b2-9319-443de3f9887b",
+              "title": "Points to Consider",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Points to Consider\n\n1. In a web application, the Salting must be done on the Server. \n\n1. While hashing user-passwords, the **Salt** should be generated randomly. It is preferable if the Salt is unique for each user's password.\n\n1. For numeric Salt, it is good to use secure algorithms such as Cryptographically Secure Pseudo-Random Number Generator (CSPRNG). Java has `java.security.SecureRandom` class for generating PRNG. \n\n1. For pseudo-random **alpha-numeric** string generator, you may use Apache class, as  `org.apache.commons.text.RandomStringGenerator` \n\n1. When we use Salting, there are two separate steps involved - \n   * Generate the salted password, and \n   * Verify the salted password. \n\nWe would see the detailed implementation in the project, where we would implement the **bCrypt **hashing algorithm along with Salting.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 938374,
+              "key": "394e19b9-0f8e-4e12-b35f-53c61fe20523",
+              "title": "Radio Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "394e19b9-0f8e-4e12-b35f-53c61fe20523",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following is not a good practice for storing passwords?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Hashing",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Salting",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Encryption",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Using a database",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 907186,
+              "key": "ae6054e4-6d0e-44cb-9f8e-ff8f74b309b3",
+              "title": "Radio Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ae6054e4-6d0e-44cb-9f8e-ff8f74b309b3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is a *salt*?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "A one way function that is not easily reversed.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "A constant value appended to a user’s password.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Random data appended to a user’s password.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Something you put on french fries",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 1107267,
+          "key": "fb114d6d-61c2-42b8-8bf4-18bb1d87a478",
+          "title": "Hashing (SHA) Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fb114d6d-61c2-42b8-8bf4-18bb1d87a478",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1107273,
+              "key": "196902b3-c875-40fa-aa83-1654b4fb47c2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Implement Hashing (SHA-256)\n\n### MessageDigest class\n\nThe `java.security.MessageDigest` class provides us an easy implementation of the MD2, MD5, SHA-1, SHA-256, SHA-384, and SHA-512 algorithms. The following example shows the SHA-256 implementation by creating an instance of the MessageDigest class. For more details of the MessageDigest class, refer <a href=\"https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#MessageDigest\" target=\"_blank\">here</a>.\n\n### SecureRandom class\n\nSalting is done by using an instance of the `java.security.SecureRandom` class. Let's look at the steps:\n\n** Step 1 - Create a main method to call the custom **`createSalt()`** and **`get_SecurePassword()`** methods**\n\n```\n//Necessary imports\nimport java.security.SecureRandom;\nimport java.security.NoSuchAlgorithmException;\nimport java.security.NoSuchProviderException;\nimport java.security.MessageDigest;\n\npublic class SaltExample {\n\npublic static void main(String[] args)throws NoSuchAlgorithmException, NoSuchProviderException {\n  // A static String for the example\n  String passwordToHash = \"myPassword\";\n\n  // Create a salt\n  byte[] salt = createSalt();\n\n  // Create a hash\n  String securePassword = get_SecurePassword(passwordToHash, salt); \n  System.out.println(securePassword); \n }\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107280,
+              "key": "7a088253-7e6a-4c5b-be40-c90afb220239",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Step 2 - Create the `createSalt()` to return a byte array** ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107276,
+              "key": "ad8b8ba9-0cb4-4189-921c-2e967609d536",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```java\n// Method to generate a Salt\nprivate static byte[] createSalt() {\n  SecureRandom random = new SecureRandom();\n  byte[] salt = new byte[16];\n  random.nextBytes(salt);\n  return salt;\n }\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107281,
+              "key": "d70bb82a-5415-4ef2-bf7f-f4dda6088f8a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Step 3 - Create the `get_SecurePassword()` to return a String** ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107277,
+              "key": "76716722-6f9a-415d-9895-97a68602df31",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```java\n// Method to generate the hash. \n//It takes a password and the Salt as input arguments\nprivate static String get_SecurePassword(String passwordToHash, byte[] salt){\n  String generatedPassword = null;\n  try {\n   MessageDigest md = MessageDigest.getInstance(\"SHA-256\");\n   md.update(salt);\n   byte[] bytes = md.digest(passwordToHash.getBytes());\n   StringBuilder sb = new StringBuilder();\n   for(int i=0; i< bytes.length ;i++)\n   {\n    sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));\n   }\n   generatedPassword = sb.toString();\n  } \n  catch (NoSuchAlgorithmException e) {\n   e.printStackTrace();\n  }\n  return generatedPassword;\n } \n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107283,
+              "key": "ec6683a1-1359-4727-a660-e1f87d285c2b",
+              "title": "Exercise - Implement MD5",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ec6683a1-1359-4727-a660-e1f87d285c2b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Generate the MD5 hash without salt",
+                "Generate the MD5 hash with salt",
+                "Compare the MD5 hash value with the SHA-256 hash value"
+              ],
+              "positive_feedback": "Superb! It's time to use the built-in library methods to implement the bCrypt algorithm next.",
+              "video_feedback": null,
+              "description": "To get acquainted with the  MessageDigest class, use your text editor to implement the MD5 algorithm (in the same manner, as shown above), and compare the generated hash, with and without salt.\n\nHint: Use `getInstance(\"MD5\")`"
+            }
+          ]
+        },
+        {
+          "id": 1107270,
+          "key": "8257aa68-8a98-4b3d-a3ac-bc0d12ece75c",
+          "title": "Hashing (bCrypt) Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8257aa68-8a98-4b3d-a3ac-bc0d12ece75c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1107271,
+              "key": "27dd7e25-1bed-4f16-a937-08ca2697b5e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Implement Hashing (bCrypt)\n\n### BCryptPasswordEncoder class\n\nIn our upcoming demo, we will demonstrate the use of **bCrypt **technique for hashing in our Spring Boot project. Fortunately, you do not have to implement it from scratch, instead, you can use a library class `org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder` , which is a part of the Spring framework. \n\n**Step 1 - Add the dependency**<br>\nAdd the <a href=\"https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security\" target=\"_blank\">Spring Boot Starter Security</a>  Maven dependency to the `pom.xml` \n<br><br>\n**Step 2 - Create an instance of the BCryptPasswordEncoder class**<br>\nYou can create an instance, and call any of the built-in methods. \n\n```java\n  BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();\n\n  // Call a built-in method\n  String securePassword = bCryptPasswordEncoder.encode(\"mySaltedPassword\");\n```\n\nIn the code snippet above, `securePassword` is the generated hash, and the `mySaltedPassword` is the String representing the raw password.\n\n> **Note** - We will demonstrate the complete workflow in the upcoming demo towards the end of the lesson.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107294,
+              "key": "4e2eed10-8989-454c-89ca-c08f937311d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Step 3 - Call either of the following built-in methods of the BCryptPasswordEncoder class**<br><br>\n1. `encode()` method - Encodes the raw password. Generally, a good encoding algorithm applies an SHA-1 or greater hash combined with an 8-byte or greater randomly generated salt.\n```java\n   // To encode a given rawPassword\n   public String encode(CharSequence rawPassword) {\n        if (rawPassword == null) {\n            throw new IllegalArgumentException(\"rawPassword cannot be null\");\n        } else {\n            String salt;\n            if (this.random != null) {\n                salt = BCrypt.gensalt(this.version.getVersion(), this.strength, this.random);\n            } else {\n                salt = BCrypt.gensalt(this.version.getVersion(), this.strength);\n            }\n\n            return BCrypt.hashpw(rawPassword.toString(), salt);\n        }\n    }\n```\n<br><br>\n2. `matches()` method -  It matches and verifies the encoded password obtained from the storage, and the submitted raw password (after encoding). Returns true if the passwords match, false if they do not. The stored password itself is never decoded.\n```java\n    public boolean matches(CharSequence rawPassword, String encodedPassword) {\n        if (rawPassword == null) {\n            throw new IllegalArgumentException(\"rawPassword cannot be null\");\n        } else if (encodedPassword != null && encodedPassword.length() != 0) {\n            if (!this.BCRYPT_PATTERN.matcher(encodedPassword).matches()) {\n                this.logger.warn(\"Encoded password does not look like BCrypt\");\n                return false;\n            } else {\n                return BCrypt.checkpw(rawPassword.toString(), encodedPassword);\n            }\n        } else {\n            this.logger.warn(\"Empty encoded password\");\n            return false;\n        }\n    }\n```\n<br><br>\n3. `upgradeEncoding()` method -  It returns true if the encoded password should be encoded again for better security, else false. The default implementation always returns false.\n```java\n    public boolean upgradeEncoding(String encodedPassword) {\n        if (encodedPassword != null && encodedPassword.length() != 0) {\n            Matcher matcher = this.BCRYPT_PATTERN.matcher(encodedPassword);\n            if (!matcher.matches()) {\n                throw new IllegalArgumentException(\"Encoded password does not look like BCrypt: \" + encodedPassword);\n            } else {\n                int strength = Integer.parseInt(matcher.group(2));\n                return strength < this.strength;\n            }\n        } else {\n            this.logger.warn(\"Empty encoded password\");\n            return false;\n        }\n    }\n```\n>**Note** - The code and description above is taken from the [BCryptPasswordEncoder](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.html) class definition.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 900755,
+          "key": "5ad2557e-4023-4db9-a0cf-6a18d9c479d4",
+          "title": "Authorization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5ad2557e-4023-4db9-a0cf-6a18d9c479d4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900727,
+              "key": "65f94aaa-bae0-4eee-9e75-897f6d82f18c",
+              "title": "Authorization Heading",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## What is Authorization?\n\n> The authorization concerns itself with permission and rights.  \n>\n\n\nIn general, **Authorization** comes after Authentication. Authorization determines whether you are permitted or have the right privilege to access the requested resources. In other words, it determines what a user is allowed to access.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900720,
+              "key": "d4bb1cac-373b-4655-8f05-5bdc7f8ae5d0",
+              "title": "ND035 C04 L01 A04.1 Authorization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fqTeO0JNGv4",
+                "china_cdn_id": "fqTeO0JNGv4.mp4"
+              }
+            },
+            {
+              "id": 1107263,
+              "key": "47525666-49e0-4c15-844e-989c10522b9a",
+              "title": "Authorization",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The following figure shows the order of execution of basic authentication and authorization in an application that follows the Model View Controller (MVC)  architectural pattern.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107264,
+              "key": "a6596a0a-7665-44ea-b4e0-20e9fe5c56f9",
+              "title": "Basic authentication and authorization modules",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fcf982a_screenshot-2020-12-08-at-8.41.49-pm/screenshot-2020-12-08-at-8.41.49-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a6596a0a-7665-44ea-b4e0-20e9fe5c56f9",
+              "caption": "Basic authentication and authorization steps\n",
+              "alt": "Basic authentication and authorization modules\n",
+              "width": 1000,
+              "height": 630,
+              "instructor_notes": null
+            },
+            {
+              "id": 900717,
+              "key": "df7303c8-0e78-4329-af09-46967a1f3430",
+              "title": "RBAC",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Role-Based Access Control (RBAC)\n\nIn RBAC, access is given based on a user's role—as a manager, engineer, customer service representative, etc.\n\nPermissions can then be given (and limited) to users based on their roles. That way, each type of user only has *limited access*—they are able to access only the specific things they need for their particular job.\n\n\n\n### How to bring Authentication and Authorization together?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900771,
+              "key": "fd1c95cb-fdf2-4e97-b59d-7a89856adbd0",
+              "title": "ND035 C04 L01 A04.2 Authorization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ryR_3u1lt0w",
+                "china_cdn_id": "ryR_3u1lt0w.mp4"
+              }
+            },
+            {
+              "id": 907260,
+              "key": "2fd19f84-1baf-463c-ac03-5858231c6f0c",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Authentication and authorization are different, yet related. You can't grant a right to a user (i.e., *authorize* that user) without first knowing who that user is (i.e., by *authenticating* their identity).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900737,
+              "key": "2cc43316-9140-4e53-b143-5a65673c3c54",
+              "title": "What is authorization?",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2cc43316-9140-4e53-b143-5a65673c3c54",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**Authorization** is all about...",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Determining what a user is allowed to access.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Proving that you are the person you say you are.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 907205,
+              "key": "7078dcfa-eca1-4829-a91a-7978ad9691ab",
+              "title": "Radio Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7078dcfa-eca1-4829-a91a-7978ad9691ab",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "In **RBAC**:",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Separate permissions are given to each individual user,",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Permissions are given to a group of users who all share the same role in the company.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "The same permissions are given to everyone in the company.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 900761,
+          "key": "8432ad56-8c7e-4ea8-b359-ebac337b38aa",
+          "title": "JWTs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8432ad56-8c7e-4ea8-b359-ebac337b38aa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900736,
+              "key": "405a4247-a33e-458f-a6a5-8a4df903cdc4",
+              "title": "JWT",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# JWTs\n\nJSON Web Token (JWT) is an open standard <a href=\"https://tools.ietf.org/html/rfc7519\" target=\"_blank\">RFC 7519</a>, that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.\n\n* JWTs are used for authentication in (RESTful) microservices architecture. \n* REST is an acronym for REpresentational State Transfer. It is a software-architectural style, in which there is **stateless** communication between client and server. \n* **Stateless** means that the server does not have to store the user cookies or other session data for any incoming request. Rather, the server authenticates a user based on a token (JWT).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900746,
+              "key": "cadd9cf8-7370-4f4b-adc5-db52270f6874",
+              "title": "ND035 C04 L01 A05 What Is JWT V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ea8T8fXsZlc",
+                "china_cdn_id": "Ea8T8fXsZlc.mp4"
+              }
+            },
+            {
+              "id": 1107644,
+              "key": "9522d2ed-82d5-487d-84b1-d69b74ec79b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Example** - An example of JSON Web Token is shown below. Can you notice the three parts (a header, payload, and signature) separated by a period (.)?\n\n```\neyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJVZGFjaXR5X1Rlc3QiLCJleHAiOjE2MDgzNjYxNDJ9.0kjTgAOOJkNxM908qJE9p1503-mi-2tha9UVneI04EXvxte4KpKYl0pVMjXG-FLtDFzfmEuRRYyPm2JRGvlKFg\n```\n\n> The token above is a Base64 encoded form of the individual three parts.  \n\n\nThese three parts together help to authenticate a user.\n\n1. **Header** - In the example above, the `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9` represents the header, such as: \n```json\n{\n\"alg\": \"HS256\",\n\"typ\": \"JWT\"\n}\n```\n<br>\n2. **Payload** - The `eyJzdWIiOiJVZGFjaXR5X1Rlc3QiLCJleHAiOjE2MDgzNjYxNDJ9` is the payload, also called a Claim. After Base64 decoding, you can get the actual user-data, such as:\n```json\n{\n\"sub\": \"1234\",\n\"name\": \"Sareeta Panda\",\n\"admin\": true\n}\n```\nThe user-data above is not necessarily secret because anyone who has access to the token can decode (Base64 decoding) the payload. The payload tells us the username/ID (not password) of the user, i.e., who is making the request. \n<br><br>\n3. **Signature** - The remaining third part is the signature, which helps the server to verify the authenticity of the token as well as the user. In fact, the signature is generated by using the header, payload, and a secret residing on the server only. If anyone (header, payload, and a secret) changes, then the signature will also change. \n\n### How does it work?\n\nThe diagram below shows how to generate, and use a JWT.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 969355,
+              "key": "eef926b5-ea44-4171-9a09-74936dfc0ef2",
+              "title": "JWT Working",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd086eb_screenshot-2020-12-09-at-1.42.09-pm/screenshot-2020-12-09-at-1.42.09-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/eef926b5-ea44-4171-9a09-74936dfc0ef2",
+              "caption": "Two steps while using the JWT for authentication",
+              "alt": "Usage of JWT for authentication and authorization",
+              "width": 700,
+              "height": 1804,
+              "instructor_notes": null
+            },
+            {
+              "id": 969348,
+              "key": "36d2f0bc-7fc0-49c4-930f-5932b34e16df",
+              "title": "JWT Image Description",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* **Step 1 - Generate JWT** - A user can attempt to log in from any client. The server returns a JSON Web Token (JWT) upon successful validation of the user credentials. This JWT is then stored locally in the client. \n* **Step 2 - Use JWT** - Later, when the user requests to access any protected resource, a JWT is sent along. Then the server performs the JWT validation before granting access to the resource.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107646,
+              "key": "e6db1f0a-21ed-40b5-86e2-09ce29d93b3f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What is statelessness?\n\nJSON web tokens are intrinsically *stateless*, meaning, the server does not store the user's session or cookies. When a JWT is sent back from a client to a server, the server only has to validate the token. \n\n\n\nStatelessness also solves the problem of scalability. Let's say we have our API server that starts to have a tremendous amount of demand. In this case, we'll be spinning up multiple servers over the same service.\n\nNow, a JWT could be hitting any one of these servers, and since it's stateless, each of those servers can be confident in the identity provided.",
+              "instructor_notes": null
+            },
+            {
+              "id": 1107645,
+              "key": "ba44a09a-0eb9-4d2f-840b-75fb06d8ab77",
+              "title": "Benefits of JWTs",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ba44a09a-0eb9-4d2f-840b-75fb06d8ab77",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are some benefits of JWTs?  \n(Select all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1559929268026",
+                    "text": "Stateless",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1559929299165",
+                    "text": "Difficult to Fake",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1559929315623",
+                    "text": "Expensive to Compute",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1559929331828",
+                    "text": "Popular and easily implemented across platforms",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1559929356145",
+                    "text": "Flexible",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1029145,
+              "key": "9cb02663-a48d-413c-b779-3a293005a198",
+              "title": "Reflect",
+              "semantic_type": "ReflectAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9cb02663-a48d-413c-b779-3a293005a198",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "title": null,
+                "semantic_type": "TextQuestion",
+                "evaluation_id": null,
+                "text": "What do you understand by “stateless communication between client and server”?"
+              },
+              "answer": {
+                "text": "Stateless communication means that the server does not have to store the user cookies or other session data for any incoming request. Rather, the server authenticates a user based on JWT. An example of a stateless protocol is HTTP, meaning that each request message can be understood in isolation.<br>\nIn contrast, a communication that requires keeping the internal state on the server is known as stateful communication. For example, a TCP connection-oriented session is a stateful connection because both systems maintain information about the session itself during its life.\n",
+                "video": null
+              }
+            },
+            {
+              "id": 907223,
+              "key": "1b99f446-cc7a-4800-8751-11cc6a9d0a32",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1b99f446-cc7a-4800-8751-11cc6a9d0a32",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Here are the three parts of an example JWT. Do you remember what each is called?"
+                },
+                "concepts_label": "Part of the JWT",
+                "answers_label": "What is it called?",
+                "concepts": [
+                  {
+                    "text": "Token type and the algorithm to be used in the signature \n```json\n{\n  \"alg\": \"HS256\",\n  \"typ\": \"JWT\"\n}\n```",
+                    "correct_answer": {
+                      "id": "a1564877493194",
+                      "text": "Header"
+                    }
+                  },
+                  {
+                    "text": "Claim\n```json\n{\n  \"sub\": \"1234\",\n  \"name\": \"Sareeta Panda\",\n  \"admin\": true\n}\n```",
+                    "correct_answer": {
+                      "id": "a1564877608467",
+                      "text": "Payload"
+                    }
+                  },
+                  {
+                    "text": "Encoded header, encoded payload, a secret, and the signing algorithm\n```json\nHMACSHA256(\n  base64UrlEncode(header) + \".\" +\n  base64UrlEncode(payload),\n  secret)\n```",
+                    "correct_answer": {
+                      "id": "a1564877635081",
+                      "text": "Signature"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1564877635081",
+                    "text": "Signature"
+                  },
+                  {
+                    "id": "a1564877608467",
+                    "text": "Payload"
+                  },
+                  {
+                    "id": "a1564877493194",
+                    "text": "Header"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107647,
+              "key": "dfff601d-e304-4777-ae0d-9399f6a30ceb",
+              "title": "JWT Parts",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dfff601d-e304-4777-ae0d-9399f6a30ceb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which JWT part is responsible for containing information specific to the currently authenticated user?",
+                "answers": [
+                  {
+                    "id": "a1565217138492",
+                    "text": "Header",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1565217157618",
+                    "text": "Payload",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1565217158188",
+                    "text": "Signature",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107648,
+              "key": "8d6e1586-6511-4638-ac15-6c089338d509",
+              "title": "Payload Security",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8d6e1586-6511-4638-ac15-6c089338d509",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: The signature is used to help encrypt a JWT so it cannot be read without a key",
+                "answers": [
+                  {
+                    "id": "a1565217501999",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1565217513395",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107649,
+              "key": "8b91eda7-11d1-4202-94e2-2f0b82e22f6b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Additional Resources\n\n* <a href=\"https://jwt.io/introduction/\" target=\"_blank\">JWT.io</a> a useful guide and list of popular JSON Web Token implementations.\n* <a href=\"https://en.wikipedia.org/wiki/Base64\" target=\"_blank\">Base64 Encoding</a>\n* <a href=\"https://en.wikipedia.org/wiki/HMAC\" target=\"_blank\">HMAC</a> keyed-hash message authentication code",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1107652,
+          "key": "68642da9-84fb-48ee-b7f5-ffd4af397a70",
+          "title": "JWT Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "68642da9-84fb-48ee-b7f5-ffd4af397a70",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1107653,
+              "key": "c72a2009-8804-47d3-a2a5-a6e7cfeda4cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Code-Decode Quiz\n\nIn the questions below, you'll find some JWTs that were signed with the secret key `learning`.   Let's use the <a href=\"https://jwt.io/#debugger-io\" target=\"_blank\">jwt.io</a> platform, where you can either paste a token or edit the payload and secret, to identify which of the following tokens may have been tampered with?\n\n> **Note:** You can triple-click on the tokens given below and then copy and paste them into the <a href=\"https://jwt.io/#debugger-io\" target=\"_blank\">jwt.io</a> platform.  \n>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107654,
+              "key": "bbefcb03-785b-43b7-8716-0a17335f3b00",
+              "title": "Verifying JWTs",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bbefcb03-785b-43b7-8716-0a17335f3b00",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these JWTs may have been tampered with?  \nThese were signed with the secret `learning`.  \n\n**Token 1**<pre><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJrIjoiY2VudHJhbCBwYXJrIn0.H7sytXDEHK1fOyOYkII5aFfzEZqGIro0Erw_84jZuGc</code></pre>\n\n**Token 2**:<pre><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJrIjoiYmF0dGVyeSBwYXJrIn0.bQEjsBRGfhKKEFtGhh83sTsMSXgSstFA_P8g2qV5Sns</pre></code>",
+                "answers": [
+                  {
+                    "id": "a1559583275029",
+                    "text": "*Token 1*",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1559583400253",
+                    "text": "*Token 2*",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107655,
+              "key": "94547c1a-c478-407a-8778-1901a198975b",
+              "title": "Match the Payload to the JWT",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "94547c1a-c478-407a-8778-1901a198975b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "*Token A*:\n \n    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJrIjoiY2VudHJhbCBwYXJrIn0.H7sytXDEHK1fOyOYkII5aFfzEZqGIro0Erw_84jZuGc\n\n*Token B*:\n \n    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJrIjoidW5pb24gc3F1YXJlIn0.N3EaAHsrJ9-ls82LT8JoFTNpDK3wcm5a79vYkSn8AFY\n\n*Token C*:\n \n    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJrIjoiYmF0dGVyeSBwYXJrIn0.bQEjsBRGfhKKEFtGhh83sTsMSXgSstFA_P8g2qV5Sns"
+                },
+                "concepts_label": "JWT",
+                "answers_label": "Payload",
+                "concepts": [
+                  {
+                    "text": "*Token A*",
+                    "correct_answer": {
+                      "id": "a1559582733317",
+                      "text": "{'park':'central park'}"
+                    }
+                  },
+                  {
+                    "text": "*Token B*",
+                    "correct_answer": {
+                      "id": "a1559582813743",
+                      "text": "{'park':'union square'}"
+                    }
+                  },
+                  {
+                    "text": "*Token C*",
+                    "correct_answer": {
+                      "id": "a1559582854521",
+                      "text": "{'park': 'battery park'}"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1559582854521",
+                    "text": "{'park': 'battery park'}"
+                  },
+                  {
+                    "id": "a1559582813743",
+                    "text": "{'park':'union square'}"
+                  },
+                  {
+                    "id": "a1559582733317",
+                    "text": "{'park':'central park'}"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 900760,
+          "key": "4fd55658-a402-4bbb-949b-1eff1c69f802",
+          "title": "Demo: eCommerce Starter Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4fd55658-a402-4bbb-949b-1eff1c69f802",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900803,
+              "key": "2412f3c4-ec85-4f3f-8381-b8ce538ac536",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's walk through the given starter code of the e-Commerce application, and then we will implement the JWT. **We'll be working with the eCommerce application throughout this course, and then—at the end of the course—you'll finish and submit the application as your final project. **\n\n## Step 1: Fork, and Clone the Project starter code",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900773,
+              "key": "50d12c85-ca2e-4dc1-a88a-f964d981bb5d",
+              "title": "ND035 C04 L01 A06.1 Code Walkthrough",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Masbxs2NJnQ",
+                "china_cdn_id": "Masbxs2NJnQ.mp4"
+              }
+            },
+            {
+              "id": 1029581,
+              "key": "84437ce9-c02d-4261-bf92-de1c7aefcf8c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "> Note - To make it convenient for you, we have created a new Github repo dedicated to this course. All the steps mentioned above will be the same, except the repo name, and the folder name.   \n\n\nThe repository for the eCommerce application starter code can be found at:\n<a href=\"https://github.com/udacity/JDND\" target=\"_blank\">https://github.com/udacity/nd035-c4-Security-and-DevOps</a> .  Did you notice that this repo contains multiple branches, that contain the code associated with upcoming demos and exercises?\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1115578,
+              "key": "4052d964-4eff-49d8-83ec-88b3c5cd1008",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd2110a_screenshot-2020-12-10-at-5.41.22-pm/screenshot-2020-12-10-at-5.41.22-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4052d964-4eff-49d8-83ec-88b3c5cd1008",
+              "caption": "Switch to a different branch as you progress through this course. ",
+              "alt": "",
+              "width": 500,
+              "height": 970,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115577,
+              "key": "0821728d-8a8d-4a8a-a8ed-556c373e1136",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Each branch contains an individual Maven project for you to follow. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1115582,
+              "key": "b2ef2537-9350-476d-9060-e8e71e07bd67",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### How to work with Github repo?\n\nYou can choose from either of the below two options:\n\n1. **Option - Clone the repo locally**<br>\nHere are the steps that you need to follow:\n   1. Fork the repo to your account. \n   1. Clone the repo using the command in your terminal (Linux/MacOS) or Git Bash (Windows):\n```\n   git clone https://github.com/USERNAME/nd035-c4-Security-and-DevOps.git\n```\n 1.  Import the project into the IntelliJ IDE. \n 1. Switch between branches, and make changes. By default, you will be on the *master* branch. To switch branch, use the commands:\n```\n   git branch\n   git checkout <branch-name>\n   ```\n After switching the branch, the code in the IntelliJ will also change automatically. \n   1. Push the local changes back to the remote (online) repo in your account. You can use:\n```\n   git add -A \n   git commit -m \"your message\"\n   git push origin <branch-name>\n   ```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1115583,
+              "key": "a735e169-3e87-4b29-ab45-c68810cec31c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. **Option - Link your IntelliJ IDE to Github repo** (Recommended)<br>\nYou can even connect your IntelliJ directly with the Github repo (in your account), and switch branches when needed. Moreover, you can perform all Github operations from the IntelliJ IDE. Refer to the **Troubleshooting Tips** page for more info. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907207,
+              "key": "da7da23b-06f1-419b-b9d6-c7dbb057cdbb",
+              "title": "Task List",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "da7da23b-06f1-419b-b9d6-c7dbb057cdbb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Either forked and cloned the repository, or linked IntelliJ to the Github repo",
+                "Imported the eCommerce application into IntelliJ",
+                "Gone through the project README file in Github"
+              ],
+              "positive_feedback": "Good! Let's now check out the starter code in detail....",
+              "video_feedback": null,
+              "description": "Before going any further, be sure you've done the following:"
+            },
+            {
+              "id": 1029587,
+              "key": "e21806d4-0460-46e3-a01a-e006e1b94ed7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Step 2: Code walkthrough and making requests to the API endpoints from the Postman tool",
+              "instructor_notes": ""
+            },
+            {
+              "id": 919027,
+              "key": "33e4879b-ba3a-4779-96bc-2fb4b3cefabf",
+              "title": "ND035 C04 L01 A06.2 Code Walkthrough",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8RjUWi5BTlc",
+                "china_cdn_id": "8RjUWi5BTlc.mp4"
+              }
+            },
+            {
+              "id": 1115558,
+              "key": "ef171e09-b9b4-43b1-a66f-01fd854cd358",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Class Diagrams\nLet's have a look at various classes present in the starter code. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1115557,
+              "key": "8e95a1d4-4526-4f52-8668-141a23423681",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d53c_controllers/controllers.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8e95a1d4-4526-4f52-8668-141a23423681",
+              "caption": "Classes in the **controllers** package",
+              "alt": "",
+              "width": 600,
+              "height": 714,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115560,
+              "key": "19f24b78-516c-4853-a8a1-f51a4bf02ad5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d564_screenshot-2020-12-10-at-12.32.39-pm/screenshot-2020-12-10-at-12.32.39-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/19f24b78-516c-4853-a8a1-f51a4bf02ad5",
+              "caption": "Classes in the **model/persistence/** package. In addition, it has a **repositories** sub-package.",
+              "alt": "",
+              "width": 700,
+              "height": 956,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115559,
+              "key": "056aa6c9-3b2f-4eff-a3ed-db458ba6ee2e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d3d2_screenshot-2020-12-10-at-12.30.38-pm/screenshot-2020-12-10-at-12.30.38-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/056aa6c9-3b2f-4eff-a3ed-db458ba6ee2e",
+              "caption": "Classes in the **model/persistence/repositories/** package",
+              "alt": "",
+              "width": 500,
+              "height": 598,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115561,
+              "key": "f5b661ad-d2e1-4957-a696-f8e32e53d271",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d4de_screenshot-2020-12-10-at-12.33.42-pm/screenshot-2020-12-10-at-12.33.42-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f5b661ad-d2e1-4957-a696-f8e32e53d271",
+              "caption": "Classes in the **model/requests/** package",
+              "alt": "",
+              "width": 500,
+              "height": 756,
+              "instructor_notes": null
+            },
+            {
+              "id": 907209,
+              "key": "6042fbc1-c6c9-484e-b821-9f6cee22f15f",
+              "title": "Task List",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6042fbc1-c6c9-484e-b821-9f6cee22f15f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Create a collection in Postman",
+                "Save your requests for quick use",
+                "Try making a `CreateUser` request",
+                "Try making a `getUser` request"
+              ],
+              "positive_feedback": "Good! Next, let's try out the `addToCart` request.",
+              "video_feedback": null,
+              "description": "Before going further, be sure you've tried the following:"
+            },
+            {
+              "id": 1096268,
+              "key": "a69d77e0-edf6-4239-9f2d-e8154c3b7581",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Step 3: Making `addToCart` and `submitOrder` requests",
+              "instructor_notes": ""
+            },
+            {
+              "id": 919028,
+              "key": "b2878bff-10d5-41e4-a6fa-0a2fc7ef09af",
+              "title": "ND035 C04 L01 A06.3 Code Walkthrough",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UXN9DWkNmlE",
+                "china_cdn_id": "UXN9DWkNmlE.mp4"
+              }
+            },
+            {
+              "id": 919029,
+              "key": "0ce310d5-5d82-45ae-93e4-2c587265df7a",
+              "title": "ND035 C04 L01 A06.4 Code Walkthrough",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gp-xtgquzfA",
+                "china_cdn_id": "gp-xtgquzfA.mp4"
+              }
+            },
+            {
+              "id": 907211,
+              "key": "b92ff1a5-8236-4f46-b507-10935029c870",
+              "title": "Task List",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b92ff1a5-8236-4f46-b507-10935029c870",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Try making an `addToCart` request",
+                "Try making an `submitOrder` request"
+              ],
+              "positive_feedback": "Nice work!",
+              "video_feedback": null,
+              "description": "Before going further, be sure you've tried the following:"
+            },
+            {
+              "id": 907216,
+              "key": "5e7f2d2c-40c4-4e59-af6c-5ae5f2ee8e34",
+              "title": "Task List",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5e7f2d2c-40c4-4e59-af6c-5ae5f2ee8e34",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Look up a user's order history",
+                "View information about the various items in the database"
+              ],
+              "positive_feedback": "Good! We'll use this starter code to demonstrate implementation of JWTs *and* we'll also be coming back to it for our final project in the course.",
+              "video_feedback": null,
+              "description": "Before going any further, it would be a good idea to make sure you feel relatively comfortable with the starter code. Here are some things to try:"
+            }
+          ]
+        },
+        {
+          "id": 907212,
+          "key": "f4a66010-25d7-41a2-9266-6b96e5da2646",
+          "title": "Demo: Authentication and Authorization using JWT",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f4a66010-25d7-41a2-9266-6b96e5da2646",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "JWTAuthenticationFilter.java",
+                "uri": "https://video.udacity-data.com/topher/2020/December/5fd0c058_jwtauthenticationfilter/jwtauthenticationfilter.java"
+              },
+              {
+                "name": "JWTAuthenticationVerficationFilter.java",
+                "uri": "https://video.udacity-data.com/topher/2020/December/5fd0c0a9_jwtauthenticationverficationfilter/jwtauthenticationverficationfilter.java"
+              },
+              {
+                "name": "SecurityConstants.java",
+                "uri": "https://video.udacity-data.com/topher/2020/December/5fd0c0c6_securityconstants/securityconstants.java"
+              },
+              {
+                "name": "UserDetailsServiceImpl.java",
+                "uri": "https://video.udacity-data.com/topher/2020/December/5fd0c0e5_userdetailsserviceimpl/userdetailsserviceimpl.java"
+              },
+              {
+                "name": "WebSecurityConfiguration.java",
+                "uri": "https://video.udacity-data.com/topher/2020/December/5fd0c105_websecurityconfiguration/websecurityconfiguration.java"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 907213,
+              "key": "341c1d70-6975-48e8-87b9-fd93e2f9917f",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Demo: API endpoints after implementing Authentication",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907214,
+              "key": "ce1a4b95-af2a-4b58-8932-fc3e6203d467",
+              "title": "ND035 C04 L01 A07 Solutions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lwCAIem7jqQ",
+                "china_cdn_id": "lwCAIem7jqQ.mp4"
+              }
+            },
+            {
+              "id": 907263,
+              "key": "0a6f4a3c-1390-4cbb-8885-aad4e03bea9d",
+              "title": "Radio Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0a6f4a3c-1390-4cbb-8885-aad4e03bea9d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When is a JWT generated by the server?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "When the user sends a request for a secure resource",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "When the user logs in successfully",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "When the user logs out successfully",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1107661,
+              "key": "2e5a6396-e4b5-462d-88d8-f7a7dc3a40e2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Demo: Implementation Details",
+              "instructor_notes": null
+            },
+            {
+              "id": 919025,
+              "key": "dcc399dd-1f76-4cdb-8000-0f9a89966e64",
+              "title": "ND035 C04 L01 A06.2 Implementation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ycKpZyZosq4",
+                "china_cdn_id": "ycKpZyZosq4.mp4"
+              }
+            },
+            {
+              "id": 1115522,
+              "key": "7fb2ffa3-72e6-4061-96d5-0bfa497437e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "> **Note**: In the demo video above, you can ignore the log statements, such as, `log.info()` and `log.error()` as of now. You will learn about logging in the next lesson.  \n>\n\n\n### Solution\n\nThe complete code followed in the video above is available in the <a href=\"https://github.com/udacity/nd035-c4-Security-and-DevOps/tree/1.Auth\" target=\"_blank\">1.Auth branch of the course Github repository</a>.",
+              "instructor_notes": null
+            },
+            {
+              "id": 1107663,
+              "key": "433dfc34-5ddd-443f-a63d-94dca4e6b12b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Facing difficulty while following the video above or have issues with the new branch? Refer to the **Troubleshooting Tips** on the next page. \n\n<hr>\n\n\n\n\n### Add the Maven dependency\n\nAdd the <a href=\"https://mvnrepository.com/artifact/com.auth0/java-jwt\" target=\"_blank\">Java JWT Maven dependency</a> to your `pom.xml`\n\n```\n<dependency>\n    <groupId>com.auth0</groupId>\n    <artifactId>java-jwt</artifactId>\n    <version>3.11.0</version>\n</dependency>\n```\n\n> Note: The version may vary in the demo video above, and the current version available.  \n>\n\n\nRefer to the list of available algorithms, and the usage (create, verify, decode a token) of the above library in the <a href=\"https://github.com/auth0/java-jwt/blob/master/README.md\" target=\"_blank\">README</a> here.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107656,
+              "key": "d10e1388-60a7-46ad-b31d-4916381e5b6f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Create the security package\n\nAs demonstrated in the video above, create the `src/main/java/com/example/demo/security` folder and the Java file to place in that folder are available for view/download at the bottom of the current page.\n\n> **Note** - If you download the Java files attached below, then the system will automatically change the name (letter-case) of the file.  \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107682,
+              "key": "68433b54-1529-4210-a4b3-348bab2d5a97",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The details of the Java files are explained below:\n\n### 1. JWTAuthenticationFilter.java\n\nThis custom class is responsible for the authentication process. This class extends the `UsernamePasswordAuthenticationFilter` class, which is available under both <a href=\"https://mvnrepository.com/artifact/org.springframework.security/spring-security-web\" target=\"_blank\">**spring-security-web**</a> and <a href=\"https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web\" target=\"_blank\">**spring-boot-starter-web**</a> dependency. The Base class parses the user credentials (username and a password). You can have a look at all the available methods of the Base class <a href=\"https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.html\" target=\"_blank\">here</a>.\n\nWe have overridden the following two methods:\n\n1. `attemptAuthentication()` - It performs actual authentication by parsing (also called filtering) the user credentials.\n```\n@Override\npublic Authentication attemptAuthentication(HttpServletRequest req,\n                                          HttpServletResponse res) throws AuthenticationException {\n  try {\n      User credentials = new ObjectMapper()\n              .readValue(req.getInputStream(), User.class);\n\n      return authenticationManager.authenticate(\n              new UsernamePasswordAuthenticationToken(\n                      credentials.getUsername(),\n                      credentials.getPassword(),\n                      new ArrayList<>()));\n  } catch (IOException e) {\n      throw new RuntimeException(e);\n  }\n}\n```\n1. `successfulAuthentication()` - This method is originally present in the parent of the Base class. After overriding, this method will be called after a user logs in successfully. Below, it is generating a String token (JWT) for this user.\n```\n@Override\nprotected void successfulAuthentication(HttpServletRequest req,\n                                      HttpServletResponse res,\n                                      FilterChain chain,\n                                      Authentication auth) throws IOException, ServletException {\n\n  String token = JWT.create()\n          .withSubject(((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername())\n          .withExpiresAt(new Date(System.currentTimeMillis() + SecurityConstants.EXPIRATION_TIME))\n          .sign(HMAC512(SecurityConstants.SECRET.getBytes()));\n  res.addHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX + token);\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107683,
+              "key": "62fa9aec-7557-4eff-9c38-55755fe555f3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 2. SecurityConstants.java\n\nThis class contains the literal constants that are used in the *JWTAuthenticationFilter* class.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107684,
+              "key": "157be313-2359-48ab-85b4-a4bc89e05754",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 3. JWTAuthenticationVerficationFilter.java\n\nThis class is responsible for the **authorization** process. This class extends the `BasicAuthenticationFilter` class. It overrides on method, and defines another custom method. \n\n1. Custom method - `getAuthentication()` - It validates the token read from the Authorization header.\n```\n private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest req) {\n     String token = req.getHeader(SecurityConstants.HEADER_STRING);\n     if (token != null) {\n         String user = JWT.require(HMAC512(SecurityConstants.SECRET.getBytes())).build()\n                 .verify(token.replace(SecurityConstants.TOKEN_PREFIX, \"\"))\n                 .getSubject();\n         if (user != null) {\n             return new UsernamePasswordAuthenticationToken(user, null, new ArrayList<>());\n         }\n         return null;\n     }\n     return null;\n }\n```\n1. Overridden method - `doFilterInternal()`- This method is used when we have multiple roles, and a policy for RBAC.\n```\n @Override\n protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) \n         throws IOException, ServletException {\n     String header = req.getHeader(SecurityConstants.HEADER_STRING);\n\n     if (header == null || !header.startsWith(SecurityConstants.TOKEN_PREFIX)) {\n         chain.doFilter(req, res);\n         return;\n     }\n\n     UsernamePasswordAuthenticationToken authentication = getAuthentication(req);\n\n     SecurityContextHolder.getContext().setAuthentication(authentication);\n     chain.doFilter(req, res);\n }\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107685,
+              "key": "7795eedb-6c30-4f17-9351-304e773e019a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 4. WebSecurityConfiguration.java\n\nAfter defining the authentication and authorization modules, we need to configure them on the Spring Security filter chain. The `WebSecurity` class is a custom implementation of the default web security configuration provided by Spring Security. In this class, we have overridden two overloaded methods:\n\n1. `configure(HttpSecurity)` - Defines public resources. Below, we have set the `SIGN_UP_URL` endpoint as public. The `http.cors()` is used to make the Spring Security support the CORS (Cross-Origin Resource Sharing) and CSRF (Cross-Site Request Forgery). Read more <a href=\"https://docs.spring.io/spring-security/site/docs/4.2.x/reference/html/cors.html\" target=\"_blank\">here</a>.\n```\n @Override\n protected void configure(HttpSecurity http) throws Exception {\n     http.cors().and().csrf().disable().authorizeRequests()\n             .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()\n             .anyRequest().authenticated()\n             .and()\n             .addFilter(new JWTAuthenticationFilter(authenticationManager()))\n             .addFilter(new JWTAuthenticationVerficationFilter(authenticationManager()))\n             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);\n }\n```\n1. `configure(AuthenticationManagerBuilder)` - It declares the BCryptPasswordEncoder as the encoding technique, and loads user-specific data.\n```\n @Override\n protected void configure(AuthenticationManagerBuilder auth) throws Exception {\n     auth.parentAuthenticationManager(authenticationManagerBean())\n         .userDetailsService(userDetailsService)\n         .passwordEncoder(bCryptPasswordEncoder);\n }\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107686,
+              "key": "491d940f-1266-4544-83aa-d8cc88ac1159",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 5. UserDetailsServiceImpl.java\n\nIt implements the `UserDetailsService` interface, and defines only one method that retrieves the User obejct from the database:\n\n```\n    @Override\n    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {\n        User user = userRepository.findByUsername(username);\n        if (user == null) {\n            throw new UsernameNotFoundException(username);\n        }\n        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), Collections.emptyList());\n    }\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 907265,
+              "key": "8032c578-4c1c-4e12-8782-7c819c0402d0",
+              "title": "Exercise - Task List",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8032c578-4c1c-4e12-8782-7c819c0402d0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Create a new `BcryptPasswordEncoder` in the main class",
+                "Add a `BcryptPasswordEncoder` field to the `UserController`  class with `@Autowired` annotation so it's constructed for you",
+                "Add two fields to `CreateUserRequest`: `password` and `confirmPassword`",
+                "Add a salt field to the `UserEntity` and store a randomly generated salt with the password",
+                "In the user controller, where new users are created, add logic to make sure the two fields match; add some form of length/complexity validation, and use the `BcryptPasswordEncoder` to store the hashed password with salt appended",
+                "Create the security package containing the provided Java files"
+              ],
+              "positive_feedback": "Congratulations! Now that hashed and salted passwords are in use, we can continue to implement JWT.",
+              "video_feedback": null,
+              "description": "First we need to add passwords to user accounts. To do this we need to add some things to our code to do hashing and password storage"
+            },
+            {
+              "id": 1107687,
+              "key": "fadd02f2-a8ac-4f31-b7e0-77a88c3b9ae4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Recommended Read\n\n* StackOverflow discussion thread on <a href=\"https://stackoverflow.com/questions/41480102/how-spring-security-filter-chain-works\" target=\"_blank\">How Spring Security Filter Chain works</a>\n* <a href=\"https://spring.io/guides/topicals/spring-security-architecture\" target=\"_blank\">Spring Security Architecture</a>",
+              "instructor_notes": null
+            },
+            {
+              "id": 919026,
+              "key": "487e4272-110e-4c1b-a652-5667b47dac07",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<hr>\n\n## Conclusion\n\nIf you have been following along, now you must be able to ...\n\n* Explain the fundamentals of authentication and authorization \n* Implement the hashing and salting techniques, such as bCrypt, and SHA-256\n* Make use of JSON Web Tokens (JWTs) for authentication in your Spring application",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1107650,
+          "key": "90c1928b-a846-495a-af42-a5416a660441",
+          "title": "Troubleshooting Tips",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "90c1928b-a846-495a-af42-a5416a660441",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1107662,
+              "key": "291e9dee-a755-46d9-9862-62804a906634",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Troubleshooting Tips\n\n1. **Dependency added in the `pom.xml` yet the IDE shows *package not found error* when rebuilding the project.**<br>\nIf you face any error in your `pom.xml` about unresolved packages, try **File → Invalidate Caches and Restart** option in your IntelliJ IDE. Also, note that the order of the dependencies in the pom does matter. <br><br>\n\n\n2. **Cannot see the project folders in IntelliJ IDE**<br>\nWhen you import a project into the IDE (maybe from VCS), there is a possibility that you may not be able to see the project structure. In such cases, you just need to close the IDE and remove the `.idea` folder from the current project directory. \n\n\n3. **How do I change the Java SDK version for the current project or the individual module?**<br>\nYou can verify/change the Java SDK version for your project by going to the following  menu-option in the IDE:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107664,
+              "key": "8e315792-54a4-4f0e-b3fa-457bd6b6572a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fcf519d_screenshot-2020-12-07-at-5.20.42-pm/screenshot-2020-12-07-at-5.20.42-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8e315792-54a4-4f0e-b3fa-457bd6b6572a",
+              "caption": "Snapshot: Verify or change the Java SDK version",
+              "alt": "",
+              "width": 700,
+              "height": 856,
+              "instructor_notes": null
+            },
+            {
+              "id": 1107667,
+              "key": "a9461080-e32d-41f4-b32a-d385bc368471",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. **How do I change the language level for a particular Module?**<br>\nGo to the **Project Structure**, and view/edit the language level. The language level must be the same as the  SDK version chosen for the project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107668,
+              "key": "ee1b8b6a-a738-4668-b87e-92548d6a17fe",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fcf51fb_screenshot-2020-12-08-at-3.23.51-pm/screenshot-2020-12-08-at-3.23.51-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ee1b8b6a-a738-4668-b87e-92548d6a17fe",
+              "caption": "Snapshot: Set/verify the language level for the individual Module",
+              "alt": "",
+              "width": 700,
+              "height": 780,
+              "instructor_notes": null
+            },
+            {
+              "id": 1107669,
+              "key": "fc351c9f-3275-4b4e-8766-c12581ea2e06",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. **How do I change the default Java compiler for all projects?**<br>\nYou can go to the following option in the IDE to view/set the Java compiler version:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1107670,
+              "key": "82643a08-4bfa-431d-a710-5125d6e76e6b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fcf537c_screenshot-2020-12-08-at-3.24.30-pm/screenshot-2020-12-08-at-3.24.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/82643a08-4bfa-431d-a710-5125d6e76e6b",
+              "caption": "Snapshot: View/change the Java compiler version",
+              "alt": "",
+              "width": 700,
+              "height": 674,
+              "instructor_notes": null
+            },
+            {
+              "id": 1107671,
+              "key": "0455ef5a-95e0-499a-9807-aa67381ce7de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. **How do I import a project from Github into the IntelliJ IDE?**<br>\nYou can import a project available in a Github repository (or any of its branches) directly into your IDE. You can even perform all standard operations within your IDE, such as, add, commit, push, pull, merge, switch branch, etc. For more info, refer [here](https://www.jetbrains.com/help/idea/import-project-or-module-wizard.html). \n>**Note** - If the imported project is not shown as a Maven project, simply right-click on the `pom.xml` file, and choose to add it as a Maven project. \n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1115563,
+              "key": "0dc0007f-5cfb-4fa8-b5f7-d1bb9081ad95",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d821_screenshot-2020-12-07-at-4.00.18-pm/screenshot-2020-12-07-at-4.00.18-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0dc0007f-5cfb-4fa8-b5f7-d1bb9081ad95",
+              "caption": "Add the link to the Github repository in the VCS",
+              "alt": "",
+              "width": 500,
+              "height": 958,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115564,
+              "key": "d8365686-9989-4c0f-ac1d-69731a092880",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d84d_screenshot-2020-12-08-at-5.14.11-pm/screenshot-2020-12-08-at-5.14.11-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d8365686-9989-4c0f-ac1d-69731a092880",
+              "caption": "Perform all standard Github operations, using the VCS menu",
+              "alt": "",
+              "width": 700,
+              "height": 759,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115565,
+              "key": "238699ea-2ca2-47d9-a334-555a9a6ab7c4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd1d884_screenshot-2020-12-08-at-5.15.03-pm/screenshot-2020-12-08-at-5.15.03-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/238699ea-2ca2-47d9-a334-555a9a6ab7c4",
+              "caption": "VCS operations pop-up. Use this option to switch between Github branches. Don't forget to periodically (invalidate cache and) restart your IDE.",
+              "alt": "",
+              "width": 300,
+              "height": 670,
+              "instructor_notes": null
+            },
+            {
+              "id": 1115562,
+              "key": "ae57f15c-0f42-4744-9b09-a8a7a053b636",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "7. **My issue is not listed above**<br>\nRefer to the <a href=\"https://www.jetbrains.com/help/idea/troubleshooting-common-maven-issues.html#maven_compiler_problem\" target=\"_blank\">Troubleshooting common Maven issues</a> - official guide.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
