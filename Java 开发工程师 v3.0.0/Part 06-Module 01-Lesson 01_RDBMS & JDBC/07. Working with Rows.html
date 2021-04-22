@@ -1,0 +1,330 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Working with Rows</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>RDBMS &amp; JDBC</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Welcome.html">01. Welcome</a>
+    </li>
+    <li class="">
+      <a href="02. RDBMS.html">02. RDBMS</a>
+    </li>
+    <li class="">
+      <a href="03. MySQL.html">03. MySQL</a>
+    </li>
+    <li class="">
+      <a href="04. MySQL Datatypes.html">04. MySQL Datatypes</a>
+    </li>
+    <li class="">
+      <a href="05. Working with Tables.html">05. Working with Tables</a>
+    </li>
+    <li class="">
+      <a href="06. Working with Foreign Keys.html">06. Working with Foreign Keys</a>
+    </li>
+    <li class="">
+      <a href="07. Working with Rows.html">07. Working with Rows</a>
+    </li>
+    <li class="">
+      <a href="08. JDBC.html">08. JDBC</a>
+    </li>
+    <li class="">
+      <a href="09. Database Migration.html">09. Database Migration</a>
+    </li>
+    <li class="">
+      <a href="10. Recap.html">10. Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Working with Rows</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>INSERT, UPDATE, DELETE, SELECT</p></h3>
+  <div>
+  <h4 id="insert">INSERT</h4>
+<p>The INSERT INTO statement adds a new record to a table.</p>
+<p>INSERT INTO can contain values for some or all of the table’s columns.</p>
+<pre><code class="sql language-sql">INSERT INTO tableName (columnNames)
+VALUES (values)</code></pre>
+<h3 id="update">UPDATE</h3>
+<p>UPDATE can update one or more records in a table.</p>
+<pre><code class="sql language-sql">UPDATE tableName SET columnName1 = value1, columnName2 = value2, ………</code></pre>
+<p>If you want to limit the number of records to UPDATE, you can append a WHERE clause:</p>
+<pre><code class="sql language-sql">UPDATE tableName SET columnName1 = value1, columnName2 = value2, …  WHERE conditionIsTrue</code></pre>
+<h4 id="delete">Delete</h4>
+<p>DELETE can <em>permanently</em> delete one or more records from a table.</p>
+<pre><code class="sql language-sql">DELETE tableName</code></pre>
+<p>If you want to delete specific records, you can append a WHERE clause:</p>
+<pre><code class="sql language-sql">DELETE tableName WHERE conditionIsTrue</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>More info</p></h3>
+  <div>
+  <h4 id="select">SELECT</h4>
+<p>SELECT is the primary way to read data from a table. It can read all rows but also sort, filter and group them. </p>
+<pre><code class="sql language-sql">SELECT columns FROM table</code></pre>
+<p><em>*</em> is a shortcut to read all columns. </p>
+<pre><code class="sql language-sql">SELECT * FROM table</code></pre>
+<p>The above statement reads all columns from all rows.</p>
+<h4 id="filter">Filter</h4>
+<p>WHERE clause accepts a condition and when used with SELECT only rows matching that condition are returned. A wide variety of conditions are supported by SQL.</p>
+<pre><code class="sql language-sql">SELECT columns FROM table WHERE condition</code></pre>
+<h4 id="sort">Sort</h4>
+<p>ORDER BY clause sorts the returned rows by one or more columns. It supports both ascending and descending sort. Ascending is the default. For descending use the DESC keyword.</p>
+<pre><code class="sql language-sql">SELECT columns FROM table ORDER BY columns</code></pre>
+<h4 id="join">JOIN</h4>
+<p>A SQL JOIN joins data from two tables. SQL supports multiple JOINs in the same query. </p>
+<h5 id="different-types-of-joins">Different types of JOINs</h5>
+<p>INNER/CROSS JOIN: Intersection. Selects rows that have matching values in both tables. <br />
+LEFT OUTER JOIN: Selects all rows  from the left table with matching rows from the right table.<br />
+RIGHT OUTER JOIN: Select all rows  from the right table with matching rows from the left table.<br />
+FULL OUTER JOIN: Union. Selects all rows from both tables. </p>
+<h5 id="inner-join">INNER JOIN</h5>
+<pre><code class="sql language-sql">SELECT columns FROM table1 INNER JOIN table2 ON column1 = column2 </code></pre>
+<h5 id="left-join">LEFT JOIN</h5>
+<pre><code class="sql language-sql">SELECT columns FROM table1 LEFT JOIN table2 ON column1 = column2 </code></pre>
+<h5 id="right-join">RIGHT JOIN</h5>
+<pre><code class="sql language-sql">SELECT columns FROM table1 RIGHT JOIN table2 ON column1 = column2 </code></pre>
+<h5 id="full-join">FULL JOIN</h5>
+<pre><code class="sql language-sql">SELECT columns FROM table1 FULL JOIN table2 ON column1 = column2 </code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Question 1</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Write an INSERT statement to insert a record in the <em>post</em> table.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="c6855c06-40da-4b87-8f45-2c8485ce5aac--0">
+        <label for="c6855c06-40da-4b87-8f45-2c8485ce5aac--0"><p>Insert contains values for all the columns except the primary key.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="c6855c06-40da-4b87-8f45-2c8485ce5aac--1">
+        <label for="c6855c06-40da-4b87-8f45-2c8485ce5aac--1"><p>Insert statement creates a record and generates a primary key.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Good job!</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Question 2</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Write a SELECT statement to select a row from <em>post</em> table by primary key.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="207a44f7-82e3-49ea-9ff4-dfe541aa417f--0">
+        <label for="207a44f7-82e3-49ea-9ff4-dfe541aa417f--0"><p>SELECT returns one row that matches the condition.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Well done.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Question 3</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Write a DELETE statement to delete a row in <em>post</em> table by primary key.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="cb55506c-c60b-4e06-aa49-5ab70177cfe4--0">
+        <label for="cb55506c-c60b-4e06-aa49-5ab70177cfe4--0"><p>One row is deleted</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Well done.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. JDBC.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Working with Rows')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

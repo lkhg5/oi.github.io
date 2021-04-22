@@ -1,0 +1,319 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Database Migration</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>RDBMS &amp; JDBC</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Welcome.html">01. Welcome</a>
+    </li>
+    <li class="">
+      <a href="02. RDBMS.html">02. RDBMS</a>
+    </li>
+    <li class="">
+      <a href="03. MySQL.html">03. MySQL</a>
+    </li>
+    <li class="">
+      <a href="04. MySQL Datatypes.html">04. MySQL Datatypes</a>
+    </li>
+    <li class="">
+      <a href="05. Working with Tables.html">05. Working with Tables</a>
+    </li>
+    <li class="">
+      <a href="06. Working with Foreign Keys.html">06. Working with Foreign Keys</a>
+    </li>
+    <li class="">
+      <a href="07. Working with Rows.html">07. Working with Rows</a>
+    </li>
+    <li class="">
+      <a href="08. JDBC.html">08. JDBC</a>
+    </li>
+    <li class="">
+      <a href="09. Database Migration.html">09. Database Migration</a>
+    </li>
+    <li class="">
+      <a href="10. Recap.html">10. Recap</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">09. Database Migration</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>JavaND#305 C04 L01 A09 Database Migration</p></h3>
+  <video controls>
+  <source src="09. JavaND#305 C04 L01 A09 Database Migration-ibLQNsK6SuY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="09. JavaND#305 C04 L01 A09 Database Migration-ibLQNsK6SuY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h5 id="resources">Resources</h5>
+<ul>
+<li><a href="https://flywaydb.org/getstarted/why" rel="noopener noreferrer" target="_blank">Why Database migrations?</a></li>
+<li><a href="https://flywaydb.org/getstarted/how" rel="noopener noreferrer" target="_blank">How Flyway works?</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-execute-flyway-database-migrations-on-startup" rel="noopener noreferrer" target="_blank">Using migrations in Spring Boot</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Here is the link to the <a href="https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l1_exercise1" target="_blank">starter code</a> for the exercise below.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Exercise</p></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <h5 id="environment-setup">Environment Setup</h5>
+<ul>
+<li>MySQL server is started and contains the <code>JDND-C3 database</code>. Create it, if not exists.</li>
+<li>Java 1.8 is installed.</li>
+<li>Checkout the <a href="https://github.com/udacity/nd035-v1-C3-Data-Stores-and-Persistence/tree/master/exercises/c3_l1_exercise1" rel="noopener noreferrer" target="_blank">starter code</a></li>
+<li>Import the starter code into the IDE like IntelliJ IDEA CE (Optional).</li>
+</ul>
+<h5 id="exercise-instructions">Exercise Instructions</h5>
+<ul>
+<li>Create a table called <em>member</em> that represents the members of a health club. The table contains the following columns,</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th id="**column**"><strong>Column</strong></th>
+<th id="**description**"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Auto Generated Primary key</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>First name of the member</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>Last name of the member</td>
+</tr>
+<tr>
+<td>age</td>
+<td>How old is the member?</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>Gender of the member</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Outstanding balance the member owes to the club</td>
+</tr>
+</tbody>
+</table>
+<p>Choose appropriate data types for each column.</p>
+<ul>
+<li>Write the SQL to create the <em>member</em> table in <em>src/main/resources/db/migration/V01__CreateTable.sql</em>.</li>
+<li>Follow the steps in <em>Application</em> class.</li>
+</ul>
+<h5 id="how-to-run-the-code">How to run the code?</h5>
+<h6 id="in-the-ide">In the IDE,</h6>
+<ul>
+<li>Run the <code>Application</code> class.</li>
+</ul>
+<h6 id="using-maven">Using Maven</h6>
+<ul>
+<li>MacOS - <code>./mvnw exec:java</code></li>
+<li>Windows - <code>mvnw exec:java</code></li>
+</ul>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="8bc94b7b-6f7b-4c1a-acbf-14ac15ce1e6e--0">
+        <label for="8bc94b7b-6f7b-4c1a-acbf-14ac15ce1e6e--0"><p>DB migrations are successful and tables are created.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="8bc94b7b-6f7b-4c1a-acbf-14ac15ce1e6e--1">
+        <label for="8bc94b7b-6f7b-4c1a-acbf-14ac15ce1e6e--1"><p>Records are inserted into the table.</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="8bc94b7b-6f7b-4c1a-acbf-14ac15ce1e6e--2">
+        <label for="8bc94b7b-6f7b-4c1a-acbf-14ac15ce1e6e--2"><p>Application console prints the log statements for all the rows read.</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Congratulations! You now completed a Spring Boot JDBC application.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Details</p></h3>
+  <div>
+  <p><a href="https://flywaydb.org/getstarted/why" rel="noopener noreferrer" target="_blank">Why Database migrations?</a><br />
+<a href="https://flywaydb.org/getstarted/how" rel="noopener noreferrer" target="_blank">How Flyway works?</a><br />
+<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-execute-flyway-database-migrations-on-startup" rel="noopener noreferrer" target="_blank">Using migrations in Spring Boot</a></p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="10. Recap.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. Database Migration')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
