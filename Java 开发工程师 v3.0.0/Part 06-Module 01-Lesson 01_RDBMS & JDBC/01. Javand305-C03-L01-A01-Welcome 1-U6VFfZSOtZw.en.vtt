@@ -153,5 +153,5 @@ All of the glucode necessary for a Spring Boot application will be provided,
 and you will only write the database interaction portion of the application.
 
 00:03:21.949 --> 00:03:27.250
-We'll also use Maven to assist us in compiling.
+We'll also use Maven to assist us in compiling.最新课程跟课件还有一对一辅导请加wx：udacity6
 
